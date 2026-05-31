@@ -80,6 +80,8 @@ gh release upload vocab-2026.06.01 \
   --clobber
 ```
 
+GitHub Actions 中的 `Release Vocabulary Manifests` 只负责发布 `manifests/*.json`。真实 `.vocabpack` 文件按设计不提交 Git，需要在本地生成后用 `gh release upload` 上传为 Release Asset。
+
 ## 下载地址格式
 
 ```text

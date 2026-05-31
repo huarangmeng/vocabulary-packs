@@ -1,4 +1,4 @@
-name: Release Vocabulary Packs
+name: Release Vocabulary Manifests
 
 on:
   workflow_dispatch:
@@ -21,19 +21,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Verify release files
+      - name: Verify manifests
         run: |
-          test -d dist/vocabpacks
-          test -f dist/vocabpacks/latest.json
-          ls -lh dist/vocabpacks
-          shasum -a 256 dist/vocabpacks/*
+          test -f manifests/latest.json
+          python3 -m json.tool manifests/latest.json >/dev/null
+          for file in manifests/*.json; do
+            python3 -m json.tool "$file" >/dev/null
+          done
+          ls -lh manifests
+          shasum -a 256 manifests/*.json
 
-      - name: Create or update release
+      - name: Create or update release manifests
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ inputs.tag }}
           name: ${{ inputs.title }} ${{ inputs.tag }}
           files: |
-            dist/vocabpacks/*.vocabpack
-            dist/vocabpacks/latest.json
-            dist/vocabpacks/latest.json.sha256
+            manifests/*.json
