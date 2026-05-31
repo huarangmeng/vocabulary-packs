@@ -22,10 +22,16 @@
 ```text
 vocabulary-packs/
   README.md
+  PACK_FORMAT.md
   manifests/
     latest.json
     2026.06.01.json
+  schemas/
+    catalog.schema.json
+    package-manifest.schema.json
+    entry.schema.json
   tools/
+    validate_vocabpack.py
     build-packs/
   .github/
     workflows/
@@ -37,7 +43,9 @@ vocabulary-packs/
 提交到 Git：
 
 - `README.md`：仓库说明。
+- `PACK_FORMAT.md`：`.vocabpack` 固定格式契约。
 - `manifests/*.json`：词库目录文件。
+- `schemas/*.json`：格式约束 schema。
 - `tools/`：后续词库包构建脚本。
 - `.github/workflows/`：Release 发布流程。
 
@@ -48,6 +56,19 @@ vocabulary-packs/
 - 本地下载或测试产生的数据。
 
 `.vocabpack` 文件只作为 GitHub Release Asset 上传，避免二进制文件进入 Git 历史。
+
+## 格式规则
+
+所有词库包必须遵守 [PACK_FORMAT.md](PACK_FORMAT.md)。
+
+固定规则：
+
+- `.vocabpack` 必须是 zip 文件。
+- 包内只能有 `manifest.json` 和 `entries.jsonl`。
+- `manifest.json` 必须符合 `schemas/package-manifest.schema.json`。
+- `entries.jsonl` 每行必须符合 `schemas/entry.schema.json`。
+- 外部 catalog 必须符合 `schemas/catalog.schema.json`。
+- 发布前必须通过 `tools/validate_vocabpack.py` 校验。
 
 ## Release 规则
 
@@ -77,6 +98,14 @@ latest.json.sha256
 ```bash
 shasum -a 256 dist/vocabpacks/*.vocabpack
 shasum -a 256 dist/vocabpacks/latest.json
+```
+
+校验词库格式：
+
+```bash
+python3 tools/validate_vocabpack.py \
+  dist/vocabpacks/ielts-academic-core-2026.06.01.vocabpack \
+  manifests/latest.json
 ```
 
 创建 Release 并上传：

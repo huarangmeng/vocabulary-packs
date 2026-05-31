@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/huarangmeng/vocabulary-packs/schemas/entry.schema.json",
+  "title": "Vocabulary Pack Entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "order",
+    "type",
+    "englishText",
+    "chinesePrompt",
+    "partOfSpeech",
+    "definitionEn",
+    "exampleEn",
+    "exampleZh",
+    "synonyms",
+    "wordFamily",
+    "difficulty",
+    "tags"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*:[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "order": { "type": "integer", "minimum": 1 },
+    "type": { "enum": ["WordOrPhrase", "Sentence", "Logic"] },
+    "englishText": { "type": "string", "minLength": 1 },
+    "chinesePrompt": { "type": "string", "minLength": 1 },
+    "partOfSpeech": { "type": "string", "minLength": 1 },
+    "definitionEn": { "type": "string", "minLength": 1 },
+    "exampleEn": { "type": "string", "minLength": 1 },
+    "exampleZh": { "type": "string", "minLength": 1 },
+    "synonyms": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "wordFamily": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "difficulty": { "type": "string", "minLength": 1 },
+    "tags": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    }
+  }
+}

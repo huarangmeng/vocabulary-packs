@@ -24,6 +24,9 @@ jobs:
       - name: Verify manifests
         run: |
           test -f manifests/latest.json
+          for file in schemas/*.json; do
+            python3 -m json.tool "$file" >/dev/null
+          done
           python3 -m json.tool manifests/latest.json >/dev/null
           for file in manifests/*.json; do
             python3 -m json.tool "$file" >/dev/null
