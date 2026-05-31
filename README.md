@@ -1,6 +1,12 @@
 # Vocabulary Packs
 
-`Vocabulary Packs` 是 `Vocabulary` App 的外部词库分发仓库。仓库本身只维护 manifest、来源说明、许可证说明和发布流程；实际 `.vocabpack` 文件通过 GitHub Releases 的 Release Assets 分发。
+`Vocabulary Packs` 是 `Vocabulary` App 的外部词库包分发仓库。
+
+这个仓库只负责三件事：
+
+- 维护词库目录文件 `manifest`。
+- 通过 GitHub Releases 发布 `.vocabpack` 词库包。
+- 给 App 提供稳定的下载地址和完整性校验信息。
 
 ## 当前决策
 
@@ -16,19 +22,32 @@
 ```text
 vocabulary-packs/
   README.md
-  LICENSES.md
   manifests/
     latest.json
     2026.06.01.json
-  sources/
-    ielts-academic-core.md
-    toefl-academic-core.md
   tools/
     build-packs/
   .github/
     workflows/
       release-packs.yml
 ```
+
+## 存储规则
+
+提交到 Git：
+
+- `README.md`：仓库说明。
+- `manifests/*.json`：词库目录文件。
+- `tools/`：后续词库包构建脚本。
+- `.github/workflows/`：Release 发布流程。
+
+不提交到 Git：
+
+- `.vocabpack` 词库包。
+- 构建过程中的临时文件。
+- 本地下载或测试产生的数据。
+
+`.vocabpack` 文件只作为 GitHub Release Asset 上传，避免二进制文件进入 Git 历史。
 
 ## Release 规则
 
@@ -81,6 +100,32 @@ gh release upload vocab-2026.06.01 \
 ```
 
 GitHub Actions 中的 `Release Vocabulary Manifests` 只负责发布 `manifests/*.json`。真实 `.vocabpack` 文件按设计不提交 Git，需要在本地生成后用 `gh release upload` 上传为 Release Asset。
+
+## Manifest 规则
+
+App 读取 `latest.json` 后展示“其他词库”列表。
+
+`latest.json` 基本结构：
+
+```json
+{
+  "schemaVersion": 1,
+  "catalogVersion": "2026.06.01",
+  "generatedAt": "2026-06-01T00:00:00Z",
+  "minAppVersion": "1.0.0",
+  "books": []
+}
+```
+
+每个词库条目后续至少包含：
+
+- `id`：稳定词库 ID。
+- `title`：展示名称。
+- `version`：词库版本。
+- `itemCount`：条目数量。
+- `sizeBytes`：下载大小。
+- `sha256`：文件校验值。
+- `urls`：下载地址列表。
 
 ## 下载地址格式
 
