@@ -1,0 +1,8 @@
+# Generated vocabulary packs should be uploaded as GitHub Release assets, not committed.
+dist/vocabpacks/*
+!dist/vocabpacks/.gitkeep
+
+# Local files
+.DS_Store
+*.tmp
+*.log

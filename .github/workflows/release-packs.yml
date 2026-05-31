@@ -1,0 +1,39 @@
+name: Release Vocabulary Packs
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag, e.g. vocab-2026.06.01
+        required: true
+      title:
+        description: Release title
+        required: false
+        default: Vocabulary Packs
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify release files
+        run: |
+          test -d dist/vocabpacks
+          test -f dist/vocabpacks/latest.json
+          ls -lh dist/vocabpacks
+          shasum -a 256 dist/vocabpacks/*
+
+      - name: Create or update release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.tag }}
+          name: ${{ inputs.title }} ${{ inputs.tag }}
+          files: |
+            dist/vocabpacks/*.vocabpack
+            dist/vocabpacks/latest.json
+            dist/vocabpacks/latest.json.sha256
