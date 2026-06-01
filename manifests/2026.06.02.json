@@ -30,6 +30,18 @@
       ],
       "urls": [
         "https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/core-chunks-1-2026.06.02.trainpack"
+      ],
+      "seriesId": "core-speaking-foundations",
+      "seriesTitle": "核心口语基础",
+      "seriesOrder": 1,
+      "learningPath": "Foundation",
+      "recommendedNextPackIds": [
+        "small-talk-1",
+        "meeting-communication-1"
+      ],
+      "companionPackIds": [
+        "small-talk-1",
+        "meeting-communication-1"
       ]
     },
     {
@@ -58,6 +70,17 @@
       ],
       "urls": [
         "https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/meeting-communication-1-2026.06.02.trainpack"
+      ],
+      "seriesId": "workplace-speaking-path",
+      "seriesTitle": "职场口语路径",
+      "seriesOrder": 1,
+      "learningPath": "WorkplaceCommunication",
+      "prerequisitePackIds": [
+        "core-chunks-1"
+      ],
+      "companionPackIds": [
+        "small-talk-1",
+        "core-chunks-1"
       ]
     },
     {
@@ -86,6 +109,19 @@
       ],
       "urls": [
         "https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/small-talk-1-2026.06.02.trainpack"
+      ],
+      "seriesId": "social-speaking-path",
+      "seriesTitle": "社交口语路径",
+      "seriesOrder": 1,
+      "learningPath": "SocialConversation",
+      "prerequisitePackIds": [
+        "core-chunks-1"
+      ],
+      "recommendedNextPackIds": [
+        "meeting-communication-1"
+      ],
+      "companionPackIds": [
+        "core-chunks-1"
       ]
     }
   ]
