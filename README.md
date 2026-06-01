@@ -19,6 +19,11 @@
 - 所有下载文件必须通过 `sha256` 校验后才能导入。
 - 官方训练包不直接写入用户自建 `study_items`。
 
+版本入口：
+
+- 当前发布版本、Release tag、catalog 时间戳和 zip 时间戳统一由 [release_config.py](file:///Users/bytedance/AndroidStudioProjects/vocabulary-packs/tools/build-packs/release_config.py) 管理。
+- 如需切换版本，优先修改 `tools/build-packs/release_config.py`，不要在各个构建脚本里单独改常量。
+
 ## 仓库结构
 
 ```text
@@ -35,9 +40,12 @@ vocabulary-packs/
     item.schema.json
   tools/
     validate_trainpack.py
+    release_trainpacks.py
     build-packs/
       README.md
       build_core_chunks_pack.py
+      build_small_talk_pack.py
+      build_meeting_communication_pack.py
   .github/
     workflows/
       release-packs.yml
@@ -97,21 +105,38 @@ latest.json.sha256
 
 ## 当前示例训练包
 
-当前仓库内置一个最小可用示例构建脚本：
+当前仓库内置三份官方训练包构建脚本：
 
 - `core-chunks-1`：高频口语表达块 1。
+- `small-talk-1`：Small Talk 1。
+- `meeting-communication-1`：会议沟通 1。
 
-它用于固定 `.trainpack` 结构、校验流程和 App 接入边界，不代表最终内容规模。
+它们用于固定 `.trainpack` 结构、校验流程和 App 接入边界，同时也是首批正式发布候选。
 
 ## 手动发布
 
 生成训练包后放到本地 `dist/trainpacks/`，该目录内容默认不提交 Git。
 
-构建示例训练包：
+推荐直接执行统一发布辅助脚本：
 
 ```bash
-python3 tools/build-packs/build_core_chunks_pack.py
+python3 tools/release_trainpacks.py
 ```
+
+这会：
+
+- 构建全部官方训练包。
+- 生成聚合后的 `manifests/latest.json`。
+- 生成 `dist/trainpacks/latest.json` 和 `latest.json.sha256`。
+- 逐个校验所有 `.trainpack`。
+
+如需单独调试某一个训练包，也可以单独运行：
+
+
+```bash
+python3 tools/build-packs/build_small_talk_pack.py
+python3 tools/build-packs/build_meeting_communication_pack.py
+python3 tools/build-packs/build_core_chunks_pack.py
 
 校验训练包格式：
 
@@ -131,23 +156,20 @@ shasum -a 256 dist/trainpacks/latest.json
 创建 Release 并上传：
 
 ```bash
-gh release create trainpack-2026.06.02 \
-  --repo huarangmeng/vocabulary-packs \
-  --title "Vocabulary Trainpacks 2026.06.02" \
-  --notes "Initial official speaking trainpacks." \
-  dist/trainpacks/*.trainpack \
-  dist/trainpacks/latest.json \
-  dist/trainpacks/latest.json.sha256
+python3 tools/print_release_command.py
 ```
 
-追加或覆盖 manifest：
+如果你已经执行过 `python3 tools/release_trainpacks.py`，上面的脚本会直接打印当前版本对应的两条命令：
+
+- `gh release create ...`
+- `gh release upload ...`
+
+这样发布命令里的 `tag`、`title`、`notes` 和 asset 路径都会从统一配置自动推导，不需要手写版本号。
+
+只想看覆盖上传命令时，也可以直接复制脚本输出中的第二段：
 
 ```bash
-gh release upload trainpack-2026.06.02 \
-  --repo huarangmeng/vocabulary-packs \
-  dist/trainpacks/latest.json \
-  dist/trainpacks/latest.json.sha256 \
-  --clobber
+python3 tools/print_release_command.py
 ```
 
 GitHub Actions 中的 `Release Vocabulary Trainpack Manifests` 只负责发布 `manifests/*.json`。真实 `.trainpack` 文件按设计不提交 Git，需要在本地生成后用 `gh release upload` 上传为 Release Asset。
@@ -194,6 +216,13 @@ https://github.com/huarangmeng/vocabulary-packs/releases/download/<tag>/<asset-n
 
 ```text
 https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/core-chunks-1-2026.06.02.trainpack
+```
+
+另外两包示例：
+
+```text
+https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/small-talk-1-2026.06.02.trainpack
+https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/meeting-communication-1-2026.06.02.trainpack
 ```
 
 ## App 接入规则

@@ -30,6 +30,60 @@
       "urls": [
         "https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/core-chunks-1-2026.06.02.trainpack"
       ]
+    },
+    {
+      "id": "meeting-communication-1",
+      "title": "会议沟通 1",
+      "description": "面向会议发言、澄清信息和温和提出异议的口语训练包。",
+      "packType": "Scenario",
+      "version": "2026.06.02",
+      "levelHint": "B1-B2",
+      "unitCount": 3,
+      "itemCount": 12,
+      "estimatedMinutes": 55,
+      "sizeBytes": 3606,
+      "sha256": "f26a33e5fa199172bd6a784c2554c6f1783212714d88d3cb4bb9a8f272b0cf2a",
+      "fileName": "meeting-communication-1-2026.06.02.trainpack",
+      "tags": [
+        "Speaking",
+        "Meeting",
+        "B1-B2"
+      ],
+      "trainingModes": [
+        "Recall",
+        "Shadow",
+        "Respond"
+      ],
+      "urls": [
+        "https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/meeting-communication-1-2026.06.02.trainpack"
+      ]
+    },
+    {
+      "id": "small-talk-1",
+      "title": "Small Talk 1",
+      "description": "面向日常寒暄、轻松开场和跟进近况的口语训练包。",
+      "packType": "Scenario",
+      "version": "2026.06.02",
+      "levelHint": "A2-B1",
+      "unitCount": 3,
+      "itemCount": 12,
+      "estimatedMinutes": 50,
+      "sizeBytes": 3234,
+      "sha256": "0a4b626ca12a36a73c2555cd24082755a796fab7451124aae1444c1c695fa70e",
+      "fileName": "small-talk-1-2026.06.02.trainpack",
+      "tags": [
+        "Speaking",
+        "SmallTalk",
+        "A2-B1"
+      ],
+      "trainingModes": [
+        "Recall",
+        "Shadow",
+        "Respond"
+      ],
+      "urls": [
+        "https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/small-talk-1-2026.06.02.trainpack"
+      ]
     }
   ]
 }

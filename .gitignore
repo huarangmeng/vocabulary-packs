@@ -6,3 +6,7 @@ dist/trainpacks/*
 .DS_Store
 *.tmp
 *.log
+
+# Python cache
+__pycache__/
+*.py[cod]

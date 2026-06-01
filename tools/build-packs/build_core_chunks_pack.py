@@ -1,23 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
-import hashlib
-import json
-import zipfile
-from pathlib import Path
-
-
-ROOT = Path(__file__).resolve().parents[2]
-VERSION = "2026.06.02"
-TAG = f"trainpack-{VERSION}"
-PACK_ID = "core-chunks-1"
-FILE_NAME = f"{PACK_ID}-{VERSION}.trainpack"
-DOWNLOAD_URL = (
-    "https://github.com/huarangmeng/vocabulary-packs/releases/download/"
-    f"{TAG}/{FILE_NAME}"
-)
-CREATED_AT = "2026-06-02T00:00:00Z"
-ZIP_TIMESTAMP = (2026, 6, 2, 0, 0, 0)
+from trainpack_builder import build_trainpack
 
 
 UNIT_SPECS = [
@@ -217,134 +201,27 @@ UNIT_SPECS = [
         ],
     },
 ]
-
-
-def write_deterministic_text(zf: zipfile.ZipFile, name: str, text: str) -> None:
-    info = zipfile.ZipInfo(filename=name, date_time=ZIP_TIMESTAMP)
-    info.compress_type = zipfile.ZIP_DEFLATED
-    info.create_system = 3
-    zf.writestr(info, text.encode("utf-8"))
-
-
-def build_units_and_items() -> tuple[list[dict], list[dict]]:
-    units: list[dict] = []
-    items: list[dict] = []
-    item_index = 1
-    for unit_order, spec in enumerate(UNIT_SPECS, start=1):
-        unit_id = f"{PACK_ID}:{spec['key']}"
-        unit_item_ids: list[str] = []
-        for order_in_unit, item_spec in enumerate(spec["items"], start=1):
-            item_id = f"{PACK_ID}:item-{item_index:04d}"
-            item_index += 1
-            item = {
-                "id": item_id,
-                "unitId": unit_id,
-                "order": order_in_unit,
-                "type": item_spec["type"],
-                "englishText": item_spec["englishText"],
-                "chinesePrompt": item_spec["chinesePrompt"],
-                "variants": item_spec.get("variants", []),
-                "notes": item_spec.get("notes", []),
-                "pronunciationTargets": item_spec.get("pronunciationTargets", []),
-                "commonMistakes": item_spec.get("commonMistakes", []),
-                "tags": item_spec.get("tags", []),
-            }
-            for optional_key in ["contextText", "responseRole", "repairType", "slots", "sampleOutputs", "focusText", "focusType"]:
-                if optional_key in item_spec:
-                    item[optional_key] = item_spec[optional_key]
-            items.append(item)
-            unit_item_ids.append(item_id)
-        units.append(
-            {
-                "unitId": unit_id,
-                "order": unit_order,
-                "title": spec["title"],
-                "communicativeGoal": spec["communicativeGoal"],
-                "scene": spec["scene"],
-                "register": spec["register"],
-                "difficulty": spec["difficulty"],
-                "tags": spec["tags"],
-                "activationPrompts": spec["activationPrompts"],
-                "itemIds": unit_item_ids,
-                "pronunciationFocus": spec["pronunciationFocus"],
-            }
-        )
-    return units, items
+def build():
+    return build_trainpack(
+        pack_id="core-chunks-1",
+        title="高频口语表达块 1",
+        description="面向日常交流与工作沟通的高频英文表达块训练包。",
+        pack_type="CoreChunks",
+        level_hint="A2-B1",
+        estimated_minutes=45,
+        tags=["Speaking", "Chunks", "A2-B1"],
+        training_modes=["Recall", "Shadow", "Respond"],
+        unit_specs=UNIT_SPECS,
+    )
 
 
 def main() -> None:
-    units, items = build_units_and_items()
-    package_manifest = {
-        "schemaVersion": 1,
-        "packId": PACK_ID,
-        "packVersion": VERSION,
-        "title": "高频口语表达块 1",
-        "description": "面向日常交流与工作沟通的高频英文表达块训练包。",
-        "packType": "CoreChunks",
-        "locale": "en-US",
-        "unitCount": len(units),
-        "itemCount": len(items),
-        "estimatedMinutes": 45,
-        "createdAt": CREATED_AT,
-        "unitsFile": "units.json",
-        "itemsFile": "items.jsonl",
-    }
-
-    output_dir = ROOT / "dist" / "trainpacks"
-    output_dir.mkdir(parents=True, exist_ok=True)
-    package_path = output_dir / FILE_NAME
-    with zipfile.ZipFile(package_path, "w") as package:
-        write_deterministic_text(package, "manifest.json", json.dumps(package_manifest, ensure_ascii=False, indent=2) + "\n")
-        write_deterministic_text(package, "units.json", json.dumps(units, ensure_ascii=False, indent=2) + "\n")
-        write_deterministic_text(
-            package,
-            "items.jsonl",
-            "\n".join(json.dumps(item, ensure_ascii=False, separators=(",", ":")) for item in items) + "\n",
-        )
-
-    digest = hashlib.sha256(package_path.read_bytes()).hexdigest()
-    size_bytes = package_path.stat().st_size
-
-    catalog = {
-        "schemaVersion": 1,
-        "catalogVersion": VERSION,
-        "generatedAt": CREATED_AT,
-        "minAppVersion": "1.1.0",
-        "packs": [
-            {
-                "id": PACK_ID,
-                "title": "高频口语表达块 1",
-                "description": "面向日常交流与工作沟通的高频英文表达块训练包。",
-                "packType": "CoreChunks",
-                "version": VERSION,
-                "levelHint": "A2-B1",
-                "unitCount": len(units),
-                "itemCount": len(items),
-                "estimatedMinutes": 45,
-                "sizeBytes": size_bytes,
-                "sha256": digest,
-                "fileName": FILE_NAME,
-                "tags": ["Speaking", "Chunks", "A2-B1"],
-                "trainingModes": ["Recall", "Shadow", "Respond"],
-                "urls": [DOWNLOAD_URL],
-            }
-        ],
-    }
-
-    manifest_dir = ROOT / "manifests"
-    manifest_dir.mkdir(parents=True, exist_ok=True)
-    catalog_text = json.dumps(catalog, ensure_ascii=False, indent=2) + "\n"
-    (manifest_dir / "latest.json").write_text(catalog_text, encoding="utf-8")
-    (manifest_dir / f"{VERSION}.json").write_text(catalog_text, encoding="utf-8")
-    (output_dir / "latest.json").write_text(catalog_text, encoding="utf-8")
-    latest_digest = hashlib.sha256((output_dir / "latest.json").read_bytes()).hexdigest()
-    (output_dir / "latest.json.sha256").write_text(f"{latest_digest}  latest.json\n", encoding="utf-8")
-
-    print(f"Generated: {package_path}")
-    print(f"Units: {len(units)}")
-    print(f"Items: {len(items)}")
-    print(f"Size: {size_bytes} bytes")
-    print(f"SHA-256: {digest}")
+    result = build()
+    print(f"Generated: {result.package_path}")
+    print(f"Units: {result.unit_count}")
+    print(f"Items: {result.item_count}")
+    print(f"Size: {result.size_bytes} bytes")
+    print(f"SHA-256: {result.sha256}")
 
 
 if __name__ == "__main__":
