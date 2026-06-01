@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/huarangmeng/vocabulary-packs/schemas/item.schema.json",
+  "title": "Vocabulary Trainpack Item",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "unitId",
+    "order",
+    "type",
+    "englishText",
+    "chinesePrompt",
+    "variants",
+    "notes",
+    "pronunciationTargets",
+    "commonMistakes",
+    "tags"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*:item-\\d{4}$" },
+    "unitId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*:[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "order": { "type": "integer", "minimum": 1 },
+    "type": {
+      "type": "string",
+      "enum": ["Chunk", "SentencePattern", "DialogueTurn", "RepairStrategy", "PronunciationTarget"]
+    },
+    "englishText": { "type": "string", "minLength": 1 },
+    "chinesePrompt": { "type": "string", "minLength": 1 },
+    "variants": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "notes": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "pronunciationTargets": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "commonMistakes": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "tags": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "contextText": { "type": "string", "minLength": 1 },
+    "responseRole": { "type": "string", "minLength": 1 },
+    "repairType": { "type": "string", "minLength": 1 },
+    "slots": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "sampleOutputs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "focusText": { "type": "string", "minLength": 1 },
+    "focusType": { "type": "string", "minLength": 1 }
+  }
+}

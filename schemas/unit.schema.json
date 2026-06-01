@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/huarangmeng/vocabulary-packs/schemas/unit.schema.json",
+  "title": "Vocabulary Trainpack Unit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "unitId",
+    "order",
+    "title",
+    "communicativeGoal",
+    "scene",
+    "register",
+    "difficulty",
+    "tags",
+    "activationPrompts",
+    "itemIds",
+    "pronunciationFocus"
+  ],
+  "properties": {
+    "unitId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*:[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "order": { "type": "integer", "minimum": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "communicativeGoal": { "type": "string", "minLength": 1 },
+    "scene": { "type": "string", "minLength": 1 },
+    "register": { "type": "string", "enum": ["Casual", "Neutral", "Formal"] },
+    "difficulty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lexical", "interactionPressure", "pronunciationRisk"],
+      "properties": {
+        "lexical": { "type": "string", "minLength": 1 },
+        "interactionPressure": { "type": "string", "enum": ["Low", "Medium", "High"] },
+        "pronunciationRisk": { "type": "string", "enum": ["Low", "Medium", "High"] }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "activationPrompts": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "itemIds": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*:item-\\d{4}$" }
+    },
+    "pronunciationFocus": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    }
+  }
+}

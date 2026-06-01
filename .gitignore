@@ -1,6 +1,6 @@
-# Generated vocabulary packs should be uploaded as GitHub Release assets, not committed.
-dist/vocabpacks/*
-!dist/vocabpacks/.gitkeep
+# Generated trainpacks should be uploaded as GitHub Release assets, not committed.
+dist/trainpacks/*
+!dist/trainpacks/.gitkeep
 
 # Local files
 .DS_Store
