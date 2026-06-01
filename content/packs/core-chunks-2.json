@@ -4,7 +4,7 @@
   "description": "围绕假设确认、过渡衔接、软化请求、收窄选项、部分认同、升级担忧、重新框定和推动决策等更高互动压力下的核心 spoken functions 组织的进阶口语表达块训练包。",
   "packType": "CoreChunks",
   "levelHint": "B1-B2",
-  "estimatedMinutes": 140,
+  "estimatedMinutes": 220,
   "tags": [
     "Speaking",
     "Chunks",
@@ -1172,6 +1172,1820 @@
         "variantPrompts": [
           "你想把下一步说清楚",
           "换一个相近场景，再完成“推动决策落地”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "reframe-problem-001",
+      "title": "重新定义问题",
+      "communicativeGoal": "把混乱讨论重新框定成更清楚的问题",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Topic",
+        "Repair",
+        "Core"
+      ],
+      "activationPrompts": [
+        "讨论有点散，你想重新定义问题",
+        "你想把问题说得更可解决"
+      ],
+      "pronunciationFocus": [
+        "maybe the real question",
+        "frame this as"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Maybe the real question is how much risk we're willing to take.",
+          "chinesePrompt": "也许真正的问题是我们愿意承担多大风险。",
+          "variants": [
+            "Maybe the bigger question is how much risk we're willing to take."
+          ],
+          "notes": [
+            "把争论转成核心问题。"
+          ],
+          "pronunciationTargets": [
+            "real question"
+          ],
+          "commonMistakes": [
+            "the real problem is how much risk we take."
+          ],
+          "tags": [
+            "Topic",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I'd frame this as a timing issue, not a quality issue.",
+          "chinesePrompt": "我会把这看成时间问题，而不是质量问题。",
+          "variants": [
+            "I would frame this more as a timing issue."
+          ],
+          "notes": [
+            "frame as 用于重新定义问题。"
+          ],
+          "pronunciationTargets": [
+            "frame this as"
+          ],
+          "commonMistakes": [
+            "I frame it to timing issue."
+          ],
+          "tags": [
+            "Topic",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Maybe we should separate {the timing issue} from {the quality issue}.",
+          "chinesePrompt": "也许我们应该把时间问题和质量问题分开。",
+          "variants": [
+            "Maybe we should separate timing from quality."
+          ],
+          "notes": [
+            "把混在一起的问题拆开。"
+          ],
+          "pronunciationTargets": [
+            "separate from"
+          ],
+          "commonMistakes": [
+            "separate timing and quality with."
+          ],
+          "tags": [
+            "Topic",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Maybe we should separate {the timing issue} from {the quality issue}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Maybe the real question is timing. I'd frame this as a timing issue, not a quality issue.",
+          "chinesePrompt": "也许真正的问题是时间。我会把这看作时间问题，不是质量问题。",
+          "variants": [],
+          "notes": [
+            "先重定义，再明确排除。"
+          ],
+          "pronunciationTargets": [
+            "not a quality issue"
+          ],
+          "commonMistakes": [
+            "not quality problem."
+          ],
+          "tags": [
+            "Topic",
+            "DialogueTurn"
+          ],
+          "contextText": "讨论有点散，你想重新定义问题",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“重新定义问题”对应的沟通动作",
+          "把混乱讨论重新框定成更清楚的问题",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Repair",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：讨论有点散，你想重新定义问题",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想把问题说得更可解决",
+          "换一个相近场景，再完成“重新定义问题”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "tone-calibration-001",
+      "title": "控制语气强度",
+      "communicativeGoal": "在表达意见时控制强弱，不显得过度绝对",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Hedging",
+        "Softening",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你有不同看法，但不想说得太绝对",
+        "你想把强硬判断改得柔和一点"
+      ],
+      "pronunciationFocus": [
+        "I'm leaning toward",
+        "a bit"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I'm leaning toward the second option.",
+          "chinesePrompt": "我更倾向于第二个选项。",
+          "variants": [
+            "I'm leaning more toward the second option."
+          ],
+          "notes": [
+            "比 I choose 更柔和。"
+          ],
+          "pronunciationTargets": [
+            "leaning toward"
+          ],
+          "commonMistakes": [
+            "I am leaning to."
+          ],
+          "tags": [
+            "Hedging",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "That feels a bit too risky to me.",
+          "chinesePrompt": "我感觉那有点太冒险了。",
+          "variants": [
+            "That seems a bit too risky to me."
+          ],
+          "notes": [
+            "a bit 和 to me 都能降强度。"
+          ],
+          "pronunciationTargets": [
+            "a bit too risky"
+          ],
+          "commonMistakes": [
+            "it is very risky for me."
+          ],
+          "tags": [
+            "Hedging",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I wouldn't say {it's wrong}, but it may be risky.",
+          "chinesePrompt": "我不会说它错了，但可能有风险。",
+          "variants": [
+            "I wouldn't call it wrong, but it may be risky."
+          ],
+          "notes": [
+            "先避免否定，再表达担忧。"
+          ],
+          "pronunciationTargets": [
+            "wouldn't say"
+          ],
+          "commonMistakes": [
+            "I don't say it wrong."
+          ],
+          "tags": [
+            "Hedging",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "I wouldn't say {it's wrong}, but it may be risky."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I wouldn't say it's wrong, but it feels a bit too risky to me.",
+          "chinesePrompt": "我不会说它错了，但我感觉有点太冒险。",
+          "variants": [],
+          "notes": [
+            "柔化否定 + 个人判断。"
+          ],
+          "pronunciationTargets": [
+            "feels a bit"
+          ],
+          "commonMistakes": [
+            "I feel it is too risk."
+          ],
+          "tags": [
+            "Hedging",
+            "DialogueTurn"
+          ],
+          "contextText": "你有不同看法，但不想说得太绝对",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“控制语气强度”对应的沟通动作",
+          "在表达意见时控制强弱，不显得过度绝对",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Softening",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你有不同看法，但不想说得太绝对",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想把强硬判断改得柔和一点",
+          "换一个相近场景，再完成“控制语气强度”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "defer-commitment-001",
+      "title": "暂缓承诺",
+      "communicativeGoal": "不确定能否承诺时先保留空间",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Hedging",
+        "Boundary",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你不能马上承诺某件事",
+        "你想先确认资源再答复"
+      ],
+      "pronunciationFocus": [
+        "can't commit",
+        "let me confirm"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I can't commit to that yet.",
+          "chinesePrompt": "我现在还不能承诺这一点。",
+          "variants": [
+            "I'm not able to commit to that yet."
+          ],
+          "notes": [
+            "清楚但不失礼貌。"
+          ],
+          "pronunciationTargets": [
+            "commit to that"
+          ],
+          "commonMistakes": [
+            "I can't promise this yet."
+          ],
+          "tags": [
+            "Hedging",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Let me confirm the timing before I say yes.",
+          "chinesePrompt": "我先确认一下时间再答应。",
+          "variants": [
+            "Let me check the timing before I say yes."
+          ],
+          "notes": [
+            "说明不是拒绝，而是需要确认。"
+          ],
+          "pronunciationTargets": [
+            "before I say yes"
+          ],
+          "commonMistakes": [
+            "before I say yes it."
+          ],
+          "tags": [
+            "Hedging",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I don't want to overpromise before {checking the timeline}.",
+          "chinesePrompt": "我不想在确认时间线前过度承诺。",
+          "variants": [
+            "I don't want to overpromise before checking the timeline."
+          ],
+          "notes": [
+            "overpromise 是高价值表达。"
+          ],
+          "pronunciationTargets": [
+            "overpromise"
+          ],
+          "commonMistakes": [
+            "promise too much."
+          ],
+          "tags": [
+            "Hedging",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "I don't want to overpromise before {checking the timeline}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I can't commit to that yet. Let me confirm the timing before I say yes.",
+          "chinesePrompt": "我现在还不能承诺。我先确认时间再答应。",
+          "variants": [],
+          "notes": [
+            "保留空间 + 给出下一步。"
+          ],
+          "pronunciationTargets": [
+            "confirm the timing"
+          ],
+          "commonMistakes": [
+            "confirm timing before say yes."
+          ],
+          "tags": [
+            "Hedging",
+            "DialogueTurn"
+          ],
+          "contextText": "你不能马上承诺某件事",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“暂缓承诺”对应的沟通动作",
+          "不确定能否承诺时先保留空间",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Softening",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你不能马上承诺某件事",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想先确认资源再答复",
+          "换一个相近场景，再完成“暂缓承诺”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "set-boundary-001",
+      "title": "设置边界",
+      "communicativeGoal": "礼貌说明自己能做和不能做的范围",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Boundary",
+        "Softening",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你想帮忙，但不能承担全部",
+        "你需要说明自己的时间或职责边界"
+      ],
+      "pronunciationFocus": [
+        "I can help with",
+        "won't be able to"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I can help with the first part, but not the whole thing.",
+          "chinesePrompt": "我可以帮第一部分，但不能负责全部。",
+          "variants": [
+            "I can help with the first part, but I can't take on the whole thing."
+          ],
+          "notes": [
+            "边界清楚且保留合作。"
+          ],
+          "pronunciationTargets": [
+            "not the whole thing"
+          ],
+          "commonMistakes": [
+            "I can't do all thing."
+          ],
+          "tags": [
+            "Boundary",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I won't be able to take this on today.",
+          "chinesePrompt": "我今天没法接这个。",
+          "variants": [
+            "I won't be able to take this on right now."
+          ],
+          "notes": [
+            "直接但不粗鲁。"
+          ],
+          "pronunciationTargets": [
+            "take this on"
+          ],
+          "commonMistakes": [
+            "I can't take this today."
+          ],
+          "tags": [
+            "Boundary",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "What I can do is {review the draft}.",
+          "chinesePrompt": "我能做的是帮你看草稿。",
+          "variants": [
+            "What I can do is review the draft."
+          ],
+          "notes": [
+            "把边界转成可执行支持。"
+          ],
+          "pronunciationTargets": [
+            "what I can do"
+          ],
+          "commonMistakes": [
+            "what I can do is to review."
+          ],
+          "tags": [
+            "Boundary",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "What I can do is {review the draft}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I can help with the first part, but I won't be able to take on the whole thing today.",
+          "chinesePrompt": "我可以帮第一部分，但今天不能接下全部。",
+          "variants": [],
+          "notes": [
+            "能力范围 + 时间边界。"
+          ],
+          "pronunciationTargets": [
+            "take on the whole thing"
+          ],
+          "commonMistakes": [
+            "take all thing."
+          ],
+          "tags": [
+            "Boundary",
+            "DialogueTurn"
+          ],
+          "contextText": "你想帮忙，但不能承担全部",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“设置边界”对应的沟通动作",
+          "礼貌说明自己能做和不能做的范围",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "Softening",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想帮忙，但不能承担全部",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你需要说明自己的时间或职责边界",
+          "换一个相近场景，再完成“设置边界”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "build-consensus-001",
+      "title": "争取共识",
+      "communicativeGoal": "把讨论推进到大家都能接受的共同点",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Decision",
+        "FollowUp",
+        "Core"
+      ],
+      "activationPrompts": [
+        "大家意见不同，你想先找共同点",
+        "你想确认哪些部分已经达成一致"
+      ],
+      "pronunciationFocus": [
+        "can we agree",
+        "common ground"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Can we agree that speed matters most here?",
+          "chinesePrompt": "我们能不能先达成一致：这里速度最重要？",
+          "variants": [
+            "Can we agree that speed is the top priority here?"
+          ],
+          "notes": [
+            "用 can we agree 推动共识。"
+          ],
+          "pronunciationTargets": [
+            "can we agree"
+          ],
+          "commonMistakes": [
+            "can we agree speed matters most?"
+          ],
+          "tags": [
+            "Decision",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "It sounds like we all want the same outcome.",
+          "chinesePrompt": "听起来我们都想要同样的结果。",
+          "variants": [
+            "It seems like we all want the same outcome."
+          ],
+          "notes": [
+            "先强调共同目标。"
+          ],
+          "pronunciationTargets": [
+            "same outcome"
+          ],
+          "commonMistakes": [
+            "we want same result."
+          ],
+          "tags": [
+            "Decision",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Maybe the common ground is {starting small}.",
+          "chinesePrompt": "也许共同点是先小范围开始。",
+          "variants": [
+            "Maybe our common ground is starting small."
+          ],
+          "notes": [
+            "把共识具体化。"
+          ],
+          "pronunciationTargets": [
+            "common ground"
+          ],
+          "commonMistakes": [
+            "common ground is start small."
+          ],
+          "tags": [
+            "Decision",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Maybe the common ground is {starting small}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "It sounds like we all want the same outcome. Can we agree that speed matters most here?",
+          "chinesePrompt": "听起来我们目标一致。我们能否同意速度最重要？",
+          "variants": [],
+          "notes": [
+            "共同目标 + 共识问题。"
+          ],
+          "pronunciationTargets": [
+            "speed matters most"
+          ],
+          "commonMistakes": [
+            "speed is most matter."
+          ],
+          "tags": [
+            "Decision",
+            "DialogueTurn"
+          ],
+          "contextText": "大家意见不同，你想先找共同点",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“争取共识”对应的沟通动作",
+          "把讨论推进到大家都能接受的共同点",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Decision",
+          "FollowUp",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：大家意见不同，你想先找共同点",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想确认哪些部分已经达成一致",
+          "换一个相近场景，再完成“争取共识”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "handle-misunderstanding-001",
+      "title": "处理误解",
+      "communicativeGoal": "发现对方误解时温和澄清而不责备",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Repair",
+        "Clarify",
+        "Core"
+      ],
+      "activationPrompts": [
+        "对方误解了你的意思",
+        "你想澄清但不想让对方尴尬"
+      ],
+      "pronunciationFocus": [
+        "what I meant was",
+        "sorry if that wasn't clear"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Sorry if that wasn't clear.",
+          "chinesePrompt": "如果刚才没说清楚，不好意思。",
+          "variants": [
+            "Sorry, I may not have been clear."
+          ],
+          "notes": [
+            "把责任放在表达清晰度上，降低冲突。"
+          ],
+          "pronunciationTargets": [
+            "wasn't clear"
+          ],
+          "commonMistakes": [
+            "sorry if you didn't understand."
+          ],
+          "tags": [
+            "Repair",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "What I meant was that we should start smaller.",
+          "chinesePrompt": "我的意思是我们应该从更小范围开始。",
+          "variants": [
+            "What I was trying to say is that we should start smaller."
+          ],
+          "notes": [
+            "直接澄清原意。"
+          ],
+          "pronunciationTargets": [
+            "what I meant was"
+          ],
+          "commonMistakes": [
+            "my meaning is."
+          ],
+          "tags": [
+            "Repair",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I don't mean {we should stop}; I mean {we should slow down}.",
+          "chinesePrompt": "我不是说要停止，我是说应该慢一点。",
+          "variants": [
+            "I don't mean we should stop; I mean we should slow down."
+          ],
+          "notes": [
+            "否定误解 + 给出正确意思。"
+          ],
+          "pronunciationTargets": [
+            "don't mean",
+            "I mean"
+          ],
+          "commonMistakes": [
+            "I not mean stop."
+          ],
+          "tags": [
+            "Repair",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "I don't mean {we should stop}; I mean {we should slow down}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Sorry if that wasn't clear. I don't mean we should stop; I mean we should slow down.",
+          "chinesePrompt": "如果没说清楚不好意思。我不是说停止，是说慢一点。",
+          "variants": [],
+          "notes": [
+            "先修复关系，再澄清意思。"
+          ],
+          "pronunciationTargets": [
+            "slow down"
+          ],
+          "commonMistakes": [
+            "not stop, just slow."
+          ],
+          "tags": [
+            "Repair",
+            "DialogueTurn"
+          ],
+          "contextText": "对方误解了你的意思",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“处理误解”对应的沟通动作",
+          "发现对方误解时温和澄清而不责备",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Repair",
+          "Clarification",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：对方误解了你的意思",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想澄清但不想让对方尴尬",
+          "换一个相近场景，再完成“处理误解”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "concede-then-shift-001",
+      "title": "让步后转折",
+      "communicativeGoal": "先承认对方合理点，再转向自己的担忧",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Disagreement",
+        "Softening",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你部分同意对方，但还有担忧",
+        "你想表达转折但不想显得反驳"
+      ],
+      "pronunciationFocus": [
+        "that's fair",
+        "at the same time"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "That's fair. At the same time, I'm worried about the timeline.",
+          "chinesePrompt": "这有道理。同时，我担心时间线。",
+          "variants": [
+            "That's fair, but I'm still worried about the timeline."
+          ],
+          "notes": [
+            "高频让步转折结构。"
+          ],
+          "pronunciationTargets": [
+            "that's fair",
+            "at the same time"
+          ],
+          "commonMistakes": [
+            "this is fair, at same time."
+          ],
+          "tags": [
+            "Disagreement",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I see the benefit, but I also see a risk.",
+          "chinesePrompt": "我看到好处，但也看到风险。",
+          "variants": [
+            "I can see the benefit, but I also see a risk."
+          ],
+          "notes": [
+            "平衡表达，不直接否定。"
+          ],
+          "pronunciationTargets": [
+            "see the benefit"
+          ],
+          "commonMistakes": [
+            "I see good and risk."
+          ],
+          "tags": [
+            "Disagreement",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I agree with {the goal}, but I'm not sure about {the timing}.",
+          "chinesePrompt": "我同意目标，但不确定时间安排。",
+          "variants": [
+            "I agree with the goal, but I'm not sure about the timing."
+          ],
+          "notes": [
+            "区分同意对象和担忧对象。"
+          ],
+          "pronunciationTargets": [
+            "agree with the goal"
+          ],
+          "commonMistakes": [
+            "agree the goal."
+          ],
+          "tags": [
+            "Disagreement",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "I agree with {the goal}, but I'm not sure about {the timing}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "That's fair. I agree with the goal, but I'm not sure about the timing.",
+          "chinesePrompt": "这有道理。我同意目标，但不确定时间安排。",
+          "variants": [],
+          "notes": [
+            "让步 + 精准转折。"
+          ],
+          "pronunciationTargets": [
+            "not sure about the timing"
+          ],
+          "commonMistakes": [
+            "not sure for timing."
+          ],
+          "tags": [
+            "Disagreement",
+            "DialogueTurn"
+          ],
+          "contextText": "你部分同意对方，但还有担忧",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“让步后转折”对应的沟通动作",
+          "先承认对方合理点，再转向自己的担忧",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "Softening",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你部分同意对方，但还有担忧",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想表达转折但不想显得反驳",
+          "换一个相近场景，再完成“让步后转折”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "push-next-step-001",
+      "title": "推动下一步",
+      "communicativeGoal": "讨论停住时提出明确下一步",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Decision",
+        "FollowUp",
+        "Core"
+      ],
+      "activationPrompts": [
+        "大家讨论很多但没有下一步",
+        "你想把讨论变成具体行动"
+      ],
+      "pronunciationFocus": [
+        "next step",
+        "why don't we"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "What's the next step from here?",
+          "chinesePrompt": "接下来下一步是什么？",
+          "variants": [
+            "So what's the next step from here?"
+          ],
+          "notes": [
+            "最直接的推进问题。"
+          ],
+          "pronunciationTargets": [
+            "next step"
+          ],
+          "commonMistakes": [
+            "what next step?"
+          ],
+          "tags": [
+            "Decision",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Why don't we test it with a small group first?",
+          "chinesePrompt": "要不我们先用一个小组试一下？",
+          "variants": [
+            "Maybe we can test it with a small group first."
+          ],
+          "notes": [
+            "用建议推动执行。"
+          ],
+          "pronunciationTargets": [
+            "why don't we"
+          ],
+          "commonMistakes": [
+            "why not we test."
+          ],
+          "tags": [
+            "Decision",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Could we decide {who owns this} before we move on?",
+          "chinesePrompt": "继续之前我们能否先定谁负责？",
+          "variants": [
+            "Can we decide who owns this before we move on?"
+          ],
+          "notes": [
+            "把下一步具体化。"
+          ],
+          "pronunciationTargets": [
+            "before we move on"
+          ],
+          "commonMistakes": [
+            "before move on."
+          ],
+          "tags": [
+            "Decision",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Could we decide {who owns this} before we move on?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "What's the next step from here? Could we decide who owns this before we move on?",
+          "chinesePrompt": "接下来下一步是什么？继续前能定一下谁负责吗？",
+          "variants": [],
+          "notes": [
+            "下一步 + owner 对齐。"
+          ],
+          "pronunciationTargets": [
+            "who owns this"
+          ],
+          "commonMistakes": [
+            "who own this."
+          ],
+          "tags": [
+            "Decision",
+            "DialogueTurn"
+          ],
+          "contextText": "大家讨论很多但没有下一步",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“推动下一步”对应的沟通动作",
+          "讨论停住时提出明确下一步",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Decision",
+          "FollowUp",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：大家讨论很多但没有下一步",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想把讨论变成具体行动",
+          "换一个相近场景，再完成“推动下一步”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "ask-priority-001",
+      "title": "请求优先级",
+      "communicativeGoal": "事情太多时请求对方明确优先级",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Priority",
+        "Clarify",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你有多个任务，不确定先做哪个",
+        "你想让对方明确优先级"
+      ],
+      "pronunciationFocus": [
+        "top priority",
+        "which one should I prioritize"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Which one should I prioritize?",
+          "chinesePrompt": "我应该优先处理哪一个？",
+          "variants": [
+            "Which one should I focus on first?"
+          ],
+          "notes": [
+            "直接请求优先级。"
+          ],
+          "pronunciationTargets": [
+            "prioritize"
+          ],
+          "commonMistakes": [
+            "which one I should priority?"
+          ],
+          "tags": [
+            "Priority",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "What's the top priority for today?",
+          "chinesePrompt": "今天最优先的是什么？",
+          "variants": [
+            "What should be the top priority today?"
+          ],
+          "notes": [
+            "适合一天内工作安排。"
+          ],
+          "pronunciationTargets": [
+            "top priority"
+          ],
+          "commonMistakes": [
+            "what is most priority."
+          ],
+          "tags": [
+            "Priority",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "If I can only do one today, should I {finish the draft}?",
+          "chinesePrompt": "如果我今天只能做一件，是不是应该先完成草稿？",
+          "variants": [
+            "If I can only do one today, should I finish the draft first?"
+          ],
+          "notes": [
+            "给出限制条件和候选项。"
+          ],
+          "pronunciationTargets": [
+            "if I can only do one"
+          ],
+          "commonMistakes": [
+            "if only can do one."
+          ],
+          "tags": [
+            "Priority",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "If I can only do one today, should I {finish the draft}?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "What's the top priority for today? If I can only do one, should I finish the draft?",
+          "chinesePrompt": "今天最优先的是什么？如果只能做一件，是不是先完成草稿？",
+          "variants": [],
+          "notes": [
+            "优先级问题 + 具体选项。"
+          ],
+          "pronunciationTargets": [
+            "finish the draft"
+          ],
+          "commonMistakes": [
+            "finish draft first?"
+          ],
+          "tags": [
+            "Priority",
+            "DialogueTurn"
+          ],
+          "contextText": "你有多个任务，不确定先做哪个",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“请求优先级”对应的沟通动作",
+          "事情太多时请求对方明确优先级",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Decision",
+          "Clarification",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你有多个任务，不确定先做哪个",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想让对方明确优先级",
+          "换一个相近场景，再完成“请求优先级”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "compare-options-001",
+      "title": "比较两个选项",
+      "communicativeGoal": "清楚比较两个选择的优势和代价",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Decision",
+        "Comparison",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你想比较两个方案",
+        "你想说明各自利弊而不是只说喜欢哪个"
+      ],
+      "pronunciationFocus": [
+        "on the one hand",
+        "on the other hand"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Option A is faster, but option B is safer.",
+          "chinesePrompt": "A 更快，但 B 更稳。",
+          "variants": [
+            "Option A is quicker, but option B is safer."
+          ],
+          "notes": [
+            "最简洁的对比结构。"
+          ],
+          "pronunciationTargets": [
+            "faster",
+            "safer"
+          ],
+          "commonMistakes": [
+            "A is more fast."
+          ],
+          "tags": [
+            "Decision",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "On the one hand, it's cheaper. On the other hand, it may take longer.",
+          "chinesePrompt": "一方面它更便宜，另一方面可能更耗时。",
+          "variants": [
+            "It's cheaper, but it may take longer."
+          ],
+          "notes": [
+            "标准对比框架。"
+          ],
+          "pronunciationTargets": [
+            "on the one hand"
+          ],
+          "commonMistakes": [
+            "in one hand."
+          ],
+          "tags": [
+            "Decision",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "The main advantage of {option A} is speed.",
+          "chinesePrompt": "A 的主要优势是速度。",
+          "variants": [
+            "The biggest advantage of option A is speed."
+          ],
+          "notes": [
+            "用于拆解优势。"
+          ],
+          "pronunciationTargets": [
+            "main advantage"
+          ],
+          "commonMistakes": [
+            "the most advantage."
+          ],
+          "tags": [
+            "Decision",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "The main advantage of {option A} is speed."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Option A is faster, but option B is safer. The main advantage of A is speed.",
+          "chinesePrompt": "A 更快，但 B 更稳。A 的主要优势是速度。",
+          "variants": [],
+          "notes": [
+            "先总比，再说明优势。"
+          ],
+          "pronunciationTargets": [
+            "advantage of A"
+          ],
+          "commonMistakes": [
+            "advantage for A."
+          ],
+          "tags": [
+            "Decision",
+            "DialogueTurn"
+          ],
+          "contextText": "你想比较两个方案",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“比较两个选项”对应的沟通动作",
+          "清楚比较两个选择的优势和代价",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Decision",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想比较两个方案",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想说明各自利弊而不是只说喜欢哪个",
+          "换一个相近场景，再完成“比较两个选项”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "de-escalate-conflict-001",
+      "title": "降低冲突",
+      "communicativeGoal": "讨论变紧张时先降温再回到问题",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Repair",
+        "Softening",
+        "Core"
+      ],
+      "activationPrompts": [
+        "对话有点紧张，你想先降温",
+        "你想把冲突拉回问题本身"
+      ],
+      "pronunciationFocus": [
+        "let's take a step back",
+        "we're on the same side"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Let's take a step back for a second.",
+          "chinesePrompt": "我们先退一步看一下。",
+          "variants": [
+            "Maybe we can take a step back for a second."
+          ],
+          "notes": [
+            "常用降温表达。"
+          ],
+          "pronunciationTargets": [
+            "take a step back"
+          ],
+          "commonMistakes": [
+            "step back a little."
+          ],
+          "tags": [
+            "Repair",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I think we're on the same side here.",
+          "chinesePrompt": "我觉得我们其实是站在同一边的。",
+          "variants": [
+            "I think we're actually on the same side here."
+          ],
+          "notes": [
+            "先恢复共同立场。"
+          ],
+          "pronunciationTargets": [
+            "same side"
+          ],
+          "commonMistakes": [
+            "we are same side."
+          ],
+          "tags": [
+            "Repair",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Maybe we can focus on {the problem}, not {who caused it}.",
+          "chinesePrompt": "也许我们可以关注问题本身，而不是谁造成的。",
+          "variants": [
+            "Maybe we can focus on the problem, not who caused it."
+          ],
+          "notes": [
+            "把责备转回问题解决。"
+          ],
+          "pronunciationTargets": [
+            "focus on the problem"
+          ],
+          "commonMistakes": [
+            "not focus who caused."
+          ],
+          "tags": [
+            "Repair",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Maybe we can focus on {the problem}, not {who caused it}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Let's take a step back. I think we're on the same side here.",
+          "chinesePrompt": "我们先退一步。我觉得我们其实目标一致。",
+          "variants": [],
+          "notes": [
+            "降温 + 共同立场。"
+          ],
+          "pronunciationTargets": [
+            "on the same side"
+          ],
+          "commonMistakes": [
+            "same side here."
+          ],
+          "tags": [
+            "Repair",
+            "DialogueTurn"
+          ],
+          "contextText": "对话有点紧张，你想先降温",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“降低冲突”对应的沟通动作",
+          "讨论变紧张时先降温再回到问题",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "Repair",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：对话有点紧张，你想先降温",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想把冲突拉回问题本身",
+          "换一个相近场景，再完成“降低冲突”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "refocus-discussion-002",
+      "title": "重新聚焦",
+      "communicativeGoal": "话题偏离时把讨论拉回当前重点",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Topic",
+        "TurnTaking",
+        "Core"
+      ],
+      "activationPrompts": [
+        "讨论跑远了，你想拉回重点",
+        "你想提醒大家先解决当前问题"
+      ],
+      "pronunciationFocus": [
+        "bring this back",
+        "focus on"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Can we bring this back to the main question?",
+          "chinesePrompt": "我们能回到主要问题上吗？",
+          "variants": [
+            "Could we bring this back to the main question?"
+          ],
+          "notes": [
+            "礼貌拉回主线。"
+          ],
+          "pronunciationTargets": [
+            "bring this back"
+          ],
+          "commonMistakes": [
+            "bring back to question."
+          ],
+          "tags": [
+            "Topic",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Let's focus on what we need to decide today.",
+          "chinesePrompt": "我们先关注今天需要决定的事。",
+          "variants": [
+            "Maybe let's focus on what we need to decide today."
+          ],
+          "notes": [
+            "强调今天要完成的任务。"
+          ],
+          "pronunciationTargets": [
+            "need to decide today"
+          ],
+          "commonMistakes": [
+            "focus what need decide."
+          ],
+          "tags": [
+            "Topic",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Before we go deeper into {that}, can we finish {this part}?",
+          "chinesePrompt": "在深入那个之前，我们能先完成这部分吗？",
+          "variants": [
+            "Before we go deeper into that, can we finish this part first?"
+          ],
+          "notes": [
+            "允许后续讨论，但先收住当前。"
+          ],
+          "pronunciationTargets": [
+            "before we go deeper"
+          ],
+          "commonMistakes": [
+            "before go deep."
+          ],
+          "tags": [
+            "Topic",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Before we go deeper into {that}, can we finish {this part}?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Can we bring this back to what we need to decide today?",
+          "chinesePrompt": "我们能回到今天需要决定的事上吗？",
+          "variants": [],
+          "notes": [
+            "拉回 + 目标。"
+          ],
+          "pronunciationTargets": [
+            "decide today"
+          ],
+          "commonMistakes": [
+            "what need decide today."
+          ],
+          "tags": [
+            "Topic",
+            "DialogueTurn"
+          ],
+          "contextText": "讨论跑远了，你想拉回重点",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“重新聚焦”对应的沟通动作",
+          "话题偏离时把讨论拉回当前重点",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：讨论跑远了，你想拉回重点",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想提醒大家先解决当前问题",
+          "换一个相近场景，再完成“重新聚焦”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "ask-for-owner-001",
+      "title": "确认负责人",
+      "communicativeGoal": "把模糊任务落到明确负责人",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Decision",
+        "Owner",
+        "Core"
+      ],
+      "activationPrompts": [
+        "任务说完了，但没人负责",
+        "你想明确谁来推进"
+      ],
+      "pronunciationFocus": [
+        "who's owning",
+        "take the lead"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Who's owning this from here?",
+          "chinesePrompt": "接下来谁来负责这个？",
+          "variants": [
+            "Who will own this from here?"
+          ],
+          "notes": [
+            "职场中 owner 很常用。"
+          ],
+          "pronunciationTargets": [
+            "owning this"
+          ],
+          "commonMistakes": [
+            "who is owner this?"
+          ],
+          "tags": [
+            "Decision",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Could you take the lead on this part?",
+          "chinesePrompt": "你能负责牵头这部分吗？",
+          "variants": [
+            "Would you be able to take the lead on this part?"
+          ],
+          "notes": [
+            "明确请求对方 lead。"
+          ],
+          "pronunciationTargets": [
+            "take the lead"
+          ],
+          "commonMistakes": [
+            "take lead of this."
+          ],
+          "tags": [
+            "Decision",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Should we assign {one owner} before we move on?",
+          "chinesePrompt": "继续前要不要指定一个负责人？",
+          "variants": [
+            "Should we assign one owner before moving on?"
+          ],
+          "notes": [
+            "建议在离开话题前定 owner。"
+          ],
+          "pronunciationTargets": [
+            "assign one owner"
+          ],
+          "commonMistakes": [
+            "assign a owner."
+          ],
+          "tags": [
+            "Decision",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Should we assign {one owner} before we move on?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Who's owning this from here? Should we assign one owner before we move on?",
+          "chinesePrompt": "接下来谁负责？继续前要不要定一个负责人？",
+          "variants": [],
+          "notes": [
+            "问责 + 推动决定。"
+          ],
+          "pronunciationTargets": [
+            "before we move on"
+          ],
+          "commonMistakes": [
+            "before move on."
+          ],
+          "tags": [
+            "Decision",
+            "DialogueTurn"
+          ],
+          "contextText": "任务说完了，但没人负责",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“确认负责人”对应的沟通动作",
+          "把模糊任务落到明确负责人",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Decision",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：任务说完了，但没人负责",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想明确谁来推进",
+          "换一个相近场景，再完成“确认负责人”这个口语动作。"
         ]
       }
     }

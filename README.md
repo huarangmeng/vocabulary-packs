@@ -33,8 +33,11 @@ vocabulary-packs/
   content/
     packs/
       core-chunks-1.json
+      core-chunks-2.json
       small-talk-1.json
+      small-talk-2.json
       meeting-communication-1.json
+      meeting-communication-2.json
   manifests/
     latest.json
     2026.06.02.json
@@ -121,6 +124,16 @@ latest.json.sha256
 - `content/packs/meeting-communication-2.json`：会议沟通 2。
 
 这些 JSON 文件是首批正式发布候选的源内容；Python 只负责读取内容、构建 `.trainpack`、生成 catalog 并执行校验。
+
+当前首批六包已经扩充为阶段 1 内容规模：
+
+- 总规模：`125` 个训练单元、`500` 个内容项。
+- `core-chunks-1`：`24` units / `96` items。
+- `core-chunks-2`：`21` units / `84` items。
+- `small-talk-1`：`20` units / `80` items。
+- `small-talk-2`：`18` units / `72` items。
+- `meeting-communication-1`：`22` units / `88` items。
+- `meeting-communication-2`：`20` units / `80` items。
 
 每个内容包的 Unit 都必须声明 `taskHints`：
 
@@ -254,11 +267,14 @@ App 读取 `latest.json` 后展示“官方训练包”列表。
 - `recommendedNextPackIds`：表达当前包学完后的下一步推荐。
 - `companionPackIds`：表达可并行或互补训练的包。
 
-首批三包的建议联动：
+首批六包的建议联动：
 
 - `core-chunks-1`：作为基础入口，推荐后续进入 `small-talk-1` 和 `meeting-communication-1`。
-- `small-talk-1`：前置建议为 `core-chunks-1`，并与 `core-chunks-1` 形成互补学习。
-- `meeting-communication-1`：前置建议为 `core-chunks-1`，并与 `small-talk-1`、`core-chunks-1` 形成互补学习。
+- `core-chunks-2`：作为核心表达进阶包，推荐搭配 `small-talk-2` 和 `meeting-communication-2`。
+- `small-talk-1`：前置建议为 `core-chunks-1`，用于进入社交口语路径。
+- `small-talk-2`：前置建议为 `core-chunks-1` 和 `small-talk-1`，用于关系推进和复杂寒暄。
+- `meeting-communication-1`：前置建议为 `core-chunks-1`，用于进入职场会议路径。
+- `meeting-communication-2`：前置建议为 `core-chunks-1` 和 `meeting-communication-1`，用于复杂会议协作。
 
 ## 下载地址格式
 
@@ -272,11 +288,14 @@ https://github.com/huarangmeng/vocabulary-packs/releases/download/<tag>/<asset-n
 https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/core-chunks-1-2026.06.02.trainpack
 ```
 
-另外两包示例：
+其他包示例：
 
 ```text
+https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/core-chunks-2-2026.06.02.trainpack
 https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/small-talk-1-2026.06.02.trainpack
+https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/small-talk-2-2026.06.02.trainpack
 https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/meeting-communication-1-2026.06.02.trainpack
+https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/meeting-communication-2-2026.06.02.trainpack
 ```
 
 ## App 接入规则

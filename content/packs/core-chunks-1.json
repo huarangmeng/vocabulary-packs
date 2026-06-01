@@ -4,7 +4,7 @@
   "description": "围绕开场、接话、理解检查、争取时间、澄清、重述、表达观点、同意、温和异议、软化语气、话题管理和收尾等高频 spoken functions 组织的核心口语表达块训练包。",
   "packType": "CoreChunks",
   "levelHint": "A2-B2",
-  "estimatedMinutes": 120,
+  "estimatedMinutes": 240,
   "tags": [
     "Speaking",
     "Chunks",
@@ -1683,6 +1683,1668 @@
         "variantPrompts": [
           "你想把一段对话结束得更顺一点",
           "换一个相近场景，再完成“收束和结束一段话”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "help-request-001",
+      "title": "请求帮助",
+      "communicativeGoal": "需要帮助时用自然、具体的方式开口",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Low",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Request",
+        "Support",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你卡住了，想请对方帮你看一下",
+        "你想请求一点具体帮助"
+      ],
+      "pronunciationFocus": [
+        "could you help",
+        "take a look"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Could you help me with this for a second?",
+          "chinesePrompt": "你能帮我看一下这个吗？",
+          "variants": [
+            "Could you give me a hand with this?"
+          ],
+          "notes": [
+            "比 Help me 更自然，也限定了帮助范围。"
+          ],
+          "pronunciationTargets": [
+            "help me with this"
+          ],
+          "commonMistakes": [
+            "Can you help me this?"
+          ],
+          "tags": [
+            "Request",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Do you mind taking a quick look?",
+          "chinesePrompt": "你介意快速看一下吗？",
+          "variants": [
+            "Would you mind taking a quick look?"
+          ],
+          "notes": [
+            "适合让对方帮你检查一小处。"
+          ],
+          "pronunciationTargets": [
+            "quick look"
+          ],
+          "commonMistakes": [
+            "Can you see this quick?"
+          ],
+          "tags": [
+            "Request",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Could you help me figure out how to {do this}?",
+          "chinesePrompt": "你能帮我弄清楚怎么做这个吗？",
+          "variants": [
+            "Could you help me work out how to do this?"
+          ],
+          "notes": [
+            "把 help 具体化到要解决的问题。"
+          ],
+          "pronunciationTargets": [
+            "figure out"
+          ],
+          "commonMistakes": [
+            "help me how to do"
+          ],
+          "tags": [
+            "Request",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Could you help me figure out how to {do this}?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Could you help me with this for a second? I can't quite figure it out.",
+          "chinesePrompt": "你能帮我看一下吗？我有点搞不明白。",
+          "variants": [],
+          "notes": [
+            "先请求，再说明卡点。"
+          ],
+          "pronunciationTargets": [
+            "can't quite figure it out"
+          ],
+          "commonMistakes": [
+            "I cannot understand this thing."
+          ],
+          "tags": [
+            "Request",
+            "DialogueTurn"
+          ],
+          "contextText": "你卡住了，想请对方帮你看一下",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“请求帮助”对应的沟通动作",
+          "需要帮助时用自然、具体的方式开口",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Softening",
+          "Clarification",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你卡住了，想请对方帮你看一下",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想请求一点具体帮助",
+          "换一个相近场景，再完成“请求帮助”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "confirm-meaning-001",
+      "title": "确认对方意思",
+      "communicativeGoal": "不确定对方意思时先确认再回应",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Low",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Clarify",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你不确定自己是否理解对了",
+        "你想在回应前确认对方的意思"
+      ],
+      "pronunciationFocus": [
+        "do you mean",
+        "if I understand"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Do you mean we should do it today?",
+          "chinesePrompt": "你的意思是我们今天就做吗？",
+          "variants": [
+            "So do you mean we should do it today?"
+          ],
+          "notes": [
+            "用 Do you mean 确认具体含义。"
+          ],
+          "pronunciationTargets": [
+            "do you mean"
+          ],
+          "commonMistakes": [
+            "You mean we do today?"
+          ],
+          "tags": [
+            "Clarify",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "If I understand you correctly, you want to wait.",
+          "chinesePrompt": "如果我理解对了，你是想先等等。",
+          "variants": [
+            "If I'm understanding you right, you want to wait."
+          ],
+          "notes": [
+            "适合更正式一点的确认。"
+          ],
+          "pronunciationTargets": [
+            "understand you correctly"
+          ],
+          "commonMistakes": [
+            "If I understand correct."
+          ],
+          "tags": [
+            "Clarify",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Are you saying that {we should wait}?",
+          "chinesePrompt": "你是说我们应该等一下吗？",
+          "variants": [
+            "So you're saying that we should wait?"
+          ],
+          "notes": [
+            "用于把对方观点复述成一句可确认的话。"
+          ],
+          "pronunciationTargets": [
+            "are you saying"
+          ],
+          "commonMistakes": [
+            "You are saying me that."
+          ],
+          "tags": [
+            "Clarify",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Are you saying that {we should wait}?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "If I understand you correctly, you want to wait until we have more details.",
+          "chinesePrompt": "如果我理解对了，你想等有更多细节再说。",
+          "variants": [],
+          "notes": [
+            "确认后补上关键信息。"
+          ],
+          "pronunciationTargets": [
+            "more details"
+          ],
+          "commonMistakes": [
+            "wait more details"
+          ],
+          "tags": [
+            "Clarify",
+            "DialogueTurn"
+          ],
+          "contextText": "你不确定自己是否理解对了",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“确认对方意思”对应的沟通动作",
+          "不确定对方意思时先确认再回应",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Clarification",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你不确定自己是否理解对了",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想在回应前确认对方的意思",
+          "换一个相近场景，再完成“确认对方意思”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "uncertainty-001",
+      "title": "表达不确定",
+      "communicativeGoal": "在不确定时诚实表达，同时保留继续讨论空间",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Low",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Hedging",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你不确定答案，但想继续回应",
+        "你想避免说得过于绝对"
+      ],
+      "pronunciationFocus": [
+        "not completely sure",
+        "I think"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I'm not completely sure, but I think so.",
+          "chinesePrompt": "我不完全确定，但我觉得是这样。",
+          "variants": [
+            "I'm not totally sure, but I think so."
+          ],
+          "notes": [
+            "先承认不确定，再给出初步判断。"
+          ],
+          "pronunciationTargets": [
+            "not completely sure"
+          ],
+          "commonMistakes": [
+            "I am not sure completely."
+          ],
+          "tags": [
+            "Hedging",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I could be wrong, but it looks fine to me.",
+          "chinesePrompt": "我可能不对，但我看起来没问题。",
+          "variants": [
+            "I might be wrong, but it looks fine to me."
+          ],
+          "notes": [
+            "降低语气强度，适合不想说死。"
+          ],
+          "pronunciationTargets": [
+            "could be wrong"
+          ],
+          "commonMistakes": [
+            "Maybe I wrong."
+          ],
+          "tags": [
+            "Hedging",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I'm not sure whether {that's the best option}.",
+          "chinesePrompt": "我不确定那是不是最好的选择。",
+          "variants": [
+            "I'm not sure if that's the best option."
+          ],
+          "notes": [
+            "用于保留意见。"
+          ],
+          "pronunciationTargets": [
+            "not sure whether"
+          ],
+          "commonMistakes": [
+            "I don't sure whether."
+          ],
+          "tags": [
+            "Hedging",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "I'm not sure whether {that's the best option}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I'm not completely sure, but I think we can start with this version.",
+          "chinesePrompt": "我不完全确定，但我觉得可以先从这个版本开始。",
+          "variants": [],
+          "notes": [
+            "不确定时仍给出可执行下一步。"
+          ],
+          "pronunciationTargets": [
+            "start with this version"
+          ],
+          "commonMistakes": [
+            "start from this version first maybe."
+          ],
+          "tags": [
+            "Hedging",
+            "DialogueTurn"
+          ],
+          "contextText": "你不确定答案，但想继续回应",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“表达不确定”对应的沟通动作",
+          "在不确定时诚实表达，同时保留继续讨论空间",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Softening",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你不确定答案，但想继续回应",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想避免说得过于绝对",
+          "换一个相近场景，再完成“表达不确定”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "ask-for-time-001",
+      "title": "请求一点时间",
+      "communicativeGoal": "需要思考或处理时礼貌请求时间",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Low",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Request",
+        "Hedging",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你需要一点时间再回答",
+        "你想先处理一下再回复"
+      ],
+      "pronunciationFocus": [
+        "give me a moment",
+        "get back to you"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Could you give me a moment to think about it?",
+          "chinesePrompt": "你能给我一点时间想一下吗？",
+          "variants": [
+            "Can you give me a minute to think about it?"
+          ],
+          "notes": [
+            "比 Wait 更礼貌。"
+          ],
+          "pronunciationTargets": [
+            "give me a moment"
+          ],
+          "commonMistakes": [
+            "Give me time to think."
+          ],
+          "tags": [
+            "Request",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Let me check and get back to you.",
+          "chinesePrompt": "我查一下再回复你。",
+          "variants": [
+            "Let me double-check and get back to you."
+          ],
+          "notes": [
+            "适合需要确认信息。"
+          ],
+          "pronunciationTargets": [
+            "get back to you"
+          ],
+          "commonMistakes": [
+            "I check and back you."
+          ],
+          "tags": [
+            "Request",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Can I get back to you {later today}?",
+          "chinesePrompt": "我今天晚点回复你可以吗？",
+          "variants": [
+            "Could I get back to you later today?"
+          ],
+          "notes": [
+            "给出明确回复时间更可靠。"
+          ],
+          "pronunciationTargets": [
+            "later today"
+          ],
+          "commonMistakes": [
+            "reply you later"
+          ],
+          "tags": [
+            "Request",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Can I get back to you {later today}?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Let me check and get back to you later today.",
+          "chinesePrompt": "我查一下，今天晚点回复你。",
+          "variants": [],
+          "notes": [
+            "把动作和时间都说清楚。"
+          ],
+          "pronunciationTargets": [
+            "check and get back"
+          ],
+          "commonMistakes": [
+            "I will check it and reply you."
+          ],
+          "tags": [
+            "Request",
+            "DialogueTurn"
+          ],
+          "contextText": "你需要一点时间再回答",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“请求一点时间”对应的沟通动作",
+          "需要思考或处理时礼貌请求时间",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Softening",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你需要一点时间再回答",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想先处理一下再回复",
+          "换一个相近场景，再完成“请求一点时间”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "ask-for-example-001",
+      "title": "请求举例",
+      "communicativeGoal": "抽象内容听不懂时请对方给例子",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Low",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Clarify",
+        "Example",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你听懂了大概，但需要一个例子",
+        "你想让对方把抽象说法具体化"
+      ],
+      "pronunciationFocus": [
+        "for example",
+        "give me an example"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Could you give me an example?",
+          "chinesePrompt": "你能给我举个例子吗？",
+          "variants": [
+            "Can you give me a quick example?"
+          ],
+          "notes": [
+            "最通用的例子请求。"
+          ],
+          "pronunciationTargets": [
+            "give me an example"
+          ],
+          "commonMistakes": [
+            "give me example"
+          ],
+          "tags": [
+            "Clarify",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "What would that look like in practice?",
+          "chinesePrompt": "实际操作中会是什么样？",
+          "variants": [
+            "What does that look like in practice?"
+          ],
+          "notes": [
+            "适合工作或方案讨论。"
+          ],
+          "pronunciationTargets": [
+            "in practice"
+          ],
+          "commonMistakes": [
+            "how it looks in practice"
+          ],
+          "tags": [
+            "Clarify",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "For example, would that mean {changing the schedule}?",
+          "chinesePrompt": "比如说，这是不是意味着要改时间？",
+          "variants": [
+            "Would that mean changing the schedule, for example?"
+          ],
+          "notes": [
+            "先给一个猜测让对方确认。"
+          ],
+          "pronunciationTargets": [
+            "would that mean"
+          ],
+          "commonMistakes": [
+            "for example it means"
+          ],
+          "tags": [
+            "Clarify",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "For example, would that mean {changing the schedule}?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Could you give me an example? I'm trying to picture how that would work.",
+          "chinesePrompt": "你能举个例子吗？我想象一下它怎么运作。",
+          "variants": [],
+          "notes": [
+            "说明为什么需要例子，语气更自然。"
+          ],
+          "pronunciationTargets": [
+            "trying to picture"
+          ],
+          "commonMistakes": [
+            "I want image it."
+          ],
+          "tags": [
+            "Clarify",
+            "DialogueTurn"
+          ],
+          "contextText": "你听懂了大概，但需要一个例子",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“请求举例”对应的沟通动作",
+          "抽象内容听不懂时请对方给例子",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Clarification",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你听懂了大概，但需要一个例子",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想让对方把抽象说法具体化",
+          "换一个相近场景，再完成“请求举例”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "state-preference-001",
+      "title": "表达偏好",
+      "communicativeGoal": "在多个选择中自然表达倾向",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Low",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Opinion",
+        "Preference",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你更喜欢其中一个选项",
+        "你想表达倾向但不显得强硬"
+      ],
+      "pronunciationFocus": [
+        "I'd rather",
+        "I prefer"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I'd rather keep it simple.",
+          "chinesePrompt": "我更想让它保持简单。",
+          "variants": [
+            "I'd prefer to keep it simple."
+          ],
+          "notes": [
+            "I'd rather 适合表达个人倾向。"
+          ],
+          "pronunciationTargets": [
+            "rather keep it simple"
+          ],
+          "commonMistakes": [
+            "I more want simple."
+          ],
+          "tags": [
+            "Opinion",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I prefer the first option, mainly because it's clearer.",
+          "chinesePrompt": "我更偏向第一个选项，主要是因为更清楚。",
+          "variants": [
+            "I'd go with the first option because it's clearer."
+          ],
+          "notes": [
+            "表达偏好时最好补一个理由。"
+          ],
+          "pronunciationTargets": [
+            "mainly because"
+          ],
+          "commonMistakes": [
+            "I prefer first because clear."
+          ],
+          "tags": [
+            "Opinion",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I'd rather {start small} and adjust later.",
+          "chinesePrompt": "我更想先小范围开始，再之后调整。",
+          "variants": [
+            "I'd prefer to start small and adjust later."
+          ],
+          "notes": [
+            "用于表达策略倾向。"
+          ],
+          "pronunciationTargets": [
+            "adjust later"
+          ],
+          "commonMistakes": [
+            "start small then adjust after."
+          ],
+          "tags": [
+            "Opinion",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "I'd rather {start small} and adjust later."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I prefer the first option, mainly because it's easier to explain.",
+          "chinesePrompt": "我更偏向第一个选项，主要是更容易解释。",
+          "variants": [],
+          "notes": [
+            "偏好 + 理由，适合大多数讨论。"
+          ],
+          "pronunciationTargets": [
+            "easier to explain"
+          ],
+          "commonMistakes": [
+            "easy to explain it."
+          ],
+          "tags": [
+            "Opinion",
+            "DialogueTurn"
+          ],
+          "contextText": "你更喜欢其中一个选项",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“表达偏好”对应的沟通动作",
+          "在多个选择中自然表达倾向",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Completeness",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你更喜欢其中一个选项",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想表达倾向但不显得强硬",
+          "换一个相近场景，再完成“表达偏好”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "gentle-reminder-001",
+      "title": "温和提醒",
+      "communicativeGoal": "提醒对方某件事但不显得催促",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Reminder",
+        "Softening",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你想提醒对方别忘了某件事",
+        "你想催一下但不想显得强硬"
+      ],
+      "pronunciationFocus": [
+        "just a quick reminder",
+        "when you get a chance"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Just a quick reminder that this is due today.",
+          "chinesePrompt": "温馨提醒一下，这个今天截止。",
+          "variants": [
+            "Just a friendly reminder that this is due today."
+          ],
+          "notes": [
+            "quick reminder 能降低催促感。"
+          ],
+          "pronunciationTargets": [
+            "quick reminder"
+          ],
+          "commonMistakes": [
+            "I remind you this due today."
+          ],
+          "tags": [
+            "Reminder",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "When you get a chance, could you send it over?",
+          "chinesePrompt": "你方便的时候能发给我吗？",
+          "variants": [
+            "Could you send it over when you get a chance?"
+          ],
+          "notes": [
+            "适合不紧急的提醒。"
+          ],
+          "pronunciationTargets": [
+            "when you get a chance"
+          ],
+          "commonMistakes": [
+            "when you have chance"
+          ],
+          "tags": [
+            "Reminder",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Just wanted to remind you about {the update}.",
+          "chinesePrompt": "想提醒你一下那个更新。",
+          "variants": [
+            "I just wanted to remind you about the update."
+          ],
+          "notes": [
+            "比 I remind you 更自然。"
+          ],
+          "pronunciationTargets": [
+            "wanted to remind you"
+          ],
+          "commonMistakes": [
+            "I want remind you."
+          ],
+          "tags": [
+            "Reminder",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Just wanted to remind you about {the update}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Just a quick reminder that this is due today, so please send it over when you get a chance.",
+          "chinesePrompt": "提醒一下这个今天截止，所以你方便时请发过来。",
+          "variants": [],
+          "notes": [
+            "先说明截止，再给请求。"
+          ],
+          "pronunciationTargets": [
+            "send it over"
+          ],
+          "commonMistakes": [
+            "send me when chance."
+          ],
+          "tags": [
+            "Reminder",
+            "DialogueTurn"
+          ],
+          "contextText": "你想提醒对方别忘了某件事",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“温和提醒”对应的沟通动作",
+          "提醒对方某件事但不显得催促",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想提醒对方别忘了某件事",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想催一下但不想显得强硬",
+          "换一个相近场景，再完成“温和提醒”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "self-correction-001",
+      "title": "自我修正",
+      "communicativeGoal": "说错或说得不准时自然改口",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Low",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Repair",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你刚才说得不准确，想马上修正",
+        "你想换一个更准确的说法"
+      ],
+      "pronunciationFocus": [
+        "sorry, I mean",
+        "let me rephrase"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Sorry, I mean next Friday, not this Friday.",
+          "chinesePrompt": "抱歉，我是说下周五，不是这周五。",
+          "variants": [
+            "Sorry, I meant next Friday, not this Friday."
+          ],
+          "notes": [
+            "直接修正错误信息。"
+          ],
+          "pronunciationTargets": [
+            "I mean"
+          ],
+          "commonMistakes": [
+            "I meaned next Friday."
+          ],
+          "tags": [
+            "Repair",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Let me rephrase that.",
+          "chinesePrompt": "我换个说法。",
+          "variants": [
+            "Let me put that another way."
+          ],
+          "notes": [
+            "非常实用的自我修复表达。"
+          ],
+          "pronunciationTargets": [
+            "rephrase that"
+          ],
+          "commonMistakes": [
+            "let me say another."
+          ],
+          "tags": [
+            "Repair",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "What I meant was {we need more time}.",
+          "chinesePrompt": "我的意思是我们需要更多时间。",
+          "variants": [
+            "What I was trying to say was we need more time."
+          ],
+          "notes": [
+            "用于修正前一句表达。"
+          ],
+          "pronunciationTargets": [
+            "what I meant was"
+          ],
+          "commonMistakes": [
+            "my meaning was."
+          ],
+          "tags": [
+            "Repair",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "What I meant was {we need more time}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Let me rephrase that. What I meant was we need more time.",
+          "chinesePrompt": "我换个说法。我的意思是我们需要更多时间。",
+          "variants": [],
+          "notes": [
+            "先标记修正，再给新表述。"
+          ],
+          "pronunciationTargets": [
+            "need more time"
+          ],
+          "commonMistakes": [
+            "I mean we need time more."
+          ],
+          "tags": [
+            "Repair",
+            "DialogueTurn"
+          ],
+          "contextText": "你刚才说得不准确，想马上修正",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“自我修正”对应的沟通动作",
+          "说错或说得不准时自然改口",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Repair",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你刚才说得不准确，想马上修正",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想换一个更准确的说法",
+          "换一个相近场景，再完成“自我修正”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "invite-continue-001",
+      "title": "请对方继续说",
+      "communicativeGoal": "鼓励对方继续展开而不是打断话题",
+      "scene": "DailyConversation",
+      "register": "Casual",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Low",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "FollowUp",
+        "SmallTalk",
+        "Core"
+      ],
+      "activationPrompts": [
+        "对方说到一半，你想请他继续讲",
+        "你对对方的话题感兴趣，想听更多"
+      ],
+      "pronunciationFocus": [
+        "go on",
+        "tell me more"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Go on, I'm listening.",
+          "chinesePrompt": "继续说，我在听。",
+          "variants": [
+            "Please go on, I'm listening."
+          ],
+          "notes": [
+            "简单自然的鼓励继续说。"
+          ],
+          "pronunciationTargets": [
+            "go on"
+          ],
+          "commonMistakes": [
+            "continue say."
+          ],
+          "tags": [
+            "FollowUp",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Tell me more about that.",
+          "chinesePrompt": "多跟我讲讲那个。",
+          "variants": [
+            "I'd love to hear more about that."
+          ],
+          "notes": [
+            "比 What else? 更自然。"
+          ],
+          "pronunciationTargets": [
+            "tell me more"
+          ],
+          "commonMistakes": [
+            "tell me more details about that thing."
+          ],
+          "tags": [
+            "FollowUp",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "What happened after {that}?",
+          "chinesePrompt": "那之后发生了什么？",
+          "variants": [
+            "So what happened after that?"
+          ],
+          "notes": [
+            "用于推动故事继续。"
+          ],
+          "pronunciationTargets": [
+            "what happened after"
+          ],
+          "commonMistakes": [
+            "after that what happen?"
+          ],
+          "tags": [
+            "FollowUp",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "What happened after {that}?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Tell me more about that. What happened after that?",
+          "chinesePrompt": "多讲讲吧。后来发生什么了？",
+          "variants": [],
+          "notes": [
+            "兴趣表达 + 追问。"
+          ],
+          "pronunciationTargets": [
+            "happened after that"
+          ],
+          "commonMistakes": [
+            "what happen after?"
+          ],
+          "tags": [
+            "FollowUp",
+            "DialogueTurn"
+          ],
+          "contextText": "对方说到一半，你想请他继续讲",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“请对方继续说”对应的沟通动作",
+          "鼓励对方继续展开而不是打断话题",
+          "语气自然轻松，不使用过度正式表达"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：对方说到一半，你想请他继续讲",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你对对方的话题感兴趣，想听更多",
+          "换一个相近场景，再完成“请对方继续说”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "understand-check-002",
+      "title": "听懂后再确认",
+      "communicativeGoal": "基本听懂后用一句话确认关键信息",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Low",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Clarify",
+        "Summary",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你大概听懂了，但想确认关键点",
+        "你想复述一遍确保没误会"
+      ],
+      "pronunciationFocus": [
+        "so basically",
+        "just to confirm"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "So basically, we need to finish it by Friday.",
+          "chinesePrompt": "所以简单说，我们周五前要完成。",
+          "variants": [
+            "So basically, it needs to be done by Friday."
+          ],
+          "notes": [
+            "用 So basically 总结重点。"
+          ],
+          "pronunciationTargets": [
+            "so basically"
+          ],
+          "commonMistakes": [
+            "so basic we need."
+          ],
+          "tags": [
+            "Clarify",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Just to confirm, the deadline is Friday, right?",
+          "chinesePrompt": "确认一下，截止时间是周五，对吗？",
+          "variants": [
+            "Just to confirm, it's due Friday, right?"
+          ],
+          "notes": [
+            "确认具体信息。"
+          ],
+          "pronunciationTargets": [
+            "just to confirm"
+          ],
+          "commonMistakes": [
+            "confirm the deadline is Friday yes?"
+          ],
+          "tags": [
+            "Clarify",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "So the main point is {the deadline}, right?",
+          "chinesePrompt": "所以重点是截止时间，对吗？",
+          "variants": [
+            "So the key point is the deadline, right?"
+          ],
+          "notes": [
+            "用于抓主线。"
+          ],
+          "pronunciationTargets": [
+            "main point"
+          ],
+          "commonMistakes": [
+            "the important is deadline."
+          ],
+          "tags": [
+            "Clarify",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "So the main point is {the deadline}, right?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Just to confirm, the deadline is Friday, and we should send a draft first.",
+          "chinesePrompt": "确认一下，截止是周五，而且我们要先发草稿。",
+          "variants": [],
+          "notes": [
+            "确认多个关键信息。"
+          ],
+          "pronunciationTargets": [
+            "send a draft first"
+          ],
+          "commonMistakes": [
+            "send draft firstly."
+          ],
+          "tags": [
+            "Clarify",
+            "DialogueTurn"
+          ],
+          "contextText": "你大概听懂了，但想确认关键点",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“听懂后再确认”对应的沟通动作",
+          "基本听懂后用一句话确认关键信息",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Clarification",
+          "Completeness",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你大概听懂了，但想确认关键点",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想复述一遍确保没误会",
+          "换一个相近场景，再完成“听懂后再确认”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "brief-summary-001",
+      "title": "简短总结",
+      "communicativeGoal": "用一两句话总结自己理解到的重点",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Summary",
+        "Core"
+      ],
+      "activationPrompts": [
+        "讨论结束前，你想总结一下",
+        "你想确认自己抓住了重点"
+      ],
+      "pronunciationFocus": [
+        "to sum up",
+        "the main thing"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "To sum up, we have two options.",
+          "chinesePrompt": "总结一下，我们有两个选择。",
+          "variants": [
+            "So to sum up, we have two options."
+          ],
+          "notes": [
+            "适合把讨论收束成结构。"
+          ],
+          "pronunciationTargets": [
+            "to sum up"
+          ],
+          "commonMistakes": [
+            "to summary."
+          ],
+          "tags": [
+            "Summary",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "The main thing is that we need to move quickly.",
+          "chinesePrompt": "关键是我们需要快点推进。",
+          "variants": [
+            "The key thing is that we need to move quickly."
+          ],
+          "notes": [
+            "The main thing is 很口语。"
+          ],
+          "pronunciationTargets": [
+            "main thing"
+          ],
+          "commonMistakes": [
+            "the main is."
+          ],
+          "tags": [
+            "Summary",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "So the takeaway is {we should start small}.",
+          "chinesePrompt": "所以结论是我们应该先小范围开始。",
+          "variants": [
+            "So the key takeaway is we should start small."
+          ],
+          "notes": [
+            "takeaway 适合总结可带走结论。"
+          ],
+          "pronunciationTargets": [
+            "takeaway"
+          ],
+          "commonMistakes": [
+            "the takeaway point is."
+          ],
+          "tags": [
+            "Summary",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "So the takeaway is {we should start small}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "To sum up, we have two options, and the main thing is to move quickly.",
+          "chinesePrompt": "总结一下，我们有两个选择，重点是尽快推进。",
+          "variants": [],
+          "notes": [
+            "总结结构 + 重点。"
+          ],
+          "pronunciationTargets": [
+            "move quickly"
+          ],
+          "commonMistakes": [
+            "quickly move."
+          ],
+          "tags": [
+            "Summary",
+            "DialogueTurn"
+          ],
+          "contextText": "讨论结束前，你想总结一下",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“简短总结”对应的沟通动作",
+          "用一两句话总结自己理解到的重点",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Completeness",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：讨论结束前，你想总结一下",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想确认自己抓住了重点",
+          "换一个相近场景，再完成“简短总结”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "invite-input-001",
+      "title": "邀请对方补充",
+      "communicativeGoal": "表达完自己观点后自然邀请对方补充",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Low",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "FollowUp",
+        "TurnTaking",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你说完自己的想法，想听对方意见",
+        "你想让对方补充遗漏点"
+      ],
+      "pronunciationFocus": [
+        "what do you think",
+        "anything to add"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "What do you think?",
+          "chinesePrompt": "你怎么看？",
+          "variants": [
+            "What are your thoughts?"
+          ],
+          "notes": [
+            "最通用的邀请回应。"
+          ],
+          "pronunciationTargets": [
+            "what do you think"
+          ],
+          "commonMistakes": [
+            "how do you think?"
+          ],
+          "tags": [
+            "FollowUp",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Is there anything you'd add?",
+          "chinesePrompt": "你有什么要补充的吗？",
+          "variants": [
+            "Anything you'd add to that?"
+          ],
+          "notes": [
+            "适合讨论后邀请补充。"
+          ],
+          "pronunciationTargets": [
+            "anything you'd add"
+          ],
+          "commonMistakes": [
+            "do you have anything add?"
+          ],
+          "tags": [
+            "FollowUp",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I'd be curious to hear {your thoughts}.",
+          "chinesePrompt": "我挺想听听你的看法。",
+          "variants": [
+            "I'd love to hear your thoughts."
+          ],
+          "notes": [
+            "更柔和、更自然地邀请对方。"
+          ],
+          "pronunciationTargets": [
+            "curious to hear"
+          ],
+          "commonMistakes": [
+            "I curious to hear."
+          ],
+          "tags": [
+            "FollowUp",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "I'd be curious to hear {your thoughts}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "That's my take. What do you think? Is there anything you'd add?",
+          "chinesePrompt": "这是我的看法。你觉得呢？有什么要补充的吗？",
+          "variants": [],
+          "notes": [
+            "先标记观点，再交出话轮。"
+          ],
+          "pronunciationTargets": [
+            "that's my take"
+          ],
+          "commonMistakes": [
+            "this is my opinion, how do you think?"
+          ],
+          "tags": [
+            "FollowUp",
+            "DialogueTurn"
+          ],
+          "contextText": "你说完自己的想法，想听对方意见",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“邀请对方补充”对应的沟通动作",
+          "表达完自己观点后自然邀请对方补充",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你说完自己的想法，想听对方意见",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想让对方补充遗漏点",
+          "换一个相近场景，再完成“邀请对方补充”这个口语动作。"
         ]
       }
     }

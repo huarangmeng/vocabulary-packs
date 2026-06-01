@@ -4,7 +4,7 @@
   "description": "面向取舍权衡、风险升级、范围控制、推动决策、责任对齐、时间压力、打断偏题和会后跟进的进阶会议沟通训练包。",
   "packType": "Scenario",
   "levelHint": "B2",
-  "estimatedMinutes": 150,
+  "estimatedMinutes": 240,
   "tags": [
     "Speaking",
     "Meeting",
@@ -1167,6 +1167,1684 @@
         "variantPrompts": [
           "你想明确谁发纪要、谁跟进问题",
           "换一个相近场景，再完成“会后跟进与收尾确认”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "resource-constraint-001",
+      "title": "说明资源不足",
+      "communicativeGoal": "在会议中说明资源限制并引导取舍",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Risk",
+        "Decision"
+      ],
+      "activationPrompts": [
+        "你想说明资源不够，需要做取舍",
+        "你想避免承诺超出团队能力"
+      ],
+      "pronunciationFocus": [
+        "limited capacity",
+        "trade off"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "We have limited capacity this quarter.",
+          "chinesePrompt": "这个季度我们的产能有限。",
+          "variants": [
+            "Our capacity is limited this quarter."
+          ],
+          "notes": [
+            "清楚说明资源约束。"
+          ],
+          "pronunciationTargets": [
+            "limited capacity"
+          ],
+          "commonMistakes": [
+            "capacity is not enough."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "If we add this, something else has to move.",
+          "chinesePrompt": "如果加这个，其他东西就得调整。",
+          "variants": [
+            "If we add this, something else will need to move."
+          ],
+          "notes": [
+            "把资源限制转成取舍。"
+          ],
+          "pronunciationTargets": [
+            "something else has to move"
+          ],
+          "commonMistakes": [
+            "something else need move."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "We need to trade off {scope} against {timeline}.",
+          "chinesePrompt": "我们需要在范围和时间线之间取舍。",
+          "variants": [
+            "We need to trade off scope against timeline."
+          ],
+          "notes": [
+            "进阶取舍表达。"
+          ],
+          "pronunciationTargets": [
+            "trade off"
+          ],
+          "commonMistakes": [
+            "trade off scope and timeline."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "We need to trade off {scope} against {timeline}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "We have limited capacity this quarter. If we add this, something else has to move.",
+          "chinesePrompt": "这个季度产能有限。如果加这个，其他东西就要调整。",
+          "variants": [],
+          "notes": [
+            "资源限制 + 后果。"
+          ],
+          "pronunciationTargets": [
+            "this quarter"
+          ],
+          "commonMistakes": [
+            "in this quarter."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "你想说明资源不够，需要做取舍",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“说明资源不足”对应的沟通动作",
+          "在会议中说明资源限制并引导取舍",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Completeness",
+          "Decision"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想说明资源不够，需要做取舍",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想避免承诺超出团队能力",
+          "换一个相近场景，再完成“说明资源不足”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "cross-team-dependency-001",
+      "title": "跨团队依赖",
+      "communicativeGoal": "说明依赖其他团队并明确风险",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Dependency",
+        "Risk"
+      ],
+      "activationPrompts": [
+        "你想说明这个任务依赖另一个团队",
+        "你想让大家看到跨团队风险"
+      ],
+      "pronunciationFocus": [
+        "depends on",
+        "blocked by"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "This depends on the data team's timeline.",
+          "chinesePrompt": "这取决于数据团队的时间线。",
+          "variants": [
+            "This is dependent on the data team's timeline."
+          ],
+          "notes": [
+            "直接说明依赖。"
+          ],
+          "pronunciationTargets": [
+            "depends on"
+          ],
+          "commonMistakes": [
+            "depends of."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "We're blocked until the API is ready.",
+          "chinesePrompt": "API 准备好之前我们会被卡住。",
+          "variants": [
+            "We'll be blocked until the API is ready."
+          ],
+          "notes": [
+            "blocked until 很职场。"
+          ],
+          "pronunciationTargets": [
+            "blocked until"
+          ],
+          "commonMistakes": [
+            "blocked before API ready."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "The dependency here is {the API contract}.",
+          "chinesePrompt": "这里的依赖是 API 契约。",
+          "variants": [
+            "The key dependency here is the API contract."
+          ],
+          "notes": [
+            "明确依赖对象。"
+          ],
+          "pronunciationTargets": [
+            "dependency here"
+          ],
+          "commonMistakes": [
+            "dependency is on."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "The dependency here is {the API contract}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "This depends on the data team's timeline, so we may be blocked until the API is ready.",
+          "chinesePrompt": "这取决于数据团队时间线，所以 API 准备好前我们可能会被卡住。",
+          "variants": [],
+          "notes": [
+            "依赖 + 风险。"
+          ],
+          "pronunciationTargets": [
+            "API is ready"
+          ],
+          "commonMistakes": [
+            "API ready."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "你想说明这个任务依赖另一个团队",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“跨团队依赖”对应的沟通动作",
+          "说明依赖其他团队并明确风险",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Completeness",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想说明这个任务依赖另一个团队",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想让大家看到跨团队风险",
+          "换一个相近场景，再完成“跨团队依赖”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "priority-conflict-001",
+      "title": "优先级冲突",
+      "communicativeGoal": "当多个目标冲突时推动明确优先级",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Priority",
+        "Decision"
+      ],
+      "activationPrompts": [
+        "你发现两个目标互相冲突",
+        "你想让大家明确哪个更优先"
+      ],
+      "pronunciationFocus": [
+        "can't optimize for both",
+        "which matters more"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "We may not be able to optimize for both speed and quality.",
+          "chinesePrompt": "我们可能没法同时最大化速度和质量。",
+          "variants": [
+            "We probably can't optimize for both speed and quality."
+          ],
+          "notes": [
+            "点明冲突。"
+          ],
+          "pronunciationTargets": [
+            "optimize for both"
+          ],
+          "commonMistakes": [
+            "optimize both."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Which matters more for this release?",
+          "chinesePrompt": "对这个版本来说哪个更重要？",
+          "variants": [
+            "Which one matters more for this release?"
+          ],
+          "notes": [
+            "推动优先级决定。"
+          ],
+          "pronunciationTargets": [
+            "matters more"
+          ],
+          "commonMistakes": [
+            "which is more matter."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "If speed is the priority, we should {cut scope}.",
+          "chinesePrompt": "如果速度优先，我们应该砍范围。",
+          "variants": [
+            "If speed is the priority, we should cut scope."
+          ],
+          "notes": [
+            "把优先级连接到行动。"
+          ],
+          "pronunciationTargets": [
+            "cut scope"
+          ],
+          "commonMistakes": [
+            "cut the scope down."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "If speed is the priority, we should {cut scope}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "We can't optimize for both. Which matters more for this release?",
+          "chinesePrompt": "我们不能两者都最大化。这个版本哪个更重要？",
+          "variants": [],
+          "notes": [
+            "冲突 + 决策问题。"
+          ],
+          "pronunciationTargets": [
+            "this release"
+          ],
+          "commonMistakes": [
+            "for this version release."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "你发现两个目标互相冲突",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“优先级冲突”对应的沟通动作",
+          "当多个目标冲突时推动明确优先级",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Decision",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你发现两个目标互相冲突",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想让大家明确哪个更优先",
+          "换一个相近场景，再完成“优先级冲突”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "manage-up-001",
+      "title": "向上管理",
+      "communicativeGoal": "向上反馈限制、风险和需要的决定",
+      "scene": "Meeting",
+      "register": "Formal",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Risk",
+        "Decision"
+      ],
+      "activationPrompts": [
+        "你需要向上说明风险并请求决定",
+        "你想让负责人知道限制条件"
+      ],
+      "pronunciationFocus": [
+        "to make this work",
+        "we'll need"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "To make this work, we'll need a clear priority from leadership.",
+          "chinesePrompt": "要让这件事可行，我们需要管理层明确优先级。",
+          "variants": [
+            "To make this work, we need a clear priority from leadership."
+          ],
+          "notes": [
+            "向上管理时清楚表达需要什么。"
+          ],
+          "pronunciationTargets": [
+            "make this work"
+          ],
+          "commonMistakes": [
+            "make it working."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "The risk is that the team is already at capacity.",
+          "chinesePrompt": "风险是团队已经满负荷了。",
+          "variants": [
+            "The main risk is that the team is already at capacity."
+          ],
+          "notes": [
+            "向上反馈容量风险。"
+          ],
+          "pronunciationTargets": [
+            "at capacity"
+          ],
+          "commonMistakes": [
+            "team is full capacity."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Could we get a decision on {scope} by Friday?",
+          "chinesePrompt": "我们能在周五前定一下范围吗？",
+          "variants": [
+            "Could we get a decision on scope by Friday?"
+          ],
+          "notes": [
+            "请求明确决定。"
+          ],
+          "pronunciationTargets": [
+            "get a decision"
+          ],
+          "commonMistakes": [
+            "get decision about."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Could we get a decision on {scope} by Friday?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "To make this work, we'll need a clear priority, because the team is already at capacity.",
+          "chinesePrompt": "要让这事可行，我们需要明确优先级，因为团队已经满负荷。",
+          "variants": [],
+          "notes": [
+            "请求 + 原因。"
+          ],
+          "pronunciationTargets": [
+            "clear priority"
+          ],
+          "commonMistakes": [
+            "clear prioritize."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "你需要向上说明风险并请求决定",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“向上管理”对应的沟通动作",
+          "向上反馈限制、风险和需要的决定",
+          "语气专业克制，避免过度随意",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Completeness",
+          "Decision"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你需要向上说明风险并请求决定",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想让负责人知道限制条件",
+          "换一个相近场景，再完成“向上管理”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "object-with-relationship-001",
+      "title": "反对但维护关系",
+      "communicativeGoal": "表达反对时保留合作关系和对方价值",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Disagreement",
+        "Softening"
+      ],
+      "activationPrompts": [
+        "你不同意方案，但想维护关系",
+        "你想反对一个点而不是否定对方"
+      ],
+      "pronunciationFocus": [
+        "I see the value",
+        "my concern is"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I see the value in that, but my concern is the timeline.",
+          "chinesePrompt": "我能看到它的价值，但我担心时间线。",
+          "variants": [
+            "I can see the value in that, but my concern is the timeline."
+          ],
+          "notes": [
+            "承认价值 + 表达担忧。"
+          ],
+          "pronunciationTargets": [
+            "see the value"
+          ],
+          "commonMistakes": [
+            "I see value of that."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I don't want to block this, but I do think we need to be careful.",
+          "chinesePrompt": "我不想阻碍这个，但我确实觉得我们需要谨慎。",
+          "variants": [
+            "I don't want to block this, but I think we need to be careful."
+          ],
+          "notes": [
+            "反对时表明合作态度。"
+          ],
+          "pronunciationTargets": [
+            "don't want to block"
+          ],
+          "commonMistakes": [
+            "I don't want block it."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "My hesitation is around {the rollout risk}.",
+          "chinesePrompt": "我犹豫的点在发布风险上。",
+          "variants": [
+            "My hesitation is mainly around the rollout risk."
+          ],
+          "notes": [
+            "用 hesitation 比 objection 柔和。"
+          ],
+          "pronunciationTargets": [
+            "hesitation"
+          ],
+          "commonMistakes": [
+            "my hesitate is."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "My hesitation is around {the rollout risk}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I see the value in that, but my hesitation is around the rollout risk.",
+          "chinesePrompt": "我能看到价值，但我犹豫的是发布风险。",
+          "variants": [],
+          "notes": [
+            "认可 + 核心担忧。"
+          ],
+          "pronunciationTargets": [
+            "rollout risk"
+          ],
+          "commonMistakes": [
+            "risk of rollout."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "你不同意方案，但想维护关系",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“反对但维护关系”对应的沟通动作",
+          "表达反对时保留合作关系和对方价值",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Softening",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你不同意方案，但想维护关系",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想反对一个点而不是否定对方",
+          "换一个相近场景，再完成“反对但维护关系”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "find-compromise-001",
+      "title": "促成折中",
+      "communicativeGoal": "在分歧中提出双方都能接受的折中方案",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Decision",
+        "Softening"
+      ],
+      "activationPrompts": [
+        "双方意见不同，你想提出折中",
+        "你想让讨论从对立转向可执行方案"
+      ],
+      "pronunciationFocus": [
+        "middle ground",
+        "could we"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Could we find a middle ground here?",
+          "chinesePrompt": "我们能不能找一个折中点？",
+          "variants": [
+            "Can we find a middle ground here?"
+          ],
+          "notes": [
+            "常用折中开场。"
+          ],
+          "pronunciationTargets": [
+            "middle ground"
+          ],
+          "commonMistakes": [
+            "middle way."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "What if we launch with a smaller scope first?",
+          "chinesePrompt": "如果我们先用更小范围发布呢？",
+          "variants": [
+            "What if we launched with a smaller scope first?"
+          ],
+          "notes": [
+            "用 what if 提出方案。"
+          ],
+          "pronunciationTargets": [
+            "what if"
+          ],
+          "commonMistakes": [
+            "how about if."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "This would give us {speed} without taking on too much risk.",
+          "chinesePrompt": "这样能给我们速度，同时不承担太多风险。",
+          "variants": [
+            "That would give us speed without taking on too much risk."
+          ],
+          "notes": [
+            "解释折中价值。"
+          ],
+          "pronunciationTargets": [
+            "without taking on"
+          ],
+          "commonMistakes": [
+            "without take too much risk."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "This would give us {speed} without taking on too much risk."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Could we find a middle ground? What if we launch with a smaller scope first?",
+          "chinesePrompt": "我们能找个折中点吗？如果先小范围发布呢？",
+          "variants": [],
+          "notes": [
+            "折中请求 + 方案。"
+          ],
+          "pronunciationTargets": [
+            "smaller scope"
+          ],
+          "commonMistakes": [
+            "small scope first."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "双方意见不同，你想提出折中",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“促成折中”对应的沟通动作",
+          "在分歧中提出双方都能接受的折中方案",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Decision",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：双方意见不同，你想提出折中",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想让讨论从对立转向可执行方案",
+          "换一个相近场景，再完成“促成折中”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "handle-silence-001",
+      "title": "处理会议沉默",
+      "communicativeGoal": "会议中没人回应时重新打开讨论",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "TurnTaking",
+        "Repair"
+      ],
+      "activationPrompts": [
+        "你提了问题但没人回应",
+        "你想让沉默的会议继续动起来"
+      ],
+      "pronunciationFocus": [
+        "any initial thoughts",
+        "maybe I'll start"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Any initial thoughts?",
+          "chinesePrompt": "大家有什么初步想法吗？",
+          "variants": [
+            "Does anyone have any initial thoughts?"
+          ],
+          "notes": [
+            "降低回答门槛。"
+          ],
+          "pronunciationTargets": [
+            "initial thoughts"
+          ],
+          "commonMistakes": [
+            "any first thoughts?"
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Maybe I'll start with one concern.",
+          "chinesePrompt": "那我先说一个担忧。",
+          "variants": [
+            "Maybe I can start with one concern."
+          ],
+          "notes": [
+            "没人说话时自己先开头。"
+          ],
+          "pronunciationTargets": [
+            "I'll start"
+          ],
+          "commonMistakes": [
+            "I start first with."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Would it help if we looked at {one example}?",
+          "chinesePrompt": "如果我们看一个例子会不会有帮助？",
+          "variants": [
+            "Would it help to look at one example?"
+          ],
+          "notes": [
+            "用例子破沉默。"
+          ],
+          "pronunciationTargets": [
+            "would it help"
+          ],
+          "commonMistakes": [
+            "is it helpful if."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Would it help if we looked at {one example}?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Any initial thoughts? If not, maybe I'll start with one concern.",
+          "chinesePrompt": "大家有什么初步想法吗？如果没有，我先说一个担忧。",
+          "variants": [],
+          "notes": [
+            "邀请 + 自己兜底。"
+          ],
+          "pronunciationTargets": [
+            "one concern"
+          ],
+          "commonMistakes": [
+            "a concern point."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "你提了问题但没人回应",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“处理会议沉默”对应的沟通动作",
+          "会议中没人回应时重新打开讨论",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Repair",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你提了问题但没人回应",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想让沉默的会议继续动起来",
+          "换一个相近场景，再完成“处理会议沉默”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "dominant-speaker-001",
+      "title": "处理强势发言者",
+      "communicativeGoal": "有人占用太多话轮时礼貌让其他人进入",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "TurnTaking",
+        "Softening"
+      ],
+      "activationPrompts": [
+        "有人一直在说，你想让其他人也发言",
+        "你想控制话轮但不冒犯"
+      ],
+      "pronunciationFocus": [
+        "bring others in",
+        "hear from"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I'd like to bring others in here as well.",
+          "chinesePrompt": "我也想听听其他人的看法。",
+          "variants": [
+            "I'd love to bring others in here as well."
+          ],
+          "notes": [
+            "礼貌分配话轮。"
+          ],
+          "pronunciationTargets": [
+            "bring others in"
+          ],
+          "commonMistakes": [
+            "bring other people in."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Can we hear from someone who hasn't spoken yet?",
+          "chinesePrompt": "我们能听听还没发言的人吗？",
+          "variants": [
+            "Could we hear from someone who hasn't spoken yet?"
+          ],
+          "notes": [
+            "让沉默成员进入。"
+          ],
+          "pronunciationTargets": [
+            "hasn't spoken yet"
+          ],
+          "commonMistakes": [
+            "who didn't speak yet."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Let's pause there and get {another perspective}.",
+          "chinesePrompt": "我们先停一下，听听另一个视角。",
+          "variants": [
+            "Let's pause there and get another perspective."
+          ],
+          "notes": [
+            "控制话轮。"
+          ],
+          "pronunciationTargets": [
+            "pause there"
+          ],
+          "commonMistakes": [
+            "pause in there."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Let's pause there and get {another perspective}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I'd like to bring others in here as well. Can we hear from someone who hasn't spoken yet?",
+          "chinesePrompt": "我也想听听其他人。能听听还没发言的人吗？",
+          "variants": [],
+          "notes": [
+            "柔和打断 + 分配话轮。"
+          ],
+          "pronunciationTargets": [
+            "hear from someone"
+          ],
+          "commonMistakes": [
+            "hear someone."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "有人一直在说，你想让其他人也发言",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“处理强势发言者”对应的沟通动作",
+          "有人占用太多话轮时礼貌让其他人进入",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：有人一直在说，你想让其他人也发言",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想控制话轮但不冒犯",
+          "换一个相近场景，再完成“处理强势发言者”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "decision-pressure-002",
+      "title": "推动拍板",
+      "communicativeGoal": "讨论充分后推动做出决定",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Decision"
+      ],
+      "activationPrompts": [
+        "讨论已经足够，你想推动拍板",
+        "你想避免会议继续循环"
+      ],
+      "pronunciationFocus": [
+        "make a call",
+        "enough to decide"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Do we have enough to make a call?",
+          "chinesePrompt": "我们现在信息够做决定了吗？",
+          "variants": [
+            "Do we have enough information to make a call?"
+          ],
+          "notes": [
+            "推动决策的常用问题。"
+          ],
+          "pronunciationTargets": [
+            "make a call"
+          ],
+          "commonMistakes": [
+            "make the decision call."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I think we're ready to decide.",
+          "chinesePrompt": "我觉得我们可以决定了。",
+          "variants": [
+            "I think we're ready to make a decision."
+          ],
+          "notes": [
+            "直接推动。"
+          ],
+          "pronunciationTargets": [
+            "ready to decide"
+          ],
+          "commonMistakes": [
+            "ready for decide."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "If no one has a strong objection, I'd suggest {option A}.",
+          "chinesePrompt": "如果没人强烈反对，我建议选 A。",
+          "variants": [
+            "If there are no strong objections, I'd suggest option A."
+          ],
+          "notes": [
+            "推动默认决定。"
+          ],
+          "pronunciationTargets": [
+            "strong objection"
+          ],
+          "commonMistakes": [
+            "strong disagree."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "If no one has a strong objection, I'd suggest {option A}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Do we have enough to make a call? If no one has a strong objection, I'd suggest option A.",
+          "chinesePrompt": "信息够拍板了吗？如果没人强烈反对，我建议 A。",
+          "variants": [],
+          "notes": [
+            "决策检查 + 默认建议。"
+          ],
+          "pronunciationTargets": [
+            "suggest option A"
+          ],
+          "commonMistakes": [
+            "suggest to option A."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "讨论已经足够，你想推动拍板",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“推动拍板”对应的沟通动作",
+          "讨论充分后推动做出决定",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Decision",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：讨论已经足够，你想推动拍板",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想避免会议继续循环",
+          "换一个相近场景，再完成“推动拍板”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "off-track-interrupt-002",
+      "title": "礼貌打断偏题",
+      "communicativeGoal": "讨论跑偏时礼貌打断并拉回议题",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Topic",
+        "TurnTaking"
+      ],
+      "activationPrompts": [
+        "讨论偏题了，你需要礼貌打断",
+        "你想回到当前议题但不否定对方"
+      ],
+      "pronunciationFocus": [
+        "sorry to jump in",
+        "bring us back"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Sorry to jump in, but can I bring us back to the timeline?",
+          "chinesePrompt": "不好意思插一下，我能把我们拉回时间线吗？",
+          "variants": [
+            "Sorry to jump in, but could I bring us back to the timeline?"
+          ],
+          "notes": [
+            "打断 + 拉回。"
+          ],
+          "pronunciationTargets": [
+            "jump in",
+            "bring us back"
+          ],
+          "commonMistakes": [
+            "jump in here."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "That's useful context, but I want to make sure we finish the decision.",
+          "chinesePrompt": "这个背景有用，但我想确保我们完成决定。",
+          "variants": [
+            "That's helpful context, but I want to make sure we finish the decision."
+          ],
+          "notes": [
+            "承认价值 + 回主线。"
+          ],
+          "pronunciationTargets": [
+            "useful context"
+          ],
+          "commonMistakes": [
+            "useful background but."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Can we park {that topic} and come back to it later?",
+          "chinesePrompt": "我们能先暂存那个话题，稍后再回来看吗？",
+          "variants": [
+            "Could we park that topic and come back to it later?"
+          ],
+          "notes": [
+            "明确暂存。"
+          ],
+          "pronunciationTargets": [
+            "park that topic"
+          ],
+          "commonMistakes": [
+            "park this thing."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Can we park {that topic} and come back to it later?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Sorry to jump in, but can I bring us back to the timeline so we can finish the decision?",
+          "chinesePrompt": "不好意思插一下，我能把我们拉回时间线，好让我们完成决定吗？",
+          "variants": [],
+          "notes": [
+            "礼貌打断 + 目的。"
+          ],
+          "pronunciationTargets": [
+            "finish the decision"
+          ],
+          "commonMistakes": [
+            "finish decision."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "讨论偏题了，你需要礼貌打断",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“礼貌打断偏题”对应的沟通动作",
+          "讨论跑偏时礼貌打断并拉回议题",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：讨论偏题了，你需要礼貌打断",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想回到当前议题但不否定对方",
+          "换一个相近场景，再完成“礼貌打断偏题”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "post-meeting-accountability-001",
+      "title": "会后追踪责任",
+      "communicativeGoal": "会后跟进进展但不显得追责冒犯",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "FollowUp",
+        "Owner"
+      ],
+      "activationPrompts": [
+        "会后你想跟进 action item",
+        "你想提醒负责人但不显得责备"
+      ],
+      "pronunciationFocus": [
+        "checking in",
+        "any update"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Just checking in on the action item from yesterday.",
+          "chinesePrompt": "跟进一下昨天的行动项。",
+          "variants": [
+            "Just checking in on yesterday's action item."
+          ],
+          "notes": [
+            "轻量会后跟进。"
+          ],
+          "pronunciationTargets": [
+            "checking in"
+          ],
+          "commonMistakes": [
+            "check in the action item."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Any update on the draft?",
+          "chinesePrompt": "草稿有什么更新吗？",
+          "variants": [
+            "Do you have any update on the draft?"
+          ],
+          "notes": [
+            "简短直接。"
+          ],
+          "pronunciationTargets": [
+            "any update"
+          ],
+          "commonMistakes": [
+            "any updates for draft?"
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Is there anything blocking {the next step}?",
+          "chinesePrompt": "下一步有什么阻塞吗？",
+          "variants": [
+            "Is anything blocking the next step?"
+          ],
+          "notes": [
+            "从追责转成帮助排障。"
+          ],
+          "pronunciationTargets": [
+            "anything blocking"
+          ],
+          "commonMistakes": [
+            "anything block."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Is there anything blocking {the next step}?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Just checking in on the action item. Is there anything blocking the next step?",
+          "chinesePrompt": "跟进一下行动项。下一步有什么阻塞吗？",
+          "variants": [],
+          "notes": [
+            "跟进 + 支持。"
+          ],
+          "pronunciationTargets": [
+            "next step"
+          ],
+          "commonMistakes": [
+            "the next action."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "会后你想跟进 action item",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“会后追踪责任”对应的沟通动作",
+          "会后跟进进展但不显得追责冒犯",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "FollowUp",
+          "Decision"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：会后你想跟进 action item",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想提醒负责人但不显得责备",
+          "换一个相近场景，再完成“会后追踪责任”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "escalate-risk-executive-001",
+      "title": "向负责人升级风险",
+      "communicativeGoal": "风险变大时清楚升级并给出建议",
+      "scene": "Meeting",
+      "register": "Formal",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Risk",
+        "Decision"
+      ],
+      "activationPrompts": [
+        "你需要向负责人升级风险",
+        "你想说明风险、影响和建议"
+      ],
+      "pronunciationFocus": [
+        "escalate",
+        "impact"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I want to escalate a risk around the timeline.",
+          "chinesePrompt": "我想升级一个关于时间线的风险。",
+          "variants": [
+            "I'd like to escalate a risk around the timeline."
+          ],
+          "notes": [
+            "正式风险升级表达。"
+          ],
+          "pronunciationTargets": [
+            "escalate a risk"
+          ],
+          "commonMistakes": [
+            "raise up a risk."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "The impact is that we may miss the launch window.",
+          "chinesePrompt": "影响是我们可能错过发布窗口。",
+          "variants": [
+            "The impact would be that we may miss the launch window."
+          ],
+          "notes": [
+            "风险必须说明影响。"
+          ],
+          "pronunciationTargets": [
+            "impact is"
+          ],
+          "commonMistakes": [
+            "influence is."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "My recommendation is to {reduce scope this week}.",
+          "chinesePrompt": "我的建议是本周缩小范围。",
+          "variants": [
+            "My recommendation would be to reduce scope this week."
+          ],
+          "notes": [
+            "升级风险时给建议。"
+          ],
+          "pronunciationTargets": [
+            "recommendation"
+          ],
+          "commonMistakes": [
+            "my recommend is."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "My recommendation is to {reduce scope this week}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I want to escalate a risk around the timeline. The impact is that we may miss the launch window.",
+          "chinesePrompt": "我想升级一个时间线风险。影响是可能错过发布窗口。",
+          "variants": [],
+          "notes": [
+            "风险 + 影响。"
+          ],
+          "pronunciationTargets": [
+            "launch window"
+          ],
+          "commonMistakes": [
+            "launch time window."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "你需要向负责人升级风险",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“向负责人升级风险”对应的沟通动作",
+          "风险变大时清楚升级并给出建议",
+          "语气专业克制，避免过度随意",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Completeness",
+          "Decision"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你需要向负责人升级风险",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想说明风险、影响和建议",
+          "换一个相近场景，再完成“向负责人升级风险”这个口语动作。"
         ]
       }
     }

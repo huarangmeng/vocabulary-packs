@@ -4,7 +4,7 @@
   "description": "面向会议开场、接入讨论、表达观点、澄清确认、总结、行动项确认、温和异议、拉回重点和会议收尾的核心会议口语训练包。",
   "packType": "Scenario",
   "levelHint": "B1-B2",
-  "estimatedMinutes": 140,
+  "estimatedMinutes": 260,
   "tags": [
     "Speaking",
     "Meeting",
@@ -1299,6 +1299,1811 @@
         "variantPrompts": [
           "你想确认大家已经没有别的问题并做收尾",
           "换一个相近场景，再完成“结束会议并收尾”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "goal-check-001",
+      "title": "确认会议目标",
+      "communicativeGoal": "会议开始时确认本次要达成什么",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Opening",
+        "Decision"
+      ],
+      "activationPrompts": [
+        "会议刚开始，你想确认目标",
+        "你想让大家知道今天要产出什么"
+      ],
+      "pronunciationFocus": [
+        "goal for today",
+        "come out of this"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "What's the main goal for today?",
+          "chinesePrompt": "今天最主要的目标是什么？",
+          "variants": [
+            "What is the main goal for today's meeting?"
+          ],
+          "notes": [
+            "会议开场的目标确认。"
+          ],
+          "pronunciationTargets": [
+            "main goal"
+          ],
+          "commonMistakes": [
+            "main target for today."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "What do we need to come out of this meeting with?",
+          "chinesePrompt": "这场会结束时我们需要产出什么？",
+          "variants": [
+            "What should we come out of this meeting with?"
+          ],
+          "notes": [
+            "强调会议产出。"
+          ],
+          "pronunciationTargets": [
+            "come out of this meeting"
+          ],
+          "commonMistakes": [
+            "come out from this meeting."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "By the end of this meeting, we should {choose one option}.",
+          "chinesePrompt": "会议结束前，我们应该选定一个方案。",
+          "variants": [
+            "By the end of this meeting, we should choose one option."
+          ],
+          "notes": [
+            "明确完成标准。"
+          ],
+          "pronunciationTargets": [
+            "by the end"
+          ],
+          "commonMistakes": [
+            "at the end we should."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "By the end of this meeting, we should {choose one option}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "What's the main goal for today? By the end, we should choose one option.",
+          "chinesePrompt": "今天主要目标是什么？结束前我们应该选定一个方案。",
+          "variants": [],
+          "notes": [
+            "问题 + 成功标准。"
+          ],
+          "pronunciationTargets": [
+            "choose one option"
+          ],
+          "commonMistakes": [
+            "choose a option."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "会议刚开始，你想确认目标",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“确认会议目标”对应的沟通动作",
+          "会议开始时确认本次要达成什么",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Naturalness",
+          "Decision"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：会议刚开始，你想确认目标",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想让大家知道今天要产出什么",
+          "换一个相近场景，再完成“确认会议目标”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "agenda-transition-001",
+      "title": "议程过渡",
+      "communicativeGoal": "在会议中从一个议题自然切到下一个",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Topic",
+        "TurnTaking"
+      ],
+      "activationPrompts": [
+        "一个议题说完了，你想进入下一项",
+        "你想让会议按议程推进"
+      ],
+      "pronunciationFocus": [
+        "move on to",
+        "next item"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Shall we move on to the next item?",
+          "chinesePrompt": "我们进入下一项好吗？",
+          "variants": [
+            "Should we move on to the next item?"
+          ],
+          "notes": [
+            "礼貌推进议程。"
+          ],
+          "pronunciationTargets": [
+            "move on"
+          ],
+          "commonMistakes": [
+            "move to next item."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "The next item is the timeline.",
+          "chinesePrompt": "下一项是时间线。",
+          "variants": [
+            "Next up is the timeline."
+          ],
+          "notes": [
+            "直接标记议题。"
+          ],
+          "pronunciationTargets": [
+            "next item"
+          ],
+          "commonMistakes": [
+            "next is timeline."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Before we move on, does anyone have {final comments}?",
+          "chinesePrompt": "继续之前，还有人有最后补充吗？",
+          "variants": [
+            "Before we move on, any final comments?"
+          ],
+          "notes": [
+            "切换前留出补充空间。"
+          ],
+          "pronunciationTargets": [
+            "before we move on"
+          ],
+          "commonMistakes": [
+            "before move on."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Before we move on, does anyone have {final comments}?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Before we move on, any final comments? If not, the next item is the timeline.",
+          "chinesePrompt": "继续前还有补充吗？如果没有，下一项是时间线。",
+          "variants": [],
+          "notes": [
+            "收尾 + 过渡。"
+          ],
+          "pronunciationTargets": [
+            "final comments"
+          ],
+          "commonMistakes": [
+            "final comment?"
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "一个议题说完了，你想进入下一项",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“议程过渡”对应的沟通动作",
+          "在会议中从一个议题自然切到下一个",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：一个议题说完了，你想进入下一项",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想让会议按议程推进",
+          "换一个相近场景，再完成“议程过渡”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "ask-background-001",
+      "title": "请求背景信息",
+      "communicativeGoal": "缺少上下文时请求背景而不打断推进",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Clarify"
+      ],
+      "activationPrompts": [
+        "你缺少背景信息，想请人补充",
+        "你想先理解上下文再发言"
+      ],
+      "pronunciationFocus": [
+        "quick background",
+        "context"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Could you give us a bit of background?",
+          "chinesePrompt": "你能给我们一点背景吗？",
+          "variants": [
+            "Could you give us some quick background?"
+          ],
+          "notes": [
+            "适合请求上下文。"
+          ],
+          "pronunciationTargets": [
+            "background"
+          ],
+          "commonMistakes": [
+            "give us some background about."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I may be missing some context here.",
+          "chinesePrompt": "我这里可能缺一些上下文。",
+          "variants": [
+            "I might be missing some context here."
+          ],
+          "notes": [
+            "先承认自己缺信息，语气更柔和。"
+          ],
+          "pronunciationTargets": [
+            "missing context"
+          ],
+          "commonMistakes": [
+            "missing some contexts."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Can you remind us why {we chose this approach}?",
+          "chinesePrompt": "你能提醒一下我们为什么选这个方案吗？",
+          "variants": [
+            "Could you remind us why we chose this approach?"
+          ],
+          "notes": [
+            "请求背景并聚焦决策原因。"
+          ],
+          "pronunciationTargets": [
+            "remind us why"
+          ],
+          "commonMistakes": [
+            "remind us why did we choose."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Can you remind us why {we chose this approach}?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I may be missing some context here. Could you give us a bit of background?",
+          "chinesePrompt": "我可能缺点背景。你能补充一下吗？",
+          "variants": [],
+          "notes": [
+            "自我定位 + 请求背景。"
+          ],
+          "pronunciationTargets": [
+            "bit of background"
+          ],
+          "commonMistakes": [
+            "a background."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "你缺少背景信息，想请人补充",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“请求背景信息”对应的沟通动作",
+          "缺少上下文时请求背景而不打断推进",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Clarification",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你缺少背景信息，想请人补充",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想先理解上下文再发言",
+          "换一个相近场景，再完成“请求背景信息”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "add-data-point-001",
+      "title": "补充数据点",
+      "communicativeGoal": "在讨论中简短补充一个数据或事实",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Data",
+        "Opinion"
+      ],
+      "activationPrompts": [
+        "你有一个数据点想补充",
+        "你想用事实支持讨论"
+      ],
+      "pronunciationFocus": [
+        "one data point",
+        "worth noting"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "One data point to add: usage dropped last week.",
+          "chinesePrompt": "补充一个数据点：上周使用量下降了。",
+          "variants": [
+            "One data point I'd add is that usage dropped last week."
+          ],
+          "notes": [
+            "用 one data point 降低打断感。"
+          ],
+          "pronunciationTargets": [
+            "data point"
+          ],
+          "commonMistakes": [
+            "one data to add."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "It's worth noting that the numbers are still early.",
+          "chinesePrompt": "值得注意的是，这些数字还很初步。",
+          "variants": [
+            "Worth noting, the numbers are still early."
+          ],
+          "notes": [
+            "提醒数据成熟度。"
+          ],
+          "pronunciationTargets": [
+            "worth noting"
+          ],
+          "commonMistakes": [
+            "it worth to note."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "The data suggests {people are dropping off earlier}.",
+          "chinesePrompt": "数据表明用户更早流失了。",
+          "variants": [
+            "The data seems to suggest people are dropping off earlier."
+          ],
+          "notes": [
+            "用 suggests 而不是 proves。"
+          ],
+          "pronunciationTargets": [
+            "data suggests"
+          ],
+          "commonMistakes": [
+            "data shows maybe."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "The data suggests {people are dropping off earlier}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "One data point to add: usage dropped last week, but the numbers are still early.",
+          "chinesePrompt": "补充一个数据点：上周使用量下降，但数字还很初步。",
+          "variants": [],
+          "notes": [
+            "数据 + 谨慎限定。"
+          ],
+          "pronunciationTargets": [
+            "numbers are still early"
+          ],
+          "commonMistakes": [
+            "numbers are young."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "你有一个数据点想补充",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“补充数据点”对应的沟通动作",
+          "在讨论中简短补充一个数据或事实",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Completeness",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你有一个数据点想补充",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想用事实支持讨论",
+          "换一个相近场景，再完成“补充数据点”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "confirm-understanding-meeting-001",
+      "title": "会议中确认理解",
+      "communicativeGoal": "在关键决定前确认自己理解无误",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Clarify",
+        "Summary"
+      ],
+      "activationPrompts": [
+        "你想在会议里确认自己理解对了",
+        "你想复述决定避免误解"
+      ],
+      "pronunciationFocus": [
+        "just to make sure",
+        "if I heard correctly"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Just to make sure I understand, we're moving the launch date.",
+          "chinesePrompt": "确认一下我的理解，我们要推迟发布日期。",
+          "variants": [
+            "Just to make sure I understand, we're moving the launch date, right?"
+          ],
+          "notes": [
+            "会议中确认理解的高频表达。"
+          ],
+          "pronunciationTargets": [
+            "make sure I understand"
+          ],
+          "commonMistakes": [
+            "make sure I understood."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "If I heard correctly, the decision is to start small.",
+          "chinesePrompt": "如果我没听错，决定是先小范围开始。",
+          "variants": [
+            "If I heard that correctly, the decision is to start small."
+          ],
+          "notes": [
+            "把听到的决定复述出来。"
+          ],
+          "pronunciationTargets": [
+            "heard correctly"
+          ],
+          "commonMistakes": [
+            "if I listened correctly."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "So we're saying {the beta starts next week}, right?",
+          "chinesePrompt": "所以我们是说 beta 下周开始，对吗？",
+          "variants": [
+            "So we're saying the beta starts next week, right?"
+          ],
+          "notes": [
+            "口语化确认。"
+          ],
+          "pronunciationTargets": [
+            "we're saying"
+          ],
+          "commonMistakes": [
+            "we are saying that beta start."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "So we're saying {the beta starts next week}, right?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "If I heard correctly, the decision is to start small and review next week.",
+          "chinesePrompt": "如果我没听错，决定是先小范围开始，下周复盘。",
+          "variants": [],
+          "notes": [
+            "决定 + 后续时间。"
+          ],
+          "pronunciationTargets": [
+            "review next week"
+          ],
+          "commonMistakes": [
+            "review in next week."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "你想在会议里确认自己理解对了",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“会议中确认理解”对应的沟通动作",
+          "在关键决定前确认自己理解无误",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Clarification",
+          "Completeness"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想在会议里确认自己理解对了",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想复述决定避免误解",
+          "换一个相近场景，再完成“会议中确认理解”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "ask-repeat-meeting-001",
+      "title": "会议中请求复述",
+      "communicativeGoal": "没听清关键信息时礼貌请对方重复",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Clarify",
+        "Repair"
+      ],
+      "activationPrompts": [
+        "会议中你没听清一个关键数字",
+        "你想请对方重复刚才的结论"
+      ],
+      "pronunciationFocus": [
+        "could you repeat",
+        "missed the last part"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Sorry, could you repeat the last part?",
+          "chinesePrompt": "不好意思，你能重复最后一部分吗？",
+          "variants": [
+            "Sorry, could you say the last part again?"
+          ],
+          "notes": [
+            "比 What? 专业自然。"
+          ],
+          "pronunciationTargets": [
+            "repeat the last part"
+          ],
+          "commonMistakes": [
+            "repeat again last part."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I missed the number you mentioned.",
+          "chinesePrompt": "我没听清你提到的那个数字。",
+          "variants": [
+            "I missed the number you just mentioned."
+          ],
+          "notes": [
+            "具体说明漏掉的信息。"
+          ],
+          "pronunciationTargets": [
+            "missed the number"
+          ],
+          "commonMistakes": [
+            "I lost the number."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Could you say that again, especially {the timeline}?",
+          "chinesePrompt": "你能再说一遍吗，尤其是时间线？",
+          "variants": [
+            "Could you repeat that, especially the timeline?"
+          ],
+          "notes": [
+            "请求重复并定位重点。"
+          ],
+          "pronunciationTargets": [
+            "especially the timeline"
+          ],
+          "commonMistakes": [
+            "specially timeline."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Could you say that again, especially {the timeline}?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Sorry, I missed the number you mentioned. Could you repeat the last part?",
+          "chinesePrompt": "不好意思，我没听清你说的数字。能重复最后一部分吗？",
+          "variants": [],
+          "notes": [
+            "说明原因 + 请求重复。"
+          ],
+          "pronunciationTargets": [
+            "number you mentioned"
+          ],
+          "commonMistakes": [
+            "number you said."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "会议中你没听清一个关键数字",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“会议中请求复述”对应的沟通动作",
+          "没听清关键信息时礼貌请对方重复",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Clarification",
+          "Repair"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：会议中你没听清一个关键数字",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想请对方重复刚才的结论",
+          "换一个相近场景，再完成“会议中请求复述”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "assign-action-item-001",
+      "title": "分配行动项",
+      "communicativeGoal": "会议结束前明确行动项和负责人",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Owner",
+        "Decision"
+      ],
+      "activationPrompts": [
+        "会议快结束了，你想明确行动项",
+        "你想确认谁负责下一步"
+      ],
+      "pronunciationFocus": [
+        "action item",
+        "owner"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "What's the action item here?",
+          "chinesePrompt": "这里的行动项是什么？",
+          "variants": [
+            "So what's the action item here?"
+          ],
+          "notes": [
+            "直接确认下一步。"
+          ],
+          "pronunciationTargets": [
+            "action item"
+          ],
+          "commonMistakes": [
+            "action point."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Who should own this next step?",
+          "chinesePrompt": "下一步谁负责？",
+          "variants": [
+            "Who will own this next step?"
+          ],
+          "notes": [
+            "确认 owner。"
+          ],
+          "pronunciationTargets": [
+            "own this next step"
+          ],
+          "commonMistakes": [
+            "who own this step?"
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Can we assign {one owner} before we wrap up?",
+          "chinesePrompt": "结束前我们能指定一个负责人吗？",
+          "variants": [
+            "Could we assign one owner before we wrap up?"
+          ],
+          "notes": [
+            "会议收尾前定责任。"
+          ],
+          "pronunciationTargets": [
+            "before we wrap up"
+          ],
+          "commonMistakes": [
+            "before wrap up."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Can we assign {one owner} before we wrap up?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "What's the action item here, and who should own this next step?",
+          "chinesePrompt": "这里的行动项是什么，下一步谁负责？",
+          "variants": [],
+          "notes": [
+            "行动项 + owner。"
+          ],
+          "pronunciationTargets": [
+            "who should own"
+          ],
+          "commonMistakes": [
+            "who should be owner."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "会议快结束了，你想明确行动项",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“分配行动项”对应的沟通动作",
+          "会议结束前明确行动项和负责人",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Decision",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：会议快结束了，你想明确行动项",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想确认谁负责下一步",
+          "换一个相近场景，再完成“分配行动项”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "time-check-001",
+      "title": "会议时间提醒",
+      "communicativeGoal": "时间不够时礼貌提醒并调整节奏",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Time",
+        "TurnTaking"
+      ],
+      "activationPrompts": [
+        "会议时间快到了，你想提醒大家",
+        "你想决定是继续还是另约时间"
+      ],
+      "pronunciationFocus": [
+        "running short on time",
+        "five minutes left"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "We're running short on time.",
+          "chinesePrompt": "我们时间不太够了。",
+          "variants": [
+            "We're a bit short on time."
+          ],
+          "notes": [
+            "会议中自然提醒时间。"
+          ],
+          "pronunciationTargets": [
+            "short on time"
+          ],
+          "commonMistakes": [
+            "time is short."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "We have about five minutes left.",
+          "chinesePrompt": "我们还剩大概五分钟。",
+          "variants": [
+            "We've got about five minutes left."
+          ],
+          "notes": [
+            "具体时间提醒。"
+          ],
+          "pronunciationTargets": [
+            "five minutes left"
+          ],
+          "commonMistakes": [
+            "left five minutes."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Should we {make a decision now} or continue this later?",
+          "chinesePrompt": "我们现在决定，还是之后继续？",
+          "variants": [
+            "Should we make a decision now or continue this later?"
+          ],
+          "notes": [
+            "用选择题推进。"
+          ],
+          "pronunciationTargets": [
+            "continue this later"
+          ],
+          "commonMistakes": [
+            "continue later this."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Should we {make a decision now} or continue this later?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "We have about five minutes left. Should we make a decision now or continue this later?",
+          "chinesePrompt": "我们还剩五分钟。现在决定还是之后继续？",
+          "variants": [],
+          "notes": [
+            "时间提醒 + 下一步选择。"
+          ],
+          "pronunciationTargets": [
+            "decision now"
+          ],
+          "commonMistakes": [
+            "decide now or later continue."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "会议时间快到了，你想提醒大家",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“会议时间提醒”对应的沟通动作",
+          "时间不够时礼貌提醒并调整节奏",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：会议时间快到了，你想提醒大家",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想决定是继续还是另约时间",
+          "换一个相近场景，再完成“会议时间提醒”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "record-decision-001",
+      "title": "记录决定",
+      "communicativeGoal": "在会议中明确记录已达成的决定",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Decision",
+        "Summary"
+      ],
+      "activationPrompts": [
+        "大家似乎已经决定了，你想记录下来",
+        "你想避免会后对决定理解不一致"
+      ],
+      "pronunciationFocus": [
+        "capture that",
+        "decision is"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Let's capture that as the decision.",
+          "chinesePrompt": "我们把这个记录为决定吧。",
+          "variants": [
+            "Let's capture this as the decision."
+          ],
+          "notes": [
+            "明确把讨论转成决定。"
+          ],
+          "pronunciationTargets": [
+            "capture that"
+          ],
+          "commonMistakes": [
+            "record it as decision."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "The decision is to move forward with option A.",
+          "chinesePrompt": "决定是推进 A 方案。",
+          "variants": [
+            "So the decision is to move forward with option A."
+          ],
+          "notes": [
+            "清楚记录决定。"
+          ],
+          "pronunciationTargets": [
+            "move forward with"
+          ],
+          "commonMistakes": [
+            "move forward option A."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I'll note that {we're starting with option A}.",
+          "chinesePrompt": "我会记录我们从 A 方案开始。",
+          "variants": [
+            "I'll note that we're starting with option A."
+          ],
+          "notes": [
+            "适合会议记录人。"
+          ],
+          "pronunciationTargets": [
+            "I'll note that"
+          ],
+          "commonMistakes": [
+            "I will note it."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "I'll note that {we're starting with option A}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Let's capture that as the decision: we're moving forward with option A.",
+          "chinesePrompt": "我们把这个记录为决定：推进 A 方案。",
+          "variants": [],
+          "notes": [
+            "标记决定 + 具体内容。"
+          ],
+          "pronunciationTargets": [
+            "moving forward"
+          ],
+          "commonMistakes": [
+            "move forward with A option."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "大家似乎已经决定了，你想记录下来",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“记录决定”对应的沟通动作",
+          "在会议中明确记录已达成的决定",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Decision",
+          "Completeness"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：大家似乎已经决定了，你想记录下来",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想避免会后对决定理解不一致",
+          "换一个相近场景，再完成“记录决定”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "summarize-risk-001",
+      "title": "总结风险",
+      "communicativeGoal": "把讨论中的主要风险简短总结出来",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Risk",
+        "Summary"
+      ],
+      "activationPrompts": [
+        "你想在决定前总结风险",
+        "你想确保大家知道主要风险是什么"
+      ],
+      "pronunciationFocus": [
+        "main risk",
+        "risk is"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "The main risk is that we may not have enough time.",
+          "chinesePrompt": "主要风险是我们可能时间不够。",
+          "variants": [
+            "The biggest risk is that we may not have enough time."
+          ],
+          "notes": [
+            "风险总结的基本句。"
+          ],
+          "pronunciationTargets": [
+            "main risk"
+          ],
+          "commonMistakes": [
+            "main risky is."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "The risk is manageable if we start small.",
+          "chinesePrompt": "如果先小范围开始，风险是可控的。",
+          "variants": [
+            "The risk should be manageable if we start small."
+          ],
+          "notes": [
+            "风险 + 缓解条件。"
+          ],
+          "pronunciationTargets": [
+            "manageable"
+          ],
+          "commonMistakes": [
+            "risk can be managed if."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "We should keep an eye on {the timeline}.",
+          "chinesePrompt": "我们应该关注时间线。",
+          "variants": [
+            "We should keep a close eye on the timeline."
+          ],
+          "notes": [
+            "轻量风险提醒。"
+          ],
+          "pronunciationTargets": [
+            "keep an eye on"
+          ],
+          "commonMistakes": [
+            "keep eyes on."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "We should keep an eye on {the timeline}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "The main risk is time, but it should be manageable if we start small.",
+          "chinesePrompt": "主要风险是时间，但如果先小范围开始应该可控。",
+          "variants": [],
+          "notes": [
+            "风险 + 缓解。"
+          ],
+          "pronunciationTargets": [
+            "start small"
+          ],
+          "commonMistakes": [
+            "manageable when start small."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "你想在决定前总结风险",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“总结风险”对应的沟通动作",
+          "把讨论中的主要风险简短总结出来",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Completeness",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想在决定前总结风险",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想确保大家知道主要风险是什么",
+          "换一个相近场景，再完成“总结风险”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "async-follow-up-001",
+      "title": "异步补充",
+      "communicativeGoal": "会后需要补充信息时自然说明",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Low",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "FollowUp"
+      ],
+      "activationPrompts": [
+        "你会议中不能马上给信息，需要会后补充",
+        "你想说明稍后会发材料"
+      ],
+      "pronunciationFocus": [
+        "follow up",
+        "send it after"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I'll follow up with the details after the meeting.",
+          "chinesePrompt": "会后我会补充细节。",
+          "variants": [
+            "I'll follow up after the meeting with the details."
+          ],
+          "notes": [
+            "会后跟进高频句。"
+          ],
+          "pronunciationTargets": [
+            "follow up"
+          ],
+          "commonMistakes": [
+            "follow up you details."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I can send the link afterward.",
+          "chinesePrompt": "我之后可以把链接发出来。",
+          "variants": [
+            "I can send the link after the meeting."
+          ],
+          "notes": [
+            "简单明确。"
+          ],
+          "pronunciationTargets": [
+            "send the link"
+          ],
+          "commonMistakes": [
+            "send link after."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Let me check that and share {the update} later.",
+          "chinesePrompt": "我查一下，稍后分享更新。",
+          "variants": [
+            "Let me check that and share the update later."
+          ],
+          "notes": [
+            "需要确认时使用。"
+          ],
+          "pronunciationTargets": [
+            "share the update"
+          ],
+          "commonMistakes": [
+            "share update later."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Let me check that and share {the update} later."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I'll follow up with the details after the meeting and send the link afterward.",
+          "chinesePrompt": "会后我会补充细节并发链接。",
+          "variants": [],
+          "notes": [
+            "明确后续动作。"
+          ],
+          "pronunciationTargets": [
+            "after the meeting"
+          ],
+          "commonMistakes": [
+            "after meeting."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "你会议中不能马上给信息，需要会后补充",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“异步补充”对应的沟通动作",
+          "会后需要补充信息时自然说明",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "FollowUp",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你会议中不能马上给信息，需要会后补充",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想说明稍后会发材料",
+          "换一个相近场景，再完成“异步补充”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "parking-lot-001",
+      "title": "暂存离题事项",
+      "communicativeGoal": "把有价值但离题的问题暂存到会后处理",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Topic",
+        "FollowUp"
+      ],
+      "activationPrompts": [
+        "有人提出有价值但不在当前范围的问题",
+        "你想保留话题但不让会议跑偏"
+      ],
+      "pronunciationFocus": [
+        "parking lot",
+        "come back to"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Let's put that in the parking lot for now.",
+          "chinesePrompt": "我们先把这个暂存一下。",
+          "variants": [
+            "Maybe let's put that in the parking lot for now."
+          ],
+          "notes": [
+            "会议中常用 parking lot。"
+          ],
+          "pronunciationTargets": [
+            "parking lot"
+          ],
+          "commonMistakes": [
+            "put it in parking."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "That's important, but it may be a separate discussion.",
+          "chinesePrompt": "这个很重要，但可能需要单独讨论。",
+          "variants": [
+            "That's important, but it might need a separate discussion."
+          ],
+          "notes": [
+            "承认价值 + 控制范围。"
+          ],
+          "pronunciationTargets": [
+            "separate discussion"
+          ],
+          "commonMistakes": [
+            "another discussion separately."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Can we come back to {that point} after this meeting?",
+          "chinesePrompt": "我们能会后再回到那个点吗？",
+          "variants": [
+            "Could we come back to that point after this meeting?"
+          ],
+          "notes": [
+            "保留后续。"
+          ],
+          "pronunciationTargets": [
+            "come back to"
+          ],
+          "commonMistakes": [
+            "come back that point."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Can we come back to {that point} after this meeting?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "That's important, but let's put it in the parking lot and come back to it later.",
+          "chinesePrompt": "这个很重要，但我们先暂存，稍后再回到它。",
+          "variants": [],
+          "notes": [
+            "承认 + 暂存 + 后续。"
+          ],
+          "pronunciationTargets": [
+            "come back to it"
+          ],
+          "commonMistakes": [
+            "come back it later."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "有人提出有价值但不在当前范围的问题",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“暂存离题事项”对应的沟通动作",
+          "把有价值但离题的问题暂存到会后处理",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "FollowUp",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：有人提出有价值但不在当前范围的问题",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想保留话题但不让会议跑偏",
+          "换一个相近场景，再完成“暂存离题事项”这个口语动作。"
+        ]
+      }
+    },
+    {
+      "key": "meeting-close-next-001",
+      "title": "会议收尾并说明下一步",
+      "communicativeGoal": "会议结束时总结决定、行动项和下一次跟进",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Closing",
+        "Summary"
+      ],
+      "activationPrompts": [
+        "会议结束前，你想清楚收尾",
+        "你想确认决定、行动项和下次跟进"
+      ],
+      "pronunciationFocus": [
+        "to close",
+        "next step"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "To close, we've agreed on option A.",
+          "chinesePrompt": "收尾一下，我们已经同意 A 方案。",
+          "variants": [
+            "To close, we've agreed to move forward with option A."
+          ],
+          "notes": [
+            "正式但简洁的收尾。"
+          ],
+          "pronunciationTargets": [
+            "to close"
+          ],
+          "commonMistakes": [
+            "to close the meeting."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "The next step is for Alex to send the draft.",
+          "chinesePrompt": "下一步是 Alex 发草稿。",
+          "variants": [
+            "Next, Alex will send the draft."
+          ],
+          "notes": [
+            "明确 action item。"
+          ],
+          "pronunciationTargets": [
+            "next step"
+          ],
+          "commonMistakes": [
+            "next step is Alex send."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Let's check in again {next Wednesday}.",
+          "chinesePrompt": "我们下周三再同步一下。",
+          "variants": [
+            "Let's check in again next Wednesday."
+          ],
+          "notes": [
+            "设定跟进时间。"
+          ],
+          "pronunciationTargets": [
+            "check in again"
+          ],
+          "commonMistakes": [
+            "check again in next Wednesday."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "context",
+            "detail"
+          ],
+          "sampleOutputs": [
+            "Let's check in again {next Wednesday}."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "To close, we've agreed on option A. The next step is for Alex to send the draft.",
+          "chinesePrompt": "收尾一下，我们同意 A 方案。下一步是 Alex 发草稿。",
+          "variants": [],
+          "notes": [
+            "决定 + 下一步。"
+          ],
+          "pronunciationTargets": [
+            "send the draft"
+          ],
+          "commonMistakes": [
+            "send draft."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "会议结束前，你想清楚收尾",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“会议收尾并说明下一步”对应的沟通动作",
+          "会议结束时总结决定、行动项和下一次跟进",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "ScenarioFit",
+          "Completeness"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：会议结束前，你想清楚收尾",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想确认决定、行动项和下次跟进",
+          "换一个相近场景，再完成“会议收尾并说明下一步”这个口语动作。"
         ]
       }
     }
