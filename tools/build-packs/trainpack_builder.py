@@ -12,8 +12,55 @@ from release_config import CREATED_AT, MIN_APP_VERSION, TAG, VERSION, ZIP_TIMEST
 
 
 ROOT = Path(__file__).resolve().parents[2]
+CONTENT_DIR = ROOT / "content" / "packs"
 OUTPUT_DIR = ROOT / "dist" / "trainpacks"
 MANIFEST_DIR = ROOT / "manifests"
+
+REQUIRED_PACK_KEYS = [
+    "packId",
+    "title",
+    "description",
+    "packType",
+    "levelHint",
+    "estimatedMinutes",
+    "tags",
+    "trainingModes",
+    "units",
+]
+
+REQUIRED_UNIT_KEYS = [
+    "key",
+    "title",
+    "communicativeGoal",
+    "scene",
+    "register",
+    "difficulty",
+    "tags",
+    "activationPrompts",
+    "pronunciationFocus",
+    "items",
+]
+
+REQUIRED_ITEM_KEYS = [
+    "type",
+    "englishText",
+    "chinesePrompt",
+]
+
+OPTIONAL_ITEM_KEYS = [
+    "variants",
+    "notes",
+    "pronunciationTargets",
+    "commonMistakes",
+    "tags",
+    "contextText",
+    "responseRole",
+    "repairType",
+    "slots",
+    "sampleOutputs",
+    "focusText",
+    "focusType",
+]
 
 
 @dataclass(frozen=True)
@@ -70,6 +117,40 @@ def _write_deterministic_text(zf: zipfile.ZipFile, name: str, text: str) -> None
     zf.writestr(info, text.encode("utf-8"))
 
 
+def _ensure_keys(data: dict[str, Any], keys: list[str], context: str) -> None:
+    missing = [key for key in keys if key not in data]
+    if missing:
+        raise ValueError(f"{context} missing required keys: {', '.join(missing)}")
+
+
+def discover_content_paths() -> list[Path]:
+    CONTENT_DIR.mkdir(parents=True, exist_ok=True)
+    return sorted(CONTENT_DIR.glob("*.json"))
+
+
+def load_pack_definition(content_path: Path) -> dict[str, Any]:
+    data = json.loads(content_path.read_text(encoding="utf-8"))
+    if not isinstance(data, dict):
+        raise ValueError(f"{content_path} must contain a JSON object")
+
+    _ensure_keys(data, REQUIRED_PACK_KEYS, str(content_path))
+    if not isinstance(data["units"], list) or not data["units"]:
+        raise ValueError(f"{content_path} must contain a non-empty units array")
+
+    for unit_index, unit in enumerate(data["units"], start=1):
+        if not isinstance(unit, dict):
+            raise ValueError(f"{content_path} unit #{unit_index} must be an object")
+        _ensure_keys(unit, REQUIRED_UNIT_KEYS, f"{content_path} unit #{unit_index}")
+        if not isinstance(unit["items"], list) or not unit["items"]:
+            raise ValueError(f"{content_path} unit #{unit_index} must contain a non-empty items array")
+        for item_index, item in enumerate(unit["items"], start=1):
+            if not isinstance(item, dict):
+                raise ValueError(f"{content_path} unit #{unit_index} item #{item_index} must be an object")
+            _ensure_keys(item, REQUIRED_ITEM_KEYS, f"{content_path} unit #{unit_index} item #{item_index}")
+
+    return data
+
+
 def _build_units_and_items(pack_id: str, unit_specs: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     units: list[dict[str, Any]] = []
     items: list[dict[str, Any]] = []
@@ -93,16 +174,8 @@ def _build_units_and_items(pack_id: str, unit_specs: list[dict[str, Any]]) -> tu
                 "commonMistakes": item_spec.get("commonMistakes", []),
                 "tags": item_spec.get("tags", []),
             }
-            for optional_key in [
-                "contextText",
-                "responseRole",
-                "repairType",
-                "slots",
-                "sampleOutputs",
-                "focusText",
-                "focusType",
-            ]:
-                if optional_key in item_spec:
+            for optional_key in OPTIONAL_ITEM_KEYS:
+                if optional_key in item_spec and optional_key not in item:
                     item[optional_key] = item_spec[optional_key]
             items.append(item)
             unit_item_ids.append(item_id)
@@ -181,6 +254,24 @@ def build_trainpack(
         tags=tags,
         training_modes=training_modes,
     )
+
+
+def build_from_definition(definition: dict[str, Any]) -> PackageBuildResult:
+    return build_trainpack(
+        pack_id=definition["packId"],
+        title=definition["title"],
+        description=definition["description"],
+        pack_type=definition["packType"],
+        level_hint=definition["levelHint"],
+        estimated_minutes=definition["estimatedMinutes"],
+        tags=definition["tags"],
+        training_modes=definition["trainingModes"],
+        unit_specs=definition["units"],
+    )
+
+
+def build_from_content_path(content_path: Path) -> PackageBuildResult:
+    return build_from_definition(load_pack_definition(content_path))
 
 
 def write_catalog(results: list[PackageBuildResult]) -> Path:

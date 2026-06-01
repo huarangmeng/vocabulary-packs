@@ -30,6 +30,11 @@
 vocabulary-packs/
   README.md
   TRAINPACK_FORMAT.md
+  content/
+    packs/
+      core-chunks-1.json
+      small-talk-1.json
+      meeting-communication-1.json
   manifests/
     latest.json
     2026.06.02.json
@@ -43,9 +48,8 @@ vocabulary-packs/
     release_trainpacks.py
     build-packs/
       README.md
-      build_core_chunks_pack.py
-      build_small_talk_pack.py
-      build_meeting_communication_pack.py
+      build_from_content.py
+      trainpack_builder.py
   .github/
     workflows/
       release-packs.yml
@@ -57,6 +61,7 @@ vocabulary-packs/
 
 - `README.md`：仓库说明。
 - `TRAINPACK_FORMAT.md`：`.trainpack` 固定格式契约。
+- `content/packs/*.json`：官方训练包内容源文件。
 - `manifests/*.json`：训练包目录文件。
 - `schemas/*.json`：格式约束 schema。
 - `tools/`：训练包构建和校验脚本。
@@ -105,13 +110,13 @@ latest.json.sha256
 
 ## 当前示例训练包
 
-当前仓库内置三份官方训练包构建脚本：
+当前仓库内置三份官方训练包内容文件：
 
-- `core-chunks-1`：高频口语表达块 1。
-- `small-talk-1`：Small Talk 1。
-- `meeting-communication-1`：会议沟通 1。
+- `content/packs/core-chunks-1.json`：高频口语表达块 1。
+- `content/packs/small-talk-1.json`：Small Talk 1。
+- `content/packs/meeting-communication-1.json`：会议沟通 1。
 
-它们用于固定 `.trainpack` 结构、校验流程和 App 接入边界，同时也是首批正式发布候选。
+这些 JSON 文件是首批正式发布候选的源内容；Python 只负责读取内容、构建 `.trainpack`、生成 catalog 并执行校验。
 
 ## 手动发布
 
@@ -130,13 +135,14 @@ python3 tools/release_trainpacks.py
 - 生成 `dist/trainpacks/latest.json` 和 `latest.json.sha256`。
 - 逐个校验所有 `.trainpack`。
 
-如需单独调试某一个训练包，也可以单独运行：
+如需单独调试某一个训练包，也可以直接传入对应 JSON：
 
 
 ```bash
-python3 tools/build-packs/build_small_talk_pack.py
-python3 tools/build-packs/build_meeting_communication_pack.py
-python3 tools/build-packs/build_core_chunks_pack.py
+python3 tools/build-packs/build_from_content.py content/packs/small-talk-1.json
+python3 tools/build-packs/build_from_content.py content/packs/meeting-communication-1.json
+python3 tools/build-packs/build_from_content.py content/packs/core-chunks-1.json
+```
 
 校验训练包格式：
 

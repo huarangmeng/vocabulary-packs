@@ -1,0 +1,381 @@
+{
+  "packId": "meeting-communication-1",
+  "title": "会议沟通 1",
+  "description": "面向会议发言、澄清信息和温和提出异议的口语训练包。",
+  "packType": "Scenario",
+  "levelHint": "B1-B2",
+  "estimatedMinutes": 55,
+  "tags": [
+    "Speaking",
+    "Meeting",
+    "B1-B2"
+  ],
+  "trainingModes": [
+    "Recall",
+    "Shadow",
+    "Respond"
+  ],
+  "units": [
+    {
+      "key": "jump-in-001",
+      "title": "礼貌接入讨论",
+      "communicativeGoal": "在会议中自然接入讨论，不显得突兀或冒犯",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "TurnTaking",
+        "Contribution"
+      ],
+      "activationPrompts": [
+        "你想在会议里接一句自己的观点",
+        "你想礼貌地插入讨论"
+      ],
+      "pronunciationFocus": [
+        "jump in",
+        "build on that"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Can I jump in for a second?",
+          "chinesePrompt": "我能先插一句吗？",
+          "variants": [
+            "Can I quickly jump in here?"
+          ],
+          "notes": [
+            "适合礼貌打断或接入讨论"
+          ],
+          "pronunciationTargets": [
+            "jump in for a second"
+          ],
+          "commonMistakes": [
+            "I interrupt a little."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I'd like to build on that.",
+          "chinesePrompt": "我想在这个基础上补充一下。",
+          "variants": [
+            "I want to build on what you just said."
+          ],
+          "notes": [
+            "先表示承接，再继续发言更自然"
+          ],
+          "pronunciationTargets": [
+            "build on that"
+          ],
+          "commonMistakes": [
+            "I add on your idea."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Just to add to that, I think we also need to look at the timeline.",
+          "chinesePrompt": "补充一点，我觉得我们还需要看看时间线。",
+          "variants": [
+            "Just to add to that, we should probably also look at the timeline."
+          ],
+          "notes": [
+            "适合把发言落到具体议题上"
+          ],
+          "pronunciationTargets": [
+            "just to add to that",
+            "look at the timeline"
+          ],
+          "commonMistakes": [
+            "Additionally I think we need see timeline."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "add to that",
+            "look at the timeline"
+          ],
+          "sampleOutputs": [
+            "Just to add to that, I think we also need to look at the timeline."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Can I jump in for a second? I think we're missing the user perspective here.",
+          "chinesePrompt": "我先插一句。我觉得我们这里忽略了用户视角。",
+          "variants": [],
+          "notes": [
+            "先取得发言权，再明确指出补充点"
+          ],
+          "pronunciationTargets": [
+            "user perspective"
+          ],
+          "commonMistakes": [
+            "I interrupt because we miss user side."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "团队正在讨论方案优先级。",
+          "responseRole": "Participant"
+        }
+      ]
+    },
+    {
+      "key": "clarify-001",
+      "title": "会议中澄清和确认",
+      "communicativeGoal": "在信息不清楚时礼貌澄清，并确认彼此理解一致",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "Meeting",
+        "Clarify",
+        "Alignment"
+      ],
+      "activationPrompts": [
+        "你想确认自己理解的是不是对的",
+        "你想请对方把一个点再说清楚一点"
+      ],
+      "pronunciationFocus": [
+        "just to clarify",
+        "same page"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Just to clarify, are we talking about the launch date or the internal deadline?",
+          "chinesePrompt": "确认一下，我们说的是上线日期还是内部截止日期？",
+          "variants": [
+            "Just to clarify, do you mean the launch date or the internal deadline?"
+          ],
+          "notes": [
+            "适合把模糊概念具体化"
+          ],
+          "pronunciationTargets": [
+            "just to clarify",
+            "internal deadline"
+          ],
+          "commonMistakes": [
+            "Clarify, which date you mean?"
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I just want to make sure we're on the same page.",
+          "chinesePrompt": "我只是想确认一下我们理解一致。",
+          "variants": [
+            "I just want to make sure we're aligned on this."
+          ],
+          "notes": [
+            "适合在推进前做统一理解"
+          ],
+          "pronunciationTargets": [
+            "same page"
+          ],
+          "commonMistakes": [
+            "I want to confirm we are same understanding."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "So if I understand correctly, the design review happens first, and engineering starts after that.",
+          "chinesePrompt": "如果我理解没错的话，是先做设计评审，然后工程再开始。",
+          "variants": [
+            "So if I understand correctly, engineering starts after the design review."
+          ],
+          "notes": [
+            "用复述来澄清通常比直接说你没听懂更顺滑"
+          ],
+          "pronunciationTargets": [
+            "if I understand correctly",
+            "after that"
+          ],
+          "commonMistakes": [
+            "If I understand right, design review first and engineer starts after."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "if I understand correctly",
+            "after that"
+          ],
+          "sampleOutputs": [
+            "So if I understand correctly, the design review happens first, and engineering starts after that."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I just want to make sure we're on the same page. Are we saying this is a must-have for this quarter?",
+          "chinesePrompt": "我想确认一下我们是不是理解一致。我们的意思是这个功能是本季度必须做的吗？",
+          "variants": [],
+          "notes": [
+            "适合把结论性判断再锚定一次"
+          ],
+          "pronunciationTargets": [
+            "must-have",
+            "this quarter"
+          ],
+          "commonMistakes": [
+            "We same page? This is must do this quarter?"
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "团队正在讨论需求优先级。",
+          "responseRole": "Participant"
+        }
+      ]
+    },
+    {
+      "key": "pushback-001",
+      "title": "温和提出异议",
+      "communicativeGoal": "在会议中表达不同意见，但保持合作和建设性的语气",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "Meeting",
+        "Pushback",
+        "Opinion"
+      ],
+      "activationPrompts": [
+        "你想表达不同意见，但不想显得太硬",
+        "你想指出风险或保留意见"
+      ],
+      "pronunciationFocus": [
+        "I see where you're coming from",
+        "a bit concerned"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I see where you're coming from, but I'm a bit concerned about the timeline.",
+          "chinesePrompt": "我理解你的出发点，但我有点担心时间线。",
+          "variants": [
+            "I get your point, but I'm a little concerned about the timeline."
+          ],
+          "notes": [
+            "先认可，再给出保留意见"
+          ],
+          "pronunciationTargets": [
+            "where you're coming from",
+            "a bit concerned"
+          ],
+          "commonMistakes": [
+            "I understand you but worry timeline."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I'm not fully convinced this is the best approach.",
+          "chinesePrompt": "我还不完全确定这是最好的做法。",
+          "variants": [
+            "I'm not completely convinced this is the right approach."
+          ],
+          "notes": [
+            "比直接说 This is wrong 温和很多"
+          ],
+          "pronunciationTargets": [
+            "fully convinced",
+            "best approach"
+          ],
+          "commonMistakes": [
+            "I don't think this is good way."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "My concern is that if we move too fast here, we might create more work later.",
+          "chinesePrompt": "我担心的是，如果这里推进太快，后面可能会带来更多工作量。",
+          "variants": [
+            "My concern is that moving too fast here could create more work later on."
+          ],
+          "notes": [
+            "把异议转成风险说明，更容易被接受"
+          ],
+          "pronunciationTargets": [
+            "my concern is that",
+            "more work later"
+          ],
+          "commonMistakes": [
+            "I worry if we fast, later more work."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "my concern is that",
+            "more work later"
+          ],
+          "sampleOutputs": [
+            "My concern is that if we move too fast here, we might create more work later."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I see where you're coming from, but I'm not fully convinced we have enough data yet.",
+          "chinesePrompt": "我理解你的意思，但我还不完全确定我们现在的数据已经足够了。",
+          "variants": [],
+          "notes": [
+            "适合在决策过快时提出保留"
+          ],
+          "pronunciationTargets": [
+            "enough data yet"
+          ],
+          "commonMistakes": [
+            "I understand you but data not enough now."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "团队准备立刻拍板一个功能方向。",
+          "responseRole": "Participant"
+        }
+      ]
+    }
+  ]
+}

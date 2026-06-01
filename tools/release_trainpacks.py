@@ -10,20 +10,17 @@ BUILD_PACKS_DIR = ROOT / "tools" / "build-packs"
 if str(BUILD_PACKS_DIR) not in sys.path:
     sys.path.insert(0, str(BUILD_PACKS_DIR))
 
-from build_core_chunks_pack import build as build_core_chunks_pack  # noqa: E402
-from build_meeting_communication_pack import build as build_meeting_communication_pack  # noqa: E402
-from build_small_talk_pack import build as build_small_talk_pack  # noqa: E402
 from print_release_command import format_release_create_command, format_release_upload_command  # noqa: E402
-from trainpack_builder import OUTPUT_DIR, write_catalog  # noqa: E402
+from trainpack_builder import OUTPUT_DIR, build_from_content_path, discover_content_paths, write_catalog  # noqa: E402
 from validate_trainpack import validate  # noqa: E402
 
 
 def main() -> None:
-    results = [
-        build_core_chunks_pack(),
-        build_small_talk_pack(),
-        build_meeting_communication_pack(),
-    ]
+    content_paths = discover_content_paths()
+    if not content_paths:
+        raise SystemExit("No content pack JSON files found under content/packs.")
+
+    results = [build_from_content_path(path) for path in content_paths]
     catalog_path = write_catalog(results)
     for result in results:
         validate(result.package_path, catalog_path)

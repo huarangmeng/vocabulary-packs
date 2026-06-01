@@ -1,0 +1,1426 @@
+{
+  "packId": "core-chunks-1",
+  "title": "高频口语表达块 1",
+  "description": "围绕开场、接话、理解检查、争取时间、澄清、重述、表达观点、同意、温和异议、软化语气、话题管理和收尾等高频 spoken functions 组织的核心口语表达块训练包。",
+  "packType": "CoreChunks",
+  "levelHint": "A2-B2",
+  "estimatedMinutes": 120,
+  "tags": [
+    "Speaking",
+    "Chunks",
+    "Core",
+    "A2-B2"
+  ],
+  "trainingModes": [
+    "Recall",
+    "Shadow",
+    "Respond"
+  ],
+  "units": [
+    {
+      "key": "opener-001",
+      "title": "自然开启对话",
+      "communicativeGoal": "用高频开场表达自然进入一段对话",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Low",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Opening",
+        "SmallTalk",
+        "Chunk"
+      ],
+      "activationPrompts": [
+        "你想自然开启一段对话",
+        "你想先用一句不生硬的话开口"
+      ],
+      "pronunciationFocus": [
+        "how's it going",
+        "good to see you"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Hey, how's it going?",
+          "chinesePrompt": "嗨，最近怎么样？",
+          "variants": [
+            "Hi, how are things going?"
+          ],
+          "notes": [
+            "熟悉场景下非常高频的自然开场。"
+          ],
+          "pronunciationTargets": [
+            "how's it going"
+          ],
+          "commonMistakes": [
+            "How are you recently?"
+          ],
+          "tags": [
+            "Opening",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Good to see you.",
+          "chinesePrompt": "见到你真好。",
+          "variants": [
+            "It's good to see you."
+          ],
+          "notes": [
+            "更适合熟人重逢，不等同于 Nice to meet you。"
+          ],
+          "pronunciationTargets": [
+            "good to see you"
+          ],
+          "commonMistakes": [
+            "Glad to see with you."
+          ],
+          "tags": [
+            "Opening",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "How's your day going so far?",
+          "chinesePrompt": "你今天到目前为止过得怎么样？",
+          "variants": [
+            "How's your day been so far?"
+          ],
+          "notes": [
+            "比单纯的 How are you 更容易接出真实内容。"
+          ],
+          "pronunciationTargets": [
+            "so far"
+          ],
+          "commonMistakes": [
+            "How is your day until now?"
+          ],
+          "tags": [
+            "Opening",
+            "SentencePattern"
+          ],
+          "slots": [
+            "your day",
+            "so far"
+          ],
+          "sampleOutputs": [
+            "How's your day going so far?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Hey, how's it going? Good to see you again.",
+          "chinesePrompt": "嗨，最近怎么样？又见到你了，真好。",
+          "variants": [],
+          "notes": [
+            "先开场再补一句关系性表达，更自然。"
+          ],
+          "pronunciationTargets": [
+            "good to see you again"
+          ],
+          "commonMistakes": [
+            "Hello, how are you? I see you again."
+          ],
+          "tags": [
+            "Opening",
+            "DialogueTurn"
+          ],
+          "contextText": "你在办公室或教室外遇到熟人。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "backchannel-001",
+      "title": "回应并鼓励对方继续说",
+      "communicativeGoal": "用高频 response tokens 表示在听并让对方继续说",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Low",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Backchannel",
+        "Listening",
+        "Response"
+      ],
+      "activationPrompts": [
+        "你想表达自己在认真听",
+        "你想让对方继续往下说"
+      ],
+      "pronunciationFocus": [
+        "right",
+        "I see"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Right.",
+          "chinesePrompt": "对，我跟上你的意思了。",
+          "variants": [
+            "Okay, right."
+          ],
+          "notes": [
+            "非常高频，用于接收信息或表示跟上了。"
+          ],
+          "pronunciationTargets": [
+            "right"
+          ],
+          "commonMistakes": [
+            "Correct."
+          ],
+          "tags": [
+            "Backchannel",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I see.",
+          "chinesePrompt": "我明白了。",
+          "variants": [
+            "Oh, I see."
+          ],
+          "notes": [
+            "表示理解，不一定等于完全同意。"
+          ],
+          "pronunciationTargets": [
+            "I see"
+          ],
+          "commonMistakes": [
+            "I understand it now."
+          ],
+          "tags": [
+            "Backchannel",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Yeah, exactly.",
+          "chinesePrompt": "对，就是这个意思。",
+          "variants": [
+            "Exactly."
+          ],
+          "notes": [
+            "用于强烈认同对方刚说的点。"
+          ],
+          "pronunciationTargets": [
+            "exactly"
+          ],
+          "commonMistakes": [
+            "Yes, that is exactlyness."
+          ],
+          "tags": [
+            "Backchannel",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Right, I see. So the problem isn't the design, it's the timing.",
+          "chinesePrompt": "明白了。所以问题不在设计，而在时间安排。",
+          "variants": [],
+          "notes": [
+            "先做接收，再顺手复述关键理解。"
+          ],
+          "pronunciationTargets": [
+            "isn't the design",
+            "the timing"
+          ],
+          "commonMistakes": [
+            "I know, problem not design, timing."
+          ],
+          "tags": [
+            "Backchannel",
+            "DialogueTurn"
+          ],
+          "contextText": "同事在解释项目进度上的问题。",
+          "responseRole": "Listener"
+        }
+      ]
+    },
+    {
+      "key": "understanding-001",
+      "title": "检查对方是否跟上",
+      "communicativeGoal": "用高频表达检查双方是否理解一致",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "Understanding",
+        "Check",
+        "Chunk"
+      ],
+      "activationPrompts": [
+        "你想确认对方听懂了你的意思",
+        "你想在解释过程中停一下检查理解"
+      ],
+      "pronunciationFocus": [
+        "you know what I mean",
+        "does that make sense"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "You know what I mean?",
+          "chinesePrompt": "你知道我是什么意思吧？",
+          "variants": [
+            "You know what I mean, right?"
+          ],
+          "notes": [
+            "很高频，但更适合非正式语境。"
+          ],
+          "pronunciationTargets": [
+            "what I mean"
+          ],
+          "commonMistakes": [
+            "You know my meaning?"
+          ],
+          "tags": [
+            "Understanding",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Does that make sense?",
+          "chinesePrompt": "这样说清楚吗？",
+          "variants": [
+            "Does that make sense so far?"
+          ],
+          "notes": [
+            "更中性，适合工作沟通和解释说明。"
+          ],
+          "pronunciationTargets": [
+            "make sense"
+          ],
+          "commonMistakes": [
+            "Do you can understand?"
+          ],
+          "tags": [
+            "Understanding",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I know what you're saying, but I think we're looking at it differently.",
+          "chinesePrompt": "我明白你的意思，但我觉得我们看的角度不一样。",
+          "variants": [
+            "I know what you mean, but I think we're seeing it differently."
+          ],
+          "notes": [
+            "既表示理解，也为后续不同观点铺垫。"
+          ],
+          "pronunciationTargets": [
+            "what you're saying",
+            "looking at it differently"
+          ],
+          "commonMistakes": [
+            "I know your saying, but we see not same."
+          ],
+          "tags": [
+            "Understanding",
+            "SentencePattern"
+          ],
+          "slots": [
+            "what you're saying",
+            "looking at it differently"
+          ],
+          "sampleOutputs": [
+            "I know what you're saying, but I think we're looking at it differently."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Does that make sense so far, or should I explain that part again?",
+          "chinesePrompt": "目前这样说清楚吗，还是我再解释一遍那部分？",
+          "variants": [],
+          "notes": [
+            "用于讲解或汇报过程中很自然。"
+          ],
+          "pronunciationTargets": [
+            "so far",
+            "explain that part again"
+          ],
+          "commonMistakes": [
+            "Do you understand until here or I explain again?"
+          ],
+          "tags": [
+            "Understanding",
+            "DialogueTurn"
+          ],
+          "contextText": "你正在向同事解释一个流程。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "buy-time-001",
+      "title": "争取思考时间",
+      "communicativeGoal": "在还没组织好语言时先稳住对话节奏",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Repair",
+        "ThinkingTime",
+        "Chunk"
+      ],
+      "activationPrompts": [
+        "你还没想好怎么回答",
+        "你需要几秒钟组织语言"
+      ],
+      "pronunciationFocus": [
+        "let me think",
+        "that's a good question"
+      ],
+      "items": [
+        {
+          "type": "RepairStrategy",
+          "englishText": "Let me think for a second.",
+          "chinesePrompt": "让我想一下。",
+          "variants": [
+            "Give me a second to think."
+          ],
+          "notes": [
+            "最实用的保底表达之一。"
+          ],
+          "pronunciationTargets": [
+            "let me",
+            "for a second"
+          ],
+          "commonMistakes": [
+            "I need think."
+          ],
+          "tags": [
+            "Repair",
+            "ThinkingTime"
+          ],
+          "repairType": "BuyTime"
+        },
+        {
+          "type": "Chunk",
+          "englishText": "That's a good question.",
+          "chinesePrompt": "这是个好问题。",
+          "variants": [
+            "That's actually a really good question."
+          ],
+          "notes": [
+            "先接住问题，再继续回答。"
+          ],
+          "pronunciationTargets": [
+            "good question"
+          ],
+          "commonMistakes": [
+            "Your question is good."
+          ],
+          "tags": [
+            "Repair",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "How can I put this?",
+          "chinesePrompt": "我该怎么说呢？",
+          "variants": [
+            "How do I put this?"
+          ],
+          "notes": [
+            "适合表达你在组织更准确的说法。"
+          ],
+          "pronunciationTargets": [
+            "put this"
+          ],
+          "commonMistakes": [
+            "How can I say this word?"
+          ],
+          "tags": [
+            "Repair",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "That's a good question. Let me think for a second.",
+          "chinesePrompt": "这是个好问题。让我想一下。",
+          "variants": [],
+          "notes": [
+            "两个高频保底块组合非常常见。"
+          ],
+          "pronunciationTargets": [
+            "good question",
+            "let me think"
+          ],
+          "commonMistakes": [
+            "Good question. I think a little."
+          ],
+          "tags": [
+            "Repair",
+            "DialogueTurn"
+          ],
+          "contextText": "别人问了你一个需要思考的问题。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "clarify-001",
+      "title": "请对方重复和澄清",
+      "communicativeGoal": "没听清或不确定时礼貌请求对方再说一遍",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Low",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Clarify",
+        "Repair",
+        "Listening"
+      ],
+      "activationPrompts": [
+        "你没听清对方最后一句话",
+        "你想请对方说慢一点"
+      ],
+      "pronunciationFocus": [
+        "didn't catch that",
+        "again"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Could you say that again?",
+          "chinesePrompt": "你能再说一遍吗？",
+          "variants": [
+            "Could you repeat that?"
+          ],
+          "notes": [
+            "高频、稳妥、通用。"
+          ],
+          "pronunciationTargets": [
+            "say that again"
+          ],
+          "commonMistakes": [
+            "Say again."
+          ],
+          "tags": [
+            "Clarify",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Sorry, I didn't catch that.",
+          "chinesePrompt": "抱歉，我刚才没听清。",
+          "variants": [
+            "Sorry, I didn't catch the last part."
+          ],
+          "notes": [
+            "先道歉再说明没听清，更自然。"
+          ],
+          "pronunciationTargets": [
+            "didn't catch that"
+          ],
+          "commonMistakes": [
+            "I don't hear clearly."
+          ],
+          "tags": [
+            "Clarify",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Could you say that again a bit more slowly?",
+          "chinesePrompt": "你能再说一遍并稍微说慢一点吗？",
+          "variants": [
+            "Could you say that a little more slowly?"
+          ],
+          "notes": [
+            "适合语速太快时。"
+          ],
+          "pronunciationTargets": [
+            "a bit more slowly"
+          ],
+          "commonMistakes": [
+            "Say again slowly."
+          ],
+          "tags": [
+            "Clarify",
+            "SentencePattern"
+          ],
+          "slots": [
+            "say that again",
+            "a bit more slowly"
+          ],
+          "sampleOutputs": [
+            "Could you say that again a bit more slowly?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Sorry, I didn't catch the last part. Could you say it again?",
+          "chinesePrompt": "抱歉，我最后那部分没听清。你能再说一遍吗？",
+          "variants": [],
+          "notes": [
+            "先说明问题，再提出请求。"
+          ],
+          "pronunciationTargets": [
+            "the last part",
+            "say it again"
+          ],
+          "commonMistakes": [
+            "Last part I didn't hear, say again."
+          ],
+          "tags": [
+            "Clarify",
+            "DialogueTurn"
+          ],
+          "contextText": "对方刚给了你一串信息，但你只漏掉最后部分。",
+          "responseRole": "Listener"
+        }
+      ]
+    },
+    {
+      "key": "rephrase-001",
+      "title": "解释和换一种说法",
+      "communicativeGoal": "在说得不够清楚时用高频块补充或重说",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "Rephrase",
+        "Explain",
+        "Chunk"
+      ],
+      "activationPrompts": [
+        "你想换一种更清楚的说法",
+        "你想在说到一半时重新组织表达"
+      ],
+      "pronunciationFocus": [
+        "I mean",
+        "what I mean is"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I mean...",
+          "chinesePrompt": "我的意思是……",
+          "variants": [
+            "What I mean is..."
+          ],
+          "notes": [
+            "口语里极高频，用于补充或修正刚说的话。"
+          ],
+          "pronunciationTargets": [
+            "I mean"
+          ],
+          "commonMistakes": [
+            "My meaning is..."
+          ],
+          "tags": [
+            "Rephrase",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "In other words...",
+          "chinesePrompt": "换句话说……",
+          "variants": [
+            "So, in other words..."
+          ],
+          "notes": [
+            "偏解释和总结，稍正式但口语中也常用。"
+          ],
+          "pronunciationTargets": [
+            "in other words"
+          ],
+          "commonMistakes": [
+            "In another words..."
+          ],
+          "tags": [
+            "Rephrase",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "What I mean is, we don't need to change the plan, just the timing.",
+          "chinesePrompt": "我的意思是，我们不需要改计划，只需要改时间安排。",
+          "variants": [
+            "What I mean is, it's the timing we need to change, not the plan."
+          ],
+          "notes": [
+            "非常典型的澄清结构。"
+          ],
+          "pronunciationTargets": [
+            "what I mean is",
+            "just the timing"
+          ],
+          "commonMistakes": [
+            "My meaning is we don't need change plan."
+          ],
+          "tags": [
+            "Rephrase",
+            "SentencePattern"
+          ],
+          "slots": [
+            "what I mean is",
+            "just the timing"
+          ],
+          "sampleOutputs": [
+            "What I mean is, we don't need to change the plan, just the timing."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I mean, it's not that I disagree. I just think we need more time.",
+          "chinesePrompt": "我的意思不是我不同意，我只是觉得我们需要更多时间。",
+          "variants": [],
+          "notes": [
+            "高频的修正加缓和结构。"
+          ],
+          "pronunciationTargets": [
+            "it's not that",
+            "need more time"
+          ],
+          "commonMistakes": [
+            "I don't disagree, only need more time."
+          ],
+          "tags": [
+            "Rephrase",
+            "DialogueTurn"
+          ],
+          "contextText": "你觉得刚才那句话容易让人误会成反对。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "stance-001",
+      "title": "表达个人看法",
+      "communicativeGoal": "用高频块自然表达观点而不是生硬陈述",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Opinion",
+        "Stance",
+        "Chunk"
+      ],
+      "activationPrompts": [
+        "你想表达自己的观点",
+        "你想先给观点加一个自然入口"
+      ],
+      "pronunciationFocus": [
+        "I think",
+        "if you ask me"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I think...",
+          "chinesePrompt": "我觉得……",
+          "variants": [
+            "I think so too."
+          ],
+          "notes": [
+            "最核心的口语观点入口之一。"
+          ],
+          "pronunciationTargets": [
+            "I think"
+          ],
+          "commonMistakes": [
+            "In my idea..."
+          ],
+          "tags": [
+            "Opinion",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "If you ask me...",
+          "chinesePrompt": "要我说的话……",
+          "variants": [
+            "If you ask me, that's the best option."
+          ],
+          "notes": [
+            "比直接下判断更自然一点。"
+          ],
+          "pronunciationTargets": [
+            "if you ask me"
+          ],
+          "commonMistakes": [
+            "If ask me..."
+          ],
+          "tags": [
+            "Opinion",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "From my point of view, the bigger issue is the timing.",
+          "chinesePrompt": "在我看来，更大的问题是时间安排。",
+          "variants": [
+            "From my point of view, timing is the bigger issue."
+          ],
+          "notes": [
+            "适合更清晰地标示立场。"
+          ],
+          "pronunciationTargets": [
+            "from my point of view"
+          ],
+          "commonMistakes": [
+            "From my side of view..."
+          ],
+          "tags": [
+            "Opinion",
+            "SentencePattern"
+          ],
+          "slots": [
+            "from my point of view",
+            "the bigger issue"
+          ],
+          "sampleOutputs": [
+            "From my point of view, the bigger issue is the timing."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "If you ask me, we should keep it simple and focus on the basics first.",
+          "chinesePrompt": "要我说的话，我们应该先保持简单，先把基础做好。",
+          "variants": [],
+          "notes": [
+            "适合提出带方向的意见。"
+          ],
+          "pronunciationTargets": [
+            "keep it simple",
+            "focus on the basics"
+          ],
+          "commonMistakes": [
+            "If ask me, simple is better first."
+          ],
+          "tags": [
+            "Opinion",
+            "DialogueTurn"
+          ],
+          "contextText": "团队在讨论是否要把方案做得更复杂。",
+          "responseRole": "Participant"
+        }
+      ]
+    },
+    {
+      "key": "agreement-001",
+      "title": "同意并顺势接着说",
+      "communicativeGoal": "用高频块表达同意，并把话接下去",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Agreement",
+        "Response",
+        "Chunk"
+      ],
+      "activationPrompts": [
+        "你想表示认同",
+        "你想在认同后顺势补充一句"
+      ],
+      "pronunciationFocus": [
+        "absolutely",
+        "that makes sense"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Exactly.",
+          "chinesePrompt": "对，就是这样。",
+          "variants": [
+            "Yeah, exactly."
+          ],
+          "notes": [
+            "短而高频，适合快速认同。"
+          ],
+          "pronunciationTargets": [
+            "exactly"
+          ],
+          "commonMistakes": [
+            "Correctly."
+          ],
+          "tags": [
+            "Agreement",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "That makes sense.",
+          "chinesePrompt": "这很有道理。",
+          "variants": [
+            "Yeah, that makes sense."
+          ],
+          "notes": [
+            "比 I agree 更柔和也更常用。"
+          ],
+          "pronunciationTargets": [
+            "makes sense"
+          ],
+          "commonMistakes": [
+            "That has sense."
+          ],
+          "tags": [
+            "Agreement",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Absolutely.",
+          "chinesePrompt": "完全同意。",
+          "variants": [
+            "Absolutely, yeah."
+          ],
+          "notes": [
+            "语气强但依然很自然。"
+          ],
+          "pronunciationTargets": [
+            "absolutely"
+          ],
+          "commonMistakes": [
+            "Full agree."
+          ],
+          "tags": [
+            "Agreement",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Yeah, that makes sense. We should probably start there.",
+          "chinesePrompt": "对，这很有道理。我们也许应该先从那里开始。",
+          "variants": [],
+          "notes": [
+            "先认同，再给出行动方向。"
+          ],
+          "pronunciationTargets": [
+            "start there"
+          ],
+          "commonMistakes": [
+            "Yes, it makes sense, we should begin from there."
+          ],
+          "tags": [
+            "Agreement",
+            "DialogueTurn"
+          ],
+          "contextText": "同事刚提出了一个可执行的建议。",
+          "responseRole": "Participant"
+        }
+      ]
+    },
+    {
+      "key": "disagreement-001",
+      "title": "温和表达不同意见",
+      "communicativeGoal": "不同意时避免太硬，先承接再表达差异",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "Disagreement",
+        "Opinion",
+        "Softening"
+      ],
+      "activationPrompts": [
+        "你不同意，但不想说得太硬",
+        "你想先承接一下再提出异议"
+      ],
+      "pronunciationFocus": [
+        "I'm not so sure",
+        "I see your point"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I'm not so sure about that.",
+          "chinesePrompt": "这个我不太确定。",
+          "variants": [
+            "I'm not entirely sure about that."
+          ],
+          "notes": [
+            "非常实用的软性异议入口。"
+          ],
+          "pronunciationTargets": [
+            "not so sure"
+          ],
+          "commonMistakes": [
+            "I am not very sure for that."
+          ],
+          "tags": [
+            "Disagreement",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I see your point, but...",
+          "chinesePrompt": "我理解你的意思，但是……",
+          "variants": [
+            "I get your point, but..."
+          ],
+          "notes": [
+            "先承接再转折，讨论中很高频。"
+          ],
+          "pronunciationTargets": [
+            "see your point"
+          ],
+          "commonMistakes": [
+            "I know your point but..."
+          ],
+          "tags": [
+            "Disagreement",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I get what you're saying, but I think we're missing the bigger issue.",
+          "chinesePrompt": "我明白你在说什么，但我觉得我们忽略了更大的问题。",
+          "variants": [
+            "I see what you're saying, but I think the bigger issue is elsewhere."
+          ],
+          "notes": [
+            "高频承接加观点差异结构。"
+          ],
+          "pronunciationTargets": [
+            "what you're saying",
+            "bigger issue"
+          ],
+          "commonMistakes": [
+            "I understand you but we miss bigger problem."
+          ],
+          "tags": [
+            "Disagreement",
+            "SentencePattern"
+          ],
+          "slots": [
+            "what you're saying",
+            "the bigger issue"
+          ],
+          "sampleOutputs": [
+            "I get what you're saying, but I think we're missing the bigger issue."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I see your point, but I'm not so sure that's the best way to start.",
+          "chinesePrompt": "我理解你的意思，但我不太确定那是不是最好的起点。",
+          "variants": [],
+          "notes": [
+            "高频而稳妥的反对模板。"
+          ],
+          "pronunciationTargets": [
+            "best way to start"
+          ],
+          "commonMistakes": [
+            "I know your point but that's not best start."
+          ],
+          "tags": [
+            "Disagreement",
+            "DialogueTurn"
+          ],
+          "contextText": "别人提出了一个你不太认可的方案。",
+          "responseRole": "Participant"
+        }
+      ]
+    },
+    {
+      "key": "hedging-001",
+      "title": "软化语气和保留余地",
+      "communicativeGoal": "用 hedges 让表达更口语、更不生硬",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "Hedging",
+        "Softening",
+        "Chunk"
+      ],
+      "activationPrompts": [
+        "你想让语气没那么直接",
+        "你想保留一点不确定或缓冲空间"
+      ],
+      "pronunciationFocus": [
+        "kind of",
+        "probably",
+        "I guess"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Kind of.",
+          "chinesePrompt": "某种程度上算是吧。",
+          "variants": [
+            "Sort of."
+          ],
+          "notes": [
+            "口语中非常常见的弱化表达。"
+          ],
+          "pronunciationTargets": [
+            "kind of"
+          ],
+          "commonMistakes": [
+            "A kind of yes."
+          ],
+          "tags": [
+            "Hedging",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Probably.",
+          "chinesePrompt": "大概吧。",
+          "variants": [
+            "Probably, yeah."
+          ],
+          "notes": [
+            "高频弱承诺词。"
+          ],
+          "pronunciationTargets": [
+            "probably"
+          ],
+          "commonMistakes": [
+            "Maybe probably."
+          ],
+          "tags": [
+            "Hedging",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "It's kind of hard to explain.",
+          "chinesePrompt": "这有点难解释。",
+          "variants": [
+            "It's sort of hard to explain."
+          ],
+          "notes": [
+            "很典型的 hedging 用法。"
+          ],
+          "pronunciationTargets": [
+            "kind of hard"
+          ],
+          "commonMistakes": [
+            "It is a little hard for explain."
+          ],
+          "tags": [
+            "Hedging",
+            "SentencePattern"
+          ],
+          "slots": [
+            "kind of",
+            "hard to explain"
+          ],
+          "sampleOutputs": [
+            "It's kind of hard to explain."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I guess we could try that first.",
+          "chinesePrompt": "我觉得我们可以先试试那个。",
+          "variants": [],
+          "notes": [
+            "I guess 是非常高频的弱化建议入口。"
+          ],
+          "pronunciationTargets": [
+            "I guess",
+            "try that first"
+          ],
+          "commonMistakes": [
+            "I think maybe we try that first."
+          ],
+          "tags": [
+            "Hedging",
+            "DialogueTurn"
+          ],
+          "contextText": "你在给建议，但不想说得太强势。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "marker-001",
+      "title": "使用高频 discourse markers",
+      "communicativeGoal": "掌握 spoken English 中最常见的标记词，让表达更像真实会话",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "DiscourseMarker",
+        "Fluency",
+        "Chunk"
+      ],
+      "activationPrompts": [
+        "你想让表达更连贯，不那么像背稿",
+        "你想掌握 so、well、anyway、by the way 这些核心 markers"
+      ],
+      "pronunciationFocus": [
+        "so",
+        "well",
+        "anyway",
+        "by the way"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "So...",
+          "chinesePrompt": "那么/所以说……",
+          "variants": [
+            "So, yeah..."
+          ],
+          "notes": [
+            "常用于开启新段或引入重点。"
+          ],
+          "pronunciationTargets": [
+            "so"
+          ],
+          "commonMistakes": [
+            "Therefore..."
+          ],
+          "tags": [
+            "DiscourseMarker",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Well...",
+          "chinesePrompt": "嗯/这个嘛……",
+          "variants": [
+            "Well, I think..."
+          ],
+          "notes": [
+            "非常高频的缓冲、转向和组织语块。"
+          ],
+          "pronunciationTargets": [
+            "well"
+          ],
+          "commonMistakes": [
+            "Good..."
+          ],
+          "tags": [
+            "DiscourseMarker",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Anyway...",
+          "chinesePrompt": "总之/话说回来……",
+          "variants": [
+            "Anyway, ..."
+          ],
+          "notes": [
+            "高频的话题管理标记。"
+          ],
+          "pronunciationTargets": [
+            "anyway"
+          ],
+          "commonMistakes": [
+            "Anyhowly..."
+          ],
+          "tags": [
+            "DiscourseMarker",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "By the way, did you ever hear back from them?",
+          "chinesePrompt": "对了，你后来有收到他们的回复吗？",
+          "variants": [],
+          "notes": [
+            "引入新话题的高频表达。"
+          ],
+          "pronunciationTargets": [
+            "by the way",
+            "hear back"
+          ],
+          "commonMistakes": [
+            "By the way, they replied you?"
+          ],
+          "tags": [
+            "DiscourseMarker",
+            "DialogueTurn"
+          ],
+          "contextText": "你想从当前话题转到另一个相关事项。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "closing-001",
+      "title": "收束和结束一段话",
+      "communicativeGoal": "用自然表达结束当前话题或收尾一段交流",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Closing",
+        "WrapUp",
+        "Chunk"
+      ],
+      "activationPrompts": [
+        "你想自然收束当前话题",
+        "你想把一段对话结束得更顺一点"
+      ],
+      "pronunciationFocus": [
+        "that's about it",
+        "sounds good"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I think that's about it.",
+          "chinesePrompt": "我觉得差不多就是这些了。",
+          "variants": [
+            "I think that's it."
+          ],
+          "notes": [
+            "收尾时非常高频。"
+          ],
+          "pronunciationTargets": [
+            "that's about it"
+          ],
+          "commonMistakes": [
+            "I think finish."
+          ],
+          "tags": [
+            "Closing",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Sounds good.",
+          "chinesePrompt": "听起来不错。",
+          "variants": [
+            "Yeah, sounds good."
+          ],
+          "notes": [
+            "结束前确认安排非常常见。"
+          ],
+          "pronunciationTargets": [
+            "sounds good"
+          ],
+          "commonMistakes": [
+            "It sounds well."
+          ],
+          "tags": [
+            "Closing",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Anyway, I think that's about it for now.",
+          "chinesePrompt": "总之，我觉得目前差不多就这些了。",
+          "variants": [
+            "Anyway, I think that's enough for now."
+          ],
+          "notes": [
+            "用 anyway 收尾非常自然。"
+          ],
+          "pronunciationTargets": [
+            "about it for now"
+          ],
+          "commonMistakes": [
+            "Anyway, that's all for current."
+          ],
+          "tags": [
+            "Closing",
+            "SentencePattern"
+          ],
+          "slots": [
+            "anyway",
+            "for now"
+          ],
+          "sampleOutputs": [
+            "Anyway, I think that's about it for now."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Sounds good. Let's leave it there for now and come back to it tomorrow.",
+          "chinesePrompt": "听起来不错。我们先到这里，明天再回来继续看。",
+          "variants": [],
+          "notes": [
+            "讨论收尾和安排后续非常实用。"
+          ],
+          "pronunciationTargets": [
+            "leave it there",
+            "come back to it"
+          ],
+          "commonMistakes": [
+            "Sounds good. Stop here and tomorrow continue."
+          ],
+          "tags": [
+            "Closing",
+            "DialogueTurn"
+          ],
+          "contextText": "你想结束当前讨论并安排后续。",
+          "responseRole": "Speaker"
+        }
+      ]
+    }
+  ]
+}

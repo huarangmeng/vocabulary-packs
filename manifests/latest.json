@@ -7,20 +7,21 @@
     {
       "id": "core-chunks-1",
       "title": "高频口语表达块 1",
-      "description": "面向日常交流与工作沟通的高频英文表达块训练包。",
+      "description": "围绕开场、接话、理解检查、争取时间、澄清、重述、表达观点、同意、温和异议、软化语气、话题管理和收尾等高频 spoken functions 组织的核心口语表达块训练包。",
       "packType": "CoreChunks",
       "version": "2026.06.02",
-      "levelHint": "A2-B1",
-      "unitCount": 3,
-      "itemCount": 12,
-      "estimatedMinutes": 45,
-      "sizeBytes": 3193,
-      "sha256": "47e59aa3f1778faffb0f49465b151b2df8a878b82ebaae16ae0200c57824b150",
+      "levelHint": "A2-B2",
+      "unitCount": 12,
+      "itemCount": 48,
+      "estimatedMinutes": 120,
+      "sizeBytes": 8117,
+      "sha256": "45a7f13af4e2756176beb69c8cd90e1e421d6e0865e21a6816075e6c72489629",
       "fileName": "core-chunks-1-2026.06.02.trainpack",
       "tags": [
         "Speaking",
         "Chunks",
-        "A2-B1"
+        "Core",
+        "A2-B2"
       ],
       "trainingModes": [
         "Recall",

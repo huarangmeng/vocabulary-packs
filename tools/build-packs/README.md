@@ -1,6 +1,6 @@
 # Build Trainpacks
 
-该目录用于放置 `.trainpack` 生成脚本。
+该目录用于放置 `.trainpack` 通用构建脚本。
 
 当前约定：
 
@@ -23,12 +23,13 @@ dist/trainpacks/
   latest.json.sha256
 ```
 
-当前脚本：
+当前结构：
 
-- `build_core_chunks_pack.py`：生成 `core-chunks-1` 示例训练包。
-- `build_small_talk_pack.py`：生成 `small-talk-1` 训练包。
-- `build_meeting_communication_pack.py`：生成 `meeting-communication-1` 训练包。
-- `trainpack_builder.py`：提供共用的 trainpack 打包与 catalog 写出逻辑。
+- `build_from_content.py`：读取 `content/packs/*.json` 并构建一个或多个 trainpack。
+- `trainpack_builder.py`：提供内容加载、trainpack 打包与 catalog 写出逻辑。
+- `release_config.py`：统一管理版本、tag、createdAt 和 zip 时间戳。
+
+内容源文件不放在这个目录，而是统一放在仓库根目录的 `content/packs/` 下。
 
 推荐统一执行：
 
@@ -39,9 +40,9 @@ python3 tools/release_trainpacks.py
 如需单独调试：
 
 ```bash
-python3 tools/build-packs/build_core_chunks_pack.py
-python3 tools/build-packs/build_small_talk_pack.py
-python3 tools/build-packs/build_meeting_communication_pack.py
+python3 tools/build-packs/build_from_content.py content/packs/core-chunks-1.json
+python3 tools/build-packs/build_from_content.py content/packs/small-talk-1.json
+python3 tools/build-packs/build_from_content.py content/packs/meeting-communication-1.json
 ```
 
 校验示例：
