@@ -48,8 +48,33 @@ REQUIRED_UNIT_KEYS = [
     "tags",
     "activationPrompts",
     "pronunciationFocus",
+    "taskHints",
     "items",
 ]
+
+REQUIRED_TASK_HINT_KEYS = [
+    "defaultRole",
+    "successCriteria",
+    "correctionFocus",
+    "retryPrompts",
+    "variantPrompts",
+]
+
+ALLOWED_TASK_ROLES = {"WarmUp", "Main", "Challenge", "Review"}
+ALLOWED_CORRECTION_FOCUS = {
+    "Naturalness",
+    "SpokenRegister",
+    "Completeness",
+    "Clarification",
+    "TurnTaking",
+    "Softening",
+    "Pronunciation",
+    "ScenarioFit",
+    "Fluency",
+    "Decision",
+    "FollowUp",
+    "Repair",
+}
 
 REQUIRED_ITEM_KEYS = [
     "type",
@@ -176,6 +201,44 @@ def _validate_catalog_metadata(catalog_metadata: Any, context: str) -> dict[str,
     return dict(catalog_metadata)
 
 
+def _validate_string_list(value: Any, context: str, *, min_items: int = 1) -> list[str]:
+    if not isinstance(value, list) or len(value) < min_items:
+        raise ValueError(f"{context} must be an array with at least {min_items} item(s)")
+    for index, item in enumerate(value, start=1):
+        if not isinstance(item, str) or not item:
+            raise ValueError(f"{context}[{index}] must be a non-empty string")
+    return list(value)
+
+
+def _validate_task_hints(task_hints: Any, context: str) -> dict[str, Any]:
+    if not isinstance(task_hints, dict):
+        raise ValueError(f"{context} taskHints must be an object")
+    _ensure_keys(task_hints, REQUIRED_TASK_HINT_KEYS, f"{context} taskHints")
+    unknown = sorted(set(task_hints.keys()) - set(REQUIRED_TASK_HINT_KEYS))
+    if unknown:
+        raise ValueError(f"{context} taskHints has unsupported keys: {', '.join(unknown)}")
+
+    default_role = task_hints["defaultRole"]
+    if default_role not in ALLOWED_TASK_ROLES:
+        raise ValueError(f"{context} taskHints.defaultRole is invalid: {default_role}")
+
+    correction_focus = _validate_string_list(
+        task_hints["correctionFocus"],
+        f"{context} taskHints.correctionFocus",
+    )
+    unknown_focus = sorted(set(correction_focus) - ALLOWED_CORRECTION_FOCUS)
+    if unknown_focus:
+        raise ValueError(f"{context} taskHints.correctionFocus has unsupported values: {', '.join(unknown_focus)}")
+
+    return {
+        "defaultRole": default_role,
+        "successCriteria": _validate_string_list(task_hints["successCriteria"], f"{context} taskHints.successCriteria"),
+        "correctionFocus": correction_focus,
+        "retryPrompts": _validate_string_list(task_hints["retryPrompts"], f"{context} taskHints.retryPrompts"),
+        "variantPrompts": _validate_string_list(task_hints["variantPrompts"], f"{context} taskHints.variantPrompts"),
+    }
+
+
 def discover_content_paths() -> list[Path]:
     CONTENT_DIR.mkdir(parents=True, exist_ok=True)
     return sorted(CONTENT_DIR.glob("*.json"))
@@ -194,6 +257,7 @@ def load_pack_definition(content_path: Path) -> dict[str, Any]:
         if not isinstance(unit, dict):
             raise ValueError(f"{content_path} unit #{unit_index} must be an object")
         _ensure_keys(unit, REQUIRED_UNIT_KEYS, f"{content_path} unit #{unit_index}")
+        unit["taskHints"] = _validate_task_hints(unit["taskHints"], f"{content_path} unit #{unit_index}")
         if not isinstance(unit["items"], list) or not unit["items"]:
             raise ValueError(f"{content_path} unit #{unit_index} must contain a non-empty items array")
         for item_index, item in enumerate(unit["items"], start=1):
@@ -247,6 +311,7 @@ def _build_units_and_items(pack_id: str, unit_specs: list[dict[str, Any]]) -> tu
                 "activationPrompts": spec["activationPrompts"],
                 "itemIds": unit_item_ids,
                 "pronunciationFocus": spec["pronunciationFocus"],
+                "taskHints": spec["taskHints"],
             }
         )
     return units, items

@@ -86,6 +86,7 @@ vocabulary-packs/
 - `manifest.json` 必须符合 `schemas/trainpack-manifest.schema.json`。
 - `units.json` 中的每个单元必须符合 `schemas/unit.schema.json`。
 - `items.jsonl` 每一行必须符合 `schemas/item.schema.json`。
+- 每个 Unit 必须包含 `taskHints`，用于 App 生成“今日口语任务流”的任务卡、成功标准、纠偏重点和重试提示。
 - 外部 catalog 必须符合 `schemas/catalog.schema.json`。
 - 发布前必须通过 `tools/validate_trainpack.py` 校验。
 
@@ -120,6 +121,16 @@ latest.json.sha256
 - `content/packs/meeting-communication-2.json`：会议沟通 2。
 
 这些 JSON 文件是首批正式发布候选的源内容；Python 只负责读取内容、构建 `.trainpack`、生成 catalog 并执行校验。
+
+每个内容包的 Unit 都必须声明 `taskHints`：
+
+- `defaultRole`：建议默认任务角色，例如 `WarmUp`、`Main`、`Challenge`。
+- `successCriteria`：本任务完成标准。
+- `correctionFocus`：优先纠偏方向。
+- `retryPrompts`：用户首次输出不理想时的重说提示。
+- `variantPrompts`：用户达到 `Spoken` 后用于判断 `Ready` 的变体场景。
+
+这些字段让 App 不需要把 Unit 硬编码转换成任务，而是可以直接把官方包编排为“热身任务 / 主训练任务 / 挑战任务”。
 
 ## 手动发布
 

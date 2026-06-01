@@ -154,7 +154,28 @@
           "contextText": "你发现团队讨论建立在一个未确认的时间假设上。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“确认假设和边界”对应的沟通动作",
+          "在继续讨论前先确认彼此当前的前提假设",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Clarification",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你觉得大家好像默认了某个前提",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想先把讨论的边界说清楚",
+          "换一个相近场景，再完成“确认假设和边界”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "bridge-transition-001",
@@ -276,7 +297,27 @@
           "contextText": "你要把讨论从背景信息转到风险准备。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“自然过渡到下一个点”对应的沟通动作",
+          "在不打断氛围的情况下，把对话平滑切到下一个重点",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想结束一个话题并顺到下一个话题",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想避免生硬转场",
+          "换一个相近场景，再完成“自然过渡到下一个点”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "soften-request-001",
@@ -398,7 +439,28 @@
           "contextText": "你想追进度，但不想显得像在催人。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“软化请求和要求”对应的沟通动作",
+          "在需要别人配合时，用更柔和但清晰的方式提出请求",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "SpokenRegister",
+          "Pronunciation",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你需要别人做一件事，但不想显得太硬",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想既礼貌又不模糊地提出要求",
+          "换一个相近场景，再完成“软化请求和要求”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "narrow-options-001",
@@ -520,7 +582,27 @@
           "contextText": "你在讨论中想帮助大家收敛到几个关键维度。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“收窄选项和推进选择”对应的沟通动作",
+          "把开放讨论收束成几个可比较的选项",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你觉得讨论选项太多了",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想把问题变成几个可选方向",
+          "换一个相近场景，再完成“收窄选项和推进选择”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "partial-agreement-001",
@@ -641,7 +723,29 @@
           "contextText": "你不想直接反对，但要把团队拉回现实成本。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“部分认同后再转向”对应的沟通动作",
+          "先接住对方的合理部分，再表达不同角度或保留意见",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "Softening",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你并不是完全不同意，只想补充另一面",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想减少直接冲突感",
+          "换一个相近场景，再完成“部分认同后再转向”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "escalate-concern-001",
@@ -763,7 +867,29 @@
           "contextText": "你要把一个被轻描淡写的问题重新提升到应有等级。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“升级担忧但不制造对立”对应的沟通动作",
+          "在风险变大时提高语气强度，但仍保持合作姿态",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "Completeness",
+          "SpokenRegister",
+          "Pronunciation"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你觉得问题已经不能只轻描淡写了",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想更明确地提醒风险",
+          "换一个相近场景，再完成“升级担忧但不制造对立”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "reframe-001",
@@ -884,7 +1010,28 @@
           "contextText": "团队一直在谈实现速度，但你更关注后续维护能力。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“重新框定问题”对应的沟通动作",
+          "当讨论陷入错误角度时，把问题换个框架重新看",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你觉得大家问的问题本身就不对",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想从另一个维度看同一个问题",
+          "换一个相近场景，再完成“重新框定问题”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "decision-framing-001",
@@ -1004,7 +1151,29 @@
           "contextText": "你要把长期讨论推进到明确决定或明确缺口。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“推动决策落地”对应的沟通动作",
+          "把讨论从信息交换推进到可执行决定",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "Decision",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你觉得大家已经讨论够了，需要收敛决策",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想把下一步说清楚",
+          "换一个相近场景，再完成“推动决策落地”这个口语动作。"
+        ]
+      }
     }
   ]
 }

@@ -149,7 +149,27 @@
           "contextText": "你在活动上刚认识一个人，想把寒暄推进成真实交流。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“初次认识后的自然延展”对应的沟通动作",
+          "在初次认识后自然继续聊下去，而不是停在表面问候",
+          "语气自然轻松，不使用过度正式表达"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你刚认识一个人，想把对话从礼貌介绍推进一点",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想用一个更自然的问题继续聊",
+          "换一个相近场景，再完成“初次认识后的自然延展”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "common-ground-001",
@@ -270,7 +290,27 @@
           "contextText": "对方在说自己刚换环境时的不适应。",
           "responseRole": "Listener"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“建立共同点”对应的沟通动作",
+          "从对方的话里抓住可共鸣点，建立更强的连接感",
+          "语气自然轻松，不使用过度正式表达"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想让对方感觉你们不是只在做表面寒暄",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你从对方经历里听到了一个自己也能接的话题",
+          "换一个相近场景，再完成“建立共同点”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "preferences-001",
@@ -390,7 +430,28 @@
           "contextText": "你们正在聊周末或者休闲方式偏好。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“聊偏好和轻度观点”对应的沟通动作",
+          "把话题从事实层推进到偏好和轻度观点交换",
+          "语气自然轻松，不使用过度正式表达"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "Completeness",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想让对话更有个人色彩",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想看看对方在一个轻松话题上的偏好",
+          "换一个相近场景，再完成“聊偏好和轻度观点”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "silence-repair-001",
@@ -505,7 +566,29 @@
           "contextText": "刚刚出现了一小段安静，你想把话题接回来。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“修复冷场和短暂停顿”对应的沟通动作",
+          "在短暂尴尬或话题断掉时自然把对话接回来",
+          "语气自然轻松，不使用过度正式表达",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "Repair",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：话题突然断了，你不想让场面尴尬",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想把短暂停顿变成新的切入口",
+          "换一个相近场景，再完成“修复冷场和短暂停顿”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "light-invitation-001",
@@ -627,7 +710,28 @@
           "contextText": "你在一段自然的对话结束前想留下后续联系机会。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“发出轻邀约”对应的沟通动作",
+          "在关系还不算深时，自然提出轻量邀约或继续聊的机会",
+          "语气自然轻松，不使用过度正式表达",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想在聊得不错后顺手发一个轻量邀约",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想表达以后可以继续聊，但不想显得太用力",
+          "换一个相近场景，再完成“发出轻邀约”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "polite-decline-001",
@@ -747,7 +851,28 @@
           "contextText": "对方邀请你参加活动，但你这周确实安排不开。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“礼貌拒绝但保持关系”对应的沟通动作",
+          "在不方便接受邀请或建议时，既说清楚也不把关系聊冷",
+          "语气自然轻松，不使用过度正式表达",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想礼貌地拒绝一个邀约",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你不想让拒绝听起来像是彻底断掉",
+          "换一个相近场景，再完成“礼貌拒绝但保持关系”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "follow-up-001",
@@ -867,7 +992,28 @@
           "contextText": "你再次见到上次聊得不错的人，想自然续上之前的话题。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“活动后续跟进”对应的沟通动作",
+          "在见面后的下一次接触里自然续上上次的话题",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你上次见面聊过一个点，这次想自然接回来",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想让对方感觉你真的记住了之前的聊天",
+          "换一个相近场景，再完成“活动后续跟进”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "reconnect-001",
@@ -987,7 +1133,29 @@
           "contextText": "你隔了比较久再次联系一个聊得还不错的人。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“隔一段时间后重新连接”对应的沟通动作",
+          "在较长时间没联系后自然重新开口，而不显得突兀",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你有一阵子没和对方说话了",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想重新建立联系，但不想显得尴尬",
+          "换一个相近场景，再完成“隔一段时间后重新连接”这个口语动作。"
+        ]
+      }
     }
   ]
 }

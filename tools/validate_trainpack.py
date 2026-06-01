@@ -23,6 +23,21 @@ ALLOWED_TRAINING_MODES = {"Recall", "Shadow", "Respond", "Repair"}
 ALLOWED_ITEM_TYPES = {"Chunk", "SentencePattern", "DialogueTurn", "RepairStrategy", "PronunciationTarget"}
 ALLOWED_REGISTERS = {"Casual", "Neutral", "Formal"}
 ALLOWED_LEVELS = {"Low", "Medium", "High"}
+ALLOWED_TASK_ROLES = {"WarmUp", "Main", "Challenge", "Review"}
+ALLOWED_CORRECTION_FOCUS = {
+    "Naturalness",
+    "SpokenRegister",
+    "Completeness",
+    "Clarification",
+    "TurnTaking",
+    "Softening",
+    "Pronunciation",
+    "ScenarioFit",
+    "Fluency",
+    "Decision",
+    "FollowUp",
+    "Repair",
+}
 PACKAGE_FILES = {"manifest.json", "units.json", "items.jsonl"}
 ITEM_REQUIRED_KEYS = {
     "id",
@@ -173,6 +188,7 @@ def validate_unit(unit: dict[str, Any], expected_order: int, pack_id: str) -> No
             "activationPrompts",
             "itemIds",
             "pronunciationFocus",
+            "taskHints",
         },
         f"unit #{expected_order}",
     )
@@ -203,6 +219,32 @@ def validate_unit(unit: dict[str, Any], expected_order: int, pack_id: str) -> No
             fail(f"unit #{expected_order} itemIds contains invalid item id: {item_id}")
     require_string_list(unit["activationPrompts"], f"unit #{expected_order} activationPrompts", min_items=1)
     require_string_list(unit["pronunciationFocus"], f"unit #{expected_order} pronunciationFocus")
+    validate_task_hints(unit["taskHints"], f"unit #{expected_order} taskHints")
+
+
+def validate_task_hints(task_hints: Any, label: str) -> None:
+    if not isinstance(task_hints, dict):
+        fail(f"{label} must be an object")
+    require_exact_keys(
+        task_hints,
+        {
+            "defaultRole",
+            "successCriteria",
+            "correctionFocus",
+            "retryPrompts",
+            "variantPrompts",
+        },
+        label,
+    )
+    if task_hints["defaultRole"] not in ALLOWED_TASK_ROLES:
+        fail(f"{label}.defaultRole is invalid: {task_hints['defaultRole']}")
+    require_string_list(task_hints["successCriteria"], f"{label}.successCriteria", min_items=1)
+    correction_focus = require_string_list(task_hints["correctionFocus"], f"{label}.correctionFocus", min_items=1)
+    for focus in correction_focus:
+        if focus not in ALLOWED_CORRECTION_FOCUS:
+            fail(f"{label}.correctionFocus contains invalid value: {focus}")
+    require_string_list(task_hints["retryPrompts"], f"{label}.retryPrompts", min_items=1)
+    require_string_list(task_hints["variantPrompts"], f"{label}.variantPrompts", min_items=1)
 
 
 def validate_item(item: dict[str, Any], expected_pack_id: str, item_index: int) -> None:

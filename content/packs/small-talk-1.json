@@ -148,7 +148,28 @@
           "contextText": "你在办公室门口或茶水间遇到熟人。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“开启轻松寒暄”对应的沟通动作",
+          "在见面或会前自然开启一段轻松对话",
+          "语气自然轻松，不使用过度正式表达"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "Naturalness",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你刚到办公室，想和同事自然打个招呼",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想在正式话题前先聊两句",
+          "换一个相近场景，再完成“开启轻松寒暄”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "event-001",
@@ -267,7 +288,27 @@
           "contextText": "你在社交或 networking 活动上和陌生人搭话。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“围绕现场环境开话题”对应的沟通动作",
+          "借助活动、地点和现场环境自然开启 conversation",
+          "语气自然轻松，不使用过度正式表达"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你在活动现场，想和陌生人开始聊天",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想借助环境或活动本身开一个安全话题",
+          "换一个相近场景，再完成“围绕现场环境开话题”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "weekend-001",
@@ -387,7 +428,27 @@
           "contextText": "周一早上，你在工位旁和同事聊天。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“聊周末和最近安排”对应的沟通动作",
+          "围绕周末安排和最近生活自然延展寒暄",
+          "语气自然轻松，不使用过度正式表达"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想问问对方周末过得怎么样",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想顺着对方近况继续聊下去",
+          "换一个相近场景，再完成“聊周末和最近安排”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "work-001",
@@ -507,7 +568,28 @@
           "contextText": "你和之前聊过几次的同事再次见面。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“聊工作和最近在忙什么”对应的沟通动作",
+          "围绕工作近况展开轻松但自然的 follow-up",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想问对方最近工作上在忙什么",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想在不太正式的情况下聊聊项目和近况",
+          "换一个相近场景，再完成“聊工作和最近在忙什么”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "weather-001",
@@ -622,7 +704,28 @@
           "contextText": "你和同事一起等电梯。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“用天气和环境接话”对应的沟通动作",
+          "用天气、通勤或环境话题自然接话，不让寒暄断掉",
+          "语气自然轻松，不使用过度正式表达"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "Pronunciation",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想用天气接一两句，不让对话突然结束",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想抱怨一下天气或通勤，再自然转到别的话题",
+          "换一个相近场景，再完成“用天气和环境接话”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "interest-001",
@@ -741,7 +844,27 @@
           "contextText": "你和新认识的人想继续把对话聊下去。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“聊兴趣爱好和娱乐”对应的沟通动作",
+          "把 small talk 从表层寒暄推进到轻度兴趣连接",
+          "语气自然轻松，不使用过度正式表达"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想从近况转到更容易延展的话题",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想看看和对方有没有共同兴趣",
+          "换一个相近场景，再完成“聊兴趣爱好和娱乐”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "follow-up-001",
@@ -859,7 +982,27 @@
           "contextText": "对方刚说到自己周末去参加了一个活动。",
           "responseRole": "Listener"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“表示兴趣并追问”对应的沟通动作",
+          "通过高频 follow-up 表达你在认真听，并自然把话题延长",
+          "语气自然轻松，不使用过度正式表达"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你不想只问一个问题后就卡住",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想在对方回答后继续顺着追问",
+          "换一个相近场景，再完成“表示兴趣并追问”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "closing-001",
@@ -978,7 +1121,28 @@
           "contextText": "你准备结束走廊或茶水间的短对话。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“自然收尾和留后手”对应的沟通动作",
+          "在 small talk 结束时自然收束，不显得突兀",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "ScenarioFit",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你要去忙别的事了，想自然结束聊天",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想把聊天收得礼貌一点，并给以后继续聊留空间",
+          "换一个相近场景，再完成“自然收尾和留后手”这个口语动作。"
+        ]
+      }
     }
   ]
 }

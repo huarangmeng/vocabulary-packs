@@ -150,7 +150,29 @@
           "contextText": "团队在纠结更快上线还是更稳方案。",
           "responseRole": "Participant"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“讨论取舍与权衡”对应的沟通动作",
+          "把方案讨论从好不好转成取舍关系和代价比较",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Decision",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想提醒大家任何方案都有代价",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想把讨论转成可比较的 trade-off",
+          "换一个相近场景，再完成“讨论取舍与权衡”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "risk-escalation-001",
@@ -270,7 +292,29 @@
           "contextText": "团队有人想继续观望，你觉得已经到了必须处理的时候。",
           "responseRole": "Participant"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“升级风险提醒”对应的沟通动作",
+          "当风险被低估时，把问题明确提升到需要处理的等级",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Completeness",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你感觉团队在轻描淡写一个风险",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你需要更明确地标记红线",
+          "换一个相近场景，再完成“升级风险提醒”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "scope-control-001",
@@ -390,7 +434,29 @@
           "contextText": "大家在会议里不断给第一版加想法，你想保护交付范围。",
           "responseRole": "Participant"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“控制范围膨胀”对应的沟通动作",
+          "在需求或讨论不断扩张时把范围拉回可交付状态",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你感觉大家又在加需求了",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想保护当前交付边界",
+          "换一个相近场景，再完成“控制范围膨胀”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "decision-push-001",
@@ -511,7 +577,29 @@
           "contextText": "会议已经来回讨论很久，你想推动收束。",
           "responseRole": "Chair"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“推动拍板”对应的沟通动作",
+          "在讨论足够充分后，主动推动团队明确决定或明确未决条件",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Decision",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你觉得讨论已经够了，应该进入决策",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想避免会议结束了还没人知道是否拍板",
+          "换一个相近场景，再完成“推动拍板”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "owner-alignment-001",
@@ -630,7 +718,29 @@
           "contextText": "你不想让 action item 以“大家回去看看”收尾。",
           "responseRole": "Chair"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“对齐 owner 和责任边界”对应的沟通动作",
+          "把会后动作落到具体 owner、支持方和截止点",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你担心会后没人真正负责",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想把负责人和支持方讲清楚",
+          "换一个相近场景，再完成“对齐 owner 和责任边界”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "time-pressure-001",
@@ -752,7 +862,29 @@
           "contextText": "会议快结束了，但行动项还没对齐。",
           "responseRole": "Chair"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“在时间压力下控节奏”对应的沟通动作",
+          "当时间不够时调整会议节奏，保住关键决定",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：会议时间快到了但关键事还没定",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想提醒大家优先级",
+          "换一个相近场景，再完成“在时间压力下控节奏”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "redirect-001",
@@ -873,7 +1005,29 @@
           "contextText": "讨论已经偏向细节故事，你要拉回主线。",
           "responseRole": "Chair"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“打断偏题或过长发言”对应的沟通动作",
+          "在需要时礼貌打断并把讨论拉回主线",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "SpokenRegister",
+          "Pronunciation"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：有人已经说太久了",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想礼貌打断并拉回主线",
+          "换一个相近场景，再完成“打断偏题或过长发言”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "follow-up-001",
@@ -993,7 +1147,28 @@
           "contextText": "你在正式结束会议前强调会后节奏。",
           "responseRole": "Chair"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“会后跟进与收尾确认”对应的沟通动作",
+          "在会议结束后明确会后动作、纪要和后续节奏",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "FollowUp",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：会议结束了，你想把会后节奏讲清楚",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想明确谁发纪要、谁跟进问题",
+          "换一个相近场景，再完成“会后跟进与收尾确认”这个口语动作。"
+        ]
+      }
     }
   ]
 }

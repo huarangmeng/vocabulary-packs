@@ -147,7 +147,28 @@
           "contextText": "你是今天会议的主持人。",
           "responseRole": "Chair"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“开场并启动会议”对应的沟通动作",
+          "自然启动会议，标记开始并过渡到 agenda",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Naturalness",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你要作为主持人把会议带起来",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想礼貌地从 small talk 切到正式议题",
+          "换一个相近场景，再完成“开场并启动会议”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "jump-in-001",
@@ -266,7 +287,28 @@
           "contextText": "团队正在讨论方案优先级。",
           "responseRole": "Participant"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“礼貌接入讨论”对应的沟通动作",
+          "在会议中自然接入讨论，不显得突兀或冒犯",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想在会议里接一句自己的观点",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想礼貌地插入讨论",
+          "换一个相近场景，再完成“礼貌接入讨论”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "opinion-001",
@@ -386,7 +428,28 @@
           "contextText": "团队在讨论方案范围是否继续扩大。",
           "responseRole": "Participant"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“表达观点和建议”对应的沟通动作",
+          "在会议中给出个人判断、建议和倾向",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Completeness",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想表达自己的观点",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想把模糊想法变成建议",
+          "换一个相近场景，再完成“表达观点和建议”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "clarify-001",
@@ -507,7 +570,28 @@
           "contextText": "团队正在讨论需求优先级。",
           "responseRole": "Participant"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“会议中澄清和确认”对应的沟通动作",
+          "在信息不清楚时礼貌澄清，并确认彼此理解一致",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Clarification",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想确认自己理解的是不是对的",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想请对方把一个点再说清楚一点",
+          "换一个相近场景，再完成“会议中澄清和确认”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "summary-001",
@@ -628,7 +712,28 @@
           "contextText": "你要帮助团队从发散讨论回到核心结论。",
           "responseRole": "Chair"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“总结讨论和回到重点”对应的沟通动作",
+          "在会议发散后帮助团队收束并重述当前结论",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：讨论有点散，你想拉回重点",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想总结一下目前的共识",
+          "换一个相近场景，再完成“总结讨论和回到重点”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "action-001",
@@ -748,7 +853,28 @@
           "contextText": "会议差不多要结束了，但行动项还没定。",
           "responseRole": "Chair"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“确认下一步和行动项”对应的沟通动作",
+          "把讨论落到 owner、deadline 和后续动作",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "FollowUp",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想防止会议结束后没人知道下一步是什么",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想把责任和时间点说清楚",
+          "换一个相近场景，再完成“确认下一步和行动项”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "pushback-001",
@@ -869,7 +995,29 @@
           "contextText": "团队准备立刻拍板一个功能方向。",
           "responseRole": "Participant"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“温和提出异议”对应的沟通动作",
+          "在会议中表达不同意见，但保持合作和建设性的语气",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Completeness",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想表达不同意见，但不想显得太硬",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想指出风险或保留意见",
+          "换一个相近场景，再完成“温和提出异议”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "topic-management-001",
@@ -989,7 +1137,29 @@
           "contextText": "团队在一个次要分支问题上停留太久。",
           "responseRole": "Chair"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“拉回重点和控制节奏”对应的沟通动作",
+          "当讨论跑偏或有人说太久时，礼貌地拉回主线",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你觉得讨论开始跑偏了",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你要控制节奏但不想显得生硬",
+          "换一个相近场景，再完成“拉回重点和控制节奏”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "closing-001",
@@ -1109,7 +1279,28 @@
           "contextText": "你准备正式结束会议。",
           "responseRole": "Chair"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“结束会议并收尾”对应的沟通动作",
+          "自然结束会议，确认结束状态和 follow-up",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "ScenarioFit",
+          "FollowUp"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想正式结束会议",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想确认大家已经没有别的问题并做收尾",
+          "换一个相近场景，再完成“结束会议并收尾”这个口语动作。"
+        ]
+      }
     }
   ]
 }

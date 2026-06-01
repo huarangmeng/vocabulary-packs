@@ -147,7 +147,28 @@
           "contextText": "你在办公室或教室外遇到熟人。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“自然开启对话”对应的沟通动作",
+          "用高频开场表达自然进入一段对话",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Naturalness",
+          "FollowUp",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想自然开启一段对话",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想先用一句不生硬的话开口",
+          "换一个相近场景，再完成“自然开启对话”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "backchannel-001",
@@ -259,7 +280,27 @@
           "contextText": "同事在解释项目进度上的问题。",
           "responseRole": "Listener"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“回应并鼓励对方继续说”对应的沟通动作",
+          "用高频 response tokens 表示在听并让对方继续说",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想表达自己在认真听",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想让对方继续往下说",
+          "换一个相近场景，再完成“回应并鼓励对方继续说”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "understanding-001",
@@ -379,7 +420,28 @@
           "contextText": "你正在向同事解释一个流程。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“检查对方是否跟上”对应的沟通动作",
+          "用高频表达检查双方是否理解一致",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "SpokenRegister",
+          "Pronunciation",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想确认对方听懂了你的意思",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想在解释过程中停一下检查理解",
+          "换一个相近场景，再完成“检查对方是否跟上”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "buy-time-001",
@@ -493,7 +555,28 @@
           "contextText": "别人问了你一个需要思考的问题。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“争取思考时间”对应的沟通动作",
+          "在还没组织好语言时先稳住对话节奏",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Repair",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你还没想好怎么回答",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你需要几秒钟组织语言",
+          "换一个相近场景，再完成“争取思考时间”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "clarify-001",
@@ -612,7 +695,28 @@
           "contextText": "对方刚给了你一串信息，但你只漏掉最后部分。",
           "responseRole": "Listener"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“请对方重复和澄清”对应的沟通动作",
+          "没听清或不确定时礼貌请求对方再说一遍",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Clarification",
+          "Repair",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你没听清对方最后一句话",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想请对方说慢一点",
+          "换一个相近场景，再完成“请对方重复和澄清”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "rephrase-001",
@@ -732,7 +836,28 @@
           "contextText": "你觉得刚才那句话容易让人误会成反对。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“解释和换一种说法”对应的沟通动作",
+          "在说得不够清楚时用高频块补充或重说",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "SpokenRegister",
+          "Pronunciation",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想换一种更清楚的说法",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想在说到一半时重新组织表达",
+          "换一个相近场景，再完成“解释和换一种说法”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "stance-001",
@@ -851,7 +976,28 @@
           "contextText": "团队在讨论是否要把方案做得更复杂。",
           "responseRole": "Participant"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“表达个人看法”对应的沟通动作",
+          "用高频块自然表达观点而不是生硬陈述",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Completeness",
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想表达自己的观点",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想先给观点加一个自然入口",
+          "换一个相近场景，再完成“表达个人看法”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "agreement-001",
@@ -962,7 +1108,27 @@
           "contextText": "同事刚提出了一个可执行的建议。",
           "responseRole": "Participant"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“同意并顺势接着说”对应的沟通动作",
+          "用高频块表达同意，并把话接下去",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "SpokenRegister",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想表示认同",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想在认同后顺势补充一句",
+          "换一个相近场景，再完成“同意并顺势接着说”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "disagreement-001",
@@ -1081,7 +1247,29 @@
           "contextText": "别人提出了一个你不太认可的方案。",
           "responseRole": "Participant"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“温和表达不同意见”对应的沟通动作",
+          "不同意时避免太硬，先承接再表达差异",
+          "语气自然清楚，适合中性日常或工作场景",
+          "在有互动压力时仍能把重点说完整"
+        ],
+        "correctionFocus": [
+          "Softening",
+          "Completeness",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你不同意，但不想说得太硬",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想先承接一下再提出异议",
+          "换一个相近场景，再完成“温和表达不同意见”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "hedging-001",
@@ -1201,7 +1389,28 @@
           "contextText": "你在给建议，但不想说得太强势。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“软化语气和保留余地”对应的沟通动作",
+          "用 hedges 让表达更口语、更不生硬",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "Softening",
+          "SpokenRegister",
+          "Pronunciation"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想让语气没那么直接",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想保留一点不确定或缓冲空间",
+          "换一个相近场景，再完成“软化语气和保留余地”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "marker-001",
@@ -1315,7 +1524,28 @@
           "contextText": "你想从当前话题转到另一个相关事项。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“使用高频 discourse markers”对应的沟通动作",
+          "掌握 spoken English 中最常见的标记词，让表达更像真实会话",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "SpokenRegister",
+          "Pronunciation",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想让表达更连贯，不那么像背稿",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想掌握 so、well、anyway、by the way 这些核心 markers",
+          "换一个相近场景，再完成“使用高频 discourse markers”这个口语动作。"
+        ]
+      }
     },
     {
       "key": "closing-001",
@@ -1434,7 +1664,27 @@
           "contextText": "你想结束当前讨论并安排后续。",
           "responseRole": "Speaker"
         }
-      ]
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“收束和结束一段话”对应的沟通动作",
+          "用自然表达结束当前话题或收尾一段交流",
+          "语气自然清楚，适合中性日常或工作场景"
+        ],
+        "correctionFocus": [
+          "ScenarioFit",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "只重说关键一句：你想自然收束当前话题",
+          "这次先放慢语速，把沟通目标说完整。"
+        ],
+        "variantPrompts": [
+          "你想把一段对话结束得更顺一点",
+          "换一个相近场景，再完成“收束和结束一段话”这个口语动作。"
+        ]
+      }
     }
   ]
 }

@@ -85,7 +85,24 @@ items.jsonl
     "core-chunks-1:item-0001",
     "core-chunks-1:item-0002"
   ],
-  "pronunciationFocus": ["didn't catch that", "again"]
+  "pronunciationFocus": ["didn't catch that", "again"],
+  "taskHints": {
+    "defaultRole": "WarmUp",
+    "successCriteria": [
+      "完成“请对方重复”对应的沟通动作",
+      "没听清时礼貌请对方重复",
+      "语气自然清楚，适合中性日常或工作场景"
+    ],
+    "correctionFocus": ["Clarification", "SpokenRegister"],
+    "retryPrompts": [
+      "只重说关键一句：你没听清对方最后一句话",
+      "这次先放慢语速，把沟通目标说完整。"
+    ],
+    "variantPrompts": [
+      "你想请对方说慢一点",
+      "换一个相近场景，再完成“请对方重复”这个口语动作。"
+    ]
+  }
 }
 ```
 
@@ -102,6 +119,36 @@ items.jsonl
 - `activationPrompts`：至少一个提示语。
 - `itemIds`：单元下所有内容项 ID，不能为空。
 - `pronunciationFocus`：发音重点短语，可以为空数组。
+- `taskHints`：任务流编排提示，不能为空。
+
+`taskHints` 字段约束：
+
+- `defaultRole`：建议默认任务角色，固定为 `WarmUp`、`Main`、`Challenge` 或 `Review`。
+- `successCriteria`：任务成功标准，至少一条。
+- `correctionFocus`：优先纠偏方向，至少一条。
+- `retryPrompts`：首次输出不理想时的重说提示，至少一条。
+- `variantPrompts`：达到 `Spoken` 后用于判断 `Ready` 的变体场景，至少一条。
+
+允许的 `correctionFocus`：
+
+- `Naturalness`
+- `SpokenRegister`
+- `Completeness`
+- `Clarification`
+- `TurnTaking`
+- `Softening`
+- `Pronunciation`
+- `ScenarioFit`
+- `Fluency`
+- `Decision`
+- `FollowUp`
+- `Repair`
+
+设计约束：
+
+- `taskHints` 是包内正式结构，不是 App 私有推导字段。
+- `taskHints` 不直接等同于当天的运行时任务；App 仍可根据用户状态把同一个单元编排成复习、热身、主训练或挑战。
+- App 生成运行时 `SpeakingTask` 时，应优先使用 `taskHints`，再结合 catalog 联动和用户历史表现。
 
 ## 原子内容项 Item
 
