@@ -212,6 +212,37 @@ App 读取 `latest.json` 后展示“官方训练包”列表。
 - `trainingModes`：支持的训练模式。
 - `urls`：下载地址列表。
 
+## 包联动规则
+
+当前“包联动”统一定义在 `catalog manifest`，而不是 `.trainpack` 包内。这样做的原则是：
+
+- `.trainpack` 继续只承载稳定内容结构，不承担学习路径编排职责。
+- 包联动属于“目录层元数据”，便于后续只改 catalog 就能调整推荐顺序和展示策略。
+- App 读取 `latest.json` 后，可直接利用联动字段做“先学什么、后学什么、一起学什么”的展示与激活引导。
+
+当前支持的联动字段：
+
+- `seriesId`
+- `seriesTitle`
+- `seriesOrder`
+- `learningPath`
+- `prerequisitePackIds`
+- `recommendedNextPackIds`
+- `companionPackIds`
+
+建议用法：
+
+- `seriesId + seriesOrder`：把 `core-chunks-1`、`core-chunks-2` 这类同系列包串成稳定序列。
+- `prerequisitePackIds`：表达“建议先完成基础包，再进入当前包”。
+- `recommendedNextPackIds`：表达当前包学完后的下一步推荐。
+- `companionPackIds`：表达可并行或互补训练的包。
+
+首批三包的建议联动：
+
+- `core-chunks-1`：作为基础入口，推荐后续进入 `small-talk-1` 和 `meeting-communication-1`。
+- `small-talk-1`：前置建议为 `core-chunks-1`，并与 `core-chunks-1` 形成互补学习。
+- `meeting-communication-1`：前置建议为 `core-chunks-1`，并与 `small-talk-1`、`core-chunks-1` 形成互补学习。
+
 ## 下载地址格式
 
 ```text

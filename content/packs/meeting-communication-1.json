@@ -16,6 +16,19 @@
     "Shadow",
     "Respond"
   ],
+  "catalogMetadata": {
+    "seriesId": "workplace-speaking-path",
+    "seriesTitle": "职场口语路径",
+    "seriesOrder": 1,
+    "learningPath": "WorkplaceCommunication",
+    "prerequisitePackIds": [
+      "core-chunks-1"
+    ],
+    "companionPackIds": [
+      "small-talk-1",
+      "core-chunks-1"
+    ]
+  },
   "units": [
     {
       "key": "opening-001",

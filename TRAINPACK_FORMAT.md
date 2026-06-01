@@ -199,6 +199,67 @@ items.jsonl
 
 Catalog 中的 `packs[].id`、`packs[].version`、`packs[].unitCount`、`packs[].itemCount` 必须和 `.trainpack` 包内 `manifest.json` 对齐。
 
+## 包联动元数据
+
+`.trainpack` 包内固定格式仍然只包含：
+
+- `manifest.json`
+- `units.json`
+- `items.jsonl`
+
+包与包之间的联动关系不写入 `.trainpack` 内部，而统一写入外部 `catalog manifest`。原因是：
+
+- 联动关系属于分发编排和学习路径，不属于包内原子训练内容本身。
+- 保持 `.trainpack` 三文件结构稳定，避免后续每次调整推荐路径都重定义包内格式。
+- 允许同一份包内容在不同 App 版本或不同发布阶段使用不同学习路径编排。
+
+Catalog 中允许为每个 `packs[]` 条目补充以下联动字段：
+
+- `seriesId`：系列稳定 ID，例如 `core-speaking-foundations`。
+- `seriesTitle`：系列展示名称，例如“核心口语基础”。
+- `seriesOrder`：该包在系列中的顺序，从 `1` 开始。
+- `learningPath`：该包所属学习路径，例如 `Foundation`、`SocialConversation`、`WorkplaceCommunication`。
+- `prerequisitePackIds`：建议先完成的前置包列表。
+- `recommendedNextPackIds`：建议后续继续学习的下一包列表。
+- `companionPackIds`：推荐并行学习或互补学习的包列表。
+
+约束：
+
+- `seriesId`、`seriesTitle`、`seriesOrder` 要么同时出现，要么同时不出现。
+- `prerequisitePackIds`、`recommendedNextPackIds`、`companionPackIds` 中的每个值都必须是现有 `packId`。
+- App 不应把这些字段视为强制业务约束，而应视为“推荐学习路径”和“展示编排”元数据。
+
+一个带联动字段的 catalog 条目示例：
+
+```json
+{
+  "id": "small-talk-1",
+  "title": "Small Talk 1",
+  "description": "面向日常寒暄、轻松开场、活动现场、工作近况、周末、天气、兴趣追问和自然收尾的高频 small talk 训练包。",
+  "packType": "Scenario",
+  "version": "2026.06.02",
+  "levelHint": "A2-B1",
+  "unitCount": 8,
+  "itemCount": 32,
+  "estimatedMinutes": 120,
+  "sizeBytes": 6457,
+  "sha256": "9e107b2a9e8256dfc6ab7d0e635f2085f363fe8940f027b8c366539c1b27ae5e",
+  "fileName": "small-talk-1-2026.06.02.trainpack",
+  "tags": ["Speaking", "SmallTalk", "Core", "A2-B1"],
+  "trainingModes": ["Recall", "Shadow", "Respond"],
+  "urls": [
+    "https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/small-talk-1-2026.06.02.trainpack"
+  ],
+  "seriesId": "social-speaking-path",
+  "seriesTitle": "社交口语路径",
+  "seriesOrder": 1,
+  "learningPath": "SocialConversation",
+  "prerequisitePackIds": ["core-chunks-1"],
+  "recommendedNextPackIds": ["meeting-communication-1"],
+  "companionPackIds": ["core-chunks-1"]
+}
+```
+
 ## 校验命令
 
 生成或发布前必须执行：

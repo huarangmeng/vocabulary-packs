@@ -16,6 +16,20 @@
     "Shadow",
     "Respond"
   ],
+  "catalogMetadata": {
+    "seriesId": "core-speaking-foundations",
+    "seriesTitle": "核心口语基础",
+    "seriesOrder": 1,
+    "learningPath": "Foundation",
+    "recommendedNextPackIds": [
+      "small-talk-1",
+      "meeting-communication-1"
+    ],
+    "companionPackIds": [
+      "small-talk-1",
+      "meeting-communication-1"
+    ]
+  },
   "units": [
     {
       "key": "opener-001",

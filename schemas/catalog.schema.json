@@ -62,8 +62,41 @@
             "type": "array",
             "minItems": 1,
             "items": { "type": "string", "pattern": "^https://.+" }
+          },
+          "seriesId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "seriesTitle": { "type": "string", "minLength": 1 },
+          "seriesOrder": { "type": "integer", "minimum": 1 },
+          "learningPath": { "type": "string", "minLength": 1 },
+          "prerequisitePackIds": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }
+          },
+          "recommendedNextPackIds": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }
+          },
+          "companionPackIds": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }
           }
-        }
+        },
+        "allOf": [
+          {
+            "if": {
+              "anyOf": [
+                { "required": ["seriesId"] },
+                { "required": ["seriesTitle"] },
+                { "required": ["seriesOrder"] }
+              ]
+            },
+            "then": {
+              "required": ["seriesId", "seriesTitle", "seriesOrder"]
+            }
+          }
+        ]
       }
     }
   }

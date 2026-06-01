@@ -46,6 +46,32 @@ ITEM_OPTIONAL_KEYS = {
     "focusText",
     "focusType",
 }
+CATALOG_PACK_REQUIRED_KEYS = {
+    "id",
+    "title",
+    "description",
+    "packType",
+    "version",
+    "levelHint",
+    "unitCount",
+    "itemCount",
+    "estimatedMinutes",
+    "sizeBytes",
+    "sha256",
+    "fileName",
+    "tags",
+    "trainingModes",
+    "urls",
+}
+CATALOG_PACK_OPTIONAL_KEYS = {
+    "seriesId",
+    "seriesTitle",
+    "seriesOrder",
+    "learningPath",
+    "prerequisitePackIds",
+    "recommendedNextPackIds",
+    "companionPackIds",
+}
 
 
 def fail(message: str) -> None:
@@ -249,27 +275,7 @@ def validate_catalog(catalog_path: Path, package_path: Path, manifest: dict[str,
     if len(matches) != 1:
         fail(f"catalog must contain exactly one pack for {pack_id}@{pack_version}")
     pack = matches[0]
-    require_exact_keys(
-        pack,
-        {
-            "id",
-            "title",
-            "description",
-            "packType",
-            "version",
-            "levelHint",
-            "unitCount",
-            "itemCount",
-            "estimatedMinutes",
-            "sizeBytes",
-            "sha256",
-            "fileName",
-            "tags",
-            "trainingModes",
-            "urls",
-        },
-        "catalog pack",
-    )
+    require_allowed_keys(pack, CATALOG_PACK_REQUIRED_KEYS, CATALOG_PACK_OPTIONAL_KEYS, "catalog pack")
     require_string(pack["id"], "catalog pack id", pattern=ID_PATTERN)
     require_string(pack["title"], "catalog pack title")
     require_string(pack["description"], "catalog pack description")
@@ -291,6 +297,22 @@ def validate_catalog(catalog_path: Path, package_path: Path, manifest: dict[str,
     urls = require_string_list(pack["urls"], "catalog pack urls", min_items=1)
     if not all(url.startswith("https://") for url in urls):
         fail("catalog pack urls must all be https")
+
+    series_fields = [field for field in ("seriesId", "seriesTitle", "seriesOrder") if field in pack]
+    if series_fields and len(series_fields) != 3:
+        fail("catalog pack seriesId, seriesTitle and seriesOrder must appear together")
+    if "seriesId" in pack:
+        require_string(pack["seriesId"], "catalog pack seriesId", pattern=ID_PATTERN)
+        require_string(pack["seriesTitle"], "catalog pack seriesTitle")
+        require_int(pack["seriesOrder"], "catalog pack seriesOrder")
+    if "learningPath" in pack:
+        require_string(pack["learningPath"], "catalog pack learningPath")
+    for linkage_key in ("prerequisitePackIds", "recommendedNextPackIds", "companionPackIds"):
+        if linkage_key in pack:
+            ids = require_string_list(pack[linkage_key], f"catalog pack {linkage_key}", min_items=1)
+            for linked_pack_id in ids:
+                if not ID_PATTERN.match(linked_pack_id):
+                    fail(f"catalog pack {linkage_key} contains invalid pack id: {linked_pack_id}")
 
     if pack["title"] != manifest["title"]:
         fail("catalog pack title must match trainpack manifest title")

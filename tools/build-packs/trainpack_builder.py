@@ -28,6 +28,16 @@ REQUIRED_PACK_KEYS = [
     "units",
 ]
 
+OPTIONAL_CATALOG_METADATA_KEYS = {
+    "seriesId",
+    "seriesTitle",
+    "seriesOrder",
+    "learningPath",
+    "prerequisitePackIds",
+    "recommendedNextPackIds",
+    "companionPackIds",
+}
+
 REQUIRED_UNIT_KEYS = [
     "key",
     "title",
@@ -78,6 +88,7 @@ class PackageBuildResult:
     sha256: str
     tags: list[str]
     training_modes: list[str]
+    catalog_metadata: dict[str, Any]
 
     @property
     def file_name(self) -> str:
@@ -91,7 +102,7 @@ class PackageBuildResult:
         )
 
     def to_catalog_entry(self) -> dict[str, Any]:
-        return {
+        entry = {
             "id": self.pack_id,
             "title": self.title,
             "description": self.description,
@@ -108,6 +119,8 @@ class PackageBuildResult:
             "trainingModes": self.training_modes,
             "urls": [self.download_url],
         }
+        entry.update(self.catalog_metadata)
+        return entry
 
 
 def _write_deterministic_text(zf: zipfile.ZipFile, name: str, text: str) -> None:
@@ -121,6 +134,46 @@ def _ensure_keys(data: dict[str, Any], keys: list[str], context: str) -> None:
     missing = [key for key in keys if key not in data]
     if missing:
         raise ValueError(f"{context} missing required keys: {', '.join(missing)}")
+
+
+def _validate_catalog_metadata(catalog_metadata: Any, context: str) -> dict[str, Any]:
+    if catalog_metadata is None:
+        return {}
+    if not isinstance(catalog_metadata, dict):
+        raise ValueError(f"{context} catalogMetadata must be an object")
+
+    unknown = sorted(set(catalog_metadata.keys()) - OPTIONAL_CATALOG_METADATA_KEYS)
+    if unknown:
+        raise ValueError(f"{context} catalogMetadata has unsupported keys: {', '.join(unknown)}")
+
+    linkage_fields = ("seriesId", "seriesTitle", "seriesOrder")
+    present_linkage_fields = [field for field in linkage_fields if field in catalog_metadata]
+    if present_linkage_fields and len(present_linkage_fields) != len(linkage_fields):
+        raise ValueError(
+            f"{context} catalogMetadata must provide seriesId, seriesTitle and seriesOrder together"
+        )
+
+    for string_key in ("seriesId", "seriesTitle", "learningPath"):
+        if string_key in catalog_metadata:
+            value = catalog_metadata[string_key]
+            if not isinstance(value, str) or not value:
+                raise ValueError(f"{context} catalogMetadata.{string_key} must be a non-empty string")
+
+    if "seriesOrder" in catalog_metadata:
+        value = catalog_metadata["seriesOrder"]
+        if not isinstance(value, int) or value < 1:
+            raise ValueError(f"{context} catalogMetadata.seriesOrder must be an integer >= 1")
+
+    for list_key in ("prerequisitePackIds", "recommendedNextPackIds", "companionPackIds"):
+        if list_key in catalog_metadata:
+            value = catalog_metadata[list_key]
+            if not isinstance(value, list) or not value:
+                raise ValueError(f"{context} catalogMetadata.{list_key} must be a non-empty array")
+            for pack_id in value:
+                if not isinstance(pack_id, str) or not pack_id:
+                    raise ValueError(f"{context} catalogMetadata.{list_key} must only contain non-empty strings")
+
+    return dict(catalog_metadata)
 
 
 def discover_content_paths() -> list[Path]:
@@ -147,6 +200,8 @@ def load_pack_definition(content_path: Path) -> dict[str, Any]:
             if not isinstance(item, dict):
                 raise ValueError(f"{content_path} unit #{unit_index} item #{item_index} must be an object")
             _ensure_keys(item, REQUIRED_ITEM_KEYS, f"{content_path} unit #{unit_index} item #{item_index}")
+
+    data["catalogMetadata"] = _validate_catalog_metadata(data.get("catalogMetadata"), str(content_path))
 
     return data
 
@@ -208,6 +263,7 @@ def build_trainpack(
     tags: list[str],
     training_modes: list[str],
     unit_specs: list[dict[str, Any]],
+    catalog_metadata: dict[str, Any] | None = None,
 ) -> PackageBuildResult:
     units, items = _build_units_and_items(pack_id, unit_specs)
     package_manifest = {
@@ -253,6 +309,7 @@ def build_trainpack(
         sha256=sha256,
         tags=tags,
         training_modes=training_modes,
+        catalog_metadata=dict(catalog_metadata or {}),
     )
 
 
@@ -267,6 +324,7 @@ def build_from_definition(definition: dict[str, Any]) -> PackageBuildResult:
         tags=definition["tags"],
         training_modes=definition["trainingModes"],
         unit_specs=definition["units"],
+        catalog_metadata=definition.get("catalogMetadata", {}),
     )
 
 

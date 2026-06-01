@@ -16,6 +16,21 @@
     "Shadow",
     "Respond"
   ],
+  "catalogMetadata": {
+    "seriesId": "social-speaking-path",
+    "seriesTitle": "社交口语路径",
+    "seriesOrder": 1,
+    "learningPath": "SocialConversation",
+    "prerequisitePackIds": [
+      "core-chunks-1"
+    ],
+    "recommendedNextPackIds": [
+      "meeting-communication-1"
+    ],
+    "companionPackIds": [
+      "core-chunks-1"
+    ]
+  },
   "units": [
     {
       "key": "greet-001",
