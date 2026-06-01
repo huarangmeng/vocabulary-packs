@@ -1,13 +1,14 @@
 {
   "packId": "meeting-communication-1",
   "title": "会议沟通 1",
-  "description": "面向会议发言、澄清信息和温和提出异议的口语训练包。",
+  "description": "面向会议开场、接入讨论、表达观点、澄清确认、总结、行动项确认、温和异议、拉回重点和会议收尾的核心会议口语训练包。",
   "packType": "Scenario",
   "levelHint": "B1-B2",
-  "estimatedMinutes": 55,
+  "estimatedMinutes": 140,
   "tags": [
     "Speaking",
     "Meeting",
+    "Core",
     "B1-B2"
   ],
   "trainingModes": [
@@ -16,6 +17,125 @@
     "Respond"
   ],
   "units": [
+    {
+      "key": "opening-001",
+      "title": "开场并启动会议",
+      "communicativeGoal": "自然启动会议，标记开始并过渡到 agenda",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Opening",
+        "Agenda"
+      ],
+      "activationPrompts": [
+        "你要作为主持人把会议带起来",
+        "你想礼貌地从 small talk 切到正式议题"
+      ],
+      "pronunciationFocus": [
+        "let's get started",
+        "take a look at the agenda"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Right, let's get started.",
+          "chinesePrompt": "好，我们开始吧。",
+          "variants": [
+            "Okay, let's get started."
+          ],
+          "notes": [
+            "很常见的会议启动表达。"
+          ],
+          "pronunciationTargets": [
+            "let's get started"
+          ],
+          "commonMistakes": [
+            "Let us start now."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Shall we begin?",
+          "chinesePrompt": "我们开始吧？",
+          "variants": [
+            "Shall we get started?"
+          ],
+          "notes": [
+            "稍微更礼貌一些。"
+          ],
+          "pronunciationTargets": [
+            "shall we begin"
+          ],
+          "commonMistakes": [
+            "Can we begin now?"
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "If no one objects, shall we take a quick look at the agenda?",
+          "chinesePrompt": "如果大家都没意见，我们先快速看一下议程吧？",
+          "variants": [
+            "If no one objects, let's take a quick look at the agenda."
+          ],
+          "notes": [
+            "从寒暄切进 agenda 很自然。"
+          ],
+          "pronunciationTargets": [
+            "if no one objects",
+            "quick look at the agenda"
+          ],
+          "commonMistakes": [
+            "If everyone agrees, we see agenda."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "if no one objects",
+            "look at the agenda"
+          ],
+          "sampleOutputs": [
+            "If no one objects, shall we take a quick look at the agenda?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Right, let's get started. We have three things to cover today.",
+          "chinesePrompt": "好，我们开始吧。今天我们有三件事要讨论。",
+          "variants": [],
+          "notes": [
+            "启动会议后立刻设定结构。"
+          ],
+          "pronunciationTargets": [
+            "three things to cover"
+          ],
+          "commonMistakes": [
+            "We start. Today have three things."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "你是今天会议的主持人。",
+          "responseRole": "Chair"
+        }
+      ]
+    },
     {
       "key": "jump-in-001",
       "title": "礼貌接入讨论",
@@ -49,7 +169,7 @@
             "Can I quickly jump in here?"
           ],
           "notes": [
-            "适合礼貌打断或接入讨论"
+            "适合礼貌打断或接入讨论。"
           ],
           "pronunciationTargets": [
             "jump in for a second"
@@ -70,7 +190,7 @@
             "I want to build on what you just said."
           ],
           "notes": [
-            "先表示承接，再继续发言更自然"
+            "先承接，再继续发言更自然。"
           ],
           "pronunciationTargets": [
             "build on that"
@@ -91,7 +211,7 @@
             "Just to add to that, we should probably also look at the timeline."
           ],
           "notes": [
-            "适合把发言落到具体议题上"
+            "适合把发言落到具体议题上。"
           ],
           "pronunciationTargets": [
             "just to add to that",
@@ -118,7 +238,7 @@
           "chinesePrompt": "我先插一句。我觉得我们这里忽略了用户视角。",
           "variants": [],
           "notes": [
-            "先取得发言权，再明确指出补充点"
+            "先取得发言权，再明确指出补充点。"
           ],
           "pronunciationTargets": [
             "user perspective"
@@ -131,6 +251,126 @@
             "DialogueTurn"
           ],
           "contextText": "团队正在讨论方案优先级。",
+          "responseRole": "Participant"
+        }
+      ]
+    },
+    {
+      "key": "opinion-001",
+      "title": "表达观点和建议",
+      "communicativeGoal": "在会议中给出个人判断、建议和倾向",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Opinion",
+        "Suggestion"
+      ],
+      "activationPrompts": [
+        "你想表达自己的观点",
+        "你想把模糊想法变成建议"
+      ],
+      "pronunciationFocus": [
+        "in my opinion",
+        "maybe we should"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "In my opinion, we should keep this simple.",
+          "chinesePrompt": "在我看来，我们应该把这件事保持简单。",
+          "variants": [
+            "From my point of view, we should keep this simple."
+          ],
+          "notes": [
+            "很稳的意见表达入口。"
+          ],
+          "pronunciationTargets": [
+            "in my opinion",
+            "keep this simple"
+          ],
+          "commonMistakes": [
+            "In my opinion we should make this simplely."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Maybe we should start with a smaller test.",
+          "chinesePrompt": "也许我们应该先从一个更小的测试开始。",
+          "variants": [
+            "Why don't we start with a smaller test?"
+          ],
+          "notes": [
+            "很常见的会议建议方式。"
+          ],
+          "pronunciationTargets": [
+            "smaller test"
+          ],
+          "commonMistakes": [
+            "Maybe we first do a smaller test."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "If you ask me, the safer option is to launch this in phases.",
+          "chinesePrompt": "要我说的话，更稳妥的做法是分阶段上线。",
+          "variants": [
+            "If you ask me, the safer approach is to roll this out in phases."
+          ],
+          "notes": [
+            "表达倾向时自然又不太强硬。"
+          ],
+          "pronunciationTargets": [
+            "safer option",
+            "in phases"
+          ],
+          "commonMistakes": [
+            "For me, safer way is phase by phase."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "if you ask me",
+            "safer option"
+          ],
+          "sampleOutputs": [
+            "If you ask me, the safer option is to launch this in phases."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "In my opinion, we should keep this simple and focus on the highest-impact change first.",
+          "chinesePrompt": "在我看来，我们应该先保持简单，先做影响最大的改动。",
+          "variants": [],
+          "notes": [
+            "给观点加清晰优先级。"
+          ],
+          "pronunciationTargets": [
+            "highest-impact change"
+          ],
+          "commonMistakes": [
+            "We should do most important change first simply."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "团队在讨论方案范围是否继续扩大。",
           "responseRole": "Participant"
         }
       ]
@@ -168,7 +408,7 @@
             "Just to clarify, do you mean the launch date or the internal deadline?"
           ],
           "notes": [
-            "适合把模糊概念具体化"
+            "适合把模糊概念具体化。"
           ],
           "pronunciationTargets": [
             "just to clarify",
@@ -190,7 +430,7 @@
             "I just want to make sure we're aligned on this."
           ],
           "notes": [
-            "适合在推进前做统一理解"
+            "适合在推进前做统一理解。"
           ],
           "pronunciationTargets": [
             "same page"
@@ -211,7 +451,7 @@
             "So if I understand correctly, engineering starts after the design review."
           ],
           "notes": [
-            "用复述来澄清通常比直接说你没听懂更顺滑"
+            "用复述来澄清通常比直接说你没听懂更顺滑。"
           ],
           "pronunciationTargets": [
             "if I understand correctly",
@@ -238,7 +478,7 @@
           "chinesePrompt": "我想确认一下我们是不是理解一致。我们的意思是这个功能是本季度必须做的吗？",
           "variants": [],
           "notes": [
-            "适合把结论性判断再锚定一次"
+            "适合把结论性判断再锚定一次。"
           ],
           "pronunciationTargets": [
             "must-have",
@@ -253,6 +493,247 @@
           ],
           "contextText": "团队正在讨论需求优先级。",
           "responseRole": "Participant"
+        }
+      ]
+    },
+    {
+      "key": "summary-001",
+      "title": "总结讨论和回到重点",
+      "communicativeGoal": "在会议发散后帮助团队收束并重述当前结论",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Summary",
+        "Alignment"
+      ],
+      "activationPrompts": [
+        "讨论有点散，你想拉回重点",
+        "你想总结一下目前的共识"
+      ],
+      "pronunciationFocus": [
+        "just to summarise",
+        "recap where we are"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "So just to summarise, we're aligned on the goal.",
+          "chinesePrompt": "所以总结一下，我们在目标上是一致的。",
+          "variants": [
+            "So just to summarise, we all agree on the goal."
+          ],
+          "notes": [
+            "总结型发言的稳妥入口。"
+          ],
+          "pronunciationTargets": [
+            "just to summarise",
+            "aligned on the goal"
+          ],
+          "commonMistakes": [
+            "To summary, our goal is same."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "If I can just recap where we are...",
+          "chinesePrompt": "如果我快速回顾一下我们目前的进展……",
+          "variants": [
+            "Let me just recap where we are."
+          ],
+          "notes": [
+            "很适合主持或整理讨论。"
+          ],
+          "pronunciationTargets": [
+            "recap where we are"
+          ],
+          "commonMistakes": [
+            "Let me review where we are now."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "So the main takeaway for me is that we need more data before we decide.",
+          "chinesePrompt": "所以对我来说，目前最主要的结论是我们在决策前还需要更多数据。",
+          "variants": [
+            "The main takeaway for me is that we need more data before deciding."
+          ],
+          "notes": [
+            "适合提炼结论，同时保留下一步方向。"
+          ],
+          "pronunciationTargets": [
+            "main takeaway",
+            "before we decide"
+          ],
+          "commonMistakes": [
+            "The main result is we need more data before decide."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "main takeaway",
+            "before we decide"
+          ],
+          "sampleOutputs": [
+            "So the main takeaway for me is that we need more data before we decide."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "If I can just recap where we are, we agree on the goal, but not yet on the timeline.",
+          "chinesePrompt": "如果我快速回顾一下，我们对目标是一致的，但时间安排还没定。",
+          "variants": [],
+          "notes": [
+            "非常实用的主持型总结句。"
+          ],
+          "pronunciationTargets": [
+            "agree on the goal",
+            "not yet on the timeline"
+          ],
+          "commonMistakes": [
+            "We same goal but timeline still not."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "你要帮助团队从发散讨论回到核心结论。",
+          "responseRole": "Chair"
+        }
+      ]
+    },
+    {
+      "key": "action-001",
+      "title": "确认下一步和行动项",
+      "communicativeGoal": "把讨论落到 owner、deadline 和后续动作",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "ActionItems",
+        "FollowUp"
+      ],
+      "activationPrompts": [
+        "你想防止会议结束后没人知道下一步是什么",
+        "你想把责任和时间点说清楚"
+      ],
+      "pronunciationFocus": [
+        "next steps",
+        "taking the lead"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Can we agree on the next steps before we wrap up?",
+          "chinesePrompt": "我们结束前能先把下一步定下来吗？",
+          "variants": [
+            "Can we quickly align on the next steps before we wrap up?"
+          ],
+          "notes": [
+            "非常适合临近收尾时使用。"
+          ],
+          "pronunciationTargets": [
+            "next steps",
+            "wrap up"
+          ],
+          "commonMistakes": [
+            "Can we decide next things before finish?"
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Who's taking the lead on this?",
+          "chinesePrompt": "这个谁来负责？",
+          "variants": [
+            "Who's going to take the lead on this?"
+          ],
+          "notes": [
+            "比 Who will do this 更口语化。"
+          ],
+          "pronunciationTargets": [
+            "taking the lead"
+          ],
+          "commonMistakes": [
+            "Who will be responsible this?"
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "So the next step is for us to put together a draft by Friday.",
+          "chinesePrompt": "所以我们的下一步是在周五前先整理出一个草稿。",
+          "variants": [
+            "So the next step is to put together a draft by Friday."
+          ],
+          "notes": [
+            "适合把 discussion 变成具体交付。"
+          ],
+          "pronunciationTargets": [
+            "put together a draft",
+            "by Friday"
+          ],
+          "commonMistakes": [
+            "Next step is make a draft before Friday."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "next step",
+            "by Friday"
+          ],
+          "sampleOutputs": [
+            "So the next step is for us to put together a draft by Friday."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Can we agree on the next steps before we wrap up? Who's taking the lead on the draft?",
+          "chinesePrompt": "我们结束前能先把下一步定下来吗？草稿由谁来主导？",
+          "variants": [],
+          "notes": [
+            "先收束，再追 owner。"
+          ],
+          "pronunciationTargets": [
+            "taking the lead on the draft"
+          ],
+          "commonMistakes": [
+            "Before end, who lead the draft?"
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "会议差不多要结束了，但行动项还没定。",
+          "responseRole": "Chair"
         }
       ]
     },
@@ -289,7 +770,7 @@
             "I get your point, but I'm a little concerned about the timeline."
           ],
           "notes": [
-            "先认可，再给出保留意见"
+            "先认可，再给出保留意见。"
           ],
           "pronunciationTargets": [
             "where you're coming from",
@@ -311,7 +792,7 @@
             "I'm not completely convinced this is the right approach."
           ],
           "notes": [
-            "比直接说 This is wrong 温和很多"
+            "比直接说 This is wrong 温和很多。"
           ],
           "pronunciationTargets": [
             "fully convinced",
@@ -333,7 +814,7 @@
             "My concern is that moving too fast here could create more work later on."
           ],
           "notes": [
-            "把异议转成风险说明，更容易被接受"
+            "把异议转成风险说明，更容易被接受。"
           ],
           "pronunciationTargets": [
             "my concern is that",
@@ -360,7 +841,7 @@
           "chinesePrompt": "我理解你的意思，但我还不完全确定我们现在的数据已经足够了。",
           "variants": [],
           "notes": [
-            "适合在决策过快时提出保留"
+            "适合在决策过快时提出保留。"
           ],
           "pronunciationTargets": [
             "enough data yet"
@@ -374,6 +855,246 @@
           ],
           "contextText": "团队准备立刻拍板一个功能方向。",
           "responseRole": "Participant"
+        }
+      ]
+    },
+    {
+      "key": "topic-management-001",
+      "title": "拉回重点和控制节奏",
+      "communicativeGoal": "当讨论跑偏或有人说太久时，礼貌地拉回主线",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "TopicManagement",
+        "Facilitation"
+      ],
+      "activationPrompts": [
+        "你觉得讨论开始跑偏了",
+        "你要控制节奏但不想显得生硬"
+      ],
+      "pronunciationFocus": [
+        "get back to the main point",
+        "park that for now"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Can we get back to the main point for a second?",
+          "chinesePrompt": "我们能先回到重点上来一下吗？",
+          "variants": [
+            "Can we come back to the main point for a second?"
+          ],
+          "notes": [
+            "很适合把跑偏讨论拉回来。"
+          ],
+          "pronunciationTargets": [
+            "main point",
+            "for a second"
+          ],
+          "commonMistakes": [
+            "Can we back to main point?"
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Maybe we should park that for now.",
+          "chinesePrompt": "也许我们可以先把这个暂时放一放。",
+          "variants": [
+            "Let's park that for now and come back to it later."
+          ],
+          "notes": [
+            "会议里非常高频的 topic control 表达。"
+          ],
+          "pronunciationTargets": [
+            "park that for now"
+          ],
+          "commonMistakes": [
+            "Let us stop this topic now."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "That's useful context, but I think we need to stay focused on the decision we're trying to make.",
+          "chinesePrompt": "这些背景信息有帮助，但我觉得我们还是得聚焦在当前要做的决策上。",
+          "variants": [
+            "That's helpful context, but I think we need to stay focused on the decision in front of us."
+          ],
+          "notes": [
+            "先认可，再拉回重点，比较不伤人。"
+          ],
+          "pronunciationTargets": [
+            "useful context",
+            "stay focused"
+          ],
+          "commonMistakes": [
+            "This context is useful but we need focus current decision."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "useful context",
+            "stay focused"
+          ],
+          "sampleOutputs": [
+            "That's useful context, but I think we need to stay focused on the decision we're trying to make."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Maybe we should park that for now and come back to it later. Otherwise, we won't get through the agenda.",
+          "chinesePrompt": "也许我们可以先把这个暂时放一放，之后再回来讨论。不然我们今天的议程过不完。",
+          "variants": [],
+          "notes": [
+            "控制时间和范围都很自然。"
+          ],
+          "pronunciationTargets": [
+            "get through the agenda"
+          ],
+          "commonMistakes": [
+            "We stop this now otherwise agenda cannot finish."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "团队在一个次要分支问题上停留太久。",
+          "responseRole": "Chair"
+        }
+      ]
+    },
+    {
+      "key": "closing-001",
+      "title": "结束会议并收尾",
+      "communicativeGoal": "自然结束会议，确认结束状态和 follow-up",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Closing",
+        "FollowUp"
+      ],
+      "activationPrompts": [
+        "你想正式结束会议",
+        "你想确认大家已经没有别的问题并做收尾"
+      ],
+      "pronunciationFocus": [
+        "I think we're done",
+        "thanks everyone for coming"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I think we're done for today.",
+          "chinesePrompt": "我觉得我们今天差不多到这里。",
+          "variants": [
+            "I think that's it for today."
+          ],
+          "notes": [
+            "收尾时非常常用。"
+          ],
+          "pronunciationTargets": [
+            "we're done for today"
+          ],
+          "commonMistakes": [
+            "We finish today."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Thanks everyone for coming.",
+          "chinesePrompt": "感谢大家参加。",
+          "variants": [
+            "Thanks, everyone, for making the time."
+          ],
+          "notes": [
+            "主持人收尾的稳定表达。"
+          ],
+          "pronunciationTargets": [
+            "everyone for coming"
+          ],
+          "commonMistakes": [
+            "Thanks everybody to come."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "We'll circulate the notes afterwards and follow up on the open questions.",
+          "chinesePrompt": "会后我们会把会议记录发出来，并跟进还没定下来的问题。",
+          "variants": [
+            "We'll send round the notes afterwards and follow up on the open questions."
+          ],
+          "notes": [
+            "把会议和会后动作连起来。"
+          ],
+          "pronunciationTargets": [
+            "circulate the notes",
+            "follow up"
+          ],
+          "commonMistakes": [
+            "We will send notes later and continue open questions."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "circulate the notes",
+            "follow up"
+          ],
+          "sampleOutputs": [
+            "We'll circulate the notes afterwards and follow up on the open questions."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Right, I think we're done for today. Thanks everyone for coming.",
+          "chinesePrompt": "好，我觉得我们今天就到这里。感谢大家参加。",
+          "variants": [],
+          "notes": [
+            "简洁但很像真实会议收尾。"
+          ],
+          "pronunciationTargets": [
+            "I think we're done",
+            "thanks everyone for coming"
+          ],
+          "commonMistakes": [
+            "Okay, meeting finish, thank you all."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "你准备正式结束会议。",
+          "responseRole": "Chair"
         }
       ]
     }

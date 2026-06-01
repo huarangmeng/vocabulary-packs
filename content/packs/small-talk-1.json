@@ -1,13 +1,14 @@
 {
   "packId": "small-talk-1",
   "title": "Small Talk 1",
-  "description": "面向日常寒暄、轻松开场和跟进近况的口语训练包。",
+  "description": "面向日常寒暄、轻松开场、活动现场、工作近况、周末、天气、兴趣追问和自然收尾的高频 small talk 训练包。",
   "packType": "Scenario",
   "levelHint": "A2-B1",
-  "estimatedMinutes": 50,
+  "estimatedMinutes": 120,
   "tags": [
     "Speaking",
     "SmallTalk",
+    "Core",
     "A2-B1"
   ],
   "trainingModes": [
@@ -38,7 +39,7 @@
       ],
       "pronunciationFocus": [
         "how's it going",
-        "been up to"
+        "good to see you"
       ],
       "items": [
         {
@@ -49,7 +50,7 @@
             "Hi, how are things going?"
           ],
           "notes": [
-            "适合熟悉但不太正式的场景"
+            "适合熟悉但不太正式的场景。"
           ],
           "pronunciationTargets": [
             "how's it going"
@@ -64,20 +65,19 @@
         },
         {
           "type": "Chunk",
-          "englishText": "What have you been up to lately?",
-          "chinesePrompt": "你最近都在忙什么？",
+          "englishText": "Good to see you.",
+          "chinesePrompt": "见到你真好。",
           "variants": [
-            "What have you been up to these days?"
+            "It's good to see you."
           ],
           "notes": [
-            "比 How are you 更容易引出内容"
+            "更适合熟人重逢，不等同于 Nice to meet you。"
           ],
           "pronunciationTargets": [
-            "been up to",
-            "lately"
+            "good to see you"
           ],
           "commonMistakes": [
-            "What are you busy these days?"
+            "Glad to see with you."
           ],
           "tags": [
             "SmallTalk",
@@ -85,50 +85,178 @@
           ]
         },
         {
-          "type": "DialogueTurn",
-          "englishText": "Hey, how's it going? You look busy today.",
-          "chinesePrompt": "嗨，最近怎么样？你今天看起来挺忙的。",
-          "variants": [],
+          "type": "SentencePattern",
+          "englishText": "How's your day going so far?",
+          "chinesePrompt": "你今天到目前为止过得怎么样？",
+          "variants": [
+            "How's your day been so far?"
+          ],
           "notes": [
-            "先寒暄，再自然带出观察"
+            "比单纯问 How are you 更容易接出真实内容。"
           ],
           "pronunciationTargets": [
-            "you look busy"
+            "so far"
           ],
           "commonMistakes": [
-            "You seem very busied today."
+            "How is your day until now?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "SentencePattern"
+          ],
+          "slots": [
+            "your day",
+            "so far"
+          ],
+          "sampleOutputs": [
+            "How's your day going so far?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Hey, how's it going? Good to see you again.",
+          "chinesePrompt": "嗨，最近怎么样？又见到你了，真好。",
+          "variants": [],
+          "notes": [
+            "先开场再补一句关系性表达，更自然。"
+          ],
+          "pronunciationTargets": [
+            "good to see you again"
+          ],
+          "commonMistakes": [
+            "Hello, how are you? I see you again."
           ],
           "tags": [
             "SmallTalk",
             "DialogueTurn"
           ],
-          "contextText": "你在茶水间遇到一位熟悉同事。",
+          "contextText": "你在办公室门口或茶水间遇到熟人。",
           "responseRole": "Speaker"
-        },
+        }
+      ]
+    },
+    {
+      "key": "event-001",
+      "title": "围绕现场环境开话题",
+      "communicativeGoal": "借助活动、地点和现场环境自然开启 conversation",
+      "scene": "SmallTalk",
+      "register": "Casual",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Low",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "SmallTalk",
+        "Environment",
+        "IceBreaker"
+      ],
+      "activationPrompts": [
+        "你在活动现场，想和陌生人开始聊天",
+        "你想借助环境或活动本身开一个安全话题"
+      ],
+      "pronunciationFocus": [
+        "what brings you here",
+        "have you been here before"
+      ],
+      "items": [
         {
-          "type": "PronunciationTarget",
-          "englishText": "How's it going?",
-          "chinesePrompt": "最近怎么样？",
-          "variants": [],
+          "type": "Chunk",
+          "englishText": "What brings you here today?",
+          "chinesePrompt": "你今天怎么会来这里？",
+          "variants": [
+            "So, what brings you here?"
+          ],
           "notes": [
-            "关注连读和弱读，避免逐词顿开"
+            "很适合活动、展会或社交场合。"
           ],
           "pronunciationTargets": [
-            "how's it going"
+            "brings you here"
           ],
-          "commonMistakes": [],
+          "commonMistakes": [
+            "Why you come here today?"
+          ],
           "tags": [
             "SmallTalk",
-            "PronunciationTarget"
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Have you been to one of these before?",
+          "chinesePrompt": "你以前来过这种活动吗？",
+          "variants": [
+            "Have you been here before?"
           ],
-          "focusText": "How's it going?",
-          "focusType": "Linking"
+          "notes": [
+            "非常安全的初次社交话题。"
+          ],
+          "pronunciationTargets": [
+            "one of these before"
+          ],
+          "commonMistakes": [
+            "You came this before?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "This is a great venue for an event like this.",
+          "chinesePrompt": "这个地方办这种活动真不错。",
+          "variants": [
+            "This is a really nice place for something like this."
+          ],
+          "notes": [
+            "对环境做正向评论，容易引出回应。"
+          ],
+          "pronunciationTargets": [
+            "great venue"
+          ],
+          "commonMistakes": [
+            "This place is very suitable for this event."
+          ],
+          "tags": [
+            "SmallTalk",
+            "SentencePattern"
+          ],
+          "slots": [
+            "great venue",
+            "event like this"
+          ],
+          "sampleOutputs": [
+            "This is a great venue for an event like this."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "What brings you here today? Have you been to one of these before?",
+          "chinesePrompt": "你今天怎么会来这里？你以前来过这种活动吗？",
+          "variants": [],
+          "notes": [
+            "连续两个安全问题，很适合 networking 开局。"
+          ],
+          "pronunciationTargets": [
+            "what brings you here",
+            "one of these before"
+          ],
+          "commonMistakes": [
+            "Why you are here today? You came before?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "DialogueTurn"
+          ],
+          "contextText": "你在社交或 networking 活动上和陌生人搭话。",
+          "responseRole": "Speaker"
         }
       ]
     },
     {
       "key": "weekend-001",
-      "title": "聊周末和近况",
+      "title": "聊周末和最近安排",
       "communicativeGoal": "围绕周末安排和最近生活自然延展寒暄",
       "scene": "SmallTalk",
       "register": "Casual",
@@ -147,7 +275,7 @@
         "你想顺着对方近况继续聊下去"
       ],
       "pronunciationFocus": [
-        "did you get up to",
+        "what did you get up to",
         "pretty low-key"
       ],
       "items": [
@@ -159,7 +287,7 @@
             "Did you get up to anything fun over the weekend?"
           ],
           "notes": [
-            "很适合办公室和朋友间轻松寒暄"
+            "很适合办公室和朋友间轻松寒暄。"
           ],
           "pronunciationTargets": [
             "anything fun",
@@ -181,7 +309,7 @@
             "It was pretty quiet, actually."
           ],
           "notes": [
-            "适合回应自己周末没干什么大事"
+            "适合回应自己周末没干什么大事。"
           ],
           "pronunciationTargets": [
             "pretty low-key"
@@ -202,7 +330,7 @@
             "I mostly stayed home and got some rest."
           ],
           "notes": [
-            "适合给出自然但简单的近况描述"
+            "适合给出自然但简单的近况描述。"
           ],
           "pronunciationTargets": [
             "mostly stayed in",
@@ -229,7 +357,7 @@
           "chinesePrompt": "你周末有做什么好玩的事吗，还是主要都在休息？",
           "variants": [],
           "notes": [
-            "给对方一个更容易接的回答范围"
+            "给对方一个更容易接的回答范围。"
           ],
           "pronunciationTargets": [
             "mostly relax"
@@ -242,6 +370,126 @@
             "DialogueTurn"
           ],
           "contextText": "周一早上，你在工位旁和同事聊天。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "work-001",
+      "title": "聊工作和最近在忙什么",
+      "communicativeGoal": "围绕工作近况展开轻松但自然的 follow-up",
+      "scene": "SmallTalk",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "SmallTalk",
+        "Work",
+        "FollowUp"
+      ],
+      "activationPrompts": [
+        "你想问对方最近工作上在忙什么",
+        "你想在不太正式的情况下聊聊项目和近况"
+      ],
+      "pronunciationFocus": [
+        "been up to",
+        "keeping busy"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "What have you been up to lately?",
+          "chinesePrompt": "你最近都在忙什么？",
+          "variants": [
+            "What have you been up to these days?"
+          ],
+          "notes": [
+            "比直接问最近在忙什么更自然。"
+          ],
+          "pronunciationTargets": [
+            "been up to",
+            "lately"
+          ],
+          "commonMistakes": [
+            "What are you busy these days?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Have you been keeping busy?",
+          "chinesePrompt": "你最近挺忙的吗？",
+          "variants": [
+            "Been keeping busy lately?"
+          ],
+          "notes": [
+            "轻松口吻，很适合跟熟人寒暄。"
+          ],
+          "pronunciationTargets": [
+            "keeping busy"
+          ],
+          "commonMistakes": [
+            "Are you busy these days?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "It's been a busy few weeks on my end.",
+          "chinesePrompt": "我这边这几周一直挺忙的。",
+          "variants": [
+            "It's been a pretty busy few weeks for me."
+          ],
+          "notes": [
+            "回应自己工作近况时很自然。"
+          ],
+          "pronunciationTargets": [
+            "busy few weeks",
+            "on my end"
+          ],
+          "commonMistakes": [
+            "My recent weeks are busy."
+          ],
+          "tags": [
+            "SmallTalk",
+            "SentencePattern"
+          ],
+          "slots": [
+            "busy few weeks",
+            "on my end"
+          ],
+          "sampleOutputs": [
+            "It's been a busy few weeks on my end."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "What have you been up to lately? Still working on that project you mentioned last time?",
+          "chinesePrompt": "你最近都在忙什么？还在做你上次提到的那个项目吗？",
+          "variants": [],
+          "notes": [
+            "带一点记忆性的 follow-up，会让对话更有人情味。"
+          ],
+          "pronunciationTargets": [
+            "working on that project"
+          ],
+          "commonMistakes": [
+            "You still do that project you said last time?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "DialogueTurn"
+          ],
+          "contextText": "你和之前聊过几次的同事再次见面。",
           "responseRole": "Speaker"
         }
       ]
@@ -279,7 +527,7 @@
             "The weather's been kind of all over the place lately."
           ],
           "notes": [
-            "很适合轻松抱怨或开话题"
+            "很适合轻松抱怨或开话题。"
           ],
           "pronunciationTargets": [
             "weather's been",
@@ -301,7 +549,7 @@
             "It was absolutely pouring this morning on my way in."
           ],
           "notes": [
-            "适合带出通勤体验"
+            "适合带出通勤体验。"
           ],
           "pronunciationTargets": [
             "pouring",
@@ -323,7 +571,7 @@
             "I don't know about you, but I'm definitely ready for some sunshine."
           ],
           "notes": [
-            "适合表达个人感受，又能邀请对方接话"
+            "既表达感受，又能邀请对方接话。"
           ],
           "pronunciationTargets": [
             "I don't know about you",
@@ -344,7 +592,7 @@
           "chinesePrompt": "最近天气变化太大了，我今早都不知道该穿什么。",
           "variants": [],
           "notes": [
-            "先说环境，再补一条轻松个人经历"
+            "先说环境，再补一条轻松个人经历。"
           ],
           "pronunciationTargets": [
             "what to wear"
@@ -357,6 +605,362 @@
             "DialogueTurn"
           ],
           "contextText": "你和同事一起等电梯。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "interest-001",
+      "title": "聊兴趣爱好和娱乐",
+      "communicativeGoal": "把 small talk 从表层寒暄推进到轻度兴趣连接",
+      "scene": "SmallTalk",
+      "register": "Casual",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "SmallTalk",
+        "Interests",
+        "Connection"
+      ],
+      "activationPrompts": [
+        "你想从近况转到更容易延展的话题",
+        "你想看看和对方有没有共同兴趣"
+      ],
+      "pronunciationFocus": [
+        "have you seen",
+        "into that"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Have you seen that new series everyone's talking about?",
+          "chinesePrompt": "你看了最近大家都在聊的那部新剧吗？",
+          "variants": [
+            "Have you seen that new show everyone keeps mentioning?"
+          ],
+          "notes": [
+            "娱乐类 small talk 非常常见。"
+          ],
+          "pronunciationTargets": [
+            "new series",
+            "everyone's talking about"
+          ],
+          "commonMistakes": [
+            "You saw that new TV series?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Are you into that kind of thing?",
+          "chinesePrompt": "你喜欢那一类东西吗？",
+          "variants": [
+            "Is that your kind of thing?"
+          ],
+          "notes": [
+            "问兴趣时比 Do you like it 更自然。"
+          ],
+          "pronunciationTargets": [
+            "into that kind of thing"
+          ],
+          "commonMistakes": [
+            "Do you like this kind?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I've just started running again, and it's harder than I remember.",
+          "chinesePrompt": "我最近又开始跑步了，比我记得的要难。",
+          "variants": [
+            "I started running again recently, and it's harder than I remembered."
+          ],
+          "notes": [
+            "很典型的兴趣引入方式。"
+          ],
+          "pronunciationTargets": [
+            "started running again"
+          ],
+          "commonMistakes": [
+            "I begin running again and it is more hard."
+          ],
+          "tags": [
+            "SmallTalk",
+            "SentencePattern"
+          ],
+          "slots": [
+            "started running again",
+            "harder than I remember"
+          ],
+          "sampleOutputs": [
+            "I've just started running again, and it's harder than I remember."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I've just started running again, actually. Do you do any sports?",
+          "chinesePrompt": "其实我最近又开始跑步了。你平时做运动吗？",
+          "variants": [],
+          "notes": [
+            "先给一点自我信息，再抛问题，更容易延展。"
+          ],
+          "pronunciationTargets": [
+            "do any sports"
+          ],
+          "commonMistakes": [
+            "I start running again. You do sports?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "DialogueTurn"
+          ],
+          "contextText": "你和新认识的人想继续把对话聊下去。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "follow-up-001",
+      "title": "表示兴趣并追问",
+      "communicativeGoal": "通过高频 follow-up 表达你在认真听，并自然把话题延长",
+      "scene": "SmallTalk",
+      "register": "Casual",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "SmallTalk",
+        "FollowUp",
+        "Listening"
+      ],
+      "activationPrompts": [
+        "你不想只问一个问题后就卡住",
+        "你想在对方回答后继续顺着追问"
+      ],
+      "pronunciationFocus": [
+        "that sounds nice",
+        "how did that go"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "That sounds nice.",
+          "chinesePrompt": "听起来不错。",
+          "variants": [
+            "That sounds really nice."
+          ],
+          "notes": [
+            "非常高频的轻度正向回应。"
+          ],
+          "pronunciationTargets": [
+            "sounds nice"
+          ],
+          "commonMistakes": [
+            "It sounds goodly."
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "How did that go?",
+          "chinesePrompt": "后来怎么样？",
+          "variants": [
+            "So how did that go?"
+          ],
+          "notes": [
+            "适合对方提到某件最近做过的事时追问。"
+          ],
+          "pronunciationTargets": [
+            "how did that go"
+          ],
+          "commonMistakes": [
+            "How was that happened?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "That sounds fun. How did you get into that?",
+          "chinesePrompt": "听起来很有意思。你是怎么开始接触这个的？",
+          "variants": [
+            "That sounds really fun. How did you get into it?"
+          ],
+          "notes": [
+            "追问兴趣来源，是很稳的对话延展点。"
+          ],
+          "pronunciationTargets": [
+            "get into that"
+          ],
+          "commonMistakes": [
+            "How did you begin this thing?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "SentencePattern"
+          ],
+          "slots": [
+            "that sounds fun",
+            "get into that"
+          ],
+          "sampleOutputs": [
+            "That sounds fun. How did you get into that?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Oh, nice. That sounds fun. How did that go in the end?",
+          "chinesePrompt": "哦，不错。听起来挺有意思的。最后怎么样？",
+          "variants": [],
+          "notes": [
+            "短回应加追问，是最实用的维持话题组合之一。"
+          ],
+          "pronunciationTargets": [
+            "in the end"
+          ],
+          "commonMistakes": [
+            "Oh nice, how it finally was?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "DialogueTurn"
+          ],
+          "contextText": "对方刚说到自己周末去参加了一个活动。",
+          "responseRole": "Listener"
+        }
+      ]
+    },
+    {
+      "key": "closing-001",
+      "title": "自然收尾和留后手",
+      "communicativeGoal": "在 small talk 结束时自然收束，不显得突兀",
+      "scene": "SmallTalk",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "SmallTalk",
+        "Closing",
+        "Transition"
+      ],
+      "activationPrompts": [
+        "你要去忙别的事了，想自然结束聊天",
+        "你想把聊天收得礼貌一点，并给以后继续聊留空间"
+      ],
+      "pronunciationFocus": [
+        "I should let you get back to it",
+        "catch up later"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I should let you get back to it.",
+          "chinesePrompt": "我就不打扰你了，让你继续忙吧。",
+          "variants": [
+            "I should let you get back to work."
+          ],
+          "notes": [
+            "办公室和工作场景下特别自然。"
+          ],
+          "pronunciationTargets": [
+            "get back to it"
+          ],
+          "commonMistakes": [
+            "I will not disturb you more."
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Anyway, it was nice catching up.",
+          "chinesePrompt": "总之，跟你聊聊挺好的。",
+          "variants": [
+            "Anyway, nice catching up with you."
+          ],
+          "notes": [
+            "收尾时非常自然。"
+          ],
+          "pronunciationTargets": [
+            "catching up"
+          ],
+          "commonMistakes": [
+            "It was nice talking."
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "We should catch up properly sometime.",
+          "chinesePrompt": "我们哪天应该好好聊聊。",
+          "variants": [
+            "We should properly catch up sometime."
+          ],
+          "notes": [
+            "给未来继续连接留余地。"
+          ],
+          "pronunciationTargets": [
+            "catch up properly"
+          ],
+          "commonMistakes": [
+            "We should talk seriously sometime."
+          ],
+          "tags": [
+            "SmallTalk",
+            "SentencePattern"
+          ],
+          "slots": [
+            "catch up properly",
+            "sometime"
+          ],
+          "sampleOutputs": [
+            "We should catch up properly sometime."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Anyway, it was nice catching up. I should let you get back to it.",
+          "chinesePrompt": "总之，跟你聊聊挺好的。我就不打扰你继续忙了。",
+          "variants": [],
+          "notes": [
+            "礼貌又自然的结束模板。"
+          ],
+          "pronunciationTargets": [
+            "nice catching up",
+            "get back to it"
+          ],
+          "commonMistakes": [
+            "Nice to chat. I go now let you busy."
+          ],
+          "tags": [
+            "SmallTalk",
+            "DialogueTurn"
+          ],
+          "contextText": "你准备结束走廊或茶水间的短对话。",
           "responseRole": "Speaker"
         }
       ]
