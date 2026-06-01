@@ -45,6 +45,49 @@
       ]
     },
     {
+      "id": "core-chunks-2",
+      "title": "高频口语表达块 2",
+      "description": "围绕假设确认、过渡衔接、软化请求、收窄选项、部分认同、升级担忧、重新框定和推动决策等更高互动压力下的核心 spoken functions 组织的进阶口语表达块训练包。",
+      "packType": "CoreChunks",
+      "version": "2026.06.02",
+      "levelHint": "B1-B2",
+      "unitCount": 8,
+      "itemCount": 32,
+      "estimatedMinutes": 140,
+      "sizeBytes": 8211,
+      "sha256": "955c270e2c6091922092978dfa800c1abfddf5ca522ac116538907096b88a24d",
+      "fileName": "core-chunks-2-2026.06.02.trainpack",
+      "tags": [
+        "Speaking",
+        "Chunks",
+        "Core",
+        "B1-B2"
+      ],
+      "trainingModes": [
+        "Recall",
+        "Shadow",
+        "Respond"
+      ],
+      "urls": [
+        "https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/core-chunks-2-2026.06.02.trainpack"
+      ],
+      "seriesId": "core-speaking-foundations",
+      "seriesTitle": "核心口语基础",
+      "seriesOrder": 2,
+      "learningPath": "Foundation",
+      "prerequisitePackIds": [
+        "core-chunks-1"
+      ],
+      "recommendedNextPackIds": [
+        "small-talk-2",
+        "meeting-communication-2"
+      ],
+      "companionPackIds": [
+        "small-talk-2",
+        "meeting-communication-2"
+      ]
+    },
+    {
       "id": "meeting-communication-1",
       "title": "会议沟通 1",
       "description": "面向会议开场、接入讨论、表达观点、澄清确认、总结、行动项确认、温和异议、拉回重点和会议收尾的核心会议口语训练包。",
@@ -81,6 +124,46 @@
       "companionPackIds": [
         "small-talk-1",
         "core-chunks-1"
+      ]
+    },
+    {
+      "id": "meeting-communication-2",
+      "title": "会议沟通 2",
+      "description": "面向取舍权衡、风险升级、范围控制、推动决策、责任对齐、时间压力、打断偏题和会后跟进的进阶会议沟通训练包。",
+      "packType": "Scenario",
+      "version": "2026.06.02",
+      "levelHint": "B2",
+      "unitCount": 8,
+      "itemCount": 32,
+      "estimatedMinutes": 150,
+      "sizeBytes": 8245,
+      "sha256": "e11b6ca8b2a5535e5d5956be2c92f78c3b25c08b9dc9ff4aa12dff6b0220eb7a",
+      "fileName": "meeting-communication-2-2026.06.02.trainpack",
+      "tags": [
+        "Speaking",
+        "Meeting",
+        "Core",
+        "B2"
+      ],
+      "trainingModes": [
+        "Recall",
+        "Shadow",
+        "Respond"
+      ],
+      "urls": [
+        "https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/meeting-communication-2-2026.06.02.trainpack"
+      ],
+      "seriesId": "workplace-speaking-path",
+      "seriesTitle": "职场口语路径",
+      "seriesOrder": 2,
+      "learningPath": "WorkplaceCommunication",
+      "prerequisitePackIds": [
+        "core-chunks-1",
+        "meeting-communication-1"
+      ],
+      "companionPackIds": [
+        "core-chunks-2",
+        "small-talk-2"
       ]
     },
     {
@@ -122,6 +205,46 @@
       ],
       "companionPackIds": [
         "core-chunks-1"
+      ]
+    },
+    {
+      "id": "small-talk-2",
+      "title": "Small Talk 2",
+      "description": "面向初识延展、建立共同点、分享偏好、修复冷场、发出轻邀约、礼貌拒绝、后续跟进和重新连接的进阶 small talk 训练包。",
+      "packType": "Scenario",
+      "version": "2026.06.02",
+      "levelHint": "B1-B2",
+      "unitCount": 8,
+      "itemCount": 32,
+      "estimatedMinutes": 140,
+      "sizeBytes": 7587,
+      "sha256": "87836eb765dda73be80de5647b455ee0090cfce1731c289a921a47dacf2d7b52",
+      "fileName": "small-talk-2-2026.06.02.trainpack",
+      "tags": [
+        "Speaking",
+        "SmallTalk",
+        "Core",
+        "B1-B2"
+      ],
+      "trainingModes": [
+        "Recall",
+        "Shadow",
+        "Respond"
+      ],
+      "urls": [
+        "https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026.06.02/small-talk-2-2026.06.02.trainpack"
+      ],
+      "seriesId": "social-speaking-path",
+      "seriesTitle": "社交口语路径",
+      "seriesOrder": 2,
+      "learningPath": "SocialConversation",
+      "prerequisitePackIds": [
+        "core-chunks-1",
+        "small-talk-1"
+      ],
+      "companionPackIds": [
+        "core-chunks-2",
+        "meeting-communication-1"
       ]
     }
   ]

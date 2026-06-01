@@ -110,11 +110,14 @@ latest.json.sha256
 
 ## 当前示例训练包
 
-当前仓库内置三份官方训练包内容文件：
+当前仓库内置六份官方训练包内容文件：
 
 - `content/packs/core-chunks-1.json`：高频口语表达块 1。
+- `content/packs/core-chunks-2.json`：高频口语表达块 2。
 - `content/packs/small-talk-1.json`：Small Talk 1。
+- `content/packs/small-talk-2.json`：Small Talk 2。
 - `content/packs/meeting-communication-1.json`：会议沟通 1。
+- `content/packs/meeting-communication-2.json`：会议沟通 2。
 
 这些 JSON 文件是首批正式发布候选的源内容；Python 只负责读取内容、构建 `.trainpack`、生成 catalog 并执行校验。
 
@@ -139,6 +142,9 @@ python3 tools/release_trainpacks.py
 
 
 ```bash
+python3 tools/build-packs/build_from_content.py content/packs/core-chunks-2.json
+python3 tools/build-packs/build_from_content.py content/packs/small-talk-2.json
+python3 tools/build-packs/build_from_content.py content/packs/meeting-communication-2.json
 python3 tools/build-packs/build_from_content.py content/packs/small-talk-1.json
 python3 tools/build-packs/build_from_content.py content/packs/meeting-communication-1.json
 python3 tools/build-packs/build_from_content.py content/packs/core-chunks-1.json

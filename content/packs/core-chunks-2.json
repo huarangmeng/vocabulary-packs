@@ -1,0 +1,1010 @@
+{
+  "packId": "core-chunks-2",
+  "title": "高频口语表达块 2",
+  "description": "围绕假设确认、过渡衔接、软化请求、收窄选项、部分认同、升级担忧、重新框定和推动决策等更高互动压力下的核心 spoken functions 组织的进阶口语表达块训练包。",
+  "packType": "CoreChunks",
+  "levelHint": "B1-B2",
+  "estimatedMinutes": 140,
+  "tags": [
+    "Speaking",
+    "Chunks",
+    "Core",
+    "B1-B2"
+  ],
+  "trainingModes": [
+    "Recall",
+    "Shadow",
+    "Respond"
+  ],
+  "catalogMetadata": {
+    "seriesId": "core-speaking-foundations",
+    "seriesTitle": "核心口语基础",
+    "seriesOrder": 2,
+    "learningPath": "Foundation",
+    "prerequisitePackIds": [
+      "core-chunks-1"
+    ],
+    "recommendedNextPackIds": [
+      "small-talk-2",
+      "meeting-communication-2"
+    ],
+    "companionPackIds": [
+      "small-talk-2",
+      "meeting-communication-2"
+    ]
+  },
+  "units": [
+    {
+      "key": "assumption-check-001",
+      "title": "确认假设和边界",
+      "communicativeGoal": "在继续讨论前先确认彼此当前的前提假设",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "AssumptionCheck",
+        "Clarify",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你觉得大家好像默认了某个前提",
+        "你想先把讨论的边界说清楚"
+      ],
+      "pronunciationFocus": [
+        "are we assuming",
+        "just to be clear"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Just to be clear, are we assuming that's already fixed?",
+          "chinesePrompt": "确认一下，我们是不是默认那部分已经定了？",
+          "variants": [
+            "Just so I'm clear, are we assuming that's already fixed?"
+          ],
+          "notes": [
+            "用来先校正默认前提。"
+          ],
+          "pronunciationTargets": [
+            "just to be clear",
+            "are we assuming"
+          ],
+          "commonMistakes": [
+            "We assume this already fixed?"
+          ],
+          "tags": [
+            "AssumptionCheck",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I may be wrong, but I think we're treating two things as the same.",
+          "chinesePrompt": "也可能是我理解错了，但我觉得我们把两件事当成一件事了。",
+          "variants": [
+            "I might be wrong, but I think we're treating those as the same thing."
+          ],
+          "notes": [
+            "先降低攻击性，再指出假设问题。"
+          ],
+          "pronunciationTargets": [
+            "I may be wrong",
+            "treating two things as the same"
+          ],
+          "commonMistakes": [
+            "Maybe I am wrong but these two are same."
+          ],
+          "tags": [
+            "AssumptionCheck",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Before we go further, can we check what we're taking as a given here?",
+          "chinesePrompt": "在继续之前，我们能先确认一下这里哪些是既定前提吗？",
+          "variants": [
+            "Before we go any further, can we check what we're treating as a given here?"
+          ],
+          "notes": [
+            "适合进入复杂讨论前先对齐前提。"
+          ],
+          "pronunciationTargets": [
+            "before we go further",
+            "as a given"
+          ],
+          "commonMistakes": [
+            "Before continue, can we check what is already given?"
+          ],
+          "tags": [
+            "AssumptionCheck",
+            "SentencePattern"
+          ],
+          "slots": [
+            "before we go further",
+            "taking as a given"
+          ],
+          "sampleOutputs": [
+            "Before we go further, can we check what we're taking as a given here?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Just to be clear, are we assuming the timeline stays the same, or is that still open?",
+          "chinesePrompt": "确认一下，我们是不是默认时间线不变，还是这件事还没定？",
+          "variants": [],
+          "notes": [
+            "先拆清前提，再继续推进。"
+          ],
+          "pronunciationTargets": [
+            "stays the same",
+            "still open"
+          ],
+          "commonMistakes": [
+            "Timeline is same or still not decided?"
+          ],
+          "tags": [
+            "AssumptionCheck",
+            "DialogueTurn"
+          ],
+          "contextText": "你发现团队讨论建立在一个未确认的时间假设上。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "bridge-transition-001",
+      "title": "自然过渡到下一个点",
+      "communicativeGoal": "在不打断氛围的情况下，把对话平滑切到下一个重点",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Transition",
+        "TopicManagement",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你想结束一个话题并顺到下一个话题",
+        "你想避免生硬转场"
+      ],
+      "pronunciationFocus": [
+        "that brings us to",
+        "on a related note"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "That brings us to the bigger question.",
+          "chinesePrompt": "这就带出了一个更大的问题。",
+          "variants": [
+            "That brings us to the larger question."
+          ],
+          "notes": [
+            "很适合把局部点过渡到主线。"
+          ],
+          "pronunciationTargets": [
+            "brings us to",
+            "bigger question"
+          ],
+          "commonMistakes": [
+            "This brings us the bigger question."
+          ],
+          "tags": [
+            "Transition",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "On a related note, we should also think about timing.",
+          "chinesePrompt": "顺便说一句，时间安排这件事我们也得考虑。",
+          "variants": [
+            "On a related note, timing is something we should think about too."
+          ],
+          "notes": [
+            "可以自然地引入相邻议题。"
+          ],
+          "pronunciationTargets": [
+            "on a related note",
+            "think about timing"
+          ],
+          "commonMistakes": [
+            "Related note, we should think timing."
+          ],
+          "tags": [
+            "Transition",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "That makes sense, and it probably leads us to the next decision we need to make.",
+          "chinesePrompt": "这说得通，而且也自然引出了我们接下来要做的决定。",
+          "variants": [
+            "That makes sense, and it probably leads into the next decision we need to make."
+          ],
+          "notes": [
+            "先认可，再引向下一步。"
+          ],
+          "pronunciationTargets": [
+            "that makes sense",
+            "leads us to the next decision"
+          ],
+          "commonMistakes": [
+            "This makes sense and goes to next decision."
+          ],
+          "tags": [
+            "Transition",
+            "SentencePattern"
+          ],
+          "slots": [
+            "that makes sense",
+            "next decision"
+          ],
+          "sampleOutputs": [
+            "That makes sense, and it probably leads us to the next decision we need to make."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "That's helpful context. On a related note, we should also talk about what happens if demand is higher than expected.",
+          "chinesePrompt": "这些背景很有帮助。顺着这个，我觉得我们也该聊聊如果需求高于预期会怎么样。",
+          "variants": [],
+          "notes": [
+            "先接住前文，再平滑引到风险讨论。"
+          ],
+          "pronunciationTargets": [
+            "helpful context",
+            "higher than expected"
+          ],
+          "commonMistakes": [
+            "This context is useful. We also should talk if demand is more than expected."
+          ],
+          "tags": [
+            "Transition",
+            "DialogueTurn"
+          ],
+          "contextText": "你要把讨论从背景信息转到风险准备。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "soften-request-001",
+      "title": "软化请求和要求",
+      "communicativeGoal": "在需要别人配合时，用更柔和但清晰的方式提出请求",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "Request",
+        "Softening",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你需要别人做一件事，但不想显得太硬",
+        "你想既礼貌又不模糊地提出要求"
+      ],
+      "pronunciationFocus": [
+        "would you mind",
+        "when you get a chance"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Would you mind taking another look when you get a chance?",
+          "chinesePrompt": "你有空的时候能不能再帮我看一眼？",
+          "variants": [
+            "Would you mind taking one more look when you get a chance?"
+          ],
+          "notes": [
+            "既礼貌又不失明确。"
+          ],
+          "pronunciationTargets": [
+            "would you mind",
+            "when you get a chance"
+          ],
+          "commonMistakes": [
+            "Can you check again when free?"
+          ],
+          "tags": [
+            "Request",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "If possible, I'd really appreciate it by tomorrow.",
+          "chinesePrompt": "如果可以的话，我会很感激你能在明天前处理。",
+          "variants": [
+            "If possible, I'd really appreciate having it by tomorrow."
+          ],
+          "notes": [
+            "适合带一个温和的时间要求。"
+          ],
+          "pronunciationTargets": [
+            "if possible",
+            "I'd really appreciate it"
+          ],
+          "commonMistakes": [
+            "If can, I appreciate you tomorrow finish."
+          ],
+          "tags": [
+            "Request",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I know you're busy, but could I ask you to prioritise this one for now?",
+          "chinesePrompt": "我知道你很忙，但我能不能请你先优先处理这个？",
+          "variants": [
+            "I know you're busy, but could I ask you to prioritise this for the moment?"
+          ],
+          "notes": [
+            "先承认对方压力，再提出优先级请求。"
+          ],
+          "pronunciationTargets": [
+            "I know you're busy",
+            "prioritise this one"
+          ],
+          "commonMistakes": [
+            "I know you're busy but please do this first."
+          ],
+          "tags": [
+            "Request",
+            "SentencePattern"
+          ],
+          "slots": [
+            "I know you're busy",
+            "prioritise this one"
+          ],
+          "sampleOutputs": [
+            "I know you're busy, but could I ask you to prioritise this one for now?"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Would you mind sending me a quick update later today, just so I know where things stand?",
+          "chinesePrompt": "你今天晚点能不能给我发个简短更新，让我知道进展到哪了？",
+          "variants": [],
+          "notes": [
+            "柔和请求加说明目的，更容易被接受。"
+          ],
+          "pronunciationTargets": [
+            "quick update",
+            "where things stand"
+          ],
+          "commonMistakes": [
+            "Can you send me update later so I know progress?"
+          ],
+          "tags": [
+            "Request",
+            "DialogueTurn"
+          ],
+          "contextText": "你想追进度，但不想显得像在催人。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "narrow-options-001",
+      "title": "收窄选项和推进选择",
+      "communicativeGoal": "把开放讨论收束成几个可比较的选项",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "DecisionMaking",
+        "Options",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你觉得讨论选项太多了",
+        "你想把问题变成几个可选方向"
+      ],
+      "pronunciationFocus": [
+        "comes down to",
+        "realistically"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Realistically, I think this comes down to two options.",
+          "chinesePrompt": "现实一点看，我觉得这件事其实就归结为两个选项。",
+          "variants": [
+            "Realistically, I think we're down to two options here."
+          ],
+          "notes": [
+            "适合收束过于发散的讨论。"
+          ],
+          "pronunciationTargets": [
+            "realistically",
+            "comes down to two options"
+          ],
+          "commonMistakes": [
+            "Actually this has only two options."
+          ],
+          "tags": [
+            "DecisionMaking",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Maybe we should rule out anything that's too costly.",
+          "chinesePrompt": "也许我们应该先排除那些成本太高的方案。",
+          "variants": [
+            "Maybe we should rule out any option that's too costly."
+          ],
+          "notes": [
+            "先设筛选条件，再谈选择。"
+          ],
+          "pronunciationTargets": [
+            "rule out",
+            "too costly"
+          ],
+          "commonMistakes": [
+            "We should remove options too expensive."
+          ],
+          "tags": [
+            "DecisionMaking",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "If we focus on what we can actually deliver this month, the choice gets a lot clearer.",
+          "chinesePrompt": "如果我们聚焦这个月实际能交付什么，选择就会清楚很多。",
+          "variants": [
+            "If we focus on what we can realistically deliver this month, the choice becomes much clearer."
+          ],
+          "notes": [
+            "用限制条件帮助大家更快选择。"
+          ],
+          "pronunciationTargets": [
+            "actually deliver",
+            "gets a lot clearer"
+          ],
+          "commonMistakes": [
+            "If focus what we can do this month, choice is more clear."
+          ],
+          "tags": [
+            "DecisionMaking",
+            "SentencePattern"
+          ],
+          "slots": [
+            "focus on what we can deliver",
+            "choice gets clearer"
+          ],
+          "sampleOutputs": [
+            "If we focus on what we can actually deliver this month, the choice gets a lot clearer."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "We have a lot of ideas on the table, but realistically I think this comes down to speed versus flexibility.",
+          "chinesePrompt": "我们现在桌面上有很多想法，但现实一点看，其实就是速度和灵活性的取舍。",
+          "variants": [],
+          "notes": [
+            "把复杂讨论压缩成可比较维度。"
+          ],
+          "pronunciationTargets": [
+            "on the table",
+            "speed versus flexibility"
+          ],
+          "commonMistakes": [
+            "There are many ideas, but this is speed and flexibility choice."
+          ],
+          "tags": [
+            "DecisionMaking",
+            "DialogueTurn"
+          ],
+          "contextText": "你在讨论中想帮助大家收敛到几个关键维度。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "partial-agreement-001",
+      "title": "部分认同后再转向",
+      "communicativeGoal": "先接住对方的合理部分，再表达不同角度或保留意见",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Agreement",
+        "Disagreement",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你并不是完全不同意，只想补充另一面",
+        "你想减少直接冲突感"
+      ],
+      "pronunciationFocus": [
+        "to an extent",
+        "at the same time"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I agree with that to an extent.",
+          "chinesePrompt": "我在一定程度上同意这个。",
+          "variants": [
+            "I agree with that up to a point."
+          ],
+          "notes": [
+            "为后续转向留出空间。"
+          ],
+          "pronunciationTargets": [
+            "to an extent"
+          ],
+          "commonMistakes": [
+            "I agree partly with that."
+          ],
+          "tags": [
+            "Agreement",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I can see the logic there, but I think there's another side to it.",
+          "chinesePrompt": "我能理解这个逻辑，但我觉得这件事还有另一面。",
+          "variants": [
+            "I can see the logic there, but I think there's another angle to it."
+          ],
+          "notes": [
+            "适合温和引出不同视角。"
+          ],
+          "pronunciationTargets": [
+            "see the logic",
+            "another side to it"
+          ],
+          "commonMistakes": [
+            "I understand your logic but there is another side."
+          ],
+          "tags": [
+            "Agreement",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I think you're right about the short term, but I'm less sure this still works longer term.",
+          "chinesePrompt": "我觉得你说的短期上是对的，但我不太确定长期看这是否还成立。",
+          "variants": [
+            "I think you're right in the short term, but I'm less sure this still works in the long term."
+          ],
+          "notes": [
+            "把 disagreement 放在时间维度上会更自然。"
+          ],
+          "pronunciationTargets": [
+            "short term",
+            "longer term"
+          ],
+          "commonMistakes": [
+            "You are right now but maybe not in long time."
+          ],
+          "tags": [
+            "Agreement",
+            "SentencePattern"
+          ],
+          "slots": [
+            "right about the short term",
+            "less sure longer term"
+          ],
+          "sampleOutputs": [
+            "I think you're right about the short term, but I'm less sure this still works longer term."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I can see the logic there, and I agree with part of it. At the same time, I think we're underestimating the effort on our side.",
+          "chinesePrompt": "我能理解这个逻辑，而且其中一部分我也同意。与此同时，我觉得我们低估了我们这边要投入的工作量。",
+          "variants": [],
+          "notes": [
+            "先认同，再明确指出保留点。"
+          ],
+          "pronunciationTargets": [
+            "at the same time",
+            "underestimating the effort"
+          ],
+          "commonMistakes": [
+            "I agree part of it, but we think less about effort."
+          ],
+          "tags": [
+            "Agreement",
+            "DialogueTurn"
+          ],
+          "contextText": "你不想直接反对，但要把团队拉回现实成本。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "escalate-concern-001",
+      "title": "升级担忧但不制造对立",
+      "communicativeGoal": "在风险变大时提高语气强度，但仍保持合作姿态",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "Risk",
+        "Concern",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你觉得问题已经不能只轻描淡写了",
+        "你想更明确地提醒风险"
+      ],
+      "pronunciationFocus": [
+        "I'm increasingly concerned",
+        "becomes a real risk"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I'm increasingly concerned this could become a real issue.",
+          "chinesePrompt": "我越来越担心这会变成一个真正的问题。",
+          "variants": [
+            "I'm getting increasingly concerned this could become a real issue."
+          ],
+          "notes": [
+            "比 I'm worried 更强，但还算克制。"
+          ],
+          "pronunciationTargets": [
+            "increasingly concerned",
+            "real issue"
+          ],
+          "commonMistakes": [
+            "I more and more worry this is a real problem."
+          ],
+          "tags": [
+            "Risk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "At that point, it stops being a minor problem.",
+          "chinesePrompt": "到了那个阶段，这就不再是个小问题了。",
+          "variants": [
+            "At that point, this stops being a small issue."
+          ],
+          "notes": [
+            "用来提升问题严重性。"
+          ],
+          "pronunciationTargets": [
+            "at that point",
+            "stops being a minor problem"
+          ],
+          "commonMistakes": [
+            "Then this is not a small problem anymore."
+          ],
+          "tags": [
+            "Risk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "What worries me is that if we leave this too late, it becomes much harder to recover from.",
+          "chinesePrompt": "我担心的是，如果这件事拖得太晚，后面就更难补救了。",
+          "variants": [
+            "What worries me is that if we leave this too late, it becomes much harder to recover."
+          ],
+          "notes": [
+            "把风险讲成因果链，比单纯反对更有说服力。"
+          ],
+          "pronunciationTargets": [
+            "what worries me is that",
+            "harder to recover from"
+          ],
+          "commonMistakes": [
+            "I worry if we leave too late, it is harder to fix back."
+          ],
+          "tags": [
+            "Risk",
+            "SentencePattern"
+          ],
+          "slots": [
+            "what worries me is that",
+            "harder to recover from"
+          ],
+          "sampleOutputs": [
+            "What worries me is that if we leave this too late, it becomes much harder to recover from."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I know we're trying to keep this lightweight, but I'm increasingly concerned that we're treating a structural issue like a temporary one.",
+          "chinesePrompt": "我知道我们想把这件事处理得轻一点，但我越来越担心我们把一个结构性问题当成临时问题在处理。",
+          "variants": [],
+          "notes": [
+            "适合在风险被低估时提高提醒强度。"
+          ],
+          "pronunciationTargets": [
+            "keep this lightweight",
+            "structural issue"
+          ],
+          "commonMistakes": [
+            "We want light way, but this is actually structure issue."
+          ],
+          "tags": [
+            "Risk",
+            "DialogueTurn"
+          ],
+          "contextText": "你要把一个被轻描淡写的问题重新提升到应有等级。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "reframe-001",
+      "title": "重新框定问题",
+      "communicativeGoal": "当讨论陷入错误角度时，把问题换个框架重新看",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Reframing",
+        "Strategy",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你觉得大家问的问题本身就不对",
+        "你想从另一个维度看同一个问题"
+      ],
+      "pronunciationFocus": [
+        "maybe the real question is",
+        "instead of asking"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Maybe the real question isn't speed, but predictability.",
+          "chinesePrompt": "也许真正的问题不是速度，而是可预期性。",
+          "variants": [
+            "Maybe the real question here isn't speed, but predictability."
+          ],
+          "notes": [
+            "经典 reframing 句型。"
+          ],
+          "pronunciationTargets": [
+            "real question",
+            "predictability"
+          ],
+          "commonMistakes": [
+            "Maybe real question is not speed but can predict."
+          ],
+          "tags": [
+            "Reframing",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I think we're framing this too narrowly.",
+          "chinesePrompt": "我觉得我们现在把这个问题框得太窄了。",
+          "variants": [
+            "I think we're looking at this a bit too narrowly."
+          ],
+          "notes": [
+            "用来提醒大家跳出当前角度。"
+          ],
+          "pronunciationTargets": [
+            "framing this too narrowly"
+          ],
+          "commonMistakes": [
+            "We are thinking this too narrow."
+          ],
+          "tags": [
+            "Reframing",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Instead of asking how fast we can ship it, maybe we should ask what we can support well after launch.",
+          "chinesePrompt": "与其问我们能多快上线，也许我们更该问上线后哪些东西我们能稳定支持。",
+          "variants": [
+            "Instead of asking how quickly we can ship it, maybe we should ask what we can support well after launch."
+          ],
+          "notes": [
+            "用 instead of asking 重构问题方向很自然。"
+          ],
+          "pronunciationTargets": [
+            "instead of asking",
+            "support well after launch"
+          ],
+          "commonMistakes": [
+            "Instead ask how fast we ship, we should ask what we can support after."
+          ],
+          "tags": [
+            "Reframing",
+            "SentencePattern"
+          ],
+          "slots": [
+            "instead of asking",
+            "maybe we should ask"
+          ],
+          "sampleOutputs": [
+            "Instead of asking how fast we can ship it, maybe we should ask what we can support well after launch."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I think we're framing this too narrowly. The issue isn't whether we can build it, but whether we can maintain it once usage grows.",
+          "chinesePrompt": "我觉得我们现在把这个问题框得太窄了。问题不是我们能不能做出来，而是用户量上来之后我们能不能维护住。",
+          "variants": [],
+          "notes": [
+            "把技术可行性重构为可持续性问题。"
+          ],
+          "pronunciationTargets": [
+            "maintain it",
+            "once usage grows"
+          ],
+          "commonMistakes": [
+            "Question is not can build, but can maintain when users more."
+          ],
+          "tags": [
+            "Reframing",
+            "DialogueTurn"
+          ],
+          "contextText": "团队一直在谈实现速度，但你更关注后续维护能力。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "decision-framing-001",
+      "title": "推动决策落地",
+      "communicativeGoal": "把讨论从信息交换推进到可执行决定",
+      "scene": "DailyConversation",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Decision",
+        "Action",
+        "Core"
+      ],
+      "activationPrompts": [
+        "你觉得大家已经讨论够了，需要收敛决策",
+        "你想把下一步说清楚"
+      ],
+      "pronunciationFocus": [
+        "are we ready to decide",
+        "what are we actually deciding"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "What are we actually deciding today?",
+          "chinesePrompt": "我们今天到底要决定什么？",
+          "variants": [
+            "What exactly are we deciding today?"
+          ],
+          "notes": [
+            "适合在讨论发散时重新聚焦。"
+          ],
+          "pronunciationTargets": [
+            "actually deciding today"
+          ],
+          "commonMistakes": [
+            "What do we decide today actually?"
+          ],
+          "tags": [
+            "Decision",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Are we ready to make a call on this?",
+          "chinesePrompt": "这件事我们现在能拍板了吗？",
+          "variants": [
+            "Are we ready to make a decision on this?"
+          ],
+          "notes": [
+            "更口语化的推动决策表达。"
+          ],
+          "pronunciationTargets": [
+            "make a call on this"
+          ],
+          "commonMistakes": [
+            "Are we ready decide this now?"
+          ],
+          "tags": [
+            "Decision",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "If we're not deciding today, then I think we should be explicit about what still needs to be true before we can.",
+          "chinesePrompt": "如果我们今天不做决定，那我觉得我们至少应该明确还差哪些条件才能做决定。",
+          "variants": [
+            "If we're not deciding today, we should at least be explicit about what still has to be true before we can."
+          ],
+          "notes": [
+            "即使不拍板，也要把决策条件说清楚。"
+          ],
+          "pronunciationTargets": [
+            "be explicit about",
+            "before we can"
+          ],
+          "commonMistakes": [
+            "If not decide today, we should say what conditions are missing."
+          ],
+          "tags": [
+            "Decision",
+            "SentencePattern"
+          ],
+          "slots": [
+            "if we're not deciding today",
+            "be explicit about"
+          ],
+          "sampleOutputs": [
+            "If we're not deciding today, then I think we should be explicit about what still needs to be true before we can."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "We've explored the trade-offs pretty thoroughly. Are we ready to make a call, or do we still need one more input before we do?",
+          "chinesePrompt": "这些取舍我们已经讨论得很充分了。我们现在能拍板了吗，还是还缺一个关键信息才能定？",
+          "variants": [],
+          "notes": [
+            "推动进入决策区，同时给未决情况留出口。"
+          ],
+          "pronunciationTargets": [
+            "trade-offs",
+            "one more input"
+          ],
+          "commonMistakes": [
+            "We discussed enough. Can decide now or still need one more thing?"
+          ],
+          "tags": [
+            "Decision",
+            "DialogueTurn"
+          ],
+          "contextText": "你要把长期讨论推进到明确决定或明确缺口。",
+          "responseRole": "Speaker"
+        }
+      ]
+    }
+  ]
+}

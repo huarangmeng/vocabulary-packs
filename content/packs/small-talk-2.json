@@ -1,0 +1,993 @@
+{
+  "packId": "small-talk-2",
+  "title": "Small Talk 2",
+  "description": "面向初识延展、建立共同点、分享偏好、修复冷场、发出轻邀约、礼貌拒绝、后续跟进和重新连接的进阶 small talk 训练包。",
+  "packType": "Scenario",
+  "levelHint": "B1-B2",
+  "estimatedMinutes": 140,
+  "tags": [
+    "Speaking",
+    "SmallTalk",
+    "Core",
+    "B1-B2"
+  ],
+  "trainingModes": [
+    "Recall",
+    "Shadow",
+    "Respond"
+  ],
+  "catalogMetadata": {
+    "seriesId": "social-speaking-path",
+    "seriesTitle": "社交口语路径",
+    "seriesOrder": 2,
+    "learningPath": "SocialConversation",
+    "prerequisitePackIds": [
+      "core-chunks-1",
+      "small-talk-1"
+    ],
+    "companionPackIds": [
+      "core-chunks-2",
+      "meeting-communication-1"
+    ]
+  },
+  "units": [
+    {
+      "key": "first-impression-001",
+      "title": "初次认识后的自然延展",
+      "communicativeGoal": "在初次认识后自然继续聊下去，而不是停在表面问候",
+      "scene": "SmallTalk",
+      "register": "Casual",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "SmallTalk",
+        "FirstMeeting",
+        "Connection"
+      ],
+      "activationPrompts": [
+        "你刚认识一个人，想把对话从礼貌介绍推进一点",
+        "你想用一个更自然的问题继续聊"
+      ],
+      "pronunciationFocus": [
+        "how do you know",
+        "what got you into"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "So how do you know the host?",
+          "chinesePrompt": "所以你是怎么认识主办人的？",
+          "variants": [
+            "How do you know the host, then?"
+          ],
+          "notes": [
+            "活动现场非常常见的延展问题。"
+          ],
+          "pronunciationTargets": [
+            "how do you know the host"
+          ],
+          "commonMistakes": [
+            "How you know the host?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "What got you into that in the first place?",
+          "chinesePrompt": "你最开始是怎么接触这个的？",
+          "variants": [
+            "What got you into that to begin with?"
+          ],
+          "notes": [
+            "很适合把话题从职业或兴趣往前追溯。"
+          ],
+          "pronunciationTargets": [
+            "got you into that",
+            "in the first place"
+          ],
+          "commonMistakes": [
+            "Why you started that at first?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "You don't have to give me the full backstory, but I'm curious how you ended up in that field.",
+          "chinesePrompt": "你不用从头讲起，不过我挺好奇你最后怎么走到这个领域的。",
+          "variants": [
+            "You don't have to give me the whole story, but I'm curious how you ended up in that field."
+          ],
+          "notes": [
+            "先减轻对方负担，再发出真实兴趣。"
+          ],
+          "pronunciationTargets": [
+            "full backstory",
+            "ended up in that field"
+          ],
+          "commonMistakes": [
+            "I am curious how you entered this field."
+          ],
+          "tags": [
+            "SmallTalk",
+            "SentencePattern"
+          ],
+          "slots": [
+            "you don't have to",
+            "I'm curious how"
+          ],
+          "sampleOutputs": [
+            "You don't have to give me the full backstory, but I'm curious how you ended up in that field."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Nice. So how do you know the host? Have you known them for long?",
+          "chinesePrompt": "不错。所以你是怎么认识主办人的？你们认识很久了吗？",
+          "variants": [],
+          "notes": [
+            "两个轻问题连起来，能自然把话题延长。"
+          ],
+          "pronunciationTargets": [
+            "known them for long"
+          ],
+          "commonMistakes": [
+            "How you know the host? You know long time?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "DialogueTurn"
+          ],
+          "contextText": "你在活动上刚认识一个人，想把寒暄推进成真实交流。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "common-ground-001",
+      "title": "建立共同点",
+      "communicativeGoal": "从对方的话里抓住可共鸣点，建立更强的连接感",
+      "scene": "SmallTalk",
+      "register": "Casual",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "SmallTalk",
+        "Connection",
+        "CommonGround"
+      ],
+      "activationPrompts": [
+        "你想让对方感觉你们不是只在做表面寒暄",
+        "你从对方经历里听到了一个自己也能接的话题"
+      ],
+      "pronunciationFocus": [
+        "same here",
+        "I've had that too"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Oh, same here. I've had exactly the same experience.",
+          "chinesePrompt": "哦，我也是。我也有过一模一样的经历。",
+          "variants": [
+            "Same here, actually. I've had almost exactly the same experience."
+          ],
+          "notes": [
+            "比单纯说 Me too 更有连接感。"
+          ],
+          "pronunciationTargets": [
+            "same here",
+            "exactly the same experience"
+          ],
+          "commonMistakes": [
+            "Me too, I have same experience."
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "That sounds very familiar, actually.",
+          "chinesePrompt": "这听起来其实特别熟悉。",
+          "variants": [
+            "That actually sounds really familiar."
+          ],
+          "notes": [
+            "轻度共鸣，不会显得过度抢话。"
+          ],
+          "pronunciationTargets": [
+            "sounds very familiar"
+          ],
+          "commonMistakes": [
+            "This sounds very known to me."
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I went through something similar when I first moved here, so I know exactly what you mean.",
+          "chinesePrompt": "我刚搬来这里的时候也经历过类似的事，所以我完全懂你的意思。",
+          "variants": [
+            "I went through something similar when I first moved here, so I know what you mean."
+          ],
+          "notes": [
+            "适合把共鸣连接到一点个人经历。"
+          ],
+          "pronunciationTargets": [
+            "went through something similar",
+            "know exactly what you mean"
+          ],
+          "commonMistakes": [
+            "I had similar thing when first moved here."
+          ],
+          "tags": [
+            "SmallTalk",
+            "SentencePattern"
+          ],
+          "slots": [
+            "went through something similar",
+            "know what you mean"
+          ],
+          "sampleOutputs": [
+            "I went through something similar when I first moved here, so I know exactly what you mean."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "That sounds very familiar, actually. I had almost the same problem when I first started there.",
+          "chinesePrompt": "这听起来其实很熟悉。我刚开始在那边的时候也几乎遇到过同样的问题。",
+          "variants": [],
+          "notes": [
+            "先共鸣，再补一个简短 personal echo。"
+          ],
+          "pronunciationTargets": [
+            "almost the same problem",
+            "when I first started"
+          ],
+          "commonMistakes": [
+            "This is familiar. I had same problem in first beginning."
+          ],
+          "tags": [
+            "SmallTalk",
+            "DialogueTurn"
+          ],
+          "contextText": "对方在说自己刚换环境时的不适应。",
+          "responseRole": "Listener"
+        }
+      ]
+    },
+    {
+      "key": "preferences-001",
+      "title": "聊偏好和轻度观点",
+      "communicativeGoal": "把话题从事实层推进到偏好和轻度观点交换",
+      "scene": "SmallTalk",
+      "register": "Casual",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "SmallTalk",
+        "Preferences",
+        "Opinion"
+      ],
+      "activationPrompts": [
+        "你想让对话更有个人色彩",
+        "你想看看对方在一个轻松话题上的偏好"
+      ],
+      "pronunciationFocus": [
+        "I'm more of a",
+        "depends on my mood"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I'm more of an early-morning person, to be honest.",
+          "chinesePrompt": "说实话，我更偏向那种早起型的人。",
+          "variants": [
+            "To be honest, I'm more of an early-morning person."
+          ],
+          "notes": [
+            "很适合表达温和偏好。"
+          ],
+          "pronunciationTargets": [
+            "more of an",
+            "early-morning person"
+          ],
+          "commonMistakes": [
+            "I am more a morning person."
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "It kind of depends on my mood, actually.",
+          "chinesePrompt": "其实有点看我当时的心情。",
+          "variants": [
+            "It really depends on my mood, actually."
+          ],
+          "notes": [
+            "适合不想给绝对答案时使用。"
+          ],
+          "pronunciationTargets": [
+            "depends on my mood"
+          ],
+          "commonMistakes": [
+            "It depends my feeling."
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "If I'm choosing for myself, I usually go for somewhere quieter and less crowded.",
+          "chinesePrompt": "如果让我自己选，我通常会选那种更安静、人没那么多的地方。",
+          "variants": [
+            "If I'm choosing for myself, I usually go for somewhere a bit quieter and less crowded."
+          ],
+          "notes": [
+            "适合表达个人偏好而不显得太强势。"
+          ],
+          "pronunciationTargets": [
+            "go for somewhere quieter",
+            "less crowded"
+          ],
+          "commonMistakes": [
+            "If choose myself, I choose quiet and not many people place."
+          ],
+          "tags": [
+            "SmallTalk",
+            "SentencePattern"
+          ],
+          "slots": [
+            "if I'm choosing for myself",
+            "I usually go for"
+          ],
+          "sampleOutputs": [
+            "If I'm choosing for myself, I usually go for somewhere quieter and less crowded."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I'm more of a stay-in-and-recharge person, to be honest. What about you?",
+          "chinesePrompt": "说实话，我更像是那种待在家里充电的人。你呢？",
+          "variants": [],
+          "notes": [
+            "先抛一点个人信息，再把球传回去。"
+          ],
+          "pronunciationTargets": [
+            "stay in and recharge"
+          ],
+          "commonMistakes": [
+            "I am more like staying home to charge myself."
+          ],
+          "tags": [
+            "SmallTalk",
+            "DialogueTurn"
+          ],
+          "contextText": "你们正在聊周末或者休闲方式偏好。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "silence-repair-001",
+      "title": "修复冷场和短暂停顿",
+      "communicativeGoal": "在短暂尴尬或话题断掉时自然把对话接回来",
+      "scene": "SmallTalk",
+      "register": "Casual",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "SmallTalk",
+        "Repair",
+        "Flow"
+      ],
+      "activationPrompts": [
+        "话题突然断了，你不想让场面尴尬",
+        "你想把短暂停顿变成新的切入口"
+      ],
+      "pronunciationFocus": [
+        "speaking of which",
+        "that reminds me"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Speaking of which, have you been anywhere good recently?",
+          "chinesePrompt": "说到这个，你最近有去过什么不错的地方吗？",
+          "variants": [
+            "Speaking of that, have you been anywhere good lately?"
+          ],
+          "notes": [
+            "适合从前一个轻话题自然再开一个。"
+          ],
+          "pronunciationTargets": [
+            "speaking of which",
+            "anywhere good recently"
+          ],
+          "commonMistakes": [
+            "Talking of this, you went good place recently?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "That reminds me, I meant to ask you about that.",
+          "chinesePrompt": "这倒提醒我了，我本来正想问你这件事。",
+          "variants": [
+            "That reminds me, I was actually meaning to ask you about that."
+          ],
+          "notes": [
+            "很适合把停顿变成 follow-up。"
+          ],
+          "pronunciationTargets": [
+            "that reminds me",
+            "meant to ask you"
+          ],
+          "commonMistakes": [
+            "This reminds me, I wanted ask you that."
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "RepairStrategy",
+          "englishText": "We've gone quiet for a second, but that's okay. I was actually curious about what you said earlier.",
+          "chinesePrompt": "我们安静了一下，不过没关系。其实我还挺想继续问问你刚才提到的那件事。",
+          "variants": [
+            "We've gone quiet for a second, but that's fine. I was actually curious about what you mentioned earlier."
+          ],
+          "notes": [
+            "适合对冷场有意识修复。"
+          ],
+          "pronunciationTargets": [
+            "gone quiet",
+            "curious about"
+          ],
+          "commonMistakes": [
+            "We became quiet, but I want ask what you said before."
+          ],
+          "tags": [
+            "SmallTalk",
+            "RepairStrategy"
+          ],
+          "repairType": "RecoverFlow"
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "That reminds me, you mentioned you were planning a trip. Did you end up booking anything?",
+          "chinesePrompt": "这倒提醒我了，你之前提到你在计划旅行。后来订了吗？",
+          "variants": [],
+          "notes": [
+            "从停顿直接接回已知线索，很自然。"
+          ],
+          "pronunciationTargets": [
+            "did you end up booking"
+          ],
+          "commonMistakes": [
+            "You said before about trip. You booked finally?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "DialogueTurn"
+          ],
+          "contextText": "刚刚出现了一小段安静，你想把话题接回来。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "light-invitation-001",
+      "title": "发出轻邀约",
+      "communicativeGoal": "在关系还不算深时，自然提出轻量邀约或继续聊的机会",
+      "scene": "SmallTalk",
+      "register": "Casual",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "SmallTalk",
+        "Invitation",
+        "Connection"
+      ],
+      "activationPrompts": [
+        "你想在聊得不错后顺手发一个轻量邀约",
+        "你想表达以后可以继续聊，但不想显得太用力"
+      ],
+      "pronunciationFocus": [
+        "if you're up for it",
+        "sometime next week"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "If you're up for it, we should grab coffee sometime.",
+          "chinesePrompt": "如果你愿意的话，我们找时间喝个咖啡吧。",
+          "variants": [
+            "If you're up for it, we should grab a coffee sometime."
+          ],
+          "notes": [
+            "很轻，不会显得太正式。"
+          ],
+          "pronunciationTargets": [
+            "if you're up for it",
+            "grab coffee sometime"
+          ],
+          "commonMistakes": [
+            "If you want, we can drink coffee one day."
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "We should continue this conversation another time.",
+          "chinesePrompt": "我们改天应该把这个话题继续聊下去。",
+          "variants": [
+            "We should pick this conversation up another time."
+          ],
+          "notes": [
+            "适合从具体话题自然延展到后续接触。"
+          ],
+          "pronunciationTargets": [
+            "continue this conversation",
+            "another time"
+          ],
+          "commonMistakes": [
+            "We should continue talk next time."
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "If you're around next week, I'd be happy to swap recommendations properly.",
+          "chinesePrompt": "如果你下周也在的话，我很愿意找个时间认真交流一下推荐清单。",
+          "variants": [
+            "If you're around next week, I'd be happy to compare recommendations properly."
+          ],
+          "notes": [
+            "把邀约绑定在具体轻主题上更自然。"
+          ],
+          "pronunciationTargets": [
+            "if you're around next week",
+            "swap recommendations"
+          ],
+          "commonMistakes": [
+            "If you are free next week, I am happy to share recommendations properly."
+          ],
+          "tags": [
+            "SmallTalk",
+            "SentencePattern"
+          ],
+          "slots": [
+            "if you're around next week",
+            "I'd be happy to"
+          ],
+          "sampleOutputs": [
+            "If you're around next week, I'd be happy to swap recommendations properly."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I've really enjoyed this chat. If you're up for it, we should grab coffee sometime next week.",
+          "chinesePrompt": "我真的挺享受这次聊天的。如果你愿意的话，我们下周找时间喝个咖啡吧。",
+          "variants": [],
+          "notes": [
+            "先明确正向感受，再发出轻邀约。"
+          ],
+          "pronunciationTargets": [
+            "enjoyed this chat",
+            "sometime next week"
+          ],
+          "commonMistakes": [
+            "I enjoy this chat. We should drink coffee next week if you want."
+          ],
+          "tags": [
+            "SmallTalk",
+            "DialogueTurn"
+          ],
+          "contextText": "你在一段自然的对话结束前想留下后续联系机会。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "polite-decline-001",
+      "title": "礼貌拒绝但保持关系",
+      "communicativeGoal": "在不方便接受邀请或建议时，既说清楚也不把关系聊冷",
+      "scene": "SmallTalk",
+      "register": "Casual",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "SmallTalk",
+        "Decline",
+        "Relationship"
+      ],
+      "activationPrompts": [
+        "你想礼貌地拒绝一个邀约",
+        "你不想让拒绝听起来像是彻底断掉"
+      ],
+      "pronunciationFocus": [
+        "I'd love to, but",
+        "rain check"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I'd love to, but this week's a bit full on my side.",
+          "chinesePrompt": "我很想去，不过我这周这边有点排满了。",
+          "variants": [
+            "I'd love to, but this week's a bit packed on my side."
+          ],
+          "notes": [
+            "既接受善意，又说明现实限制。"
+          ],
+          "pronunciationTargets": [
+            "I'd love to",
+            "a bit full on my side"
+          ],
+          "commonMistakes": [
+            "I want to, but this week is full for me."
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Can I take a rain check on that?",
+          "chinesePrompt": "这次我能先改天吗？",
+          "variants": [
+            "Could I take a rain check on that?"
+          ],
+          "notes": [
+            "很自然的英语拒绝保留句。"
+          ],
+          "pronunciationTargets": [
+            "take a rain check"
+          ],
+          "commonMistakes": [
+            "Can I do it another day?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I'm going to have to pass this time, but please ask me again another week.",
+          "chinesePrompt": "这次我可能得先婉拒，不过你改周再约我也完全可以。",
+          "variants": [
+            "I'm going to have to pass this time, but do ask me again another week."
+          ],
+          "notes": [
+            "既拒绝，又明确保留后续空间。"
+          ],
+          "pronunciationTargets": [
+            "have to pass this time",
+            "ask me again another week"
+          ],
+          "commonMistakes": [
+            "This time I pass, but ask me next time."
+          ],
+          "tags": [
+            "SmallTalk",
+            "SentencePattern"
+          ],
+          "slots": [
+            "have to pass this time",
+            "ask me again"
+          ],
+          "sampleOutputs": [
+            "I'm going to have to pass this time, but please ask me again another week."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I'd love to, but this week is a bit full for me. Can I take a rain check and get back to you next week?",
+          "chinesePrompt": "我很想去，不过我这周有点排满了。我能不能先改天，下周再和你确认？",
+          "variants": [],
+          "notes": [
+            "完整而自然的 soft decline 模板。"
+          ],
+          "pronunciationTargets": [
+            "get back to you next week"
+          ],
+          "commonMistakes": [
+            "I want, but this week full. Maybe next week I tell you."
+          ],
+          "tags": [
+            "SmallTalk",
+            "DialogueTurn"
+          ],
+          "contextText": "对方邀请你参加活动，但你这周确实安排不开。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "follow-up-001",
+      "title": "活动后续跟进",
+      "communicativeGoal": "在见面后的下一次接触里自然续上上次的话题",
+      "scene": "SmallTalk",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "SmallTalk",
+        "FollowUp",
+        "Memory"
+      ],
+      "activationPrompts": [
+        "你上次见面聊过一个点，这次想自然接回来",
+        "你想让对方感觉你真的记住了之前的聊天"
+      ],
+      "pronunciationFocus": [
+        "last time we spoke",
+        "did that ever"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Last time we spoke, you mentioned you were waiting to hear back.",
+          "chinesePrompt": "我们上次聊的时候，你提到你在等回复。",
+          "variants": [
+            "When we spoke last time, you mentioned you were waiting to hear back."
+          ],
+          "notes": [
+            "先唤起共同记忆，再进入 follow-up。"
+          ],
+          "pronunciationTargets": [
+            "last time we spoke",
+            "waiting to hear back"
+          ],
+          "commonMistakes": [
+            "Last time we talked, you said you wait reply."
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Did that ever work out in the end?",
+          "chinesePrompt": "那件事后来最后顺利了吗？",
+          "variants": [
+            "Did that work out in the end?"
+          ],
+          "notes": [
+            "很常用的 follow-up 追问。"
+          ],
+          "pronunciationTargets": [
+            "work out in the end"
+          ],
+          "commonMistakes": [
+            "That thing finally became okay?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "You probably don't even remember mentioning it, but I was curious how that interview process turned out.",
+          "chinesePrompt": "你可能都不记得自己提过这事了，不过我还挺好奇后来那个面试流程怎么样了。",
+          "variants": [
+            "You probably don't even remember mentioning it, but I was curious how that interview process ended up going."
+          ],
+          "notes": [
+            "先减轻对方压力，再问 follow-up。"
+          ],
+          "pronunciationTargets": [
+            "don't even remember mentioning it",
+            "turned out"
+          ],
+          "commonMistakes": [
+            "You maybe don't remember saying it, but I am curious how interview was."
+          ],
+          "tags": [
+            "SmallTalk",
+            "SentencePattern"
+          ],
+          "slots": [
+            "don't even remember mentioning it",
+            "I was curious how"
+          ],
+          "sampleOutputs": [
+            "You probably don't even remember mentioning it, but I was curious how that interview process turned out."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Last time we spoke, you mentioned you were looking for a new flat. Did that ever work out in the end?",
+          "chinesePrompt": "我们上次聊的时候，你提到你在找新房子。后来这件事顺利了吗？",
+          "variants": [],
+          "notes": [
+            "完整的记忆型 follow-up 模板。"
+          ],
+          "pronunciationTargets": [
+            "looking for a new flat"
+          ],
+          "commonMistakes": [
+            "Last time you said finding new house. It worked finally?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "DialogueTurn"
+          ],
+          "contextText": "你再次见到上次聊得不错的人，想自然续上之前的话题。",
+          "responseRole": "Speaker"
+        }
+      ]
+    },
+    {
+      "key": "reconnect-001",
+      "title": "隔一段时间后重新连接",
+      "communicativeGoal": "在较长时间没联系后自然重新开口，而不显得突兀",
+      "scene": "SmallTalk",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B1-B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "SmallTalk",
+        "Reconnect",
+        "Relationship"
+      ],
+      "activationPrompts": [
+        "你有一阵子没和对方说话了",
+        "你想重新建立联系，但不想显得尴尬"
+      ],
+      "pronunciationFocus": [
+        "it's been a while",
+        "crossed my mind"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "It's been a while. How have things been on your side?",
+          "chinesePrompt": "有段时间没见了。你那边最近怎么样？",
+          "variants": [
+            "It's been a while. How have things been with you?"
+          ],
+          "notes": [
+            "重新建立联系的经典轻开场。"
+          ],
+          "pronunciationTargets": [
+            "it's been a while",
+            "on your side"
+          ],
+          "commonMistakes": [
+            "Long time no see. How are things with your side?"
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "You crossed my mind the other day, actually.",
+          "chinesePrompt": "其实前两天我还想起你来着。",
+          "variants": [
+            "You actually crossed my mind the other day."
+          ],
+          "notes": [
+            "带一点温度，但不夸张。"
+          ],
+          "pronunciationTargets": [
+            "crossed my mind"
+          ],
+          "commonMistakes": [
+            "I remembered you some days ago."
+          ],
+          "tags": [
+            "SmallTalk",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I realised we hadn't caught up in ages, so I just wanted to say hi and see how you're doing.",
+          "chinesePrompt": "我突然意识到我们很久没聊了，所以就想来打个招呼，看看你最近怎么样。",
+          "variants": [
+            "I realised we hadn't caught up in ages, so I wanted to say hi and see how things are going."
+          ],
+          "notes": [
+            "适合在消息或线下重连时使用。"
+          ],
+          "pronunciationTargets": [
+            "hadn't caught up in ages",
+            "see how you're doing"
+          ],
+          "commonMistakes": [
+            "I realised we long time not catch up, so I say hi."
+          ],
+          "tags": [
+            "SmallTalk",
+            "SentencePattern"
+          ],
+          "slots": [
+            "hadn't caught up in ages",
+            "wanted to say hi"
+          ],
+          "sampleOutputs": [
+            "I realised we hadn't caught up in ages, so I just wanted to say hi and see how you're doing."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Hey, it's been a while. You crossed my mind the other day, actually, so I thought I'd say hello.",
+          "chinesePrompt": "嗨，好久不见。其实我前两天还想起你来着，所以就想着来打个招呼。",
+          "variants": [],
+          "notes": [
+            "完整的轻量重连模板。"
+          ],
+          "pronunciationTargets": [
+            "thought I'd say hello"
+          ],
+          "commonMistakes": [
+            "Long time. I remembered you and wanted say hello."
+          ],
+          "tags": [
+            "SmallTalk",
+            "DialogueTurn"
+          ],
+          "contextText": "你隔了比较久再次联系一个聊得还不错的人。",
+          "responseRole": "Speaker"
+        }
+      ]
+    }
+  ]
+}

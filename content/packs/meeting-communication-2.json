@@ -1,0 +1,999 @@
+{
+  "packId": "meeting-communication-2",
+  "title": "会议沟通 2",
+  "description": "面向取舍权衡、风险升级、范围控制、推动决策、责任对齐、时间压力、打断偏题和会后跟进的进阶会议沟通训练包。",
+  "packType": "Scenario",
+  "levelHint": "B2",
+  "estimatedMinutes": 150,
+  "tags": [
+    "Speaking",
+    "Meeting",
+    "Core",
+    "B2"
+  ],
+  "trainingModes": [
+    "Recall",
+    "Shadow",
+    "Respond"
+  ],
+  "catalogMetadata": {
+    "seriesId": "workplace-speaking-path",
+    "seriesTitle": "职场口语路径",
+    "seriesOrder": 2,
+    "learningPath": "WorkplaceCommunication",
+    "prerequisitePackIds": [
+      "core-chunks-1",
+      "meeting-communication-1"
+    ],
+    "companionPackIds": [
+      "core-chunks-2",
+      "small-talk-2"
+    ]
+  },
+  "units": [
+    {
+      "key": "tradeoff-001",
+      "title": "讨论取舍与权衡",
+      "communicativeGoal": "把方案讨论从好不好转成取舍关系和代价比较",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "TradeOff",
+        "Decision"
+      ],
+      "activationPrompts": [
+        "你想提醒大家任何方案都有代价",
+        "你想把讨论转成可比较的 trade-off"
+      ],
+      "pronunciationFocus": [
+        "trade-off",
+        "at the cost of"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "The trade-off here is speed versus control.",
+          "chinesePrompt": "这里的取舍其实是速度和控制力之间的平衡。",
+          "variants": [
+            "The trade-off here is really speed versus control."
+          ],
+          "notes": [
+            "最直接的 trade-off 点题表达。"
+          ],
+          "pronunciationTargets": [
+            "trade-off",
+            "speed versus control"
+          ],
+          "commonMistakes": [
+            "The balance here is speed and control."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "We can absolutely do that, but only at the cost of flexibility later.",
+          "chinesePrompt": "我们当然可以这么做，但代价是后面的灵活性会下降。",
+          "variants": [
+            "We can do that, but only at the cost of flexibility later on."
+          ],
+          "notes": [
+            "适合提醒隐性代价。"
+          ],
+          "pronunciationTargets": [
+            "at the cost of",
+            "flexibility later"
+          ],
+          "commonMistakes": [
+            "We can do that, but cost is later less flexible."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I don't think this is about finding a perfect option so much as being clear about which downside we're willing to accept.",
+          "chinesePrompt": "我觉得这件事与其说是在找完美方案，不如说是要明确我们愿意接受哪一种 downside。",
+          "variants": [
+            "I don't think this is about finding a perfect option so much as being clear about which downside we're willing to live with."
+          ],
+          "notes": [
+            "把团队从“找完美答案”拉回现实决策。"
+          ],
+          "pronunciationTargets": [
+            "so much as",
+            "willing to accept"
+          ],
+          "commonMistakes": [
+            "This is not finding perfect option, but deciding which bad side we accept."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "not about finding a perfect option",
+            "which downside we're willing to accept"
+          ],
+          "sampleOutputs": [
+            "I don't think this is about finding a perfect option so much as being clear about which downside we're willing to accept."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I think we all want the faster option, but the trade-off here is that we'd be taking on more operational risk afterwards.",
+          "chinesePrompt": "我觉得大家都想选更快的方案，但这里的取舍是，我们之后会承担更多运维风险。",
+          "variants": [],
+          "notes": [
+            "把偏好和代价同时说出来。"
+          ],
+          "pronunciationTargets": [
+            "operational risk afterwards"
+          ],
+          "commonMistakes": [
+            "We all want fast option, but later operation risk becomes more."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "团队在纠结更快上线还是更稳方案。",
+          "responseRole": "Participant"
+        }
+      ]
+    },
+    {
+      "key": "risk-escalation-001",
+      "title": "升级风险提醒",
+      "communicativeGoal": "当风险被低估时，把问题明确提升到需要处理的等级",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "Meeting",
+        "Risk",
+        "Escalation"
+      ],
+      "activationPrompts": [
+        "你感觉团队在轻描淡写一个风险",
+        "你需要更明确地标记红线"
+      ],
+      "pronunciationFocus": [
+        "I'm not comfortable",
+        "red flag"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "At this point, I'm not comfortable treating that as a minor risk.",
+          "chinesePrompt": "到这个阶段，我已经不太能接受继续把这当成一个小风险来看了。",
+          "variants": [
+            "At this point, I'm no longer comfortable treating that as a minor risk."
+          ],
+          "notes": [
+            "温和但明确地升级问题等级。"
+          ],
+          "pronunciationTargets": [
+            "I'm not comfortable",
+            "minor risk"
+          ],
+          "commonMistakes": [
+            "At this point I am not okay to see this as small risk."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "For me, that's starting to look like a red flag.",
+          "chinesePrompt": "对我来说，这已经开始像一个红旗信号了。",
+          "variants": [
+            "To me, that's starting to look like a real red flag."
+          ],
+          "notes": [
+            "比 simply saying problem 更有信号感。"
+          ],
+          "pronunciationTargets": [
+            "red flag"
+          ],
+          "commonMistakes": [
+            "For me this is becoming a warning sign big."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "If we're still seeing the same issue this late in the process, I think we need to treat it as something structural rather than incidental.",
+          "chinesePrompt": "如果流程都到这么后面了我们还在看到同样的问题，我觉得这就该被视为结构性问题，而不是偶发情况。",
+          "variants": [
+            "If we're still seeing the same issue this late in the process, we need to treat it as structural rather than incidental."
+          ],
+          "notes": [
+            "适合把 repeated issue 升级为结构性风险。"
+          ],
+          "pronunciationTargets": [
+            "this late in the process",
+            "structural rather than incidental"
+          ],
+          "commonMistakes": [
+            "If same issue still appears late, we should see it as structure problem."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "this late in the process",
+            "structural rather than incidental"
+          ],
+          "sampleOutputs": [
+            "If we're still seeing the same issue this late in the process, I think we need to treat it as something structural rather than incidental."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I know we're trying not to overreact, but at this point I'm not comfortable treating that as a minor risk anymore.",
+          "chinesePrompt": "我知道我们不想反应过度，但到这个阶段，我已经不太能接受继续把这当成一个小风险看待了。",
+          "variants": [],
+          "notes": [
+            "先接住团队情绪，再升级风险判断。"
+          ],
+          "pronunciationTargets": [
+            "trying not to overreact"
+          ],
+          "commonMistakes": [
+            "I know we don't want overreact, but this is not small risk now."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "团队有人想继续观望，你觉得已经到了必须处理的时候。",
+          "responseRole": "Participant"
+        }
+      ]
+    },
+    {
+      "key": "scope-control-001",
+      "title": "控制范围膨胀",
+      "communicativeGoal": "在需求或讨论不断扩张时把范围拉回可交付状态",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Scope",
+        "Delivery"
+      ],
+      "activationPrompts": [
+        "你感觉大家又在加需求了",
+        "你想保护当前交付边界"
+      ],
+      "pronunciationFocus": [
+        "scope starts to creep",
+        "keep this manageable"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I think the scope is starting to creep here.",
+          "chinesePrompt": "我觉得这里的范围开始慢慢往外长了。",
+          "variants": [
+            "I think the scope is beginning to creep here."
+          ],
+          "notes": [
+            "非常典型的 scope control 表达。"
+          ],
+          "pronunciationTargets": [
+            "scope is starting to creep"
+          ],
+          "commonMistakes": [
+            "I think scope is becoming bigger slowly here."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Can we keep this manageable for the first pass?",
+          "chinesePrompt": "我们能不能先把第一版控制在可管理范围内？",
+          "variants": [
+            "Can we keep this manageable for the initial pass?"
+          ],
+          "notes": [
+            "适合把讨论拉回 first pass 思维。"
+          ],
+          "pronunciationTargets": [
+            "keep this manageable",
+            "first pass"
+          ],
+          "commonMistakes": [
+            "Can we keep this easy in first version?"
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I'm not saying those ideas aren't valuable, but if we keep adding them now, we stop having a clearly shippable version.",
+          "chinesePrompt": "我不是说这些想法没价值，但如果我们现在继续往里加，就没有一个清晰可上线的版本了。",
+          "variants": [
+            "I'm not saying those ideas aren't valuable, but if we keep adding them now, we stop having a clearly deliverable version."
+          ],
+          "notes": [
+            "先认可价值，再强调交付边界。"
+          ],
+          "pronunciationTargets": [
+            "clearly shippable version"
+          ],
+          "commonMistakes": [
+            "I don't say these ideas are not valuable, but if add now we have no clear version to ship."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "I'm not saying",
+            "clearly shippable version"
+          ],
+          "sampleOutputs": [
+            "I'm not saying those ideas aren't valuable, but if we keep adding them now, we stop having a clearly shippable version."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Those are all sensible additions, but I think the scope is starting to creep. Can we keep this manageable for the first release?",
+          "chinesePrompt": "这些补充都挺合理，但我觉得范围已经开始膨胀了。我们能不能先把首发控制在可管理范围内？",
+          "variants": [],
+          "notes": [
+            "典型的产品/工程范围收口句。"
+          ],
+          "pronunciationTargets": [
+            "sensible additions",
+            "first release"
+          ],
+          "commonMistakes": [
+            "These additions are reasonable, but scope becomes bigger. Can we make first release manageable?"
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "大家在会议里不断给第一版加想法，你想保护交付范围。",
+          "responseRole": "Participant"
+        }
+      ]
+    },
+    {
+      "key": "decision-push-001",
+      "title": "推动拍板",
+      "communicativeGoal": "在讨论足够充分后，主动推动团队明确决定或明确未决条件",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Decision",
+        "Facilitation"
+      ],
+      "activationPrompts": [
+        "你觉得讨论已经够了，应该进入决策",
+        "你想避免会议结束了还没人知道是否拍板"
+      ],
+      "pronunciationFocus": [
+        "land a decision",
+        "blocking us from deciding"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Can we try to land a decision before we leave this topic?",
+          "chinesePrompt": "我们能不能在离开这个话题前先把决定落下来？",
+          "variants": [
+            "Can we try to land a decision before we move on from this topic?"
+          ],
+          "notes": [
+            "很有主持感，但不生硬。"
+          ],
+          "pronunciationTargets": [
+            "land a decision",
+            "before we leave this topic"
+          ],
+          "commonMistakes": [
+            "Can we decide before leaving this topic?"
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "What's still blocking us from deciding?",
+          "chinesePrompt": "现在到底还有什么在阻止我们做决定？",
+          "variants": [
+            "What exactly is still blocking us from deciding?"
+          ],
+          "notes": [
+            "适合在一直不拍板时找剩余缺口。"
+          ],
+          "pronunciationTargets": [
+            "blocking us from deciding"
+          ],
+          "commonMistakes": [
+            "What still blocks us to decide?"
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "If we're not comfortable deciding yet, I think we should at least agree on what evidence would change that.",
+          "chinesePrompt": "如果我们现在还不够放心拍板，那我觉得至少要先对齐，什么证据出现后我们会愿意拍板。",
+          "variants": [
+            "If we're not comfortable deciding yet, we should at least agree on what evidence would change that."
+          ],
+          "notes": [
+            "防止会议以模糊状态结束。"
+          ],
+          "pronunciationTargets": [
+            "comfortable deciding yet",
+            "what evidence would change that"
+          ],
+          "commonMistakes": [
+            "If not comfortable decide, we should agree what proof changes it."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "if we're not comfortable deciding yet",
+            "what evidence would change that"
+          ],
+          "sampleOutputs": [
+            "If we're not comfortable deciding yet, I think we should at least agree on what evidence would change that."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "We've heard the main concerns and the main advantages. Can we try to land a decision, or are we saying one more data point is still missing?",
+          "chinesePrompt": "主要顾虑和主要优势我们都已经听到了。我们能不能现在尝试拍板，还是说还明确缺一个数据点？",
+          "variants": [],
+          "notes": [
+            "把“继续讨论”变成“是否还缺明确条件”。"
+          ],
+          "pronunciationTargets": [
+            "main concerns",
+            "one more data point"
+          ],
+          "commonMistakes": [
+            "We heard advantages and concerns. Can decide or still need one more data?"
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "会议已经来回讨论很久，你想推动收束。",
+          "responseRole": "Chair"
+        }
+      ]
+    },
+    {
+      "key": "owner-alignment-001",
+      "title": "对齐 owner 和责任边界",
+      "communicativeGoal": "把会后动作落到具体 owner、支持方和截止点",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "Ownership",
+        "ActionItems"
+      ],
+      "activationPrompts": [
+        "你担心会后没人真正负责",
+        "你想把负责人和支持方讲清楚"
+      ],
+      "pronunciationFocus": [
+        "single owner",
+        "driving this forward"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Can we name a single owner for this?",
+          "chinesePrompt": "这件事我们能不能明确一个唯一 owner？",
+          "variants": [
+            "Can we identify a single owner for this?"
+          ],
+          "notes": [
+            "非常适合防止“大家都负责=没人负责”。"
+          ],
+          "pronunciationTargets": [
+            "single owner"
+          ],
+          "commonMistakes": [
+            "Can we choose one owner for this?"
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Who's actually driving this forward from here?",
+          "chinesePrompt": "从这里往后，这件事到底是谁在往前推进？",
+          "variants": [
+            "Who's really driving this forward from this point?"
+          ],
+          "notes": [
+            "用 actually 强调不要落在空泛责任上。"
+          ],
+          "pronunciationTargets": [
+            "driving this forward"
+          ],
+          "commonMistakes": [
+            "Who is really making this go forward?"
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I'm hearing a lot of shared responsibility, but I think we still need one person accountable for the final outcome.",
+          "chinesePrompt": "我听到很多“共同负责”的说法，但我觉得我们还是需要一个人对最终结果真正负责。",
+          "variants": [
+            "I'm hearing a lot of shared responsibility, but I think we still need one person accountable for the final outcome here."
+          ],
+          "notes": [
+            "适合把模糊责任重新压到 accountable owner。"
+          ],
+          "pronunciationTargets": [
+            "shared responsibility",
+            "accountable for the final outcome"
+          ],
+          "commonMistakes": [
+            "Many people share responsibility, but we need one people responsible for final result."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "shared responsibility",
+            "accountable for the final outcome"
+          ],
+          "sampleOutputs": [
+            "I'm hearing a lot of shared responsibility, but I think we still need one person accountable for the final outcome."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Before we wrap up, can we name a single owner for the next step and be clear about who they're pulling in for support?",
+          "chinesePrompt": "结束前我们能不能明确一下下一步的唯一 owner，以及他需要谁来配合支持？",
+          "variants": [],
+          "notes": [
+            "把 owner 和 support roles 同时说清楚。"
+          ],
+          "pronunciationTargets": [
+            "pulling in for support"
+          ],
+          "commonMistakes": [
+            "Before end, can we choose owner and who helps him?"
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "你不想让 action item 以“大家回去看看”收尾。",
+          "responseRole": "Chair"
+        }
+      ]
+    },
+    {
+      "key": "time-pressure-001",
+      "title": "在时间压力下控节奏",
+      "communicativeGoal": "当时间不够时调整会议节奏，保住关键决定",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "TimeManagement",
+        "Facilitation"
+      ],
+      "activationPrompts": [
+        "会议时间快到了但关键事还没定",
+        "你想提醒大家优先级"
+      ],
+      "pronunciationFocus": [
+        "running short on time",
+        "protect time for"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "We're running short on time, so can we focus on the decision itself?",
+          "chinesePrompt": "我们时间有点不够了，所以能不能先聚焦在这个决定本身？",
+          "variants": [
+            "We're running short on time, so can we focus on the decision itself for now?"
+          ],
+          "notes": [
+            "适合把讨论从细节拉回结论。"
+          ],
+          "pronunciationTargets": [
+            "running short on time",
+            "decision itself"
+          ],
+          "commonMistakes": [
+            "We are lacking time, so can focus on decision itself?"
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I'd like to protect the last ten minutes for next steps.",
+          "chinesePrompt": "我想把最后十分钟留给下一步安排。",
+          "variants": [
+            "I'd like to keep the last ten minutes for next steps."
+          ],
+          "notes": [
+            "主持人很常用的时间保护表达。"
+          ],
+          "pronunciationTargets": [
+            "protect the last ten minutes",
+            "next steps"
+          ],
+          "commonMistakes": [
+            "I want save last ten minutes for next steps."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Given the time, I think we need to separate what's essential to resolve now from what can be handled offline.",
+          "chinesePrompt": "考虑到时间，我觉得我们得把现在必须解决的点和可以会后处理的点分开。",
+          "variants": [
+            "Given the time, I think we need to separate what's essential to resolve now from what we can handle offline."
+          ],
+          "notes": [
+            "非常适合控制会议收尾阶段。"
+          ],
+          "pronunciationTargets": [
+            "given the time",
+            "handled offline"
+          ],
+          "commonMistakes": [
+            "Considering time, we should separate what solve now and what solve after meeting."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "given the time",
+            "handled offline"
+          ],
+          "sampleOutputs": [
+            "Given the time, I think we need to separate what's essential to resolve now from what can be handled offline."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "We're running short on time. I'd like to protect the last ten minutes for actions and owners, so can we park the implementation detail for now?",
+          "chinesePrompt": "我们时间有点不够了。我想把最后十分钟留给行动项和 owner，所以实现细节能不能先暂时放一放？",
+          "variants": [],
+          "notes": [
+            "时间管理和 topic parking 一起用。"
+          ],
+          "pronunciationTargets": [
+            "actions and owners",
+            "park the implementation detail"
+          ],
+          "commonMistakes": [
+            "Time is short. I want save last ten minutes for actions, so implementation detail can stop now?"
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "会议快结束了，但行动项还没对齐。",
+          "responseRole": "Chair"
+        }
+      ]
+    },
+    {
+      "key": "redirect-001",
+      "title": "打断偏题或过长发言",
+      "communicativeGoal": "在需要时礼貌打断并把讨论拉回主线",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "High",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "Meeting",
+        "Interrupting",
+        "Facilitation"
+      ],
+      "activationPrompts": [
+        "有人已经说太久了",
+        "你想礼貌打断并拉回主线"
+      ],
+      "pronunciationFocus": [
+        "if I can jump in",
+        "bring us back"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Sorry to cut in, but can I bring us back to the question on the table?",
+          "chinesePrompt": "抱歉打断一下，不过我能不能把大家拉回到桌面上的这个问题？",
+          "variants": [
+            "Sorry to cut in, but can I bring us back to the question in front of us?"
+          ],
+          "notes": [
+            "礼貌而明确。"
+          ],
+          "pronunciationTargets": [
+            "sorry to cut in",
+            "bring us back"
+          ],
+          "commonMistakes": [
+            "Sorry interrupt, can I bring us back to question?"
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "If I can jump in there, I think we're drifting a little.",
+          "chinesePrompt": "如果我能插一句，我觉得我们有点开始偏了。",
+          "variants": [
+            "If I can jump in there, I think we're drifting slightly."
+          ],
+          "notes": [
+            "适合在偏题还不算严重时轻提醒。"
+          ],
+          "pronunciationTargets": [
+            "jump in there",
+            "we're drifting"
+          ],
+          "commonMistakes": [
+            "If I can interrupt, I think we are moving away."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "That's useful background, but I don't want us to lose sight of the decision we're supposed to leave with today.",
+          "chinesePrompt": "这些背景信息很有用，但我不希望我们把今天本来要带走的那个决定给聊丢了。",
+          "variants": [
+            "That's useful background, but I don't want us to lose sight of the decision we're meant to leave with today."
+          ],
+          "notes": [
+            "先认可背景价值，再把团队拉回目标。"
+          ],
+          "pronunciationTargets": [
+            "useful background",
+            "lose sight of"
+          ],
+          "commonMistakes": [
+            "This background is useful, but I don't want we lose the decision today."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "that's useful background",
+            "lose sight of the decision"
+          ],
+          "sampleOutputs": [
+            "That's useful background, but I don't want us to lose sight of the decision we're supposed to leave with today."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Sorry to cut in, but I think we're drifting a little. Can I bring us back to what we need to decide before the end of the hour?",
+          "chinesePrompt": "抱歉打断一下，不过我觉得我们有点偏了。我能不能把大家拉回到我们这一个小时结束前必须决定的那件事上？",
+          "variants": [],
+          "notes": [
+            "适合主持人或强 facilitation 场景。"
+          ],
+          "pronunciationTargets": [
+            "before the end of the hour"
+          ],
+          "commonMistakes": [
+            "Sorry interrupt. We are drifting. Can return to what decide before this hour ends?"
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "讨论已经偏向细节故事，你要拉回主线。",
+          "responseRole": "Chair"
+        }
+      ]
+    },
+    {
+      "key": "follow-up-001",
+      "title": "会后跟进与收尾确认",
+      "communicativeGoal": "在会议结束后明确会后动作、纪要和后续节奏",
+      "scene": "Meeting",
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "B2",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Low"
+      },
+      "tags": [
+        "Meeting",
+        "FollowUp",
+        "Closure"
+      ],
+      "activationPrompts": [
+        "会议结束了，你想把会后节奏讲清楚",
+        "你想明确谁发纪要、谁跟进问题"
+      ],
+      "pronunciationFocus": [
+        "follow through on",
+        "send round"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I'll send round a short summary after this.",
+          "chinesePrompt": "会后我会发一个简短总结出来。",
+          "variants": [
+            "I'll send round a brief summary after this."
+          ],
+          "notes": [
+            "英式语感很自然，send round 很高频。"
+          ],
+          "pronunciationTargets": [
+            "send round",
+            "short summary"
+          ],
+          "commonMistakes": [
+            "I will send short summary around after this."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Let's make sure we follow through on the actions we agreed.",
+          "chinesePrompt": "我们还是确保把今天说好的行动项真正跟下去。",
+          "variants": [
+            "Let's make sure we follow through on the actions we agreed on."
+          ],
+          "notes": [
+            "适合把会议和执行真正连起来。"
+          ],
+          "pronunciationTargets": [
+            "follow through on"
+          ],
+          "commonMistakes": [
+            "Let's make sure we continue the actions we agreed."
+          ],
+          "tags": [
+            "Meeting",
+            "Chunk"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I'll capture the open questions separately so we don't lose them, but they shouldn't block the actions we've already agreed today.",
+          "chinesePrompt": "我会把还没定的问题单独记下来，避免丢掉，但它们不应该阻塞我们今天已经确认的行动项。",
+          "variants": [
+            "I'll capture the open questions separately so we don't lose them, but they shouldn't block the actions we've already agreed on today."
+          ],
+          "notes": [
+            "适合在收尾时区分“未决问题”和“已定动作”。"
+          ],
+          "pronunciationTargets": [
+            "capture the open questions",
+            "shouldn't block"
+          ],
+          "commonMistakes": [
+            "I will note open questions separately, but they should not stop actions we agreed today."
+          ],
+          "tags": [
+            "Meeting",
+            "SentencePattern"
+          ],
+          "slots": [
+            "capture the open questions",
+            "shouldn't block"
+          ],
+          "sampleOutputs": [
+            "I'll capture the open questions separately so we don't lose them, but they shouldn't block the actions we've already agreed today."
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Thanks, everyone. I'll send round a short summary, and let's make sure we follow through on the actions before the next check-in.",
+          "chinesePrompt": "谢谢大家。我会发一个简短总结出来，也请大家在下次 check-in 前把今天的行动项真正推进起来。",
+          "variants": [],
+          "notes": [
+            "会后节奏和下次节点一起说清楚。"
+          ],
+          "pronunciationTargets": [
+            "before the next check-in"
+          ],
+          "commonMistakes": [
+            "I will send summary, and let's continue actions before next meeting."
+          ],
+          "tags": [
+            "Meeting",
+            "DialogueTurn"
+          ],
+          "contextText": "你在正式结束会议前强调会后节奏。",
+          "responseRole": "Chair"
+        }
+      ]
+    }
+  ]
+}
