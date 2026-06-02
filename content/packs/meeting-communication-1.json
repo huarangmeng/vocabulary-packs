@@ -16,6 +16,19 @@
     "Shadow",
     "Respond"
   ],
+  "pronunciationPolicy": {
+    "dialects": [
+      "en-US",
+      "en-GB"
+    ],
+    "referenceScope": [
+      "EnglishText",
+      "Variant",
+      "PronunciationTarget"
+    ],
+    "generator": "online-verified-pronunciation-builder-v2",
+    "minimumVerifiedCoverage": 0.98
+  },
   "catalogMetadata": {
     "seriesId": "workplace-speaking-path",
     "seriesTitle": "职场口语路径",

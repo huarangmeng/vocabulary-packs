@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/huarangmeng/vocabulary-packs/schemas/pronunciation-reference.schema.json",
+  "title": "Vocabulary Trainpack Pronunciation Reference",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "itemId",
+    "unitId",
+    "unitTitle",
+    "targetType",
+    "targetText",
+    "dialect",
+    "phonemes",
+    "words",
+    "source",
+    "confidence",
+    "reviewStatus",
+    "provenance"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*:pron-\\d{5}$" },
+    "itemId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*:item-\\d{4}$" },
+    "unitId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*:[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "unitTitle": { "type": "string", "minLength": 1 },
+    "targetType": { "type": "string", "enum": ["EnglishText", "Variant", "PronunciationTarget"] },
+    "targetText": { "type": "string", "minLength": 1 },
+    "dialect": { "type": "string", "enum": ["en-US", "en-GB"] },
+    "phonemes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "words": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text", "phonemes", "source", "confidence", "sourceUrl", "license", "dialect"],
+        "properties": {
+          "text": { "type": "string", "minLength": 1 },
+          "phonemes": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "source": { "type": "string", "enum": ["CuratedLexicon", "DictionaryApi", "Cmudict", "InflectionRule"] },
+          "confidence": { "type": "string", "enum": ["Low", "Medium", "High"] },
+          "sourceUrl": { "type": "string", "minLength": 1 },
+          "license": { "type": "string", "minLength": 1 },
+          "dialect": { "type": "string", "enum": ["en-US", "en-GB"] }
+        }
+      }
+    },
+    "source": { "type": "string", "enum": ["PackVerifiedOnline"] },
+    "confidence": { "type": "string", "enum": ["Low", "Medium", "High"] },
+    "reviewStatus": { "type": "string", "enum": ["PackVerified"] },
+    "provenance": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source", "sourceUrl", "license"],
+        "properties": {
+          "source": { "type": "string", "minLength": 1 },
+          "sourceUrl": { "type": "string", "minLength": 1 },
+          "license": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

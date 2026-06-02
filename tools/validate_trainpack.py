@@ -23,6 +23,11 @@ ALLOWED_TRAINING_MODES = {"Recall", "Shadow", "Respond", "Repair"}
 ALLOWED_ITEM_TYPES = {"Chunk", "SentencePattern", "DialogueTurn", "RepairStrategy", "PronunciationTarget"}
 ALLOWED_REGISTERS = {"Casual", "Neutral", "Formal"}
 ALLOWED_LEVELS = {"Low", "Medium", "High"}
+ALLOWED_PRONUNCIATION_DIALECTS = {"en-US", "en-GB"}
+ALLOWED_PRONUNCIATION_TARGET_TYPES = {"EnglishText", "Variant", "PronunciationTarget"}
+ALLOWED_PRONUNCIATION_SOURCES = {"PackVerifiedOnline"}
+ALLOWED_WORD_PRONUNCIATION_SOURCES = {"CuratedLexicon", "DictionaryApi", "Cmudict", "InflectionRule"}
+ALLOWED_PRONUNCIATION_REVIEW_STATUS = {"PackVerified"}
 ALLOWED_TASK_ROLES = {"WarmUp", "Main", "Challenge", "Review"}
 ALLOWED_CORRECTION_FOCUS = {
     "Naturalness",
@@ -38,7 +43,7 @@ ALLOWED_CORRECTION_FOCUS = {
     "FollowUp",
     "Repair",
 }
-PACKAGE_FILES = {"manifest.json", "units.json", "items.jsonl"}
+PACKAGE_FILES = {"manifest.json", "units.json", "items.jsonl", "pronunciation_references.jsonl"}
 ITEM_REQUIRED_KEYS = {
     "id",
     "unitId",
@@ -70,6 +75,9 @@ CATALOG_PACK_REQUIRED_KEYS = {
     "levelHint",
     "unitCount",
     "itemCount",
+    "pronunciationReferenceCount",
+    "referenceCoverage",
+    "verifiedCoverage",
     "estimatedMinutes",
     "sizeBytes",
     "sha256",
@@ -147,10 +155,14 @@ def validate_manifest(manifest: dict[str, Any]) -> None:
             "locale",
             "unitCount",
             "itemCount",
+            "pronunciationReferenceCount",
+            "referenceCoverage",
+            "verifiedCoverage",
             "estimatedMinutes",
             "createdAt",
             "unitsFile",
             "itemsFile",
+            "pronunciationReferencesFile",
         },
         "trainpack manifest",
     )
@@ -165,12 +177,17 @@ def validate_manifest(manifest: dict[str, Any]) -> None:
     require_string(manifest["locale"], "trainpack manifest locale", pattern=re.compile(r"^[a-z]{2}-[A-Z]{2}$"))
     require_int(manifest["unitCount"], "trainpack manifest unitCount")
     require_int(manifest["itemCount"], "trainpack manifest itemCount")
+    require_int(manifest["pronunciationReferenceCount"], "trainpack manifest pronunciationReferenceCount")
+    require_float_ratio(manifest["referenceCoverage"], "trainpack manifest referenceCoverage")
+    require_float_ratio(manifest["verifiedCoverage"], "trainpack manifest verifiedCoverage")
     require_int(manifest["estimatedMinutes"], "trainpack manifest estimatedMinutes")
     require_string(manifest["createdAt"], "trainpack manifest createdAt", pattern=UTC_PATTERN)
     if manifest["unitsFile"] != "units.json":
         fail("trainpack manifest unitsFile must be units.json")
     if manifest["itemsFile"] != "items.jsonl":
         fail("trainpack manifest itemsFile must be items.jsonl")
+    if manifest["pronunciationReferencesFile"] != "pronunciation_references.jsonl":
+        fail("trainpack manifest pronunciationReferencesFile must be pronunciation_references.jsonl")
 
 
 def validate_unit(unit: dict[str, Any], expected_order: int, pack_id: str) -> None:
@@ -273,7 +290,97 @@ def validate_item(item: dict[str, Any], expected_pack_id: str, item_index: int) 
                 require_string(item[optional_key], f"item #{item_index} {optional_key}")
 
 
-def read_package(package_path: Path) -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]:
+def require_float_ratio(value: Any, label: str) -> float:
+    if not isinstance(value, (int, float)) or value < 0 or value > 1:
+        fail(f"{label} must be a number between 0 and 1")
+    return float(value)
+
+
+def validate_pronunciation_reference(
+    reference: dict[str, Any],
+    expected_pack_id: str,
+    reference_index: int,
+    item_ids: set[str],
+    unit_ids: set[str],
+) -> None:
+    require_exact_keys(
+        reference,
+        {
+            "id",
+            "itemId",
+            "unitId",
+            "unitTitle",
+            "targetType",
+            "targetText",
+            "dialect",
+            "phonemes",
+            "words",
+            "source",
+            "confidence",
+            "reviewStatus",
+            "provenance",
+        },
+        f"pronunciation reference #{reference_index}",
+    )
+    reference_id = require_string(reference["id"], f"pronunciation reference #{reference_index} id")
+    if not reference_id.startswith(f"{expected_pack_id}:pron-"):
+        fail(f"pronunciation reference #{reference_index} id must start with {expected_pack_id}:pron-")
+    item_id = require_string(reference["itemId"], f"pronunciation reference #{reference_index} itemId", pattern=ITEM_ID_PATTERN)
+    if item_id not in item_ids:
+        fail(f"pronunciation reference {reference_id} references unknown itemId: {item_id}")
+    unit_id = require_string(reference["unitId"], f"pronunciation reference #{reference_index} unitId", pattern=UNIT_ID_PATTERN)
+    if unit_id not in unit_ids:
+        fail(f"pronunciation reference {reference_id} references unknown unitId: {unit_id}")
+    require_string(reference["unitTitle"], f"pronunciation reference #{reference_index} unitTitle")
+    if reference["targetType"] not in ALLOWED_PRONUNCIATION_TARGET_TYPES:
+        fail(f"pronunciation reference {reference_id} has invalid targetType: {reference['targetType']}")
+    require_string(reference["targetText"], f"pronunciation reference #{reference_index} targetText")
+    if reference["dialect"] not in ALLOWED_PRONUNCIATION_DIALECTS:
+        fail(f"pronunciation reference {reference_id} has invalid dialect: {reference['dialect']}")
+    require_string_list(reference["phonemes"], f"pronunciation reference #{reference_index} phonemes", min_items=1)
+    words = reference["words"]
+    if not isinstance(words, list) or not words:
+        fail(f"pronunciation reference {reference_id} words must be a non-empty list")
+    flattened: list[str] = []
+    for word_index, word in enumerate(words, start=1):
+        if not isinstance(word, dict):
+            fail(f"pronunciation reference {reference_id} word #{word_index} must be an object")
+        require_exact_keys(
+            word,
+            {"text", "phonemes", "source", "confidence", "sourceUrl", "license", "dialect"},
+            f"pronunciation reference {reference_id} word #{word_index}",
+        )
+        require_string(word["text"], f"pronunciation reference {reference_id} word #{word_index} text")
+        flattened.extend(require_string_list(word["phonemes"], f"pronunciation reference {reference_id} word #{word_index} phonemes", min_items=1))
+        if word["source"] not in ALLOWED_WORD_PRONUNCIATION_SOURCES:
+            fail(f"pronunciation reference {reference_id} word #{word_index} source is invalid: {word['source']}")
+        if word["confidence"] not in ALLOWED_LEVELS:
+            fail(f"pronunciation reference {reference_id} word #{word_index} confidence is invalid: {word['confidence']}")
+        require_string(word["sourceUrl"], f"pronunciation reference {reference_id} word #{word_index} sourceUrl")
+        require_string(word["license"], f"pronunciation reference {reference_id} word #{word_index} license")
+        if word["dialect"] not in ALLOWED_PRONUNCIATION_DIALECTS:
+            fail(f"pronunciation reference {reference_id} word #{word_index} dialect is invalid: {word['dialect']}")
+    if flattened != reference["phonemes"]:
+        fail(f"pronunciation reference {reference_id} phonemes must equal flattened word phonemes")
+    if reference["source"] not in ALLOWED_PRONUNCIATION_SOURCES:
+        fail(f"pronunciation reference {reference_id} source is invalid: {reference['source']}")
+    if reference["confidence"] not in ALLOWED_LEVELS:
+        fail(f"pronunciation reference {reference_id} confidence is invalid: {reference['confidence']}")
+    if reference["reviewStatus"] not in ALLOWED_PRONUNCIATION_REVIEW_STATUS:
+        fail(f"pronunciation reference {reference_id} reviewStatus is invalid: {reference['reviewStatus']}")
+    provenance = reference["provenance"]
+    if not isinstance(provenance, list) or not provenance:
+        fail(f"pronunciation reference {reference_id} provenance must be a non-empty list")
+    for provenance_index, item in enumerate(provenance, start=1):
+        if not isinstance(item, dict):
+            fail(f"pronunciation reference {reference_id} provenance #{provenance_index} must be an object")
+        require_exact_keys(item, {"source", "sourceUrl", "license"}, f"pronunciation reference {reference_id} provenance #{provenance_index}")
+        require_string(item["source"], f"pronunciation reference {reference_id} provenance #{provenance_index} source")
+        require_string(item["sourceUrl"], f"pronunciation reference {reference_id} provenance #{provenance_index} sourceUrl")
+        require_string(item["license"], f"pronunciation reference {reference_id} provenance #{provenance_index} license")
+
+
+def read_package(package_path: Path) -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
     if not package_path.is_file():
         fail(f"package does not exist: {package_path}")
     with zipfile.ZipFile(package_path) as package:
@@ -283,6 +390,7 @@ def read_package(package_path: Path) -> tuple[dict[str, Any], list[dict[str, Any
         manifest = json.loads(package.read("manifest.json").decode("utf-8"))
         units = json.loads(package.read("units.json").decode("utf-8"))
         items_text = package.read("items.jsonl").decode("utf-8")
+        pronunciation_references_text = package.read("pronunciation_references.jsonl").decode("utf-8")
     if not isinstance(manifest, dict):
         fail("package manifest must be a JSON object")
     if not isinstance(units, list):
@@ -295,10 +403,25 @@ def read_package(package_path: Path) -> tuple[dict[str, Any], list[dict[str, Any
         if not isinstance(item, dict):
             fail(f"items.jsonl line {line_number} must be a JSON object")
         items.append(item)
-    return manifest, units, items
+    pronunciation_references: list[dict[str, Any]] = []
+    for line_number, line in enumerate(pronunciation_references_text.splitlines(), start=1):
+        if not line.strip():
+            fail(f"pronunciation_references.jsonl line {line_number} is blank")
+        reference = json.loads(line)
+        if not isinstance(reference, dict):
+            fail(f"pronunciation_references.jsonl line {line_number} must be a JSON object")
+        pronunciation_references.append(reference)
+    return manifest, units, items, pronunciation_references
 
 
-def validate_catalog(catalog_path: Path, package_path: Path, manifest: dict[str, Any], units: list[dict[str, Any]], items: list[dict[str, Any]]) -> None:
+def validate_catalog(
+    catalog_path: Path,
+    package_path: Path,
+    manifest: dict[str, Any],
+    units: list[dict[str, Any]],
+    items: list[dict[str, Any]],
+    pronunciation_references: list[dict[str, Any]],
+) -> None:
     catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
     if not isinstance(catalog, dict):
         fail("catalog must be a JSON object")
@@ -327,6 +450,9 @@ def validate_catalog(catalog_path: Path, package_path: Path, manifest: dict[str,
     require_string(pack["levelHint"], "catalog pack levelHint")
     require_int(pack["unitCount"], "catalog pack unitCount")
     require_int(pack["itemCount"], "catalog pack itemCount")
+    require_int(pack["pronunciationReferenceCount"], "catalog pack pronunciationReferenceCount")
+    require_float_ratio(pack["referenceCoverage"], "catalog pack referenceCoverage")
+    require_float_ratio(pack["verifiedCoverage"], "catalog pack verifiedCoverage")
     require_int(pack["estimatedMinutes"], "catalog pack estimatedMinutes")
     require_int(pack["sizeBytes"], "catalog pack sizeBytes")
     require_string(pack["sha256"], "catalog pack sha256", pattern=SHA256_PATTERN)
@@ -366,6 +492,15 @@ def validate_catalog(catalog_path: Path, package_path: Path, manifest: dict[str,
         fail("catalog pack unitCount must match trainpack manifest and actual units")
     if pack["itemCount"] != len(items) or pack["itemCount"] != manifest["itemCount"]:
         fail("catalog pack itemCount must match trainpack manifest and actual items")
+    if (
+        pack["pronunciationReferenceCount"] != len(pronunciation_references)
+        or pack["pronunciationReferenceCount"] != manifest["pronunciationReferenceCount"]
+    ):
+        fail("catalog pack pronunciationReferenceCount must match trainpack manifest and actual references")
+    if pack["referenceCoverage"] != manifest["referenceCoverage"]:
+        fail("catalog pack referenceCoverage must match trainpack manifest")
+    if pack["verifiedCoverage"] != manifest["verifiedCoverage"]:
+        fail("catalog pack verifiedCoverage must match trainpack manifest")
     if pack["estimatedMinutes"] != manifest["estimatedMinutes"]:
         fail("catalog pack estimatedMinutes must match trainpack manifest")
     if pack["sizeBytes"] != package_path.stat().st_size:
@@ -378,12 +513,14 @@ def validate_catalog(catalog_path: Path, package_path: Path, manifest: dict[str,
 
 
 def validate(package_path: Path, catalog_path: Path) -> None:
-    manifest, units, items = read_package(package_path)
+    manifest, units, items, pronunciation_references = read_package(package_path)
     validate_manifest(manifest)
     if manifest["unitCount"] != len(units):
         fail("trainpack manifest unitCount must match actual units")
     if manifest["itemCount"] != len(items):
         fail("trainpack manifest itemCount must match actual items")
+    if manifest["pronunciationReferenceCount"] != len(pronunciation_references):
+        fail("trainpack manifest pronunciationReferenceCount must match actual pronunciation references")
 
     seen_unit_ids: set[str] = set()
     unit_id_to_item_ids: dict[str, list[str]] = {}
@@ -430,7 +567,15 @@ def validate(package_path: Path, catalog_path: Path) -> None:
             if item["order"] != expected_order:
                 fail(f"item order must be continuous inside unit {unit_id}: expected {expected_order}, got {item['order']}")
 
-    validate_catalog(catalog_path, package_path, manifest, units, items)
+    seen_reference_ids: set[str] = set()
+    for index, reference in enumerate(pronunciation_references, start=1):
+        validate_pronunciation_reference(reference, manifest["packId"], index, seen_item_ids, seen_unit_ids)
+        reference_id = reference["id"]
+        if reference_id in seen_reference_ids:
+            fail(f"duplicate pronunciation reference id: {reference_id}")
+        seen_reference_ids.add(reference_id)
+
+    validate_catalog(catalog_path, package_path, manifest, units, items, pronunciation_references)
 
 
 def main(argv: list[str]) -> int:

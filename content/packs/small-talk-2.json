@@ -16,6 +16,19 @@
     "Shadow",
     "Respond"
   ],
+  "pronunciationPolicy": {
+    "dialects": [
+      "en-US",
+      "en-GB"
+    ],
+    "referenceScope": [
+      "EnglishText",
+      "Variant",
+      "PronunciationTarget"
+    ],
+    "generator": "online-verified-pronunciation-builder-v2",
+    "minimumVerifiedCoverage": 0.98
+  },
   "catalogMetadata": {
     "seriesId": "social-speaking-path",
     "seriesTitle": "社交口语路径",

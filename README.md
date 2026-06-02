@@ -46,6 +46,7 @@ vocabulary-packs/
     trainpack-manifest.schema.json
     unit.schema.json
     item.schema.json
+    pronunciation-reference.schema.json
   tools/
     validate_trainpack.py
     release_trainpacks.py
@@ -53,6 +54,8 @@ vocabulary-packs/
       README.md
       build_from_content.py
       trainpack_builder.py
+      pronunciation_reference_builder.py
+      requirements-pronunciation.txt
   .github/
     workflows/
       release-packs.yml
@@ -85,11 +88,13 @@ vocabulary-packs/
 固定规则：
 
 - `.trainpack` 必须是 zip 文件。
-- 包内只能有 `manifest.json`、`units.json` 和 `items.jsonl`。
+- 包内只能有 `manifest.json`、`units.json`、`items.jsonl` 和 `pronunciation_references.jsonl`。
 - `manifest.json` 必须符合 `schemas/trainpack-manifest.schema.json`。
 - `units.json` 中的每个单元必须符合 `schemas/unit.schema.json`。
 - `items.jsonl` 每一行必须符合 `schemas/item.schema.json`。
+- `pronunciation_references.jsonl` 每一行必须符合 `schemas/pronunciation-reference.schema.json`。
 - 每个 Unit 必须包含 `taskHints`，用于 App 生成“今日口语任务流”的任务卡、成功标准、纠偏重点和重试提示。
+- 官方包构建时必须生成 `en-US` 和 `en-GB` 双方言发音参考；低可信启发式结果必须标记为 `NeedsReview`。
 - 外部 catalog 必须符合 `schemas/catalog.schema.json`。
 - 发布前必须通过 `tools/validate_trainpack.py` 校验。
 
@@ -135,6 +140,16 @@ latest.json.sha256
 - `meeting-communication-1`：`22` units / `88` items。
 - `meeting-communication-2`：`20` units / `80` items。
 
+当前六包已生成包内发音参考索引：
+
+- 总规模：`2980` 条发音参考，覆盖率 `100%`。
+- `core-chunks-1`：`554` references。
+- `core-chunks-2`：`524` references。
+- `small-talk-1`：`460` references。
+- `small-talk-2`：`438` references。
+- `meeting-communication-1`：`522` references。
+- `meeting-communication-2`：`482` references。
+
 每个内容包的 Unit 都必须声明 `taskHints`：
 
 - `defaultRole`：建议默认任务角色，例如 `WarmUp`、`Main`、`Challenge`。
@@ -152,6 +167,9 @@ latest.json.sha256
 推荐直接执行统一发布辅助脚本：
 
 ```bash
+python3 -m venv .venv-pronunciation
+. .venv-pronunciation/bin/activate
+python -m pip install -r tools/build-packs/requirements-pronunciation.txt
 python3 tools/release_trainpacks.py
 ```
 
@@ -161,6 +179,7 @@ python3 tools/release_trainpacks.py
 - 生成聚合后的 `manifests/latest.json`。
 - 生成 `dist/trainpacks/latest.json` 和 `latest.json.sha256`。
 - 逐个校验所有 `.trainpack`。
+- 离线生成 `pronunciation_references.jsonl`，供 App 导入后作为官方包发音参考索引。
 
 如需单独调试某一个训练包，也可以直接传入对应 JSON：
 
@@ -235,12 +254,25 @@ App 读取 `latest.json` 后展示“官方训练包”列表。
 - `version`：训练包版本。
 - `unitCount`：单元数量。
 - `itemCount`：内容项数量。
+- `pronunciationReferenceCount`：发音参考数量。
+- `referenceCoverage`：发音参考覆盖率。
+- `verifiedCoverage`：高可信取证覆盖率，发布候选必须不低于 `0.98`。
 - `estimatedMinutes`：预计学习时长。
 - `sizeBytes`：下载大小。
 - `sha256`：文件校验值。
 - `fileName`：Release asset 文件名。
 - `trainingModes`：支持的训练模式。
 - `urls`：下载地址列表。
+
+## 发音参考旁路文件
+
+构建工具会同步生成可提交的发音参考旁路副本：
+
+```text
+content/generated-pronunciation-references/{packId}.pronunciation_references.jsonl
+```
+
+这些文件和 `.trainpack` 包内的 `pronunciation_references.jsonl` 保持完全一致，用于 review 和抽检具体音素；App 运行时仍以下载后的 `.trainpack` 包内文件为准。
 
 ## 包联动规则
 
@@ -303,7 +335,7 @@ https://github.com/huarangmeng/vocabulary-packs/releases/download/trainpack-2026
 - App 先拉取 catalog，再展示“官方训练包”。
 - App 下载 `.trainpack` 到临时文件。
 - App 校验 catalog 中声明的 `sha256`。
-- App 解包并校验包内 `manifest.json`、`units.json` 和 `items.jsonl`。
+- App 解包并校验包内 `manifest.json`、`units.json`、`items.jsonl` 和 `pronunciation_references.jsonl`。
 - 官方训练包只进入官方内容层，不自动加入用户自建内容。
 - 用户手动选择“加入训练计划”后，才创建单元级激活记录。
 

@@ -10,6 +10,7 @@
 manifest.json
 units.json
 items.jsonl
+pronunciation_references.jsonl
 ```
 
 要求：
@@ -18,6 +19,8 @@ items.jsonl
 - `units.json` 必须是 UTF-8 JSON。
 - `items.jsonl` 必须是 UTF-8 JSON Lines。
 - `items.jsonl` 每一行必须是一个完整 JSON 内容项。
+- `pronunciation_references.jsonl` 必须是 UTF-8 JSON Lines。
+- `pronunciation_references.jsonl` 每一行必须是一个完整发音参考对象。
 - zip 内不允许目录、不允许嵌套路径、不允许额外文件。
 - zip 内文件名必须完全匹配，区分大小写。
 
@@ -36,10 +39,14 @@ items.jsonl
   "locale": "en-US",
   "unitCount": 3,
   "itemCount": 12,
+  "pronunciationReferenceCount": 84,
+  "referenceCoverage": 1.0,
+  "verifiedCoverage": 1.0,
   "estimatedMinutes": 45,
   "createdAt": "2026-06-02T00:00:00Z",
   "unitsFile": "units.json",
-  "itemsFile": "items.jsonl"
+  "itemsFile": "items.jsonl",
+  "pronunciationReferencesFile": "pronunciation_references.jsonl"
 }
 ```
 
@@ -54,10 +61,14 @@ items.jsonl
 - `locale`：语言区域，例如 `en-US`。
 - `unitCount`：必须等于 `units.json` 实际单元数。
 - `itemCount`：必须等于 `items.jsonl` 实际行数。
+- `pronunciationReferenceCount`：必须等于 `pronunciation_references.jsonl` 实际行数。
+- `referenceCoverage`：发音参考覆盖率。
+- `verifiedCoverage`：高可信取证覆盖率，发布候选必须不低于 `0.98`。
 - `estimatedMinutes`：包级预计学习时长，必须大于 `0`。
 - `createdAt`：UTC ISO-8601 时间，必须以 `Z` 结尾。
 - `unitsFile`：固定为 `units.json`。
 - `itemsFile`：固定为 `items.jsonl`。
+- `pronunciationReferencesFile`：固定为 `pronunciation_references.jsonl`。
 
 ## 训练单元 Unit
 
@@ -210,6 +221,80 @@ items.jsonl
 - `focusText`
 - `focusType`
 
+## 发音参考 Pronunciation Reference
+
+`pronunciation_references.jsonl` 是官方包的发音参考索引。它不替代 `pronunciationTargets`：
+
+- `pronunciationTargets` 负责说明“练哪里”。
+- `pronunciation_references.jsonl` 负责说明“这个目标在特定方言下应该怎么发音”。
+
+构建工具同时会在仓库中生成可审查的旁路副本：
+
+```text
+content/generated-pronunciation-references/{packId}.pronunciation_references.jsonl
+```
+
+旁路副本必须和对应 `.trainpack` 包内的 `pronunciation_references.jsonl` 内容完全一致。它用于代码审查和人工抽检，不是 App 下载训练包时的额外运行时依赖。
+
+每一行必须包含一个完整发音参考对象：
+
+```json
+{
+  "id": "core-chunks-1:pron-00001",
+  "itemId": "core-chunks-1:item-0001",
+  "unitId": "core-chunks-1:clarify-001",
+  "unitTitle": "请对方重复",
+  "targetType": "EnglishText",
+  "targetText": "Could you say that again?",
+  "dialect": "en-US",
+  "phonemes": ["k", "ʊ", "d", "j", "u", "s", "eɪ", "ð", "æ", "t", "ə", "g", "eɪ", "n"],
+  "words": [
+    {
+      "text": "could",
+      "phonemes": ["k", "ʊ", "d"],
+      "source": "CuratedLexicon",
+      "confidence": "High",
+      "sourceUrl": "https://en.wiktionary.org/wiki/could#Pronunciation",
+      "license": "source-provided",
+      "dialect": "en-US"
+    }
+  ],
+  "source": "PackVerifiedOnline",
+  "confidence": "High",
+  "reviewStatus": "PackVerified",
+  "provenance": [
+    {
+      "source": "CuratedLexicon",
+      "sourceUrl": "https://en.wiktionary.org/wiki/could#Pronunciation",
+      "license": "source-provided"
+    }
+  ]
+}
+```
+
+字段约束：
+
+- `id`：全局稳定 ID，格式为 `{packId}:pron-00001`。
+- `itemId`：必须指向 `items.jsonl` 中的现有内容项。
+- `unitId`：必须指向 `units.json` 中的现有单元。
+- `targetType`：固定为 `EnglishText`、`Variant` 或 `PronunciationTarget`。
+- `targetText`：被测表达、变体或重点片段。
+- `dialect`：固定支持 `en-US` 和 `en-GB`。
+- `phonemes`：目标整体音素序列，必须等于 `words[].phonemes` 展平后的结果。
+- `words`：逐词音素与来源，便于 App 做词级和音素级反馈。
+- `source`：包级参考来源，固定为 `PackVerifiedOnline`。
+- `confidence`：固定为 `High`、`Medium` 或 `Low`。
+- `reviewStatus`：正式写入包内的参考固定为 `PackVerified`。
+- `provenance`：合并后的来源清单，至少包含 `source`、`sourceUrl` 和 `license`。
+
+发音参考生成原则：
+
+- 构建工具在发布前联网取证并固化结果，不要求内容作者在 `content/packs/*.json` 中手写完整音标。
+- 优先使用 `DictionaryApi`、`CuratedLexicon`、`Cmudict` 和可追溯词形规则。
+- 正式包禁止写入 `HeuristicG2P` 或其他低可信猜测结果。
+- 无法验证的目标必须写入 `dist/reports/{packId}-pronunciation-review.json`，并导致 `verifiedCoverage` 门禁失败。
+- App 只有在 `reviewStatus=PackVerified` 或用户确认后，才允许输出高置信红色发音错误。
+
 ## 外部 Catalog
 
 `manifests/latest.json` 和版本化 catalog 必须包含：
@@ -230,6 +315,9 @@ items.jsonl
       "levelHint": "A2-B1",
       "unitCount": 3,
       "itemCount": 12,
+      "pronunciationReferenceCount": 84,
+      "referenceCoverage": 1.0,
+      "verifiedCoverage": 1.0,
       "estimatedMinutes": 45,
       "sizeBytes": 12345,
       "sha256": "replace-with-real-sha256",
@@ -244,7 +332,7 @@ items.jsonl
 }
 ```
 
-Catalog 中的 `packs[].id`、`packs[].version`、`packs[].unitCount`、`packs[].itemCount` 必须和 `.trainpack` 包内 `manifest.json` 对齐。
+Catalog 中的 `packs[].id`、`packs[].version`、`packs[].unitCount`、`packs[].itemCount`、`packs[].pronunciationReferenceCount`、`packs[].referenceCoverage` 和 `packs[].verifiedCoverage` 必须和 `.trainpack` 包内 `manifest.json` 对齐。
 
 ## 包联动元数据
 
@@ -253,11 +341,12 @@ Catalog 中的 `packs[].id`、`packs[].version`、`packs[].unitCount`、`packs[]
 - `manifest.json`
 - `units.json`
 - `items.jsonl`
+- `pronunciation_references.jsonl`
 
 包与包之间的联动关系不写入 `.trainpack` 内部，而统一写入外部 `catalog manifest`。原因是：
 
 - 联动关系属于分发编排和学习路径，不属于包内原子训练内容本身。
-- 保持 `.trainpack` 三文件结构稳定，避免后续每次调整推荐路径都重定义包内格式。
+- 保持 `.trainpack` 四文件结构稳定，避免后续每次调整推荐路径都重定义包内格式。
 - 允许同一份包内容在不同 App 版本或不同发布阶段使用不同学习路径编排。
 
 Catalog 中允许为每个 `packs[]` 条目补充以下联动字段：

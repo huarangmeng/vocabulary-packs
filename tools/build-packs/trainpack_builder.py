@@ -8,11 +8,13 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from pronunciation_reference_builder import build_pronunciation_references, write_pronunciation_review_report
 from release_config import CREATED_AT, MIN_APP_VERSION, TAG, VERSION, ZIP_TIMESTAMP
 
 
 ROOT = Path(__file__).resolve().parents[2]
 CONTENT_DIR = ROOT / "content" / "packs"
+GENERATED_PRONUNCIATION_DIR = ROOT / "content" / "generated-pronunciation-references"
 OUTPUT_DIR = ROOT / "dist" / "trainpacks"
 MANIFEST_DIR = ROOT / "manifests"
 
@@ -26,6 +28,11 @@ REQUIRED_PACK_KEYS = [
     "tags",
     "trainingModes",
     "units",
+]
+
+OPTIONAL_PACK_KEYS = [
+    "catalogMetadata",
+    "pronunciationPolicy",
 ]
 
 OPTIONAL_CATALOG_METADATA_KEYS = {
@@ -109,6 +116,9 @@ class PackageBuildResult:
     estimated_minutes: int
     unit_count: int
     item_count: int
+    pronunciation_reference_count: int
+    reference_coverage: float
+    verified_coverage: float
     size_bytes: int
     sha256: str
     tags: list[str]
@@ -136,6 +146,9 @@ class PackageBuildResult:
             "levelHint": self.level_hint,
             "unitCount": self.unit_count,
             "itemCount": self.item_count,
+            "pronunciationReferenceCount": self.pronunciation_reference_count,
+            "referenceCoverage": self.reference_coverage,
+            "verifiedCoverage": self.verified_coverage,
             "estimatedMinutes": self.estimated_minutes,
             "sizeBytes": self.size_bytes,
             "sha256": self.sha256,
@@ -153,6 +166,20 @@ def _write_deterministic_text(zf: zipfile.ZipFile, name: str, text: str) -> None
     info.compress_type = zipfile.ZIP_DEFLATED
     info.create_system = 3
     zf.writestr(info, text.encode("utf-8"))
+
+
+def _pronunciation_references_jsonl(pronunciation_references: list[dict[str, Any]]) -> str:
+    return "\n".join(
+        json.dumps(reference, ensure_ascii=False, separators=(",", ":"))
+        for reference in pronunciation_references
+    ) + "\n"
+
+
+def _write_generated_pronunciation_references(pack_id: str, pronunciation_references: list[dict[str, Any]]) -> Path:
+    GENERATED_PRONUNCIATION_DIR.mkdir(parents=True, exist_ok=True)
+    output_path = GENERATED_PRONUNCIATION_DIR / f"{pack_id}.pronunciation_references.jsonl"
+    output_path.write_text(_pronunciation_references_jsonl(pronunciation_references), encoding="utf-8")
+    return output_path
 
 
 def _ensure_keys(data: dict[str, Any], keys: list[str], context: str) -> None:
@@ -250,6 +277,9 @@ def load_pack_definition(content_path: Path) -> dict[str, Any]:
         raise ValueError(f"{content_path} must contain a JSON object")
 
     _ensure_keys(data, REQUIRED_PACK_KEYS, str(content_path))
+    unknown_pack_keys = sorted(set(data.keys()) - (set(REQUIRED_PACK_KEYS) | set(OPTIONAL_PACK_KEYS)))
+    if unknown_pack_keys:
+        raise ValueError(f"{content_path} has unsupported keys: {', '.join(unknown_pack_keys)}")
     if not isinstance(data["units"], list) or not data["units"]:
         raise ValueError(f"{content_path} must contain a non-empty units array")
 
@@ -266,8 +296,52 @@ def load_pack_definition(content_path: Path) -> dict[str, Any]:
             _ensure_keys(item, REQUIRED_ITEM_KEYS, f"{content_path} unit #{unit_index} item #{item_index}")
 
     data["catalogMetadata"] = _validate_catalog_metadata(data.get("catalogMetadata"), str(content_path))
+    data["pronunciationPolicy"] = _validate_pronunciation_policy(data.get("pronunciationPolicy"), str(content_path))
 
     return data
+
+
+def _validate_pronunciation_policy(policy: Any, context: str) -> dict[str, Any]:
+    if policy is None:
+        return {
+            "dialects": ["en-US", "en-GB"],
+            "referenceScope": ["EnglishText", "Variant", "PronunciationTarget"],
+            "minimumVerifiedCoverage": 0.98,
+            "generator": "online-verified-pronunciation-builder-v2",
+        }
+    if not isinstance(policy, dict):
+        raise ValueError(f"{context} pronunciationPolicy must be an object")
+    required = {"dialects", "referenceScope", "minimumVerifiedCoverage", "generator"}
+    missing = sorted(required - policy.keys())
+    if missing:
+        raise ValueError(f"{context} pronunciationPolicy missing keys: {', '.join(missing)}")
+    unknown = sorted(policy.keys() - required)
+    if unknown:
+        raise ValueError(f"{context} pronunciationPolicy has unsupported keys: {', '.join(unknown)}")
+    dialects = _validate_string_list(policy["dialects"], f"{context} pronunciationPolicy.dialects")
+    if dialects != ["en-US", "en-GB"]:
+        raise ValueError(f"{context} pronunciationPolicy.dialects must be ['en-US', 'en-GB']")
+    reference_scope = _validate_string_list(policy["referenceScope"], f"{context} pronunciationPolicy.referenceScope")
+    if reference_scope != ["EnglishText", "Variant", "PronunciationTarget"]:
+        raise ValueError(
+            f"{context} pronunciationPolicy.referenceScope must be ['EnglishText', 'Variant', 'PronunciationTarget']"
+        )
+    minimum_verified_coverage = policy["minimumVerifiedCoverage"]
+    if (
+        not isinstance(minimum_verified_coverage, (int, float))
+        or minimum_verified_coverage < 0.98
+        or minimum_verified_coverage > 1
+    ):
+        raise ValueError(f"{context} pronunciationPolicy.minimumVerifiedCoverage must be between 0.98 and 1")
+    generator = policy["generator"]
+    if not isinstance(generator, str) or not generator:
+        raise ValueError(f"{context} pronunciationPolicy.generator must be a non-empty string")
+    return {
+        "dialects": dialects,
+        "referenceScope": reference_scope,
+        "minimumVerifiedCoverage": float(minimum_verified_coverage),
+        "generator": generator,
+    }
 
 
 def _build_units_and_items(pack_id: str, unit_specs: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
@@ -329,8 +403,20 @@ def build_trainpack(
     training_modes: list[str],
     unit_specs: list[dict[str, Any]],
     catalog_metadata: dict[str, Any] | None = None,
+    pronunciation_policy: dict[str, Any] | None = None,
 ) -> PackageBuildResult:
     units, items = _build_units_and_items(pack_id, unit_specs)
+    pronunciation_result = build_pronunciation_references(pack_id, units, items)
+    pronunciation_references = pronunciation_result.references
+    write_pronunciation_review_report(pack_id, pronunciation_result)
+    pronunciation_references_text = _pronunciation_references_jsonl(pronunciation_references)
+    _write_generated_pronunciation_references(pack_id, pronunciation_references)
+    minimum_verified_coverage = (pronunciation_policy or {}).get("minimumVerifiedCoverage", 0.98)
+    if pronunciation_result.verified_coverage < minimum_verified_coverage:
+        raise ValueError(
+            f"{pack_id} verified pronunciation coverage {pronunciation_result.verified_coverage:.2%} "
+            f"is below required {minimum_verified_coverage:.2%}; see dist/reports/{pack_id}-pronunciation-review.json"
+        )
     package_manifest = {
         "schemaVersion": 1,
         "packId": pack_id,
@@ -341,10 +427,14 @@ def build_trainpack(
         "locale": "en-US",
         "unitCount": len(units),
         "itemCount": len(items),
+        "pronunciationReferenceCount": len(pronunciation_references),
+        "referenceCoverage": pronunciation_result.reference_coverage,
+        "verifiedCoverage": pronunciation_result.verified_coverage,
         "estimatedMinutes": estimated_minutes,
         "createdAt": CREATED_AT,
         "unitsFile": "units.json",
         "itemsFile": "items.jsonl",
+        "pronunciationReferencesFile": "pronunciation_references.jsonl",
     }
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -356,6 +446,11 @@ def build_trainpack(
             package,
             "items.jsonl",
             "\n".join(json.dumps(item, ensure_ascii=False, separators=(",", ":")) for item in items) + "\n",
+        )
+        _write_deterministic_text(
+            package,
+            "pronunciation_references.jsonl",
+            pronunciation_references_text,
         )
 
     size_bytes = package_path.stat().st_size
@@ -370,6 +465,9 @@ def build_trainpack(
         estimated_minutes=estimated_minutes,
         unit_count=len(units),
         item_count=len(items),
+        pronunciation_reference_count=len(pronunciation_references),
+        reference_coverage=pronunciation_result.reference_coverage,
+        verified_coverage=pronunciation_result.verified_coverage,
         size_bytes=size_bytes,
         sha256=sha256,
         tags=tags,
@@ -390,6 +488,7 @@ def build_from_definition(definition: dict[str, Any]) -> PackageBuildResult:
         training_modes=definition["trainingModes"],
         unit_specs=definition["units"],
         catalog_metadata=definition.get("catalogMetadata", {}),
+        pronunciation_policy=definition.get("pronunciationPolicy", {}),
     )
 
 

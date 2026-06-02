@@ -1,11 +1,15 @@
 # Generated trainpacks should be uploaded as GitHub Release assets, not committed.
 dist/trainpacks/*
 !dist/trainpacks/.gitkeep
+dist/reports/
+content/pronunciation-cache/
 
 # Local files
 .DS_Store
 *.tmp
 *.log
+.learnings/
+.venv*/
 
 # Python cache
 __pycache__/
