@@ -4,7 +4,7 @@
   "description": "自然开场、接住话题、追问、轻量分享、换话题和礼貌结束，服务今日口语迁移训练。",
   "packType": "SpeakingActs",
   "levelHint": "A2-B1",
-  "estimatedMinutes": 130,
+  "estimatedMinutes": 264,
   "tags": [
     "Speaking",
     "SpeakingActs",
@@ -896,6 +896,876 @@
           "Naturalness",
           "SpokenRegister",
           "Completeness"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    },
+    {
+      "key": "show-interest",
+      "speakingActId": "show-interest",
+      "title": "表达兴趣",
+      "communicativeGoal": "别人分享时，用短句表达兴趣并鼓励继续说。",
+      "scene": "DailyConversation",
+      "sceneCoverage": [
+        "Office",
+        "Cafe",
+        "Classroom"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "DailyConversation"
+      ],
+      "activationPrompts": [
+        "对方分享一个计划。",
+        "你想表现出愿意听。"
+      ],
+      "pronunciationFocus": [
+        "sounds interesting",
+        "tell me more",
+        "I'd love to hear"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "That sounds interesting.",
+          "chinesePrompt": "听起来很有意思。",
+          "variants": [
+            "That sounds really interesting."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "sounds interesting"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Tell me more about that.",
+          "chinesePrompt": "多跟我说说那个。",
+          "variants": [
+            "Could you tell me more about that?"
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "tell me more"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "That sounds interesting. How did you get into it?",
+          "chinesePrompt": "听起来很有意思。你是怎么开始接触它的？",
+          "variants": [],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "get into it"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "对方提到一个新爱好。",
+          "responseRole": "Speaker"
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I'd love to hear more about it.",
+          "chinesePrompt": "我很想多听听这个。",
+          "variants": [
+            "I'd like to hear more about it."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "hear more about it"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“表达兴趣”对应的沟通动作。",
+          "先用保底表达说出口，再升级到自然表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "Naturalness",
+          "SpokenRegister"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    },
+    {
+      "key": "light-empathy",
+      "speakingActId": "light-empathy",
+      "title": "轻微共情",
+      "communicativeGoal": "别人说忙、累或遇到小麻烦时，给出轻量共情。",
+      "scene": "DailyConversation",
+      "sceneCoverage": [
+        "Office",
+        "Cafe",
+        "OnlineChat"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "DailyConversation"
+      ],
+      "activationPrompts": [
+        "对方说最近很累。",
+        "对方说今天不太顺。"
+      ],
+      "pronunciationFocus": [
+        "that sounds tough",
+        "I get that",
+        "long day"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "That sounds tough.",
+          "chinesePrompt": "听起来挺不容易的。",
+          "variants": [
+            "That sounds really tough."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "sounds tough"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I get that.",
+          "chinesePrompt": "我理解。",
+          "variants": [
+            "I can understand that."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "I get that"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "That sounds like a long day. I hope you get some rest.",
+          "chinesePrompt": "听起来是漫长的一天。希望你能休息一下。",
+          "variants": [],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "long day"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "对方说今天连续开会。",
+          "responseRole": "Speaker"
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "That must be a bit stressful.",
+          "chinesePrompt": "那一定有点压力。",
+          "variants": [
+            "That must feel a bit stressful."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "bit stressful"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“轻微共情”对应的沟通动作。",
+          "先用保底表达说出口，再升级到自然表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "Naturalness",
+          "ScenarioFit",
+          "Softening"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    },
+    {
+      "key": "share-preference",
+      "speakingActId": "share-preference",
+      "title": "分享偏好",
+      "communicativeGoal": "闲聊里表达喜欢、不喜欢或偏好，但保持轻松。",
+      "scene": "DailyConversation",
+      "sceneCoverage": [
+        "Cafe",
+        "Office",
+        "Classroom"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "DailyConversation"
+      ],
+      "activationPrompts": [
+        "别人问你喜欢什么。",
+        "你想轻松表达自己的偏好。"
+      ],
+      "pronunciationFocus": [
+        "I usually prefer",
+        "I'm more into",
+        "not really my thing"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I usually prefer something quiet.",
+          "chinesePrompt": "我通常更喜欢安静一点的。",
+          "variants": [
+            "I usually prefer quieter places."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "usually prefer"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "I'm more into simple food.",
+          "chinesePrompt": "我更喜欢简单的食物。",
+          "variants": [
+            "I'm more into simple meals."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "more into"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "That sounds fun, but it's not really my thing.",
+          "chinesePrompt": "听起来很好玩，但不太是我的菜。",
+          "variants": [],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "not really my thing"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "对方邀请你参加一个你不太感兴趣的活动。",
+          "responseRole": "Speaker"
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "I like it, but only once in a while.",
+          "chinesePrompt": "我喜欢，但只是偶尔。",
+          "variants": [
+            "I enjoy it, but only once in a while."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "once in a while"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“分享偏好”对应的沟通动作。",
+          "先用保底表达说出口，再升级到自然表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "SpokenRegister",
+          "Naturalness",
+          "Softening"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    },
+    {
+      "key": "invite-response",
+      "speakingActId": "invite-response",
+      "title": "邀请对方回应",
+      "communicativeGoal": "自己分享后，把话题自然交还给对方。",
+      "scene": "DailyConversation",
+      "sceneCoverage": [
+        "Office",
+        "Cafe",
+        "Classroom"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "DailyConversation"
+      ],
+      "activationPrompts": [
+        "你说完自己的近况。",
+        "你不想让对话停在自己这里。"
+      ],
+      "pronunciationFocus": [
+        "how about you",
+        "what about you",
+        "your side"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "How about you?",
+          "chinesePrompt": "你呢？",
+          "variants": [
+            "What about you?"
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "how about you"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "How are things on your side?",
+          "chinesePrompt": "你那边怎么样？",
+          "variants": [
+            "How are things going on your side?"
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "your side"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "My week has been busy. How about you?",
+          "chinesePrompt": "我这周挺忙的。你呢？",
+          "variants": [],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "how about you"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "你分享完自己的近况。",
+          "responseRole": "Speaker"
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "What have you been working on lately?",
+          "chinesePrompt": "你最近在忙什么？",
+          "variants": [
+            "What have you been up to lately?"
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "working on lately"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“邀请对方回应”对应的沟通动作。",
+          "先用保底表达说出口，再升级到自然表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "FollowUp",
+          "Completeness",
+          "Naturalness"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    },
+    {
+      "key": "make-small-invitation",
+      "speakingActId": "make-small-invitation",
+      "title": "发出轻量邀请",
+      "communicativeGoal": "自然提出喝咖啡、一起走或之后再聊的小邀请。",
+      "scene": "DailyConversation",
+      "sceneCoverage": [
+        "Office",
+        "Cafe",
+        "Event"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "DailyConversation"
+      ],
+      "activationPrompts": [
+        "你想邀请同事一起喝咖啡。",
+        "你想之后找时间聊。"
+      ],
+      "pronunciationFocus": [
+        "grab coffee",
+        "join me",
+        "sometime this week"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Do you want to grab coffee?",
+          "chinesePrompt": "你想一起喝杯咖啡吗？",
+          "variants": [
+            "Would you like to grab coffee?"
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "grab coffee"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "You're welcome to join me.",
+          "chinesePrompt": "欢迎你一起。",
+          "variants": [
+            "Feel free to join me."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "join me"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "If you're free, we could catch up sometime this week.",
+          "chinesePrompt": "如果你有空，我们这周可以找时间聊聊。",
+          "variants": [],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "sometime this week"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "你想和同事找时间聊近况。",
+          "responseRole": "Speaker"
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Maybe we can talk more after lunch.",
+          "chinesePrompt": "也许我们午饭后可以多聊聊。",
+          "variants": [
+            "Maybe we could talk more after lunch."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "after lunch"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“发出轻量邀请”对应的沟通动作。",
+          "先用保底表达说出口，再升级到自然表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "Softening",
+          "ScenarioFit",
+          "Naturalness"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    },
+    {
+      "key": "decline-lightly",
+      "speakingActId": "decline-lightly",
+      "title": "轻松婉拒",
+      "communicativeGoal": "不想或不能参加时，简短婉拒并保持关系。",
+      "scene": "DailyConversation",
+      "sceneCoverage": [
+        "Office",
+        "Cafe",
+        "Event"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "DailyConversation"
+      ],
+      "activationPrompts": [
+        "别人邀请你，但你没有时间。",
+        "你想拒绝但不显得冷淡。"
+      ],
+      "pronunciationFocus": [
+        "I can't today",
+        "maybe next time",
+        "thanks for asking"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I can't today, but thanks for asking.",
+          "chinesePrompt": "我今天不行，不过谢谢你问我。",
+          "variants": [
+            "I can't make it today, but thanks for asking."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "thanks for asking"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Maybe next time.",
+          "chinesePrompt": "也许下次吧。",
+          "variants": [
+            "Maybe another time."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "next time"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I'd love to, but I already have plans.",
+          "chinesePrompt": "我很想去，但我已经有安排了。",
+          "variants": [],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "already have plans"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "对方邀请你下班后一起去。",
+          "responseRole": "Speaker"
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "Let's try another day.",
+          "chinesePrompt": "我们改天试试。",
+          "variants": [
+            "Let's do another day."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，用于今日口语的开口、纠偏、迁移和补弱。"
+          ],
+          "pronunciationTargets": [
+            "another day"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“轻松婉拒”对应的沟通动作。",
+          "先用保底表达说出口，再升级到自然表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "Softening",
+          "SpokenRegister",
+          "ScenarioFit"
         ],
         "retryPrompts": [
           "先说最短可用表达，保证对话继续。",
