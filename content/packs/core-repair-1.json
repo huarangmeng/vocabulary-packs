@@ -1,0 +1,799 @@
+{
+  "packId": "core-repair-1",
+  "title": "核心修复口语动作 1",
+  "description": "没听清、理解不确定、需要思考、需要插话或说错时，先撑住对话再自然修复。",
+  "packType": "SpeakingActs",
+  "levelHint": "A2-B1",
+  "estimatedMinutes": 120,
+  "tags": [
+    "Speaking",
+    "SpeakingActs",
+    "Repair",
+    "Core"
+  ],
+  "trainingModes": [
+    "Recall",
+    "Shadow",
+    "Respond",
+    "Repair"
+  ],
+  "pronunciationPolicy": {
+    "dialects": [
+      "en-US",
+      "en-GB"
+    ],
+    "referenceScope": [
+      "EnglishText",
+      "Variant",
+      "PronunciationTarget"
+    ],
+    "generator": "online-verified-pronunciation-builder-v3-stress-aware",
+    "minimumVerifiedCoverage": 0.98
+  },
+  "catalogMetadata": {
+    "seriesId": "v2-speaking-actions",
+    "seriesTitle": "V2 官方口语动作",
+    "seriesOrder": 1,
+    "learningPath": "Foundation",
+    "recommendedNextPackIds": [
+      "small-talk-actions-1",
+      "meeting-actions-1"
+    ],
+    "companionPackIds": [
+      "pronunciation-risk-1"
+    ],
+    "dailyQueueRoles": [
+      "Review",
+      "New",
+      "Transfer",
+      "WeakPoint",
+      "Challenge"
+    ]
+  },
+  "units": [
+    {
+      "key": "clarify-repeat",
+      "speakingActId": "clarify-repeat",
+      "title": "请对方重复",
+      "communicativeGoal": "没听清时，用自然短句请对方重复、放慢或补充最后部分。",
+      "scene": "DailyConversation",
+      "sceneCoverage": [
+        "DailyConversation",
+        "PhoneCall",
+        "Meeting"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "DailyConversation"
+      ],
+      "activationPrompts": [
+        "你没听清对方刚才说的话。",
+        "你只漏掉最后一个数字或名字。"
+      ],
+      "pronunciationFocus": [
+        "again",
+        "say that again",
+        "more slowly"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Sorry, again?",
+          "chinesePrompt": "抱歉，可以再说一次吗？",
+          "variants": [
+            "Sorry, one more time?"
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "again"
+          ],
+          "commonMistakes": [
+            "What? Say again."
+          ],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Sorry, could you say that again?",
+          "chinesePrompt": "抱歉，你能再说一遍吗？",
+          "variants": [
+            "Could you say that again, please?"
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "say that again"
+          ],
+          "commonMistakes": [
+            "Can you speak again?"
+          ],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I didn't catch the last part.",
+          "chinesePrompt": "我没听清最后那部分。",
+          "variants": [
+            "I missed the last part."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "last part"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "对方刚说了一串信息，你只漏掉最后一段。",
+          "responseRole": "Speaker"
+        },
+        {
+          "type": "RepairStrategy",
+          "englishText": "Could you say that a bit more slowly?",
+          "chinesePrompt": "你能稍微慢一点说吗？",
+          "variants": [
+            "Could you slow down a little?"
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "more slowly"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "repairType": "Speed"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Review",
+        "successCriteria": [
+          "完成“请对方重复”对应的沟通动作。",
+          "先用保底表达说出口，再升级到更自然的表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "Clarification",
+          "Repair",
+          "Pronunciation"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    },
+    {
+      "key": "confirm-understanding",
+      "speakingActId": "confirm-understanding",
+      "title": "确认自己理解",
+      "communicativeGoal": "听到关键信息后，用一句话确认自己是否理解正确。",
+      "scene": "WorkConversation",
+      "sceneCoverage": [
+        "Meeting",
+        "CustomerSupport",
+        "DailyConversation"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "WorkConversation"
+      ],
+      "activationPrompts": [
+        "你想确认自己有没有理解错。",
+        "你需要复述对方的意思再继续。"
+      ],
+      "pronunciationFocus": [
+        "let me check",
+        "just to confirm",
+        "you mean"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Let me check if I understood you correctly.",
+          "chinesePrompt": "让我确认一下我有没有理解对。",
+          "variants": [
+            "Let me make sure I understood you correctly."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "understood you correctly"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Just to confirm, you want me to send it today.",
+          "chinesePrompt": "确认一下，你是想让我今天发出去。",
+          "variants": [
+            "Just to make sure, you want me to send it today."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "just to confirm"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "So you mean we should start with the simple version.",
+          "chinesePrompt": "所以你的意思是我们应该先从简单版本开始。",
+          "variants": [
+            "So you're saying we should start with the simple version."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "you mean"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "你需要把对方的建议复述成一句可确认的话。",
+          "responseRole": "Speaker"
+        },
+        {
+          "type": "RepairStrategy",
+          "englishText": "Did I get that right?",
+          "chinesePrompt": "我理解对了吗？",
+          "variants": [
+            "Is that right?"
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "get that right"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "repairType": "Confirmation"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“确认自己理解”对应的沟通动作。",
+          "先用保底表达说出口，再升级到更自然的表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "Completeness",
+          "ScenarioFit",
+          "Repair"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    },
+    {
+      "key": "buy-time",
+      "speakingActId": "buy-time",
+      "title": "争取思考时间",
+      "communicativeGoal": "需要思考时先接住对话，避免沉默或直接卡住。",
+      "scene": "DailyConversation",
+      "sceneCoverage": [
+        "DailyConversation",
+        "Interview",
+        "Meeting"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "DailyConversation"
+      ],
+      "activationPrompts": [
+        "你需要一点时间想答案。",
+        "你不想马上沉默。"
+      ],
+      "pronunciationFocus": [
+        "give me a second",
+        "let me think",
+        "good question"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Give me a second.",
+          "chinesePrompt": "给我一秒钟。",
+          "variants": [
+            "Give me just a second."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "give me a second"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Let me think about that for a moment.",
+          "chinesePrompt": "让我想一会儿。",
+          "variants": [
+            "Let me think about it for a moment."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "let me think"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "That's a good question. Let me think about it.",
+          "chinesePrompt": "这个问题很好，让我想一下。",
+          "variants": [
+            "Good question. Let me think about it."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "good question"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "对方问了一个你不能马上回答的问题。",
+          "responseRole": "Speaker"
+        },
+        {
+          "type": "RepairStrategy",
+          "englishText": "I'm not sure yet, but I can check.",
+          "chinesePrompt": "我现在还不确定，但我可以查一下。",
+          "variants": [
+            "I'm not sure yet. I can check and get back to you."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "not sure yet"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "repairType": "Hesitation"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "WarmUp",
+        "successCriteria": [
+          "完成“争取思考时间”对应的沟通动作。",
+          "先用保底表达说出口，再升级到更自然的表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "Fluency",
+          "Naturalness",
+          "Repair"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    },
+    {
+      "key": "soft-interrupt",
+      "speakingActId": "soft-interrupt",
+      "title": "礼貌打断",
+      "communicativeGoal": "需要插话或纠正方向时，用低冲突方式进入对话。",
+      "scene": "Meeting",
+      "sceneCoverage": [
+        "Meeting",
+        "GroupDiscussion",
+        "PhoneCall"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "Meeting"
+      ],
+      "activationPrompts": [
+        "你需要礼貌地插一句。",
+        "你想补充一个关键点。"
+      ],
+      "pronunciationFocus": [
+        "sorry to interrupt",
+        "jump in",
+        "quick point"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Sorry to interrupt.",
+          "chinesePrompt": "抱歉打断一下。",
+          "variants": [
+            "Sorry for jumping in."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "sorry to interrupt"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Can I jump in for a second?",
+          "chinesePrompt": "我可以插一句吗？",
+          "variants": [
+            "May I jump in for a second?"
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "jump in"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Just a quick point before we move on.",
+          "chinesePrompt": "在继续之前，我补充一个很快的点。",
+          "variants": [
+            "One quick point before we move on."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "quick point"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "会议即将进入下一个话题，你需要补一句。",
+          "responseRole": "Speaker"
+        },
+        {
+          "type": "RepairStrategy",
+          "englishText": "Can I add one thing here?",
+          "chinesePrompt": "我可以在这里补充一点吗？",
+          "variants": [
+            "Could I add one thing here?"
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "add one thing"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "repairType": "TurnTaking"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“礼貌打断”对应的沟通动作。",
+          "先用保底表达说出口，再升级到更自然的表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "TurnTaking",
+          "Softening",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    },
+    {
+      "key": "recover-mistake",
+      "speakingActId": "recover-mistake",
+      "title": "说错后重述",
+      "communicativeGoal": "发现自己说错、说乱或说反时，快速重述并回到对话。",
+      "scene": "DailyConversation",
+      "sceneCoverage": [
+        "DailyConversation",
+        "Meeting",
+        "Interview"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "DailyConversation"
+      ],
+      "activationPrompts": [
+        "said that wrong",
+        "let me rephrase",
+        "what I mean"
+      ],
+      "pronunciationFocus": [
+        "你刚才把意思说反了。",
+        "你意识到自己说得不清楚。"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "Sorry, I said that wrong.",
+          "chinesePrompt": "抱歉，我刚才说错了。",
+          "variants": [
+            "Sorry, that came out wrong."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "said that wrong"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "Let me rephrase that.",
+          "chinesePrompt": "让我换个说法。",
+          "variants": [
+            "Let me say that another way."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "rephrase that"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "What I mean is that we need more time.",
+          "chinesePrompt": "我的意思是我们需要更多时间。",
+          "variants": [
+            "I mean we need more time."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "what I mean"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "你刚才表达不清，需要重新说重点。",
+          "responseRole": "Speaker"
+        },
+        {
+          "type": "RepairStrategy",
+          "englishText": "I mixed up the dates.",
+          "chinesePrompt": "我把日期弄混了。",
+          "variants": [
+            "I got the dates mixed up."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "mixed up"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "repairType": "Correction"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“说错后重述”对应的沟通动作。",
+          "先用保底表达说出口，再升级到更自然的表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "Repair",
+          "Completeness",
+          "Naturalness"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    }
+  ]
+}

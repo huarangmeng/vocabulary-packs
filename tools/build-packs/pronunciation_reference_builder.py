@@ -138,6 +138,8 @@ def build_pronunciation_references(pack_id: str, units: list[dict[str, Any]], it
                     "dialect": dialect,
                     "phonemes": [phoneme for word in word_refs for phoneme in word["phonemes"]],
                     "words": word_refs,
+                    "lexicalStress": _merge_lexical_stress(word_refs),
+                    "sentenceStress": _sentence_stress_targets(target["targetText"], word_refs),
                     "source": "PackVerifiedOnline",
                     "confidence": "High",
                     "reviewStatus": "PackVerified",
@@ -230,6 +232,7 @@ def _word(text: str, phonemes: list[str], source: str, dialect: str, source_url:
     return {
         "text": text,
         "phonemes": phonemes,
+        "lexicalStress": _infer_lexical_stress(phonemes),
         "source": source,
         "confidence": "High",
         "sourceUrl": source_url,
@@ -424,6 +427,45 @@ def _ed_suffix(last_phoneme: str) -> list[str]:
     if last_phoneme in {"p", "k", "f", "θ", "s", "ʃ", "t͡ʃ"}:
         return ["t"]
     return ["d"]
+
+
+def _infer_lexical_stress(phonemes: list[str]) -> list[int]:
+    stress: list[int] = []
+    stressed = False
+    for phoneme in phonemes:
+        if phoneme not in VOWELS:
+            continue
+        if not stressed and phoneme not in {"ə", "ɚ", "ɝ"}:
+            stress.append(1)
+            stressed = True
+        else:
+            stress.append(0)
+    return stress
+
+
+def _merge_lexical_stress(words: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        {"word": word["text"], "stress": word.get("lexicalStress", [])}
+        for word in words
+        if word.get("lexicalStress")
+    ]
+
+
+def _sentence_stress_targets(target_text: str, words: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    content_words = [
+        word["text"]
+        for word in words
+        if word["text"] not in {"a", "an", "the", "to", "of", "for", "and", "or", "but", "in", "on", "at", "that"}
+    ]
+    if not content_words:
+        return []
+    return [
+        {
+            "pattern": target_text,
+            "primaryWords": content_words[-2:] if len(content_words) > 1 else content_words,
+            "note": "Default official-pack cue: keep function words light and make the final content word clear.",
+        }
+    ]
 
 
 def _merge_provenance(words: list[dict[str, Any]]) -> list[dict[str, str]]:

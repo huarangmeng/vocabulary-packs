@@ -1,0 +1,781 @@
+{
+  "packId": "opinion-builder-1",
+  "title": "观点表达口语动作 1",
+  "description": "从说出观点、给理由、举例、比较取舍到保留不确定性，形成可迁移的观点表达链路。",
+  "packType": "SpeakingActs",
+  "levelHint": "A2-B1",
+  "estimatedMinutes": 130,
+  "tags": [
+    "Speaking",
+    "SpeakingActs",
+    "Opinion",
+    "Reasoning"
+  ],
+  "trainingModes": [
+    "Recall",
+    "Shadow",
+    "Respond",
+    "Repair"
+  ],
+  "pronunciationPolicy": {
+    "dialects": [
+      "en-US",
+      "en-GB"
+    ],
+    "referenceScope": [
+      "EnglishText",
+      "Variant",
+      "PronunciationTarget"
+    ],
+    "generator": "online-verified-pronunciation-builder-v3-stress-aware",
+    "minimumVerifiedCoverage": 0.98
+  },
+  "catalogMetadata": {
+    "seriesId": "v2-speaking-actions",
+    "seriesTitle": "V2 官方口语动作",
+    "seriesOrder": 4,
+    "learningPath": "OpinionBuilder",
+    "recommendedNextPackIds": [
+      "pronunciation-risk-1"
+    ],
+    "companionPackIds": [
+      "meeting-actions-1",
+      "small-talk-actions-1"
+    ],
+    "dailyQueueRoles": [
+      "Review",
+      "New",
+      "Transfer",
+      "WeakPoint",
+      "Challenge"
+    ]
+  },
+  "units": [
+    {
+      "key": "state-view",
+      "speakingActId": "state-view",
+      "title": "说出观点",
+      "communicativeGoal": "用清楚但不生硬的方式说出自己的看法。",
+      "scene": "Discussion",
+      "sceneCoverage": [
+        "Meeting",
+        "Classroom",
+        "DailyConversation"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "Discussion"
+      ],
+      "activationPrompts": [
+        "别人问你怎么看。",
+        "你需要先给一个明确立场。"
+      ],
+      "pronunciationFocus": [
+        "I think",
+        "in my view",
+        "for me"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I think this is the better option.",
+          "chinesePrompt": "我觉得这是更好的选项。",
+          "variants": [
+            "I think this option is better."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "I think"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "In my view, we should keep it simple.",
+          "chinesePrompt": "在我看来，我们应该保持简单。",
+          "variants": [
+            "My view is that we should keep it simple."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "in my view"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "For me, the main issue is time.",
+          "chinesePrompt": "对我来说，主要问题是时间。",
+          "variants": [
+            "For me, time is the main issue."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "main issue"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I think this is the better option because it's easier to explain.",
+          "chinesePrompt": "我觉得这是更好的选项，因为更容易解释。",
+          "variants": [],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "better option"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "你需要在两个方案中选一个。",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“说出观点”对应的沟通动作。",
+          "先用保底表达说出口，再升级到更自然的表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "Completeness",
+          "Naturalness",
+          "Decision"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    },
+    {
+      "key": "give-reason",
+      "speakingActId": "give-reason",
+      "title": "给出理由",
+      "communicativeGoal": "观点之后补一个短理由，让表达更有支撑。",
+      "scene": "Discussion",
+      "sceneCoverage": [
+        "Meeting",
+        "Classroom",
+        "Interview"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "Discussion"
+      ],
+      "activationPrompts": [
+        "你刚说了观点，需要补理由。",
+        "别人问为什么。"
+      ],
+      "pronunciationFocus": [
+        "because",
+        "the reason is",
+        "it helps"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "The reason is that it's easier to maintain.",
+          "chinesePrompt": "原因是它更容易维护。",
+          "variants": [
+            "The main reason is that it's easier to maintain."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "the reason is"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "It helps us save time.",
+          "chinesePrompt": "它能帮助我们节省时间。",
+          "variants": [
+            "It can help us save time."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "save time"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I prefer this one because it is clearer.",
+          "chinesePrompt": "我更喜欢这个，因为它更清楚。",
+          "variants": [],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "because it is clearer"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "你解释自己的选择。",
+          "responseRole": "Speaker"
+        },
+        {
+          "type": "Chunk",
+          "englishText": "That matters because the deadline is close.",
+          "chinesePrompt": "这很重要，因为截止时间很近。",
+          "variants": [
+            "That matters because we have a close deadline."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "deadline is close"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“给出理由”对应的沟通动作。",
+          "先用保底表达说出口，再升级到更自然的表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "Completeness",
+          "Naturalness",
+          "Decision"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    },
+    {
+      "key": "give-example",
+      "speakingActId": "give-example",
+      "title": "给一个例子",
+      "communicativeGoal": "用简短例子把抽象观点说具体。",
+      "scene": "Discussion",
+      "sceneCoverage": [
+        "Meeting",
+        "Classroom",
+        "Interview"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "Discussion"
+      ],
+      "activationPrompts": [
+        "你的观点有点抽象。",
+        "你需要举一个简单例子。"
+      ],
+      "pronunciationFocus": [
+        "for example",
+        "for instance",
+        "a simple example"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "For example, we can start with one team.",
+          "chinesePrompt": "比如，我们可以先从一个团队开始。",
+          "variants": [
+            "For example, we could start with one team."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "for example"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "Chunk",
+          "englishText": "For instance, the support team needs this first.",
+          "chinesePrompt": "比如，支持团队最先需要这个。",
+          "variants": [
+            "For instance, support needs this first."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "for instance"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "A simple example is the onboarding flow.",
+          "chinesePrompt": "一个简单例子是入门流程。",
+          "variants": [
+            "One simple example is the onboarding flow."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "simple example"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "For example, if a user is new, this step saves time.",
+          "chinesePrompt": "比如，如果用户是新手，这一步能节省时间。",
+          "variants": [],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "saves time"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "你要解释为什么某一步有价值。",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“给一个例子”对应的沟通动作。",
+          "先用保底表达说出口，再升级到更自然的表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "Completeness",
+          "ScenarioFit",
+          "Naturalness"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    },
+    {
+      "key": "compare-tradeoff",
+      "speakingActId": "compare-tradeoff",
+      "title": "比较取舍",
+      "communicativeGoal": "比较两个选项时同时说出好处和代价。",
+      "scene": "Discussion",
+      "sceneCoverage": [
+        "Meeting",
+        "Planning",
+        "Interview"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "Discussion"
+      ],
+      "activationPrompts": [
+        "你需要比较两个方案。",
+        "你想说明一个取舍。"
+      ],
+      "pronunciationFocus": [
+        "the tradeoff",
+        "faster but",
+        "safer but"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "The tradeoff is speed versus quality.",
+          "chinesePrompt": "取舍是速度和质量。",
+          "variants": [
+            "The tradeoff is between speed and quality."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "the tradeoff"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "This option is faster, but it is less flexible.",
+          "chinesePrompt": "这个选项更快，但灵活性较低。",
+          "variants": [
+            "This is faster, but less flexible."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "faster but"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "The safer option takes more time.",
+          "chinesePrompt": "更稳妥的选项需要更多时间。",
+          "variants": [
+            "The safer option will take more time."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "safer option"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I would choose the safer option because the risk is lower.",
+          "chinesePrompt": "我会选择更稳妥的选项，因为风险更低。",
+          "variants": [],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "risk is lower"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "你在解释为什么放弃更快方案。",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“比较取舍”对应的沟通动作。",
+          "先用保底表达说出口，再升级到更自然的表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "Decision",
+          "Completeness",
+          "Naturalness"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    },
+    {
+      "key": "soften-uncertainty",
+      "speakingActId": "soften-uncertainty",
+      "title": "表达不确定",
+      "communicativeGoal": "不完全确定时，给出保留空间但仍能推进讨论。",
+      "scene": "Discussion",
+      "sceneCoverage": [
+        "Meeting",
+        "Interview",
+        "DailyConversation"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "Medium"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "Discussion"
+      ],
+      "activationPrompts": [
+        "你不确定答案。",
+        "你想表达初步判断但不想说死。"
+      ],
+      "pronunciationFocus": [
+        "I'm not completely sure",
+        "my guess",
+        "I would need"
+      ],
+      "items": [
+        {
+          "type": "Chunk",
+          "englishText": "I'm not completely sure yet.",
+          "chinesePrompt": "我现在还不能完全确定。",
+          "variants": [
+            "I'm not totally sure yet."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "not completely sure"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "SentencePattern",
+          "englishText": "My guess is that it will take two weeks.",
+          "chinesePrompt": "我的猜测是这需要两周。",
+          "variants": [
+            "I would guess it takes two weeks."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "my guess"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ]
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I would need to check the details before I answer.",
+          "chinesePrompt": "我需要先确认细节再回答。",
+          "variants": [],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "check the details"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "别人问你一个你不能马上确认的问题。",
+          "responseRole": "Speaker"
+        },
+        {
+          "type": "RepairStrategy",
+          "englishText": "Can I get back to you on that?",
+          "chinesePrompt": "这个问题我之后回复你可以吗？",
+          "variants": [
+            "Could I get back to you on that?"
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "get back to you"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "repairType": "Deferral"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“表达不确定”对应的沟通动作。",
+          "先用保底表达说出口，再升级到更自然的表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "Softening",
+          "Completeness",
+          "ScenarioFit"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    }
+  ]
+}

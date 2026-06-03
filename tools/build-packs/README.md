@@ -17,9 +17,11 @@
 
 ```text
 dist/trainpacks/
-  core-chunks-1-2026.06.02.trainpack
-  small-talk-1-2026.06.02.trainpack
-  meeting-communication-1-2026.06.02.trainpack
+  core-repair-1-2026.06.03.trainpack
+  small-talk-actions-1-2026.06.03.trainpack
+  meeting-actions-1-2026.06.03.trainpack
+  opinion-builder-1-2026.06.03.trainpack
+  pronunciation-risk-1-2026.06.03.trainpack
   latest.json
   latest.json.sha256
 ```
@@ -46,15 +48,15 @@ python3 tools/release_trainpacks.py
 如需单独调试：
 
 ```bash
-python3 tools/build-packs/build_from_content.py content/packs/core-chunks-1.json
-python3 tools/build-packs/build_from_content.py content/packs/small-talk-1.json
-python3 tools/build-packs/build_from_content.py content/packs/meeting-communication-1.json
+python3 tools/build-packs/build_from_content.py content/packs/core-repair-1.json
+python3 tools/build-packs/build_from_content.py content/packs/small-talk-actions-1.json
+python3 tools/build-packs/build_from_content.py content/packs/meeting-actions-1.json
 ```
 
 校验示例：
 
 ```bash
 python3 tools/validate_trainpack.py \
-  dist/trainpacks/core-chunks-1-2026.06.02.trainpack \
+  dist/trainpacks/core-repair-1-2026.06.03.trainpack \
   manifests/latest.json
 ```

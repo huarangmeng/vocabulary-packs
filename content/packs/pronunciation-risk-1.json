@@ -1,0 +1,816 @@
+{
+  "packId": "pronunciation-risk-1",
+  "title": "发音与重音风险口语动作 1",
+  "description": "围绕高频表达里的词重音、句重音、弱读、连读和结尾音，提供可评估的局部 pronunciation focus。",
+  "packType": "SpeakingActs",
+  "levelHint": "A2-B1",
+  "estimatedMinutes": 110,
+  "tags": [
+    "Speaking",
+    "SpeakingActs",
+    "Pronunciation",
+    "Stress"
+  ],
+  "trainingModes": [
+    "Recall",
+    "Shadow",
+    "Respond",
+    "Repair"
+  ],
+  "pronunciationPolicy": {
+    "dialects": [
+      "en-US",
+      "en-GB"
+    ],
+    "referenceScope": [
+      "EnglishText",
+      "Variant",
+      "PronunciationTarget"
+    ],
+    "generator": "online-verified-pronunciation-builder-v3-stress-aware",
+    "minimumVerifiedCoverage": 0.98
+  },
+  "catalogMetadata": {
+    "seriesId": "v2-speaking-actions",
+    "seriesTitle": "V2 官方口语动作",
+    "seriesOrder": 5,
+    "learningPath": "PronunciationRisk",
+    "recommendedNextPackIds": [
+      "core-repair-1"
+    ],
+    "companionPackIds": [
+      "small-talk-actions-1",
+      "meeting-actions-1",
+      "opinion-builder-1"
+    ],
+    "dailyQueueRoles": [
+      "Review",
+      "New",
+      "Transfer",
+      "WeakPoint",
+      "Challenge"
+    ]
+  },
+  "units": [
+    {
+      "key": "sentence-stress",
+      "speakingActId": "sentence-stress",
+      "title": "突出关键词",
+      "communicativeGoal": "在完整句中让关键词更清楚，而不是平均用力读每个词。",
+      "scene": "PronunciationPractice",
+      "sceneCoverage": [
+        "DailyConversation",
+        "Meeting",
+        "Interview"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "High"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "PronunciationPractice"
+      ],
+      "activationPrompts": [
+        "你已经会说句子，但听起来每个词一样重。",
+        "你需要把重点词读清楚。"
+      ],
+      "pronunciationFocus": [
+        "main issue",
+        "better option",
+        "next step"
+      ],
+      "items": [
+        {
+          "type": "PronunciationTarget",
+          "englishText": "The main issue is time.",
+          "chinesePrompt": "重点读 main issue 和 time。",
+          "variants": [
+            "For me, the main issue is time."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "main issue",
+            "time"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "focusType": "SentenceStress",
+          "focusText": "The main issue is time."
+        },
+        {
+          "type": "PronunciationTarget",
+          "englishText": "This is the better option.",
+          "chinesePrompt": "重点读 better option。",
+          "variants": [
+            "I think this is the better option."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "better option"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "focusType": "SentenceStress",
+          "focusText": "This is the better option."
+        },
+        {
+          "type": "PronunciationTarget",
+          "englishText": "What's the next step?",
+          "chinesePrompt": "重点读 next step。",
+          "variants": [
+            "What should be the next step?"
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "next step"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "focusType": "SentenceStress",
+          "focusText": "What's the next step?"
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "The main issue is time, so the next step should be simple.",
+          "chinesePrompt": "主要问题是时间，所以下一步应该简单。",
+          "variants": [],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "main issue",
+            "next step"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "你在会议里总结重点。",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“突出关键词”对应的沟通动作。",
+          "先用保底表达说出口，再升级到更自然的表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "Pronunciation",
+          "Fluency",
+          "Naturalness"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    },
+    {
+      "key": "weak-function-words",
+      "speakingActId": "weak-function-words",
+      "title": "弱读功能词",
+      "communicativeGoal": "在自然表达中轻读 to、for、that 等功能词。",
+      "scene": "PronunciationPractice",
+      "sceneCoverage": [
+        "DailyConversation",
+        "Meeting",
+        "Interview"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "High"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "PronunciationPractice"
+      ],
+      "activationPrompts": [
+        "你把每个功能词都读得太重。",
+        "你需要让句子更自然连贯。"
+      ],
+      "pronunciationFocus": [
+        "to send it",
+        "for a moment",
+        "that again"
+      ],
+      "items": [
+        {
+          "type": "PronunciationTarget",
+          "englishText": "You want me to send it today.",
+          "chinesePrompt": "to 和 it 轻一点，send/today 更清楚。",
+          "variants": [
+            "Just to confirm, you want me to send it today."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "to send it"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "focusType": "WeakForm",
+          "focusText": "You want me to send it today."
+        },
+        {
+          "type": "PronunciationTarget",
+          "englishText": "Let me think about that for a moment.",
+          "chinesePrompt": "for a moment 中 for 轻读。",
+          "variants": [
+            "Let me think about it for a moment."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "for a moment"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "focusType": "WeakForm",
+          "focusText": "Let me think about that for a moment."
+        },
+        {
+          "type": "PronunciationTarget",
+          "englishText": "Could you say that again?",
+          "chinesePrompt": "that 可轻一点，again 读清楚。",
+          "variants": [
+            "Could you repeat that again?"
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "that again"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "focusType": "WeakForm",
+          "focusText": "Could you say that again?"
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Let me think about that for a moment.",
+          "chinesePrompt": "让我想一会儿。",
+          "variants": [],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "for a moment"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "对方问了一个你需要思考的问题。",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“弱读功能词”对应的沟通动作。",
+          "先用保底表达说出口，再升级到更自然的表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "Pronunciation",
+          "Fluency",
+          "Naturalness"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    },
+    {
+      "key": "linking",
+      "speakingActId": "linking",
+      "title": "自然连读",
+      "communicativeGoal": "在常见短语中保持自然连接，不逐词断开。",
+      "scene": "PronunciationPractice",
+      "sceneCoverage": [
+        "DailyConversation",
+        "Meeting",
+        "PhoneCall"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "High"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "PronunciationPractice"
+      ],
+      "activationPrompts": [
+        "你能说对单词，但短语听起来断裂。",
+        "你需要把高频短语连起来。"
+      ],
+      "pronunciationFocus": [
+        "good to see you",
+        "get back to you",
+        "add one thing"
+      ],
+      "items": [
+        {
+          "type": "PronunciationTarget",
+          "englishText": "Good to see you.",
+          "chinesePrompt": "good to see you 自然连起来。",
+          "variants": [
+            "It's good to see you."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "good to see you"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "focusType": "Linking",
+          "focusText": "Good to see you."
+        },
+        {
+          "type": "PronunciationTarget",
+          "englishText": "Can I get back to you?",
+          "chinesePrompt": "get back to you 保持连贯。",
+          "variants": [
+            "Could I get back to you?"
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "get back to you"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "focusType": "Linking",
+          "focusText": "Can I get back to you?"
+        },
+        {
+          "type": "PronunciationTarget",
+          "englishText": "Can I add one thing here?",
+          "chinesePrompt": "add one thing 不要断开。",
+          "variants": [
+            "Could I add one thing here?"
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "add one thing"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "focusType": "Linking",
+          "focusText": "Can I add one thing here?"
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "Good to see you. Can I ask you something?",
+          "chinesePrompt": "见到你真好。我能问你一件事吗？",
+          "variants": [],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "good to see you",
+            "ask you"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "你先寒暄再转入问题。",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“自然连读”对应的沟通动作。",
+          "先用保底表达说出口，再升级到更自然的表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "Pronunciation",
+          "Fluency",
+          "Naturalness"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    },
+    {
+      "key": "final-consonants",
+      "speakingActId": "final-consonants",
+      "title": "保留结尾音",
+      "communicativeGoal": "短句和关键词末尾辅音不能吞掉，否则容易影响理解。",
+      "scene": "PronunciationPractice",
+      "sceneCoverage": [
+        "Meeting",
+        "PhoneCall",
+        "DailyConversation"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "High"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "PronunciationPractice"
+      ],
+      "activationPrompts": [
+        "你说快时容易吞掉结尾音。",
+        "你需要把关键短词结尾读清楚。"
+      ],
+      "pronunciationFocus": [
+        "last part",
+        "next step",
+        "mixed up"
+      ],
+      "items": [
+        {
+          "type": "PronunciationTarget",
+          "englishText": "I didn't catch the last part.",
+          "chinesePrompt": "last part 的 st 和 t 要清楚。",
+          "variants": [
+            "I missed the last part."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "last part"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "focusType": "FinalConsonant",
+          "focusText": "I didn't catch the last part."
+        },
+        {
+          "type": "PronunciationTarget",
+          "englishText": "What's the next step?",
+          "chinesePrompt": "next step 的 t/st 不要丢。",
+          "variants": [
+            "What is the next step?"
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "next step"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "focusType": "FinalConsonant",
+          "focusText": "What's the next step?"
+        },
+        {
+          "type": "PronunciationTarget",
+          "englishText": "I mixed up the dates.",
+          "chinesePrompt": "mixed up 的结尾音要保留。",
+          "variants": [
+            "I got the dates mixed up."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "mixed up"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "focusType": "FinalConsonant",
+          "focusText": "I mixed up the dates."
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I didn't catch the last part. Could you say it again?",
+          "chinesePrompt": "我没听清最后部分。你能再说一遍吗？",
+          "variants": [],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "last part",
+            "again"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "你需要对方重复最后部分。",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Main",
+        "successCriteria": [
+          "完成“保留结尾音”对应的沟通动作。",
+          "先用保底表达说出口，再升级到更自然的表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "Pronunciation",
+          "Clarification",
+          "Fluency"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    },
+    {
+      "key": "clear-contrast",
+      "speakingActId": "clear-contrast",
+      "title": "区分易混音",
+      "communicativeGoal": "在高频表达中区分 this/think、right/light 等容易混淆的音。",
+      "scene": "PronunciationPractice",
+      "sceneCoverage": [
+        "DailyConversation",
+        "Meeting",
+        "Interview"
+      ],
+      "register": "Neutral",
+      "difficulty": {
+        "lexical": "A2-B1",
+        "interactionPressure": "Medium",
+        "pronunciationRisk": "High"
+      },
+      "tags": [
+        "SpeakingAct",
+        "Official",
+        "PronunciationPractice"
+      ],
+      "activationPrompts": [
+        "你需要把易混音放进真实表达里练。",
+        "你已经能读单词，但句子里会混。"
+      ],
+      "pronunciationFocus": [
+        "this thing",
+        "think this",
+        "right light"
+      ],
+      "items": [
+        {
+          "type": "PronunciationTarget",
+          "englishText": "I think this is right.",
+          "chinesePrompt": "think 和 this 的起始音要区分。",
+          "variants": [
+            "I think this one is right."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "think this"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "focusType": "PhonemeContrast",
+          "focusText": "I think this is right."
+        },
+        {
+          "type": "PronunciationTarget",
+          "englishText": "This thing takes time.",
+          "chinesePrompt": "this thing 不要读成同一个音。",
+          "variants": [
+            "This thing will take time."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "this thing"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "focusType": "PhonemeContrast",
+          "focusText": "This thing takes time."
+        },
+        {
+          "type": "PronunciationTarget",
+          "englishText": "The right light is on.",
+          "chinesePrompt": "right 和 light 要区分。",
+          "variants": [
+            "The right light is still on."
+          ],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "right light"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "focusType": "PhonemeContrast",
+          "focusText": "The right light is on."
+        },
+        {
+          "type": "DialogueTurn",
+          "englishText": "I think this is the right next step.",
+          "chinesePrompt": "我觉得这是正确的下一步。",
+          "variants": [],
+          "notes": [
+            "官方 V2 口语动作包内容，进入今日口语动态队列后用于先开口、再纠偏、再迁移。"
+          ],
+          "pronunciationTargets": [
+            "think this",
+            "right next"
+          ],
+          "commonMistakes": [],
+          "tags": [
+            "SpeakingAct",
+            "Move"
+          ],
+          "contextText": "你在会议里确认下一步。",
+          "responseRole": "Speaker"
+        }
+      ],
+      "taskHints": {
+        "defaultRole": "Challenge",
+        "successCriteria": [
+          "完成“区分易混音”对应的沟通动作。",
+          "先用保底表达说出口，再升级到更自然的表达。",
+          "表达命中后，只评估当前 pronunciationFocus。"
+        ],
+        "correctionFocus": [
+          "Pronunciation",
+          "Completeness",
+          "Naturalness"
+        ],
+        "retryPrompts": [
+          "先说最短可用表达，保证对话继续。",
+          "保持意思不变，放慢并重说 pronunciationFocus。"
+        ],
+        "variantPrompts": [
+          "换一个相近场景，再完成同一个动作。",
+          "保留沟通目标，换成更自然的说法。"
+        ],
+        "recommendedTaskTypes": [
+          "Review",
+          "New",
+          "Transfer",
+          "WeakPoint"
+        ],
+        "transferPrompts": [
+          "把同一个动作迁移到另一个场景。",
+          "换一个对象、时间或限制条件再说一次。"
+        ],
+        "weakPointPrompts": [
+          "只重练当前 pronunciationFocus。",
+          "先用 fallback 完成动作，再升级到 natural move。"
+        ]
+      }
+    }
+  ]
+}

@@ -31,7 +31,7 @@
     "description": { "type": "string", "minLength": 1 },
     "packType": {
       "type": "string",
-      "enum": ["CoreChunks", "Scenario", "Function", "Repair", "PronunciationFocus", "ExamSpeaking"]
+      "enum": ["SpeakingActs"]
     },
     "locale": { "type": "string", "pattern": "^[a-z]{2}-[A-Z]{2}$" },
     "unitCount": { "type": "integer", "minimum": 1 },

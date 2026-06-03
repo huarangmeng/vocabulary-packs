@@ -18,7 +18,7 @@ VERSION_PATTERN = re.compile(r"^\d{4}\.\d{2}\.\d{2}$")
 UTC_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
 SHA256_PATTERN = re.compile(r"^[a-f0-9]{64}$")
 FILE_NAME_PATTERN = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*-\d{4}\.\d{2}\.\d{2}\.trainpack$")
-ALLOWED_PACK_TYPES = {"CoreChunks", "Scenario", "Function", "Repair", "PronunciationFocus", "ExamSpeaking"}
+ALLOWED_PACK_TYPES = {"SpeakingActs"}
 ALLOWED_TRAINING_MODES = {"Recall", "Shadow", "Respond", "Repair"}
 ALLOWED_ITEM_TYPES = {"Chunk", "SentencePattern", "DialogueTurn", "RepairStrategy", "PronunciationTarget"}
 ALLOWED_REGISTERS = {"Casual", "Neutral", "Formal"}
@@ -29,6 +29,7 @@ ALLOWED_PRONUNCIATION_SOURCES = {"PackVerifiedOnline"}
 ALLOWED_WORD_PRONUNCIATION_SOURCES = {"CuratedLexicon", "DictionaryApi", "Cmudict", "InflectionRule"}
 ALLOWED_PRONUNCIATION_REVIEW_STATUS = {"PackVerified"}
 ALLOWED_TASK_ROLES = {"WarmUp", "Main", "Challenge", "Review"}
+ALLOWED_DAILY_QUEUE_ROLES = {"Review", "New", "Transfer", "WeakPoint", "Challenge"}
 ALLOWED_CORRECTION_FOCUS = {
     "Naturalness",
     "SpokenRegister",
@@ -65,6 +66,8 @@ ITEM_OPTIONAL_KEYS = {
     "sampleOutputs",
     "focusText",
     "focusType",
+    "moveKind",
+    "register",
 }
 CATALOG_PACK_REQUIRED_KEYS = {
     "id",
@@ -94,6 +97,7 @@ CATALOG_PACK_OPTIONAL_KEYS = {
     "prerequisitePackIds",
     "recommendedNextPackIds",
     "companionPackIds",
+    "dailyQueueRoles",
 }
 
 
@@ -191,7 +195,7 @@ def validate_manifest(manifest: dict[str, Any]) -> None:
 
 
 def validate_unit(unit: dict[str, Any], expected_order: int, pack_id: str) -> None:
-    require_exact_keys(
+    require_allowed_keys(
         unit,
         {
             "unitId",
@@ -207,6 +211,7 @@ def validate_unit(unit: dict[str, Any], expected_order: int, pack_id: str) -> No
             "pronunciationFocus",
             "taskHints",
         },
+        {"speakingActId", "sceneCoverage"},
         f"unit #{expected_order}",
     )
     unit_id = require_string(unit["unitId"], f"unit #{expected_order} unitId", pattern=UNIT_ID_PATTERN)
@@ -242,7 +247,7 @@ def validate_unit(unit: dict[str, Any], expected_order: int, pack_id: str) -> No
 def validate_task_hints(task_hints: Any, label: str) -> None:
     if not isinstance(task_hints, dict):
         fail(f"{label} must be an object")
-    require_exact_keys(
+    require_allowed_keys(
         task_hints,
         {
             "defaultRole",
@@ -251,6 +256,7 @@ def validate_task_hints(task_hints: Any, label: str) -> None:
             "retryPrompts",
             "variantPrompts",
         },
+        {"recommendedTaskTypes", "transferPrompts", "weakPointPrompts"},
         label,
     )
     if task_hints["defaultRole"] not in ALLOWED_TASK_ROLES:
@@ -262,6 +268,14 @@ def validate_task_hints(task_hints: Any, label: str) -> None:
             fail(f"{label}.correctionFocus contains invalid value: {focus}")
     require_string_list(task_hints["retryPrompts"], f"{label}.retryPrompts", min_items=1)
     require_string_list(task_hints["variantPrompts"], f"{label}.variantPrompts", min_items=1)
+    for optional_key in ("transferPrompts", "weakPointPrompts"):
+        if optional_key in task_hints:
+            require_string_list(task_hints[optional_key], f"{label}.{optional_key}", min_items=1)
+    if "recommendedTaskTypes" in task_hints:
+        roles = require_string_list(task_hints["recommendedTaskTypes"], f"{label}.recommendedTaskTypes", min_items=1)
+        for role in roles:
+            if role not in ALLOWED_DAILY_QUEUE_ROLES:
+                fail(f"{label}.recommendedTaskTypes contains invalid value: {role}")
 
 
 def validate_item(item: dict[str, Any], expected_pack_id: str, item_index: int) -> None:
@@ -315,6 +329,8 @@ def validate_pronunciation_reference(
             "dialect",
             "phonemes",
             "words",
+            "lexicalStress",
+            "sentenceStress",
             "source",
             "confidence",
             "reviewStatus",
@@ -347,11 +363,16 @@ def validate_pronunciation_reference(
             fail(f"pronunciation reference {reference_id} word #{word_index} must be an object")
         require_exact_keys(
             word,
-            {"text", "phonemes", "source", "confidence", "sourceUrl", "license", "dialect"},
+            {"text", "phonemes", "lexicalStress", "source", "confidence", "sourceUrl", "license", "dialect"},
             f"pronunciation reference {reference_id} word #{word_index}",
         )
         require_string(word["text"], f"pronunciation reference {reference_id} word #{word_index} text")
         flattened.extend(require_string_list(word["phonemes"], f"pronunciation reference {reference_id} word #{word_index} phonemes", min_items=1))
+        if not isinstance(word["lexicalStress"], list):
+            fail(f"pronunciation reference {reference_id} word #{word_index} lexicalStress must be a list")
+        for stress_index, stress_value in enumerate(word["lexicalStress"]):
+            if stress_value not in {0, 1, 2}:
+                fail(f"pronunciation reference {reference_id} word #{word_index} lexicalStress[{stress_index}] is invalid")
         if word["source"] not in ALLOWED_WORD_PRONUNCIATION_SOURCES:
             fail(f"pronunciation reference {reference_id} word #{word_index} source is invalid: {word['source']}")
         if word["confidence"] not in ALLOWED_LEVELS:
@@ -362,6 +383,10 @@ def validate_pronunciation_reference(
             fail(f"pronunciation reference {reference_id} word #{word_index} dialect is invalid: {word['dialect']}")
     if flattened != reference["phonemes"]:
         fail(f"pronunciation reference {reference_id} phonemes must equal flattened word phonemes")
+    if not isinstance(reference["lexicalStress"], list):
+        fail(f"pronunciation reference {reference_id} lexicalStress must be a list")
+    if not isinstance(reference["sentenceStress"], list):
+        fail(f"pronunciation reference {reference_id} sentenceStress must be a list")
     if reference["source"] not in ALLOWED_PRONUNCIATION_SOURCES:
         fail(f"pronunciation reference {reference_id} source is invalid: {reference['source']}")
     if reference["confidence"] not in ALLOWED_LEVELS:
@@ -481,6 +506,11 @@ def validate_catalog(
             for linked_pack_id in ids:
                 if not ID_PATTERN.match(linked_pack_id):
                     fail(f"catalog pack {linkage_key} contains invalid pack id: {linked_pack_id}")
+    if "dailyQueueRoles" in pack:
+        roles = require_string_list(pack["dailyQueueRoles"], "catalog pack dailyQueueRoles", min_items=1)
+        for role in roles:
+            if role not in ALLOWED_DAILY_QUEUE_ROLES:
+                fail(f"catalog pack dailyQueueRoles contains invalid value: {role}")
 
     if pack["title"] != manifest["title"]:
         fail("catalog pack title must match trainpack manifest title")

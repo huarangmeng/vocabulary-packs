@@ -11,12 +11,12 @@ BUILD_PACKS_DIR = ROOT / "tools" / "build-packs"
 if str(BUILD_PACKS_DIR) not in sys.path:
     sys.path.insert(0, str(BUILD_PACKS_DIR))
 
-from release_config import DEFAULT_RELEASE_NOTES, REPOSITORY, TAG, release_title  # noqa: E402
+from release_config import DEFAULT_RELEASE_NOTES, REPOSITORY, TAG, VERSION, release_title  # noqa: E402
 from trainpack_builder import OUTPUT_DIR  # noqa: E402
 
 
 def _asset_paths() -> list[Path]:
-    trainpacks = sorted(OUTPUT_DIR.glob("*.trainpack"))
+    trainpacks = sorted(OUTPUT_DIR.glob(f"*-{VERSION}.trainpack"))
     return trainpacks + [OUTPUT_DIR / "latest.json", OUTPUT_DIR / "latest.json.sha256"]
 
 

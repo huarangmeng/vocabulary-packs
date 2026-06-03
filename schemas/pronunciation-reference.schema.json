@@ -14,6 +14,8 @@
     "dialect",
     "phonemes",
     "words",
+    "lexicalStress",
+    "sentenceStress",
     "source",
     "confidence",
     "reviewStatus",
@@ -46,11 +48,46 @@
             "minItems": 1,
             "items": { "type": "string", "minLength": 1 }
           },
+          "lexicalStress": {
+            "type": "array",
+            "items": { "type": "integer", "enum": [0, 1, 2] }
+          },
           "source": { "type": "string", "enum": ["CuratedLexicon", "DictionaryApi", "Cmudict", "InflectionRule"] },
           "confidence": { "type": "string", "enum": ["Low", "Medium", "High"] },
           "sourceUrl": { "type": "string", "minLength": 1 },
           "license": { "type": "string", "minLength": 1 },
           "dialect": { "type": "string", "enum": ["en-US", "en-GB"] }
+        }
+      }
+    },
+    "lexicalStress": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["word", "stress"],
+        "properties": {
+          "word": { "type": "string", "minLength": 1 },
+          "stress": {
+            "type": "array",
+            "items": { "type": "integer", "enum": [0, 1, 2] }
+          }
+        }
+      }
+    },
+    "sentenceStress": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["pattern", "primaryWords", "note"],
+        "properties": {
+          "pattern": { "type": "string", "minLength": 1 },
+          "primaryWords": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "note": { "type": "string", "minLength": 1 }
         }
       }
     },

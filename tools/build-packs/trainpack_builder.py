@@ -43,6 +43,7 @@ OPTIONAL_CATALOG_METADATA_KEYS = {
     "prerequisitePackIds",
     "recommendedNextPackIds",
     "companionPackIds",
+    "dailyQueueRoles",
 }
 
 REQUIRED_UNIT_KEYS = [
@@ -66,8 +67,14 @@ REQUIRED_TASK_HINT_KEYS = [
     "retryPrompts",
     "variantPrompts",
 ]
+OPTIONAL_TASK_HINT_KEYS = [
+    "recommendedTaskTypes",
+    "transferPrompts",
+    "weakPointPrompts",
+]
 
 ALLOWED_TASK_ROLES = {"WarmUp", "Main", "Challenge", "Review"}
+ALLOWED_DAILY_QUEUE_ROLES = {"Review", "New", "Transfer", "WeakPoint", "Challenge"}
 ALLOWED_CORRECTION_FOCUS = {
     "Naturalness",
     "SpokenRegister",
@@ -225,6 +232,12 @@ def _validate_catalog_metadata(catalog_metadata: Any, context: str) -> dict[str,
                 if not isinstance(pack_id, str) or not pack_id:
                     raise ValueError(f"{context} catalogMetadata.{list_key} must only contain non-empty strings")
 
+    if "dailyQueueRoles" in catalog_metadata:
+        roles = _validate_string_list(catalog_metadata["dailyQueueRoles"], f"{context} catalogMetadata.dailyQueueRoles")
+        unknown_roles = sorted(set(roles) - ALLOWED_DAILY_QUEUE_ROLES)
+        if unknown_roles:
+            raise ValueError(f"{context} catalogMetadata.dailyQueueRoles has unsupported values: {', '.join(unknown_roles)}")
+
     return dict(catalog_metadata)
 
 
@@ -241,7 +254,8 @@ def _validate_task_hints(task_hints: Any, context: str) -> dict[str, Any]:
     if not isinstance(task_hints, dict):
         raise ValueError(f"{context} taskHints must be an object")
     _ensure_keys(task_hints, REQUIRED_TASK_HINT_KEYS, f"{context} taskHints")
-    unknown = sorted(set(task_hints.keys()) - set(REQUIRED_TASK_HINT_KEYS))
+    allowed_keys = set(REQUIRED_TASK_HINT_KEYS) | set(OPTIONAL_TASK_HINT_KEYS)
+    unknown = sorted(set(task_hints.keys()) - allowed_keys)
     if unknown:
         raise ValueError(f"{context} taskHints has unsupported keys: {', '.join(unknown)}")
 
@@ -257,13 +271,22 @@ def _validate_task_hints(task_hints: Any, context: str) -> dict[str, Any]:
     if unknown_focus:
         raise ValueError(f"{context} taskHints.correctionFocus has unsupported values: {', '.join(unknown_focus)}")
 
-    return {
+    result = {
         "defaultRole": default_role,
         "successCriteria": _validate_string_list(task_hints["successCriteria"], f"{context} taskHints.successCriteria"),
         "correctionFocus": correction_focus,
         "retryPrompts": _validate_string_list(task_hints["retryPrompts"], f"{context} taskHints.retryPrompts"),
         "variantPrompts": _validate_string_list(task_hints["variantPrompts"], f"{context} taskHints.variantPrompts"),
     }
+    for list_key in OPTIONAL_TASK_HINT_KEYS:
+        if list_key in task_hints:
+            values = _validate_string_list(task_hints[list_key], f"{context} taskHints.{list_key}")
+            if list_key == "recommendedTaskTypes":
+                unknown_roles = sorted(set(values) - ALLOWED_DAILY_QUEUE_ROLES)
+                if unknown_roles:
+                    raise ValueError(f"{context} taskHints.{list_key} has unsupported values: {', '.join(unknown_roles)}")
+            result[list_key] = values
+    return result
 
 
 def discover_content_paths() -> list[Path]:
@@ -388,6 +411,10 @@ def _build_units_and_items(pack_id: str, unit_specs: list[dict[str, Any]]) -> tu
                 "taskHints": spec["taskHints"],
             }
         )
+        if "speakingActId" in spec:
+            units[-1]["speakingActId"] = spec["speakingActId"]
+        if "sceneCoverage" in spec:
+            units[-1]["sceneCoverage"] = spec["sceneCoverage"]
     return units, items
 
 
